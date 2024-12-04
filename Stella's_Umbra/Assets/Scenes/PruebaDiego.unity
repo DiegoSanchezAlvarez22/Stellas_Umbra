@@ -1400,16 +1400,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1212798584}
   - component: {fileID: 1212798583}
-  - component: {fileID: 1212798581}
   - component: {fileID: 1212798580}
   - component: {fileID: 1212798579}
+  - component: {fileID: 1212798581}
   m_Layer: 0
   m_Name: EnemyAir(Tree)
   m_TagString: EnemyAir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1212798579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1470,17 +1470,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12faf9eca3b976409cb56c039824882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyType: 1
+  _currentState: 0
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
-  _playerTransform: {fileID: 0}
   _searchRange: 6
   _maxDistance: 9
   _attackDistance: 3.5
   _speed: 2
   _speedReductor: 2
-  _enemyType: 1
-  _currentState: 0
+  _projectilePrefab: {fileID: 1799812100026369324, guid: 07895ce589d33414d9d8d3405be894f3, type: 3}
+  _firePoint: {fileID: 1212798584}
+  _reloadTime: 2
 --- !u!212 &1212798583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1570,7 +1572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1214484493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1701,17 +1703,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12faf9eca3b976409cb56c039824882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyType: 0
+  _currentState: 0
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
-  _playerTransform: {fileID: 0}
   _searchRange: 6
   _maxDistance: 9
   _attackDistance: 3.5
   _speed: 2
   _speedReductor: 3
-  _enemyType: 0
-  _currentState: 0
+  _projectilePrefab: {fileID: 7623279800016655656, guid: 07895ce589d33414d9d8d3405be894f3, type: 3}
+  _firePoint: {fileID: 1214484494}
+  _reloadTime: 2
 --- !u!1 &1285512789
 GameObject:
   m_ObjectHideFlags: 0

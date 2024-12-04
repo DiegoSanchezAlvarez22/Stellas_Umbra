@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class TreeBehaviour1 : MonoBehaviour
 {
-    [SerializeField] private LayerMask _playerLayer;
-    [SerializeField] private Transform _playerTransform;
+    [Header("Movement")]
+    [SerializeField] private EnemyType _enemyType;
+    [SerializeField] private MovementState _currentState;
     private Vector3 _startingPos;
-
-    [SerializeField] private float _searchRange;
-    [SerializeField] private float _maxDistance, _attackDistance;
+    [SerializeField] private LayerMask _playerLayer;
+    private Transform _playerTransform;
+    [SerializeField] private float _searchRange, _maxDistance, _attackDistance;
     [SerializeField] private float _speed, _speedReductor;
     private float _maxSpeed;
     private bool _lookingRight;
 
-    [SerializeField] private EnemyType _enemyType;
-    [SerializeField] private MovementState _currentState;
+    [Header("Attack")]
+    [SerializeField] private GameObject _projectilePrefab; // Prefab del proyectil
+    [SerializeField] private Transform _firePoint; // Punto desde donde se dispara el proyectil
+    [SerializeField] private float _reloadTime = 2f; // Tiempo de recarga entre disparos
+    private float _lastAttackTime; // Momento del �ltimo ataque
 
     enum EnemyType
     {
@@ -151,6 +155,24 @@ public class TreeBehaviour1 : MonoBehaviour
         }
     }
 
+    private void FlipToTarget(Vector3 _target)
+    {
+        if (_target.x > transform.position.x && !_lookingRight)
+        {
+            Flip();
+        }
+        else if (_target.x < transform.position.x && _lookingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        _lookingRight = !_lookingRight;
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+    }
+
     private void Attack()
     {
         switch (_enemyType)
@@ -174,7 +196,11 @@ public class TreeBehaviour1 : MonoBehaviour
 
     private void AttackWanderingSoul()
     {
-
+        if (Time.time >= _lastAttackTime + _reloadTime)
+        {
+            ShootProjectile();
+            _lastAttackTime = Time.time;
+        }
     }
 
     private void AttackMagicCloud()
@@ -182,22 +208,26 @@ public class TreeBehaviour1 : MonoBehaviour
 
     }
 
-    private void FlipToTarget(Vector3 _target)
+    private void ShootProjectile()
     {
-        if (_target.x > transform.position.x && !_lookingRight)
+        if (_playerTransform == null)
         {
-            Flip();
-        }
-        else if (_target.x < transform.position.x && _lookingRight)
-        {
-            Flip();
-        }
-    }
+            return;
 
-    private void Flip()
-    {
-        _lookingRight = !_lookingRight;
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y +180, 0);
+        }
+
+        GameObject projectile = Instantiate(_projectilePrefab, _firePoint.position,
+            Quaternion.identity); // Instanciar el disparo desde la posicion de disparo
+        Vector3 direction = (_playerTransform.position - 
+            _firePoint.position).normalized; // Direccion al jug
+        projectile.transform.rotation = Quaternion.LookRotation(direction); // Rota el desparo
+
+        // Aplicar velocidad al proyectil
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = direction * 10f; // Ajusta la velocidad según sea necesario
+        }
     }
 
     private void OnDrawGizmos()
