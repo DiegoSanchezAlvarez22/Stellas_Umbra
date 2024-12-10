@@ -26,8 +26,6 @@ public class BossHandBehaviour : MonoBehaviour
     [SerializeField] GameObject Boss;
     private Animator BossBody;
     [SerializeField] Transform tracker;
-    private bool trackea = false;
-
     void Start()
     {
         Animator = GetComponent<Animator>();
@@ -36,14 +34,6 @@ public class BossHandBehaviour : MonoBehaviour
         BossBody.SetBool("BossAttack", false);
     }
 
-    private void Update()
-    {
-        while (trackea == true)
-        {
-            Transform newPosition = tracker.transform;
-            newPosition.position = new Vector3(player.position.x * followSpeed, 2, player.position.z);
-        }
-    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -63,7 +53,7 @@ public class BossHandBehaviour : MonoBehaviour
     {
         while (true)
         {
-            if (animatorTriggered == true && dañable)
+            if (animatorTriggered == true)
             {
                 Animator.SetTrigger("BarridoRecibeDaño");
                 animatorTriggered = false; // Resetea el flag.
@@ -103,13 +93,12 @@ public class BossHandBehaviour : MonoBehaviour
 
             if (dañable == true)
             {
-                    trackea = true;
+                Transform newPosition = tracker.transform;
+                newPosition.position = new Vector3(player.localPosition.x * followSpeed, 2, player.localPosition.z);
 
-                    yield return new WaitForSeconds(fallDelay);
+                yield return new WaitForSeconds(fallDelay);
 
-                    Animator.SetTrigger("Atacando");
-                    trackea = false;
-
+                Animator.SetTrigger("Atacando");
             }
 
             yield return new WaitForSeconds(5f);
