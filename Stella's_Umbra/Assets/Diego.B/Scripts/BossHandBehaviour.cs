@@ -25,6 +25,8 @@ public class BossHandBehaviour : MonoBehaviour
     [SerializeField] Transform player; // Referencia al jugador
     [SerializeField] GameObject Boss;
     private Animator BossBody;
+    [SerializeField] Transform tracker;
+    private bool trackea = false;
 
     void Start()
     {
@@ -32,6 +34,15 @@ public class BossHandBehaviour : MonoBehaviour
         BossBody = Boss.GetComponent<Animator>();
         StartCoroutine(Fase1());
         BossBody.SetBool("BossAttack", false);
+    }
+
+    private void Update()
+    {
+        while (trackea == true)
+        {
+            Transform newPosition = tracker.transform;
+            newPosition.position = new Vector3(player.position.x * followSpeed, 2, player.position.z);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -92,14 +103,12 @@ public class BossHandBehaviour : MonoBehaviour
 
             if (dañable == true)
             {
-                    Animator.applyRootMotion = false;
-                    Vector3 animationOffset = transform.position;
-                    Vector3 manualControl = new Vector3(player.position.x * followSpeed, 2, -3);
-                    transform.position = animationOffset + manualControl;
+                    trackea = true;
 
                     yield return new WaitForSeconds(fallDelay);
 
                     Animator.SetTrigger("Atacando");
+                    trackea = false;
 
             }
 
