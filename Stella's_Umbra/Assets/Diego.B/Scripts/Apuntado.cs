@@ -83,7 +83,7 @@ public class Apuntado : MonoBehaviour
             fijador2.GetComponent<Renderer>().enabled = false;
         }
 
-        Movimiento();
+        //Movimiento();
         DistanceShoot();
         UpShoot();
         StartCoroutine(SpecialAtq());
@@ -93,7 +93,7 @@ public class Apuntado : MonoBehaviour
     //Atque distancia
     void DistanceShoot()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Disparando");
             GameObject instantiatedBullet;

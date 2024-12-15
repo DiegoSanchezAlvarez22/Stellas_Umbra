@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraPos : MonoBehaviour
 {
-    [SerializeField] private GameObject _target;
+    private GameObject _target;
 
     private void Start()
     {

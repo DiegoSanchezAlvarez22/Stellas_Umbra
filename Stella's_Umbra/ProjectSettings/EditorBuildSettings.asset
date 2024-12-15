@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PruebaDiego.unity
+    path: Assets/Diego.S/Scenes/PruebaDiego.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/PruebaDiegoLeft.unity
+    path: Assets/Diego.S/Scenes/PruebaDiegoLeft.unity
     guid: d8c8425d51567ed46895f8d7f0c5c94b
   - enabled: 1
-    path: Assets/Scenes/PruebaDiegoRight.unity
+    path: Assets/Diego.S/Scenes/PruebaDiegoRight.unity
     guid: f6efcbdd151a95740975a1842a03de5f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
