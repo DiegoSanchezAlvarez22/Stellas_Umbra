@@ -6,11 +6,8 @@ public class Apuntado : MonoBehaviour
 {
     [SerializeField] Transform shootingPoint;
     private Vector3 shootingPointOriginal;
-    [SerializeField] float speed = 5f;
     private BoxCollider boxCollider;
     [SerializeField] float tamañoAgachado;
-    private Vector3 tamañoJugador;
-    [SerializeField] float fuerzaDeSalto = 5f;
 
     [Header("Aataque a Distancia")]
     [SerializeField] SphereCollider sphereCollider;
@@ -34,7 +31,6 @@ public class Apuntado : MonoBehaviour
     void Start()
     {
         fijador2 = fijador.GetChild(0);
-        //sphereCollider = rangoDeApuntado.GetComponent<SphereCollider>();
         // Guardamos el padre y la posición original del objeto hijo
         posicionOriginal = fijador.localPosition;
         fijador2.GetComponent<Renderer>().enabled = false;
@@ -42,17 +38,16 @@ public class Apuntado : MonoBehaviour
         shootingPointOriginal = shootingPoint.localPosition;
         // Inicializa la última posición en X del objeto padre
         lastXPosition = transform.localPosition.x;
-        //tamañoJugador = boxCollider.transform.localScale;
     }
 
     //Establecer Fijador
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider sphereCollider)
     {
         //Debug.Log(other.gameObject.name);
-        if (other.CompareTag("Interactuable"))
+        if (sphereCollider.CompareTag("Interactuable")  )
         {
             Debug.Log("El objeto ha entrado en el SphereCollider del hijo.");
-            fijador.SetParent(other.transform);
+            fijador.SetParent(sphereCollider.transform);
             Debug.Log("Fijador ahora es hijo de objeto");
             // Coloca el objeto hijo justo encima del nuevo padre
             fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
@@ -62,7 +57,7 @@ public class Apuntado : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactuable"))
+        if (other.CompareTag("Interactuable") || other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
         {
             Debug.Log("El objeto ha salido en el SphereCollider del hijo.");
             fijador.transform.parent = padreOriginal;
@@ -172,23 +167,6 @@ public class Apuntado : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.R) && Energia < 100)
         {
             Debug.Log("Energia insuficiente");
-        }
-    }
-
-    //Movimiento
-    private void Movimiento()
-    {
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position = new Vector3(transform.position.x + 1 * speed * Time.deltaTime, transform.position.y, transform.position.z);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.position = new Vector3(transform.position.x - 1 * speed * Time.deltaTime, transform.position.y, transform.position.z);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + fuerzaDeSalto * Time.deltaTime, transform.position.z);
         }
     }
 

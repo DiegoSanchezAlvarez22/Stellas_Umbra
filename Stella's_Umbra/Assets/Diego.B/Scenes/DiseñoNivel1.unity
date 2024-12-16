@@ -343,14 +343,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuertaGatillo
       objectReference: {fileID: 0}
-    - target: {fileID: 3733829360948695312, guid: 3e5b161a3e4f07a48a71afc25175e2cd, type: 3}
-      propertyPath: m_Size.x
-      value: 2.55659
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733829360948695312, guid: 3e5b161a3e4f07a48a71afc25175e2cd, type: 3}
-      propertyPath: m_Center.x
-      value: 0.059985183
-      objectReference: {fileID: 0}
     - target: {fileID: 7683738275627441825, guid: 3e5b161a3e4f07a48a71afc25175e2cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -496.3553
