@@ -58,7 +58,7 @@ public class Apuntado : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactuable"))
+        if (other.CompareTag("Interactuable") || other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
         {
             Debug.Log("El objeto ha salido en el SphereCollider del hijo.");
             fijador.transform.parent = padreOriginal;
