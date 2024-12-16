@@ -58,10 +58,14 @@ public class Disparofijado : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Destroy(this.gameObject);
-    //    Debug.Log("Bala destruida");
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Interactuable"))
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+            Debug.Log("Bala destruida");
+        }  
+    }
 }
 

@@ -30,7 +30,7 @@ public class Respawn : MonoBehaviour
         //transform.position = _respawnPoint.transform.position;
         //vidas al maximo
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         transform.position = _respawnPoint.transform.position;
     }
 }
