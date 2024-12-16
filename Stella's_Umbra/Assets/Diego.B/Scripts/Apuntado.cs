@@ -6,7 +6,6 @@ public class Apuntado : MonoBehaviour
 {
     [SerializeField] Transform shootingPoint;
     private Vector3 shootingPointOriginal;
-    [SerializeField] float speed = 5f;
     private BoxCollider boxCollider;
     [SerializeField] float tamañoAgachado;
 
