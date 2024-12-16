@@ -234,7 +234,7 @@ public class TreeBehaviour1 : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _searchRange);
-        Gizmos.DrawWireSphere(_startingPos, _maxDistance);
+        //Gizmos.DrawWireSphere(_startingPos, _maxDistance);
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _attackDistance);

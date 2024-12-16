@@ -49,7 +49,7 @@ public class PlayerMov : MonoBehaviour
     private float lastDashTime = -Mathf.Infinity;
 
     [Header("Wall")]
-    protected bool _inWall;
+    [SerializeField] protected bool _inWall;
     private bool _canGrabWall;
 
     [Header("MoveObj")]
@@ -96,21 +96,21 @@ public class PlayerMov : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.CompareTag("Floor"))
         {
             _inFloor = true;
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
         }
 
-        if (collision.gameObject.tag == "Wall" && _inFloor == false)
+        if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
         {
             _inWall = true;
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
         }
 
-        if (collision.gameObject.tag == "MovableObj")
+        if (collision.gameObject.CompareTag("MovableObj"))
         {
             _canMoveObj = true;
             _objInMove = collision.gameObject;
@@ -119,19 +119,19 @@ public class PlayerMov : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.name == "Floor")
+        if (collision.gameObject.CompareTag("Floor"))
         {   
             _inFloor = false;
             _canJump = false;
         }
 
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.CompareTag("Wall"))
         {
             _inWall = false;
             _canJump = false;
         }
 
-        if (collision.gameObject.tag == "MovableObj")
+        if (collision.gameObject.CompareTag("MovableObj"))
         {
             _canMoveObj = false;
             _objInMove = null;

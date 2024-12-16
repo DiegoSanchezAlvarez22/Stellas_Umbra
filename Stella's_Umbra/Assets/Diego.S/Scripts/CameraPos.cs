@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraPos : MonoBehaviour
 {
-    private GameObject _target;
+    [SerializeField] private GameObject _target;
 
     private void Start()
     {
@@ -13,6 +13,6 @@ public class CameraPos : MonoBehaviour
 
     void Update()
     {
-        this.gameObject.transform.position = new Vector3(_target.transform.position.x, _target.transform.position.y, _target.transform.position.z - 10);
+        this.gameObject.transform.position = new Vector3(_target.transform.position.x, _target.transform.position.y + 2.5f, _target.transform.position.z - 10f);
     }
 }
