@@ -525,6 +525,7 @@ MonoBehaviour:
   dashForce: 20
   dashDuration: 0.2
   dashCooldown: 0.3
+  _inWall: 0
   _initialObjParent: {fileID: 0}
 --- !u!114 &2089185292222206164
 MonoBehaviour:
@@ -554,8 +555,8 @@ MonoBehaviour:
   cristalesRequeridos: 5
   regenerarVida: 1
   cantidadActualCristales: 0
-  vidaActual: 10
-  corazonesMax: 10
+  vidaActual: 4
+  corazonesMax: 4
   cambioVida:
     m_PersistentCalls:
       m_Calls: []
@@ -575,9 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 927611748827660408}
-  speed: 5
   "tama\xF1oAgachado": 0.5
-  fuerzaDeSalto: 100
   sphereCollider: {fileID: 2160388577919333903}
   fijador: {fileID: 1785737683253930734}
   alturaSobrePadre: 1
