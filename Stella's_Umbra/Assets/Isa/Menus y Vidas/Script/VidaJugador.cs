@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 public class VidaJugador : MonoBehaviour
@@ -19,6 +20,26 @@ public class VidaJugador : MonoBehaviour
     {
         vidaActual = corazonesMax;
         cambioVida.Invoke(vidaActual);
+    }
+
+    private void Update()
+    {
+        if (vidaActual == 0)
+        {
+            //Respawn _respawn;
+            //_respawn = gameObject.GetComponent<Respawn>();
+            //_respawn.RespawnPosition();
+            //vidaActual = corazonesMax;
+            //cambioVida.Invoke(vidaActual);
+
+            //CorazonesUI _corazonesUI;
+            //_corazonesUI = gameObject.GetComponent<CorazonesUI>();
+            //cambioVida.AddListener(_corazonesUI.CambiarCorazones);
+            //sumarCorazon.AddListener(_corazonesUI.SumarCorazones);
+
+            SceneManager.LoadScene("Menu Principal");
+            Destroy(gameObject);
+        }
     }
 
     // Método para recoger un item

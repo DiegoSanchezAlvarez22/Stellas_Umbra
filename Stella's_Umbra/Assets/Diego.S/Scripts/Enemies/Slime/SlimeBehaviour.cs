@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using static UnityEngine.GraphicsBuffer;
 
 public class SlimeBehaviour : MonoBehaviour
 {
@@ -88,23 +85,23 @@ public class SlimeBehaviour : MonoBehaviour
         _speed *= -1;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(_floorFinder.transform.position,
-            _floorFinder.transform.position + Vector3.down * _distanceLineDown);
-        Gizmos.DrawLine(_floorFinder.transform.position,
-            _floorFinder.transform.position + Vector3.left * _distanceLineRight);
-        Gizmos.DrawLine(_floorFinder.transform.position,
-            _floorFinder.transform.position + Vector3.right * _distanceLineRight);
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(_floorFinder.transform.position,
+    //        _floorFinder.transform.position + Vector3.down * _distanceLineDown);
+    //    Gizmos.DrawLine(_floorFinder.transform.position,
+    //        _floorFinder.transform.position + Vector3.left * _distanceLineRight);
+    //    Gizmos.DrawLine(_floorFinder.transform.position,
+    //        _floorFinder.transform.position + Vector3.right * _distanceLineRight);
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, _distanceToPlayer);
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawWireSphere(transform.position, _distanceToPlayer);
 
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, _distanceMoveToPlayer);
+    //    Gizmos.color = Color.magenta;
+    //    Gizmos.DrawWireSphere(transform.position, _distanceMoveToPlayer);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _attackDistance);
-    }
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, _attackDistance);
+    //}
 }

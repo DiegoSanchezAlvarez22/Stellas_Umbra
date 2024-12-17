@@ -24,7 +24,7 @@ public class CorazonesUI : MonoBehaviour
         vidaJugador.sumarCorazon.AddListener(SumarCorazones);
     }
 
-    private void CambiarCorazones(int vidaActual)
+    public void CambiarCorazones(int vidaActual)
     {
         if (!listaCorazones.Any())
         {
@@ -46,7 +46,7 @@ public class CorazonesUI : MonoBehaviour
         indexActual = cantidadMaximaVida - 1;
     }
 
-    private void SumarCorazones(int sumar)
+    public void SumarCorazones(int sumar)
     {
         
         Image corazon = Instantiate(prefabCorazonVacio, transform);

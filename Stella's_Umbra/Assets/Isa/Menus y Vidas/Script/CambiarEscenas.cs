@@ -19,7 +19,7 @@ public class CambiarEscenas : MonoBehaviour
     }
     public void IrJuego()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("DiseñoNivel1.1");
     }
     public void IrAjustes()
     {

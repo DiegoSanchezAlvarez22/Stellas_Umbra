@@ -115,6 +115,13 @@ public class PlayerMov : MonoBehaviour
             _canMoveObj = true;
             _objInMove = collision.gameObject;
         }
+
+        if (collision.gameObject.CompareTag("EnemyAir") || collision.gameObject.CompareTag("EnemyFloor"))
+        {
+            VidaJugador _vida;
+            _vida = gameObject.GetComponent<VidaJugador>();
+            _vida.PerderVida(1);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
