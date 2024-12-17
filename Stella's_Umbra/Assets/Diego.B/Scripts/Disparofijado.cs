@@ -60,7 +60,7 @@ public class Disparofijado : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactuable"))
+        if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
         {
             Destroy(this.gameObject);
             Destroy(other.gameObject);

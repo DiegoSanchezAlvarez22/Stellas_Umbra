@@ -20,7 +20,7 @@ public class Apuntado : MonoBehaviour
     [SerializeField] GameObject projectile;
 
     [Header("Ataque Desde Arriba y Especial")]
-    [SerializeField] int Energia = 100;
+    [SerializeField] float Energia = 100;
     [SerializeField] GameObject roca;
     [SerializeField] GameObject Tornado;
     [SerializeField] float duracionAtaque;
@@ -44,7 +44,7 @@ public class Apuntado : MonoBehaviour
     private void OnTriggerEnter(Collider sphereCollider)
     {
         //Debug.Log(other.gameObject.name);
-        if (sphereCollider.CompareTag("Interactuable")  )
+        if (sphereCollider.CompareTag("Interactuable") || sphereCollider.CompareTag("EnemyAir") || sphereCollider.CompareTag("EnemyFloor"))
         {
             Debug.Log("El objeto ha entrado en el SphereCollider del hijo.");
             fijador.SetParent(sphereCollider.transform);
@@ -68,16 +68,10 @@ public class Apuntado : MonoBehaviour
 
     private void Update()
     {
-        // Hacer visible el objeto hijo mientras la tecla esté presionada
-        if (Input.GetKey(KeyCode.Tab))
+        if(Energia < 100)
         {
-            fijador2.GetComponent<Renderer>().enabled = true;
+            Energia = Energia + Time.deltaTime;
         }
-        else
-        {
-            fijador2.GetComponent<Renderer>().enabled = false;
-        }
-
         //Movimiento();
         DistanceShoot();
         UpShoot();
@@ -88,12 +82,21 @@ public class Apuntado : MonoBehaviour
     //Atque distancia
     void DistanceShoot()
     {
+        // Hacer visible el objeto hijo mientras la tecla esté presionada
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            fijador2.GetComponent<Renderer>().enabled = true;
+        }
+        else
+        {
+            fijador2.GetComponent<Renderer>().enabled = false;
+        }
         if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Disparando");
             GameObject instantiatedBullet;
             instantiatedBullet = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-            instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador2);
+            instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
         }
     }
 

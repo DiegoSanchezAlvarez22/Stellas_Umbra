@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 479d3799f64d1f44f90194f2b6b8d09b, type: 3}
+  - {fileID: 2100000, guid: 05e9f822e9dd1fe4c99c195ca2b0ae5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7510395565991060576}
   - component: {fileID: 2844159486686954631}
   - component: {fileID: 5354612760120539426}
+  - component: {fileID: 6884992824201578787}
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Ataque
@@ -164,6 +165,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6884992824201578787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342673284362773583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111a364e00f6bf64fae25eaa637875be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8334112639691801222
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +241,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 479d3799f64d1f44f90194f2b6b8d09b, type: 3}
+  - {fileID: 2100000, guid: c9c4bd96e4958384982144000020f005, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

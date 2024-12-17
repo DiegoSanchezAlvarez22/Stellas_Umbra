@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class AtaqueDesdeArriba : MonoBehaviour
+public class TornadoBehaviour : MonoBehaviour
 {
-    [SerializeField] int damage;
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
