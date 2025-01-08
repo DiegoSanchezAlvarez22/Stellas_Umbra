@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\apuntado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\scripts\\apuntado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\apuntado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\scenechangerspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\scenechangerspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\scripts\\disparofijado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\disparofijado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\ataquedesdearriba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\ataquedesdearriba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\camerapos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\camerapos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\enemies\\treebehaviour1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\enemies\\treebehaviour1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\instantiateplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\instantiateplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\player\\respawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\player\\respawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\ataquedesdearriba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\ataquedesdearriba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\scripts\\tornadobehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\tornadobehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,6 +29,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\bosshandbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\bosshandbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\disparofijado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\disparofijado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\scenechangerspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\scenechangerspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\enemies\\treebehaviour1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\enemies\\treebehaviour1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\instantiateplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\instantiateplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 282,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "TornadoBehaviour.cs",
+              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:10:59.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "SceneChangerSpace.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\SceneChangerSpace.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\SceneChangerSpace.cs",
@@ -62,25 +79,24 @@
               "RelativeToolTip": "Assets\\Diego.S\\Scripts\\SceneChangerSpace.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T06:56:33.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T06:56:33.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Disparofijado.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Disparofijado.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\Disparofijado.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Disparofijado.cs",
               "RelativeToolTip": "Assets\\Diego.B\\Scripts\\Disparofijado.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowD4AAABKAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowEQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T06:06:50.228Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "TreeBehaviour1.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
@@ -88,12 +104,11 @@
               "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
               "ViewState": "AgIAAHcAAAAAAAAAAAAuwOwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T23:00:38.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T23:00:38.441Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "PlayerMov.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
@@ -106,20 +121,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Respawn.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
               "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T14:50:53.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "CameraPos.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\CameraPos.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\CameraPos.cs",
@@ -138,7 +153,7 @@
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\Apuntado.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Apuntado.cs",
               "RelativeToolTip": "Assets\\Diego.B\\Scripts\\Apuntado.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAmwD4AAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAEYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T13:28:45.899Z",
               "EditorCaption": ""
@@ -151,14 +166,14 @@
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
               "RelativeToolTip": "Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T13:27:08.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "InstantiatePlayer.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\InstantiatePlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\InstantiatePlayer.cs",
@@ -166,20 +181,20 @@
               "RelativeToolTip": "Assets\\Diego.S\\Scripts\\InstantiatePlayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T13:17:52.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T13:17:52.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "BossHandBehaviour.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\BossHandBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\BossHandBehaviour.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\BossHandBehaviour.cs",
               "RelativeToolTip": "Assets\\Diego.B\\Scripts\\BossHandBehaviour.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAwwGUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T23:44:23.258Z"
+              "WhenOpened": "2024-12-09T23:44:23.258Z",
+              "EditorCaption": ""
             }
           ]
         }
