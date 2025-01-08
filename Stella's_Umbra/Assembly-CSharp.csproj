@@ -61,44 +61,48 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\SaltoRegulable.cs" />
+    <Compile Include="Assets\Diego.S\Input\Input1.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\InstantiatePlayer.cs" />
     <Compile Include="Assets\Diego.B\Scripts\DoorTrigger.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\SalirDelJuego.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Enemies\TreeBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Enemies\TreeBehaviour1.cs" />
-    <Compile Include="Assets\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuPausa.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\VidaJugador.cs" />
-    <Compile Include="Assets\Scripts\PorSiAcaso\Inutiles\SaltoRegulable.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMov.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\Dash.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
-    <Compile Include="Assets\Scripts\PorSiAcaso\Inutiles\Jump.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBehaviour.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\CorazonesUI.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\SceneChangerSpace.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\Jump.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Player\Respawn.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Palanca.cs" />
-    <Compile Include="Assets\Scripts\CameraPos.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\Enemy.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\CambiarEscenas.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\CorazonesUI.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\CambiarEscenas.cs" />
-    <Compile Include="Assets\Scripts\SceneChangerSpace.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Bat\BatBehaviour.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\MenuPausa.cs" />
-    <Compile Include="Assets\Scripts\Player\Respawn.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
+    <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\VidaJugador.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\Potion.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />
-    <Compile Include="Assets\Scripts\PorSiAcaso\Utiles\Dash.cs" />
-    <Compile Include="Assets\Input\Input1.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\Item.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour1.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />
-    <Compile Include="Assets\Menus y Vidas\Script\Potion.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -1266,6 +1270,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">

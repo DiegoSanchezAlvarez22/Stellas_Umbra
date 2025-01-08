@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class BossHandBehaviour : MonoBehaviour
@@ -19,13 +18,11 @@ public class BossHandBehaviour : MonoBehaviour
     private List<Vector3> spawnedPositions = new List<Vector3>(); // Lista de posiciones generadas
     private List<GameObject> spawnedObjects = new List<GameObject>(); // Lista de objetos instanciados
 
-    [SerializeField] float followSpeed = 5f; // Velocidad de seguimiento en el eje X
     [SerializeField] float fallDelay = 2f; // Tiempo antes de que la mano caiga
 
     [SerializeField] Transform player; // Referencia al jugador
     [SerializeField] GameObject Boss;
     private Animator BossBody;
-    [SerializeField] Transform tracker;
     void Start()
     {
         Animator = GetComponent<Animator>();
@@ -62,6 +59,10 @@ public class BossHandBehaviour : MonoBehaviour
 
                 dañable = false;
                 DestroyAllObjects();
+
+                yield return new WaitForSeconds(5f);
+
+                Animator.SetTrigger("JefeAcerca");
             }
 
             // Configurar Idle
@@ -93,17 +94,13 @@ public class BossHandBehaviour : MonoBehaviour
 
             if (dañable == true)
             {
-                Transform newPosition = tracker.transform;
-                newPosition.position = new Vector3(player.localPosition.x * followSpeed, 2, player.localPosition.z);
+                Animator.SetBool("Arriba",true);
 
                 yield return new WaitForSeconds(fallDelay);
 
+                Animator.SetBool("Arriba", false);
                 Animator.SetTrigger("Atacando");
             }
-
-            yield return new WaitForSeconds(5f);
-
-            Animator.SetTrigger("JefeAcerca");
 
             //StartCoroutine(ReiniciarCourutine());
         }   

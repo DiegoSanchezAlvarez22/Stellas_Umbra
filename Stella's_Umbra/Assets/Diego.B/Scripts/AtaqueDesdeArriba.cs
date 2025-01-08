@@ -3,16 +3,14 @@ using UnityEngine;
 public class AtaqueDesdeArriba : MonoBehaviour
 {
     [SerializeField] int damage;
-    private GameObject objeto;
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        objeto = collision.gameObject;
-
-        if (collision.gameObject.CompareTag("Destruible"))
+        if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
         {
-            Destroy(objeto);
-            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+            Debug.Log("Bala destruida");
         }
     }
 }

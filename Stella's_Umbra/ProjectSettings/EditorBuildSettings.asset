@@ -6,13 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PruebaDiego.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Isa/Menus y Vidas/Scenes/Menu Principal.unity
+    guid: 97417915f4e78ca4cb64ee47ef0eb388
   - enabled: 1
-    path: Assets/Scenes/PruebaDiegoLeft.unity
-    guid: d8c8425d51567ed46895f8d7f0c5c94b
+    path: Assets/Isa/Menus y Vidas/Scenes/Opciones.unity
+    guid: 3609abd9a3cd50446ab82213f3d84b36
   - enabled: 1
-    path: Assets/Scenes/PruebaDiegoRight.unity
-    guid: f6efcbdd151a95740975a1842a03de5f
+    path: Assets/Isa/Menus y Vidas/Scenes/Ajustes.unity
+    guid: ed9ac1d6159865447bb1af6c672f5049
+  - enabled: 1
+    path: Assets/Isa/Menus y Vidas/Scenes/ControlesTeclado.unity
+    guid: df74c623c0325fb4da51f5a6ec91e018
+  - enabled: 1
+    path: Assets/Isa/Menus y Vidas/Scenes/ControlesMando.unity
+    guid: b511adba56ba6fc48b654f2812570cf1
+  - enabled: 1
+    path: Assets/Isa/Menus y Vidas/Scenes/Creditos.unity
+    guid: 803674296acea9740999f9e0f71247a1
+  - enabled: 1
+    path: "Assets/Beta/Scenes/Dise\xF1oNivel1.1.unity"
+    guid: b00f473acbc6bed4cbcbe646dcc69660
+  - enabled: 1
+    path: Assets/Beta/Scenes/Scene01.unity
+    guid: 995db46553386e0479696e90de27e48e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
