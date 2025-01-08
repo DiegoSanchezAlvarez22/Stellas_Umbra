@@ -25,7 +25,7 @@ public class Respawn : MonoBehaviour
         
     }
 
-    private void RespawnPosition()
+    public void RespawnPosition()
     {
         //transform.position = _respawnPoint.transform.position;
         //vidas al maximo
