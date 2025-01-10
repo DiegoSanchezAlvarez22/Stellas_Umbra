@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,6 +33,9 @@ public class PlayerMov : MonoBehaviour
     [Header("SuperJump")]
     [SerializeField] private float _minJumpForce = 5f;
     [SerializeField] private float _maxJumpForce = 20f;
+    [SerializeField] private bool _superJumpActive;
+    [SerializeField] private float _timeSuperJumpActive;
+    [SerializeField] private int _superJumpsLeft;
     private bool _isJumping;
     private float _holdStartTime;
 
@@ -215,9 +219,12 @@ public class PlayerMov : MonoBehaviour
 
     private void OnSuperJumpStarted(InputAction.CallbackContext _callbackContext)
     {
-        // Registra el momento en que se presion� la tecla
-        _holdStartTime = (float)_callbackContext.startTime;
-        _isJumping = true;
+        if (_inFloor && _superJumpsLeft > 0 && _superJumpActive == true)
+        {
+            // Registra el momento en que se presiona la tecla
+            _holdStartTime = (float)_callbackContext.startTime;
+            _isJumping = true;
+        }
     }
 
     private void OnSuperJumpCanceled(InputAction.CallbackContext _callbackContext)
@@ -234,6 +241,8 @@ public class PlayerMov : MonoBehaviour
 
             Debug.Log("Salto realizado con una fuerza de: " + _superJumpForce);
             _isJumping = false;
+
+            _superJumpsLeft -= 1;
         }
     }
 

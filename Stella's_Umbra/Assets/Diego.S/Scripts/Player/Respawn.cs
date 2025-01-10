@@ -32,5 +32,7 @@ public class Respawn : MonoBehaviour
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         transform.position = _respawnPoint.transform.position;
+
+        //REINICIAR SUPER SALTOS MAXIMOS
     }
 }

@@ -9892,6 +9892,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _superJumpsLeft
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _superJumpActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _timeSuperJumpActive
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11383,7 +11395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1245821835
 Transform:
   m_ObjectHideFlags: 0
@@ -11547,7 +11559,7 @@ Camera:
   m_GameObject: {fileID: 1263209045}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.57978815, g: 0.7237177, b: 0.9528302, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -11570,7 +11582,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0
-  far clip plane: 20
+  far clip plane: 317.7
   field of view: 60
   orthographic: 1
   orthographic size: 6.5
