@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4929934141495819276}
   - component: {fileID: 7567347338800159081}
   - component: {fileID: 3779219701235170069}
+  - component: {fileID: 8755160260100505958}
+  - component: {fileID: 3508399214007403201}
   m_Layer: 0
   m_Name: EnemyAir(Bat)
   m_TagString: EnemyAir
@@ -176,3 +178,29 @@ MonoBehaviour:
   _player: {fileID: 0}
   _distance: 7
   _startingPoint: {x: 0.23, y: 7.49, z: 0}
+--- !u!114 &8755160260100505958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245127494552187500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9862c8893f28f14ca51ae1a2b6ade07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+--- !u!114 &3508399214007403201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245127494552187500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifes: 0

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+//[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Enemy))]
+[RequireComponent(typeof(EnemyLifes))]
 public class TreeBehaviour1 : MonoBehaviour
 {
     [Header("Movement")]
@@ -213,7 +216,6 @@ public class TreeBehaviour1 : MonoBehaviour
         if (_playerTransform == null)
         {
             return;
-
         }
 
         GameObject projectile = Instantiate(_projectilePrefab, _firePoint.position,

@@ -33,8 +33,8 @@ public class PlayerMov : MonoBehaviour
     [Header("SuperJump")]
     [SerializeField] private float _minJumpForce = 5f;
     [SerializeField] private float _maxJumpForce = 20f;
-    [SerializeField] private bool _superJumpActive;
-    [SerializeField] private float _timeSuperJumpActive;
+    [SerializeField] private bool _canSuperJump;
+    //[SerializeField] private float _timeSuperJumpActive;
     [SerializeField] private int _superJumpsLeft;
     private bool _isJumping;
     private float _holdStartTime;
@@ -110,7 +110,11 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
         {
             _inWall = true;
-            _canJump = true;
+            //if (//salto con pared desbloqueado)
+            //{
+            //    _canJump = true;
+            //}
+            _canJump = true;//quitar cuando funcione lo de arriba
             _jumpsLeft = _jumpsLeftMax;
         }
 
@@ -118,13 +122,6 @@ public class PlayerMov : MonoBehaviour
         {
             _canMoveObj = true;
             _objInMove = collision.gameObject;
-        }
-
-        if (collision.gameObject.CompareTag("EnemyAir") || collision.gameObject.CompareTag("EnemyFloor"))
-        {
-            VidaJugador _vida;
-            _vida = gameObject.GetComponent<VidaJugador>();
-            _vida.PerderVida(1);
         }
     }
 
@@ -219,7 +216,7 @@ public class PlayerMov : MonoBehaviour
 
     private void OnSuperJumpStarted(InputAction.CallbackContext _callbackContext)
     {
-        if (_inFloor && _superJumpsLeft > 0 && _superJumpActive == true)
+        if (_inFloor && _superJumpsLeft > 0 && _canSuperJump == true)
         {
             // Registra el momento en que se presiona la tecla
             _holdStartTime = (float)_callbackContext.startTime;

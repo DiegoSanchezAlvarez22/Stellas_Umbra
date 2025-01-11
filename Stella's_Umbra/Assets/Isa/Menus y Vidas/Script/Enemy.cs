@@ -4,36 +4,35 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int daño; // Cantidad de vida que el enemigo quita al jugador
+    [SerializeField] int _damage; // Cantidad de vida que el enemigo quita al jugador
     [Tooltip("Este valor solo es necesario modificarlo en caso de que se " +
         "quiera destruir el objeto al pasar el valor indicado.")]
-    [SerializeField] float _time; // Tiempo que tardará en destruirse si no colisiona con nada
 
     private void Start()
     {
         if (gameObject.tag == "EnemyShot")
         {
+            float _time = 8; // Tiempo que tardará en destruirse si no colisiona con nada
             Invoke("DestroyThis", _time);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que colisiona es el jugador
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) // Verifica si el objeto que colisiona es el jugador
         {
             VidaJugador vidaJugador = other.GetComponent<VidaJugador>();
 
             if (vidaJugador != null)
             {
-                vidaJugador.PerderVida(daño); // Quita vida al jugador
-                Debug.Log("Jugador recibió daño: " + daño);
+                vidaJugador.PerderVida(_damage); // Quita vida al jugador
+                Debug.Log("Jugador recibió daño: " + _damage);
             }
+        }
 
-            if (gameObject.tag == "EnemyShot")
-            {
-                DestroyThis();
-            }
+        if (gameObject.tag == "EnemyShot")
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -46,19 +45,14 @@ public class Enemy : MonoBehaviour
 
             if (vidaJugador != null)
             {
-                vidaJugador.PerderVida(daño); // Quita vida al jugador
-                Debug.Log("Jugador recibió daño: " + daño);
-            }
-
-            if (gameObject.tag == "EnemyShot")
-            {
-                DestroyThis();
+                Debug.Log("Jugador recibió daño: " + _damage);
+                vidaJugador.PerderVida(_damage); // Quita vida al jugador
             }
         }
-    }
 
-    private void DestroyThis()
-    {
-        Destroy(gameObject);
+        if (gameObject.tag == "EnemyShot")
+        {
+            Destroy(gameObject);
+        }
     }
 }

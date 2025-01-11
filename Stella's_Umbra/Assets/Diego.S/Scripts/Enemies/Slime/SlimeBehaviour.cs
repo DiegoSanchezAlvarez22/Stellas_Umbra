@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Enemy))]
+[RequireComponent(typeof(EnemyLifes))]
 public class SlimeBehaviour : MonoBehaviour
 {
     [Header("Movement")]
@@ -38,15 +41,15 @@ public class SlimeBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!Physics.Raycast(_floorFinder.position, Vector3.down, out RaycastHit _floor, _distanceLineDown))
-        {
-            Girar();
-        }
-        if (Physics.Raycast(_floorFinder.position, Vector3.right, out RaycastHit _wallRight, _distanceLineRight)
-            || Physics.Raycast(_floorFinder.position, Vector3.left, out RaycastHit _wallLeft, _distanceLineRight))
-        {
-            Girar();
-        }
+        //if (!Physics.Raycast(_floorFinder.position, Vector3.down, out RaycastHit _floor, _distanceLineDown))
+        //{
+        //    Girar();
+        //}
+        //if (Physics.Raycast(_floorFinder.position, Vector3.right, out RaycastHit _wallRight, _distanceLineRight)
+        //    || Physics.Raycast(_floorFinder.position, Vector3.left, out RaycastHit _wallLeft, _distanceLineRight))
+        //{
+        //    Girar();
+        //}
 
         Move();
     }

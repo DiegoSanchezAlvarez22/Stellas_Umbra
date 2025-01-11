@@ -20,7 +20,7 @@ public class Apuntado : MonoBehaviour
     [SerializeField] GameObject projectile;
 
     [Header("Ataque Desde Arriba y Especial")]
-    [SerializeField] float Energia = 100;
+    [SerializeField] float Energia = 0;
     [SerializeField] GameObject roca;
     [SerializeField] GameObject Tornado;
     [SerializeField] float duracionAtaque;
@@ -68,7 +68,7 @@ public class Apuntado : MonoBehaviour
 
     private void Update()
     {
-        if(Energia < 100)
+        if(Energia <= 100) //100 es el maximo conseguible
         {
             Energia = Energia + Time.deltaTime;
         }
@@ -158,7 +158,7 @@ public class Apuntado : MonoBehaviour
 
     private IEnumerator SpecialAtq()
     {
-        if (Input.GetKeyDown(KeyCode.R) && Energia == 100)
+        if (Input.GetKeyDown(KeyCode.R) && Energia >= 100)
         {
             GameObject instantiatedTornado;
             instantiatedTornado = GameObject.Instantiate(Tornado, new Vector3(transform.localPosition.x, (float)2.5, transform.localPosition.z), shootingPoint.rotation);

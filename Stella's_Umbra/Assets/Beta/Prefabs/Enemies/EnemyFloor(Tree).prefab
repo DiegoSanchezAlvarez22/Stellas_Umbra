@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6024538392630687016}
   - component: {fileID: 2346679697041382263}
   - component: {fileID: 5150826862664587599}
+  - component: {fileID: -49561574224232284}
   m_Layer: 0
   m_Name: EnemyFloor(Tree)
   m_TagString: EnemyFloor
@@ -163,3 +164,16 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 7623279800016655656, guid: 07895ce589d33414d9d8d3405be894f3, type: 3}
   _firePoint: {fileID: 2620617557790943998}
   _reloadTime: 2
+  _life: 0
+--- !u!114 &-49561574224232284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565127718906850028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

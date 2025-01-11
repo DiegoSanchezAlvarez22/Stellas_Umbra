@@ -9912,6 +9912,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8933333562012420752, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: Energia
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

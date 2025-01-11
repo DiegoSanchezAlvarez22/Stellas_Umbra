@@ -227,6 +227,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1692272324648021538, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: vidaActual
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692272324648021538, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: corazonesMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006928983686853181, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564488033807154199, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4727914585704887531, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -236,13 +252,23 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8933333562012420752, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933333562012420752, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: alturaSobrePadre
       value: 0.34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1483377053}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 934374250}
   m_SourcePrefab: {fileID: 100100000, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
 --- !u!1 &687048158
 GameObject:
@@ -890,6 +916,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
   m_PrefabInstance: {fileID: 513655960}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &934374249 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+  m_PrefabInstance: {fileID: 513655960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &934374250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934374239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d22c06cf76a15041ad500b483760d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackArea: {fileID: 1483377052}
+  _canAttack: 0
+  _timeAttaking: 0.25
+  _timeRechargeAttack: 1
 --- !u!1 &948773812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1206,73 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 44.58992, y: 2.7317362, z: 1}
   m_Center: {x: 0.056835175, y: -0.8658681, z: 0}
+--- !u!1 &1483377052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483377053}
+  - component: {fileID: 1483377055}
+  - component: {fileID: 1483377054}
+  m_Layer: 9
+  m_Name: BasicAttackArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1483377053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483377052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 934374249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483377054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483377052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122ca1d2cbd16184d9b6fef10f59c860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+--- !u!65 &1483377055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483377052}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5, y: 0.9, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1584829262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1801,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAir(Bat)
       objectReference: {fileID: 0}
+    - target: {fileID: 2245127494552187500, guid: 9066ffc1781387342ae04fe11c5f0f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508399214007403201, guid: 9066ffc1781387342ae04fe11c5f0f2f, type: 3}
+      propertyPath: _lifes
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1743,6 +1865,34 @@ PrefabInstance:
     - target: {fileID: 1783306359334640410, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
       propertyPath: m_Name
       value: EnemyFloor(Slime)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783306359334640410, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783306359334640410, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: m_TagString
+      value: EnemyFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858120650092746324, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: _lifes
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030523707101182581, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262297509456257240, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1801,6 +1951,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFloor(Tree)
       objectReference: {fileID: 0}
+    - target: {fileID: 3565127718906850028, guid: c0007440346ab304daf324eb5f20080e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188842916223402528, guid: c0007440346ab304daf324eb5f20080e, type: 3}
+      propertyPath: _lifes
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1814,6 +1972,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1064853150759307303, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
+      propertyPath: _time
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064853150759307303, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4825656711054730354, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.47
@@ -1857,6 +2023,14 @@ PrefabInstance:
     - target: {fileID: 8066546691838169684, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
       propertyPath: m_Name
       value: EnemyAir(Tree)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066546691838169684, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240719851379132850, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
+      propertyPath: _lifes
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

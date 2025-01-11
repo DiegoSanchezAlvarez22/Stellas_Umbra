@@ -81,8 +81,11 @@
     <Compile Include="Assets\Isa\Menus y Vidas\Script\CambiarEscenas.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
+    <Compile Include="Assets\BasicAttackAreaBehaviour.cs" />
+    <Compile Include="Assets\PlayerAttacks.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
+    <Compile Include="Assets\EnemyLifes.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\VidaJugador.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Potion.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />

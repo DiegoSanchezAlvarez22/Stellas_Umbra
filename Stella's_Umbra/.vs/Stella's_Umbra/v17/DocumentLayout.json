@@ -3,22 +3,63 @@
   "WorkspaceRootPath": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\enemies\\slime\\slimebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\enemies\\slime\\slimebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\isa\\menus y vidas\\script\\vidajugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\isa\\menus y vidas\\script\\vidajugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\isa\\menus y vidas\\script\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\isa\\menus y vidas\\script\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Equilibrium\\Assets\\Scripts\\Doors\\DoorTimed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\playerattacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\playerattacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\player\\respawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\player\\respawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\isa\\menus y vidas\\script\\corazonesui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\isa\\menus y vidas\\script\\corazonesui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\apuntado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\apuntado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\enemylifes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\enemylifes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\tornadobehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\tornadobehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\ataquedesdearriba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\ataquedesdearriba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\disparofijado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\disparofijado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\enemies\\bat\\batbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\enemies\\bat\\batbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.s\\scripts\\enemies\\treebehaviour1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\enemies\\treebehaviour1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\bosshandbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\bosshandbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\diego.b\\scripts\\bossbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\scripts\\bossbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\scripts\\bossbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -29,50 +70,180 @@
       "DocumentGroups": [
         {
           "DockedWidth": 282,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Respawn.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
-              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
-              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
-              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Player\\Respawn.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAhAAAA",
+              "DocumentIndex": 5,
+              "Title": "CorazonesUI.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\CorazonesUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Isa\\Menus y Vidas\\Script\\CorazonesUI.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\CorazonesUI.cs",
+              "RelativeToolTip": "Assets\\Isa\\Menus y Vidas\\Script\\CorazonesUI.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAADgv0UAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T08:29:07.593Z",
+              "WhenOpened": "2025-01-11T15:50:09.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DoorTimed.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Equilibrium\\Assets\\Scripts\\Doors\\DoorTimed.cs",
-              "RelativeDocumentMoniker": "..\\..\\Equilibrium\\Assets\\Scripts\\Doors\\DoorTimed.cs",
-              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Equilibrium\\Assets\\Scripts\\Doors\\DoorTimed.cs",
-              "RelativeToolTip": "..\\..\\Equilibrium\\Assets\\Scripts\\Doors\\DoorTimed.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAqAAAA",
+              "Title": "VidaJugador.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\VidaJugador.cs",
+              "RelativeDocumentMoniker": "Assets\\Isa\\Menus y Vidas\\Script\\VidaJugador.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\VidaJugador.cs",
+              "RelativeToolTip": "Assets\\Isa\\Menus y Vidas\\Script\\VidaJugador.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAkwFAAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T08:19:40.808Z",
+              "WhenOpened": "2025-01-11T15:49:31.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "PlayerAttacks.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\PlayerAttacks.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerAttacks.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\PlayerAttacks.cs",
+              "RelativeToolTip": "Assets\\PlayerAttacks.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T15:13:59.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerMov.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
               "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
               "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
-              "ViewState": "AQIAAKsAAAAAAAAAAAAuwPQAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-10T07:49:30.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T09:58:41.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EnemyLifes.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\EnemyLifes.cs",
+              "RelativeDocumentMoniker": "Assets\\EnemyLifes.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\EnemyLifes.cs",
+              "RelativeToolTip": "Assets\\EnemyLifes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:47:21.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AtaqueDesdeArriba.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\AtaqueDesdeArriba.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T13:20:00.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TornadoBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\TornadoBehaviour.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T13:24:03.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Apuntado.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Apuntado.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\Apuntado.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Apuntado.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\Apuntado.cs",
+              "ViewState": "AQIAAKwAAAAAAAAAAADwv6kAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T09:35:10.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SlimeBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAkwC0AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:01:48.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Disparofijado.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Disparofijado.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\Disparofijado.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\Disparofijado.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\Disparofijado.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAA3wEAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:04:35.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TreeBehaviour1.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
+              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Enemies\\TreeBehaviour1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T09:59:12.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BatBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\Bat\\BatBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Enemies\\Bat\\BatBehaviour.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\Bat\\BatBehaviour.cs",
+              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Enemies\\Bat\\BatBehaviour.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T09:55:53.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "BossBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\BossBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\BossBehaviour.cs",
@@ -85,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "BossHandBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\BossHandBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\BossHandBehaviour.cs",
