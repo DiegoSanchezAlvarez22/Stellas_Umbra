@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AtaqueDesdeArriba : MonoBehaviour
 {
-    [SerializeField] private int _damage;
+    [SerializeField] private float _damage;
 
     private void OnTriggerEnter(Collider other)
     {
