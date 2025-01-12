@@ -68,6 +68,7 @@
     <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuPausa.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
+    <Compile Include="Assets\PlayerExpSystem.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />
     <Compile Include="Assets\HealthBarBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour.cs" />

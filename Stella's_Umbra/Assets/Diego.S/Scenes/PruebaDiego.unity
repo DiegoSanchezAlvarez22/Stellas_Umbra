@@ -540,6 +540,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       insertIndex: -1
       addedObject: {fileID: 934374250}
+    - targetCorrespondingSourceObject: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 934374251}
   m_SourcePrefab: {fileID: 100100000, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
 --- !u!1 &687048158
 GameObject:
@@ -1208,6 +1211,19 @@ MonoBehaviour:
   _canAttack: 0
   _timeAttaking: 0.25
   _timeRechargeAttack: 1
+--- !u!114 &934374251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934374239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f14b264df7bddb43b0d8ef5c9a976eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentExp: 0
 --- !u!1 &948773812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2326,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: _expToAdd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -2317,6 +2337,10 @@ PrefabInstance:
       propertyPath: _maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
+      propertyPath: _playerTarget
+      value: 
+      objectReference: {fileID: 934374239}
     - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
       propertyPath: _currentHealth
       value: 10
