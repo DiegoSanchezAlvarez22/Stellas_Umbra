@@ -67,6 +67,7 @@
     <Compile Include="Assets\Diego.B\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuPausa.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
+    <Compile Include="Assets\Diego.B\Scripts\MapaDesplegable.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
     <Compile Include="Assets\PlayerExpSystem.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />
