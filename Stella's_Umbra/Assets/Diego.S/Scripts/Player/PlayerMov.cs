@@ -61,6 +61,12 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] private Transform _initialObjParent;
     private GameObject _objInMove;
 
+    [Header("Animaciones")]
+    [SerializeField] Animator animator;
+
+    [Header("Render")]
+    [SerializeField] SpriteRenderer _spriteRenderer;
+
     #endregion
 
     private void Awake()
@@ -68,6 +74,7 @@ public class PlayerMov : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         _rb = GetComponent<Rigidbody>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _input = GetComponent<PlayerInput>();
 
         _jump = _input.actions["Jump"];
@@ -80,6 +87,7 @@ public class PlayerMov : MonoBehaviour
     private void Update()
     {
         _direction = _input.actions["Walk"].ReadValue<Vector2>();
+        float speed = _direction.x;
 
         if (isDashing)
         {
@@ -90,6 +98,17 @@ public class PlayerMov : MonoBehaviour
                 _rb.linearVelocity = Vector3.zero; // Detiene el movimiento del dash
             }
         }
+        animator.SetFloat("Movement", speed);
+        if (_direction.x > 0)
+        {
+            _spriteRenderer.flipX = true; //Cambiamos la rotacion del pj
+        }
+        else if (_direction.x < 0)
+        {
+            _spriteRenderer.flipX = false;
+        }
+
+
     }
 
     private void FixedUpdate()
