@@ -238,9 +238,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1652431018173190424}
-  - component: {fileID: 8366792149196797897}
   - component: {fileID: 6074576780525506499}
   - component: {fileID: -2859536973752038707}
+  - component: {fileID: 8366792149196797897}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Ataque
@@ -264,20 +264,6 @@ Transform:
   - {fileID: 1216478845004911014}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8366792149196797897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293527828824941751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee64caad79f42f443b13b14f8c776689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  speed: 10
 --- !u!135 &6074576780525506499
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -326,6 +312,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8366792149196797897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5293527828824941751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee64caad79f42f443b13b14f8c776689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _speed: 2
 --- !u!1 &7868058403910373648
 GameObject:
   m_ObjectHideFlags: 0

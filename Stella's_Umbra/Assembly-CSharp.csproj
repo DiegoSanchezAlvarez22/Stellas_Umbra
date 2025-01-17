@@ -68,7 +68,10 @@
     <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuPausa.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
+    <Compile Include="Assets\PlayerExpSystem.cs" />
+    <Compile Include="Assets\Diego.B\Objetos mapa\MapaZoom.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />
+    <Compile Include="Assets\HealthBarBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\Dash.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
@@ -78,11 +81,16 @@
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\Jump.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\Respawn.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Palanca.cs" />
+    <Compile Include="Assets\Diego.B\Objetos mapa\MapaDesplegable.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\CambiarEscenas.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
+    <Compile Include="Assets\BasicAttackAreaBehaviour.cs" />
+    <Compile Include="Assets\PlayerAttacks.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
+    <Compile Include="Assets\EnemyLifes.cs" />
+    <Compile Include="Assets\Diego.B\Objetos mapa\Teletransporte.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\VidaJugador.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Potion.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />

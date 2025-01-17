@@ -75,9 +75,9 @@ public class VidaJugador : MonoBehaviour
         if (vidaActual <= 0)
         {
             vidaActual = 0;
-            Debug.Log("Has Morido");
+            Debug.Log("Has muerto");
         }
         cambioVida.Invoke(vidaActual);
-        Debug.Log("Vida perdida. Vida actual: " + vidaActual);
+        Debug.Log("Vida actual: " + vidaActual);
     }
 }

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Enemy))]
+[RequireComponent(typeof(EnemyLifes))]
 public class BatBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform _player;

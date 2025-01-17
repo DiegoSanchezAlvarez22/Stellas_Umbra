@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Disparofijado : MonoBehaviour
 {
-    [SerializeField] int damage;
-    [SerializeField] float speed;
+    [SerializeField] int _damage;
+    [SerializeField] float _speed;
 
-    private Transform objetivoPadre; // Referencia al objeto padre de objetoFijador
-    private GameObject fijador;
-    private Renderer fijadorRenderer; // Referencia al Renderer del fijador
+    private Transform _objetivoPadre; // Referencia al objeto padre de objetoFijador
+    private GameObject _fijador;
+    private Renderer _fijadorRenderer; // Referencia al Renderer del fijador
 
     private void Update()
     {
@@ -21,13 +21,13 @@ public class Disparofijado : MonoBehaviour
     {
         if (fijador != null && fijador.parent != null)
         {
-            objetivoPadre = fijador.parent; // Asigna el padre como el objetivo
-            fijadorRenderer = fijador.GetComponent<Renderer>(); // Obtiene el Renderer del fijador
-            if (fijadorRenderer == null)
+            _objetivoPadre = fijador.parent; // Asigna el padre como el objetivo
+            _fijadorRenderer = fijador.GetComponent<Renderer>(); // Obtiene el Renderer del fijador
+            if (_fijadorRenderer == null)
             {
                 Debug.LogWarning("El fijador no tiene un componente Renderer.");
             }
-            Debug.Log("Objetivo (padre) asignado: " + objetivoPadre.name);
+            Debug.Log("Objetivo (padre) asignado: " + _objetivoPadre.name);
         }
         else
         {
@@ -44,11 +44,11 @@ public class Disparofijado : MonoBehaviour
     private void MovimientoBala()
     {
         // Solo mover si el objetivo (padre) está asignado
-        if (objetivoPadre != null && fijadorRenderer != null && fijadorRenderer.enabled)
+        if (_objetivoPadre != null && _fijadorRenderer != null && _fijadorRenderer.enabled)
         {
             // Calcula la dirección hacia el objetivo padre
-            Vector3 direccion = (objetivoPadre.position - transform.position).normalized;
-            transform.position += direccion * speed * Time.deltaTime;
+            Vector3 direccion = (_objetivoPadre.position - transform.position).normalized;
+            transform.position += direccion * _speed * Time.deltaTime;
         }
         else
         {
@@ -62,9 +62,8 @@ public class Disparofijado : MonoBehaviour
     {
         if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
         {
-            Destroy(this.gameObject);
-            Destroy(other.gameObject);
-            Debug.Log("Bala destruida");
+            other.GetComponent<EnemyLifes>().DamageRecieved(_damage); //Perdida de vida del enemigo
+            Destroy(gameObject);
         }  
     }
 }
