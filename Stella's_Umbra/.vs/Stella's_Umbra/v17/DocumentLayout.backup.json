@@ -1,25 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\",
+<<<<<<< HEAD
+  "WorkspaceRootPath": "G:\\Juego\\Stella\u0027s_Umbra\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|g:\\juego\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|g:\\juego\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|G:\\Juego\\Stella\u0027s_Umbra\\assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
 =======
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
+<<<<<<< HEAD
+  "WorkspaceRootPath": "C:\\Users\\dgbor\\Downloads\\Juego\\Stellas_Umbra\\Stella\u0027s_Umbra\\",
+  "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\dgbor\\Downloads\\Juego\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\dgbor\\downloads\\juego\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+=======
+  "WorkspaceRootPath": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\player\\playermov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\diego.s\\scripts\\enemies\\slime\\slimebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.s\\scripts\\enemies\\slime\\slimebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|c:\\users\\diego\\desktop\\proyectosclase\\stella\u0027s_umbra\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\mapazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> ac2e7a55d5595c2a15efc9250c12ff49ff336daf
 >>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\MapaDesplegable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Diego.B\\Scripts\\MapaDesplegable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\MapaDesplegable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,29 +61,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-<<<<<<< HEAD
-              "Title": "Teletransporte.cs",
-              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Title": "PlayerMov.cs",
+              "DocumentMoniker": "G:\\Juego\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "ToolTip": "G:\\Juego\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "ViewState": "AQIAADUBAAAAAAAAAAAYwGcAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T18:13:55.907Z",
+              "WhenOpened": "2025-01-17T08:18:27.379Z",
 =======
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 1,
               "Title": "MapaZoom.cs",
-              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "DocumentMoniker": "C:\\Users\\dgbor\\Downloads\\Juego\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
               "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
-              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "ToolTip": "C:\\Users\\dgbor\\Downloads\\Juego\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
               "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwDEAAAABAAAAAAAAAA==",
+=======
+              "DocumentIndex": 0,
+              "Title": "PlayerMov.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Player\\PlayerMov.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwB4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T18:34:58.465Z",
+              "WhenOpened": "2025-01-17T08:11:24.934Z",
 >>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
               "EditorCaption": ""
             },
@@ -59,33 +105,79 @@
               "$type": "Document",
               "DocumentIndex": 1,
 <<<<<<< HEAD
-              "Title": "MapaDesplegable.cs",
-              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
-              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
-              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
-              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "Title": "MapaZoom.cs",
+              "DocumentMoniker": "G:\\Juego\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "ToolTip": "G:\\Juego\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 =======
-              "Title": "Teletransporte.cs",
-              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Title": "SlimeBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "RelativeToolTip": "Assets\\Diego.S\\Scripts\\Enemies\\Slime\\SlimeBehaviour.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T18:13:55.907Z",
+              "WhenOpened": "2025-01-17T08:04:00.273Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MapaZoom.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\MapaZoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+>>>>>>> ac2e7a55d5595c2a15efc9250c12ff49ff336daf
+>>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T18:34:58.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 2,
+              "Title": "Teletransporte.cs",
+              "DocumentMoniker": "G:\\Juego\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ToolTip": "G:\\Juego\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+=======
+<<<<<<< HEAD
+              "DocumentIndex": 0,
+              "Title": "Teletransporte.cs",
+              "DocumentMoniker": "C:\\Users\\dgbor\\Downloads\\Juego\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ToolTip": "C:\\Users\\dgbor\\Downloads\\Juego\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+=======
+              "DocumentIndex": 3,
+              "Title": "Teletransporte.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ToolTip": "C:\\Users\\Diego\\Desktop\\ProyectosClase\\Stella\u0027s_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+>>>>>>> ac2e7a55d5595c2a15efc9250c12ff49ff336daf
+              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAB2AAAAAAAAAA==",
+>>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T18:13:55.907Z"
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 3,
+=======
+              "DocumentIndex": 4,
+>>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
               "Title": "MapaDesplegable.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
-              "RelativeDocumentMoniker": "Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
-              "RelativeToolTip": "Assets\\Diego.B\\Scripts\\MapaDesplegable.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
->>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
               "WhenOpened": "2025-01-15T20:10:37.187Z"
             }
           ]

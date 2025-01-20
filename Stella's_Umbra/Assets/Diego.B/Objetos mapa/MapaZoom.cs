@@ -3,20 +3,6 @@ using UnityEngine.EventSystems;
 
 public class MapaZoom : MonoBehaviour, IScrollHandler
 {
-<<<<<<< HEAD
-    public RectTransform mapa; // El RectTransform del mapa
-    public float zoomSpeed = 0.1f; // Velocidad de zoom
-    public float minZoom = 0.5f; // Escala mínima
-    public float maxZoom = 2.0f; // Escala máxima
-
-    public void OnScroll(PointerEventData eventData)
-    {
-        // Calcula la nueva escala basada en la dirección del scroll
-        float newScale = Mathf.Clamp(mapa.localScale.x + eventData.scrollDelta.y * zoomSpeed, minZoom, maxZoom);
-
-        // Aplica la escala uniformemente en X e Y
-        mapa.localScale = new Vector3(newScale, newScale, 1);
-=======
     public RectTransform mapa; // RectTransform del mapa
     public RectTransform contenedor; // RectTransform del contenedor (con la máscara)
     public float zoomSpeed = 0.1f; // Velocidad de zoom
@@ -60,6 +46,5 @@ public class MapaZoom : MonoBehaviour, IScrollHandler
         mapaPos.y = Mathf.Clamp(mapaPos.y, min.y - (mapaHeight / 2), max.y + (mapaHeight / 2));
 
         mapa.localPosition = mapaPos;
->>>>>>> 46d7437d5c1df3857f54f94aeb64ee4328e722ba
     }
 }
