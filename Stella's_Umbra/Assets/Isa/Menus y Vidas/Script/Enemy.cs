@@ -28,10 +28,7 @@ public class Enemy : MonoBehaviour
                 vidaJugador.PerderVida(_damage); // Quita vida al jugador
                 Debug.Log("Jugador recibió daño: " + _damage);
             }
-        }
 
-        if (gameObject.tag == "EnemyShot")
-        {
             Destroy(gameObject);
         }
     }
@@ -48,10 +45,7 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Jugador recibió daño: " + _damage);
                 vidaJugador.PerderVida(_damage); // Quita vida al jugador
             }
-        }
 
-        if (gameObject.tag == "EnemyShot")
-        {
             Destroy(gameObject);
         }
     }

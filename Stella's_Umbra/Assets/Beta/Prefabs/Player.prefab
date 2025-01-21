@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 8933333562012420752}
   - component: {fileID: 8280908493845885683}
   - component: {fileID: 6033304798287099784}
+  - component: {fileID: 612874926118024614}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -478,10 +479,10 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 523885814, guid: b8a5e3abb339aff4d91f931962769224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.4985715, y: 1.4985715}
+  m_Size: {x: 1.7483333, y: 1.7489152}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -613,7 +614,7 @@ MonoBehaviour:
   _minJumpForce: 5
   _maxJumpForce: 20
   _canSuperJump: 0
-  _superJumpsLeft: 0
+  _superJumpsLeft: 2
   _canDash: 1
   _dashForce: 10
   _dashTimeRechargeNeed: 3
@@ -714,3 +715,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentExp: 0
+--- !u!114 &612874926118024614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671716360910017017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088154a6ceb1b954793b5c385a605713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skilltree: {fileID: 0}
