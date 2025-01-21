@@ -10216,7 +10216,7 @@ PrefabInstance:
     - target: {fileID: 2549569791863814557, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 26744c3ceab70c84da7c4936f0943db4, type: 2}
+      objectReference: {fileID: 9100000, guid: 09c005d08a616ab4f99ffa8e8ee762cd, type: 2}
     - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: animator
       value: 
