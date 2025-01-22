@@ -286,7 +286,6 @@ MonoBehaviour:
   _currentHealth: 5
   _damageDuration: 0.1
   _expToAdd: 20
-  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
 --- !u!1 &4648026214448170886
 GameObject:
   m_ObjectHideFlags: 0

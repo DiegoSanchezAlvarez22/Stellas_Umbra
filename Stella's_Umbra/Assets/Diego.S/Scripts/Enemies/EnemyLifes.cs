@@ -11,6 +11,7 @@ public class EnemyLifes : MonoBehaviour
     [SerializeField] private float _damageDuration;
     [SerializeField] private int _expToAdd;
     private SpriteRenderer _spriteRenderer;
+    [SerializeField] public GameObject _dyingEffect;
 
     private void Start()
     {
@@ -34,7 +35,9 @@ public class EnemyLifes : MonoBehaviour
         else
         {
             _playerTarget.GetComponent<PlayerExpSystem>().AddExp(_expToAdd);
+            Instantiate(_dyingEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+
         }
     }
 
