@@ -174,8 +174,7 @@ public class PlayerMov : MonoBehaviour
         _superJump.started += OnSuperJumpStarted;
         _superJump.canceled += OnSuperJumpCanceled;
 
-        _dash.Enable();
-        _dash.performed += Dash;
+        
 
         _grabWall.Enable();
         _grabWall.performed += WallGrabPerformed;
@@ -185,6 +184,28 @@ public class PlayerMov : MonoBehaviour
         _moveObj.performed += MoveObjPerformed;
         _moveObj.canceled += MoveObjCanceled;
     }
+
+    //public bool EnableHab(string _nameSkill, bool _isActive)
+    //{
+    //    if (_nameSkill == "Dash" && _isActive)
+    //    {
+    //        _dash.Enable();
+    //        _dash.performed += Dash;
+    //        return true;
+    //    }
+
+    //    return false;
+
+    //    switch (_nameSkill)
+    //    {
+    //        case "Dash":
+    //            {
+    //                return true;
+    //            }
+    //    }
+
+
+    //}
 
     private void OnDisable()
     {

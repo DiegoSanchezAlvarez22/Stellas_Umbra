@@ -89,6 +89,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Enemies\HealthBarBehaviour.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ImageHover.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
@@ -101,9 +102,11 @@
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour1.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\BasicAttackAreaBehaviour.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Slot.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
