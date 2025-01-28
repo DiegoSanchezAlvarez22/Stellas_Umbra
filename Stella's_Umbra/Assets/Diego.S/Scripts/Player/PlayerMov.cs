@@ -170,58 +170,76 @@ public class PlayerMov : MonoBehaviour
         _jump.Enable();
         _jump.performed += Jump;
 
-        _superJump.Enable();
-        _superJump.started += OnSuperJumpStarted;
-        _superJump.canceled += OnSuperJumpCanceled;
+        //_superJump.Enable();
+        //_superJump.started += OnSuperJumpStarted;
+        //_superJump.canceled += OnSuperJumpCanceled;
 
-        
+        //_dash.Enable();
+        //_dash.performed += Dash;
 
-        _grabWall.Enable();
-        _grabWall.performed += WallGrabPerformed;
-        _grabWall.canceled += WallGrabCanceled;
+        //_grabWall.Enable();
+        //_grabWall.performed += WallGrabPerformed;
+        //_grabWall.canceled += WallGrabCanceled;
 
         _moveObj.Enable();
         _moveObj.performed += MoveObjPerformed;
         _moveObj.canceled += MoveObjCanceled;
     }
 
-    //public bool EnableHab(string _nameSkill, bool _isActive)
-    //{
-    //    if (_nameSkill == "Dash" && _isActive)
-    //    {
-    //        _dash.Enable();
-    //        _dash.performed += Dash;
-    //        return true;
-    //    }
+    public bool EnableHab(string _nameSkill, bool _isActive)
+    {
+        if (_nameSkill == "Dash")
+        {
+            if (_isActive)
+            {
+                _dash.Enable();
+                _dash.performed += Dash;
+                return true;
+            }
+            else
+            {
+                _dash.performed -= Dash;
+                _dash.Disable();
+                return true;
+            }
+        }
 
-    //    return false;
+        if (_nameSkill == "SuperJump")
+        {
+            if (_isActive)
+            {
+                _superJump.Enable();
+                _superJump.started += OnSuperJumpStarted;
+                _superJump.canceled += OnSuperJumpCanceled;
+                return true;
+            }
+            else
+            {
+                _superJump.started -= OnSuperJumpStarted;
+                _superJump.canceled -= OnSuperJumpCanceled;
+                _superJump.Disable();
+                return true;
+            }
+        }
 
-    //    switch (_nameSkill)
-    //    {
-    //        case "Dash":
-    //            {
-    //                return true;
-    //            }
-    //    }
-
-
-    //}
+        return false;
+    }
 
     private void OnDisable()
     {
         _jump.performed -= Jump;
         _jump.Disable();
 
-        _superJump.started -= OnSuperJumpStarted;
-        _superJump.canceled -= OnSuperJumpCanceled;
-        _superJump.Disable();
-
-        _dash.performed -= Dash;
-        _dash.Disable();
-
-        _grabWall.performed -= WallGrabPerformed;
-        _grabWall.performed -= WallGrabPerformed;
-        _grabWall.Disable();
+        //_superJump.started -= OnSuperJumpStarted;
+        //_superJump.canceled -= OnSuperJumpCanceled;
+        //_superJump.Disable();
+        
+        //_dash.performed -= Dash;
+        //_dash.Disable();
+        
+        //_grabWall.performed -= WallGrabPerformed;
+        //_grabWall.performed -= WallGrabPerformed;
+        //_grabWall.Disable();
 
         _moveObj.performed -= MoveObjPerformed;
         _moveObj.canceled -= MoveObjCanceled;
