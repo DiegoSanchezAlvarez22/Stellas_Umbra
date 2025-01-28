@@ -31,9 +31,9 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] private bool _inFloor;
 
     [Header("SuperJump")]
+    [SerializeField] private bool _canSuperJump;
     [SerializeField] private float _minJumpForce = 5f;
     [SerializeField] private float _maxJumpForce = 20f;
-    [SerializeField] private bool _canSuperJump;
     //[SerializeField] private float _timeSuperJumpActive;
     [SerializeField] private int _superJumpsLeft;
     private bool _isJumping;
@@ -78,7 +78,7 @@ public class PlayerMov : MonoBehaviour
         _input = GetComponent<PlayerInput>();
 
         _jump = _input.actions["Jump"];
-        _dash = _input.actions["Dash"];
+        //_dash = _input.actions["Dash"];
         _superJump = _input.actions["SuperJump"];
         _grabWall = _input.actions["GrabWall"];
         _moveObj = _input.actions["MoveObj"];
@@ -98,7 +98,9 @@ public class PlayerMov : MonoBehaviour
                 _rb.linearVelocity = Vector3.zero; // Detiene el movimiento del dash
             }
         }
+
         animator.SetFloat("Movement", speed);
+
         if (_direction.x > 0)
         {
             _spriteRenderer.flipX = true; //Cambiamos la rotacion del pj
@@ -107,8 +109,6 @@ public class PlayerMov : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
-
-
     }
 
     private void FixedUpdate()
@@ -181,48 +181,9 @@ public class PlayerMov : MonoBehaviour
         //_grabWall.performed += WallGrabPerformed;
         //_grabWall.canceled += WallGrabCanceled;
 
-        _moveObj.Enable();
-        _moveObj.performed += MoveObjPerformed;
-        _moveObj.canceled += MoveObjCanceled;
-    }
-
-    public bool EnableHab(string _nameSkill, bool _isActive)
-    {
-        if (_nameSkill == "Dash")
-        {
-            if (_isActive)
-            {
-                _dash.Enable();
-                _dash.performed += Dash;
-                return true;
-            }
-            else
-            {
-                _dash.performed -= Dash;
-                _dash.Disable();
-                return true;
-            }
-        }
-
-        if (_nameSkill == "SuperJump")
-        {
-            if (_isActive)
-            {
-                _superJump.Enable();
-                _superJump.started += OnSuperJumpStarted;
-                _superJump.canceled += OnSuperJumpCanceled;
-                return true;
-            }
-            else
-            {
-                _superJump.started -= OnSuperJumpStarted;
-                _superJump.canceled -= OnSuperJumpCanceled;
-                _superJump.Disable();
-                return true;
-            }
-        }
-
-        return false;
+        //_moveObj.Enable();
+        //_moveObj.performed += MoveObjPerformed;
+        //_moveObj.canceled += MoveObjCanceled;
     }
 
     private void OnDisable()
@@ -241,9 +202,71 @@ public class PlayerMov : MonoBehaviour
         //_grabWall.performed -= WallGrabPerformed;
         //_grabWall.Disable();
 
-        _moveObj.performed -= MoveObjPerformed;
-        _moveObj.canceled -= MoveObjCanceled;
-        _moveObj.Disable();
+        //_moveObj.performed -= MoveObjPerformed;
+        //_moveObj.canceled -= MoveObjCanceled;
+        //_moveObj.Disable();
+    }
+
+    public bool EnableHab(string _nameSkill, bool _learned)
+    {
+        Debug.Log("2");
+        if (_nameSkill == "Dash")
+        {
+            Debug.Log("3");
+            if (_learned)
+            {
+                _canDash = true;
+                //_dash.Enable();
+                //_dash.performed += Dash;
+                return true;
+            }
+            else
+            {
+                //_dash.performed -= Dash;
+                //_dash.Disable();
+                return true;
+            }
+        }
+
+        if (_nameSkill == "SuperJump")
+        {
+            if (_learned)
+            {
+                _canSuperJump = true;
+                _superJump.Enable();
+                _superJump.started += OnSuperJumpStarted;
+                _superJump.canceled += OnSuperJumpCanceled;
+                return true;
+            }
+            else
+            {
+                _canSuperJump = false;
+                _superJump.started -= OnSuperJumpStarted;
+                _superJump.canceled -= OnSuperJumpCanceled;
+                _superJump.Disable();
+                return true;
+            }
+        }
+
+        if (_nameSkill == "MoveObj")
+        {
+            if (_learned)
+            {
+                _moveObj.Enable();
+                _moveObj.performed += MoveObjPerformed;
+                _moveObj.canceled += MoveObjCanceled;
+                return true;
+            }
+            else
+            {
+                _moveObj.performed -= MoveObjPerformed;
+                _moveObj.canceled -= MoveObjCanceled;
+                _moveObj.Disable();
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void Jump(InputAction.CallbackContext _callbackContext)
@@ -303,7 +326,7 @@ public class PlayerMov : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext _callbackContext)
     {
-        if (_callbackContext.started && Time.time >= lastDashTime + dashCooldown && !isDashing)
+        if (_callbackContext.started && Time.time >= lastDashTime + dashCooldown && !isDashing && _canDash)
         {
             dashDirection = new Vector3(Input.GetAxis("Horizontal"),
             0, Input.GetAxis("Vertical")).normalized;

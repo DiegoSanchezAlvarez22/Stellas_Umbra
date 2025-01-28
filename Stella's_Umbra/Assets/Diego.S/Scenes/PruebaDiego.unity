@@ -307,6 +307,14 @@ PrefabInstance:
       propertyPath: _skilltree
       value: 
       objectReference: {fileID: 924948515}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _canDash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033304798287099784, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1775,85 +1783,81 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3237617873979073, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 515799773577360491, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 655570696321885327, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: BoulderAttack
       objectReference: {fileID: 0}
     - target: {fileID: 707223728577543575, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 707223728577543575, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 707223728577543575, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 937262896672944072, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 1118667964029081063, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: m_Name
       value: SkillTree
       objectReference: {fileID: 0}
     - target: {fileID: 1362929045610078874, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 1362929045610078874, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 1362929045610078874, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
-    - target: {fileID: 1518573481953461839, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2343894540223798606, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+    - target: {fileID: 1833322687031612693, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: MoreHealth1
       objectReference: {fileID: 0}
     - target: {fileID: 2343894540223798606, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 2343894540223798606, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343894540223798606, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 2451718187289430153, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 2451718187289430153, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2451718187289430153, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 2486309887979938339, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 2486309887979938339, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2486309887979938339, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566242858119803028, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: WallJump
       objectReference: {fileID: 0}
     - target: {fileID: 2677712294633464084, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: m_Pivot.x
@@ -1935,227 +1939,207 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2682247104328769651, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2690100081293991900, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 2948516997388250076, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 2948516997388250076, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2948516997388250076, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
-    - target: {fileID: 2948516997388250076, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+    - target: {fileID: 3220553160523391741, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: Dash
       objectReference: {fileID: 0}
-    - target: {fileID: 3098787413747432473, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3182991008834771571, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580734521464296198, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 3465103780152542956, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: EnergyOrbAttack
       objectReference: {fileID: 0}
     - target: {fileID: 3606804829342636501, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 3606804829342636501, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 3606804829342636501, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 3629839504117312580, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 3629839504117312580, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 3629839504117312580, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
-    - target: {fileID: 3915665675473393144, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4236441647186393799, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 3997657103710621713, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: BasicAttack
       objectReference: {fileID: 0}
     - target: {fileID: 4387884943638005410, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 4387884943638005410, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 4387884943638005410, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 4612499348746189308, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 4612499348746189308, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 4612499348746189308, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 4662559388089901726, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 4662559388089901726, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 4662559388089901726, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4873399323555240088, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 4943769949569167579, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 4943769949569167579, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 4943769949569167579, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044617283380487089, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5085244398946013225, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5089559934842275502, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 5139970709678150020, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 5139970709678150020, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 5139970709678150020, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5148919789643670151, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 5185371943565338978, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 5185371943565338978, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 5185371943565338978, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
-    - target: {fileID: 5933504459345985938, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 5360322590901785093, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: DoubleJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761176480498334879, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: MoreHealth3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868793707370079425, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: EnergyBoost1
       objectReference: {fileID: 0}
     - target: {fileID: 6141448917763652507, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 6141448917763652507, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 6141448917763652507, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
       objectReference: {fileID: 0}
-    - target: {fileID: 6747708259703927239, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 6707793595190965346, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: MoreHealth2
       objectReference: {fileID: 0}
-    - target: {fileID: 6989917028755677168, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6989917028755677168, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+    - target: {fileID: 6879025392851887621, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: EnergyBoost3
       objectReference: {fileID: 0}
     - target: {fileID: 6989917028755677168, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989917028755677168, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: linkedColor.g
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989917028755677168, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: linkedColor.r
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330597277189902627, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: MoveObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662623267505748990, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: SuperJump
       objectReference: {fileID: 0}
     - target: {fileID: 7841856644552962800, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: openColor.a
-      value: 1
+      propertyPath: linkedColor.b
+      value: 0.8431373
       objectReference: {fileID: 0}
     - target: {fileID: 7841856644552962800, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: closeColor.a
-      value: 1
+      propertyPath: linkedColor.g
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 7841856644552962800, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      propertyPath: linkedColor.a
-      value: 1
+      propertyPath: linkedColor.r
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103707431447302534, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: TornadoAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123863638712182910, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: EnergyBoost2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248663423354823384, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _skillName
+      value: TripleJump
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1118667964029081063, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 51657559745657383}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
---- !u!114 &51657559745657383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924948515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cd857434750cd46bba07cd3acb46a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillPoints: 10
 --- !u!1001 &1574007496098352471
 PrefabInstance:
   m_ObjectHideFlags: 0

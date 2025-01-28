@@ -11,7 +11,9 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
     public int skillLevel = 1;
     //public SkillDescScript skillScript;
 
-    PlayerExpSystem _playerExp;
+    public PlayerMov _PlayerMov;
+
+    [SerializeField] string _skillName;
 
     public RawImage rawImageSkill;
     public SkillTree_Link[] linkToThis;
@@ -36,6 +38,10 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
             m_RawImage.color = linkToThis[0].linkedColor;
             SkillTree_Manager.instance.skillPoints--;
             SkillTree_Manager.instance.UpdateSkillPoints();
+
+            Debug.Log("1");
+            _PlayerMov.EnableHab(_skillName, isLearned);
+            Debug.Log("4");
         }
     }
     public void UnLearn()
@@ -46,6 +52,8 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
             m_RawImage.color = Color.white;
             SkillTree_Manager.instance.skillPoints++;
             SkillTree_Manager.instance.UpdateSkillPoints();
+
+            _PlayerMov.EnableHab(_skillName, isLearned);
         }
     }
 
@@ -87,11 +95,10 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
     {
         
        foreach (SkillTree_Link links in linkGoOut)
-        {
+       {
             if (links.isLinked)
                 return false;
-
-        }
+       }
         return true;
 
     }
@@ -100,7 +107,7 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
     {
         if (CheckLinkToThis())
         {
-            if (!isLearned && /*_playerExp._currentExp > 0*/ SkillTree_Manager.instance.skillPoints > 0)
+            if (!isLearned && SkillTree_Manager.instance.skillPoints > 0)
             {
                 if (linkGoOut.Length > 0)
                 {
