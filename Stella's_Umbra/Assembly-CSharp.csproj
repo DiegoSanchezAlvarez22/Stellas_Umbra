@@ -63,12 +63,14 @@
   <ItemGroup>
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\SaltoRegulable.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerExpSystem.cs" />
+    <Compile Include="Assets\Julio\Banderilla.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\EnemyLifes.cs" />
     <Compile Include="Assets\Diego.S\Input\Input1.cs" />
     <Compile Include="Assets\Diego.S\Scripts\InstantiatePlayer.cs" />
     <Compile Include="Assets\Diego.B\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuPausa.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
+    <Compile Include="Assets\Julio\CheckPointSystem.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\MapaZoom.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />

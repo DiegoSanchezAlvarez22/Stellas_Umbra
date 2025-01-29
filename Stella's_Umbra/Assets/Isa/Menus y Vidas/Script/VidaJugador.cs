@@ -16,6 +16,13 @@ public class VidaJugador : MonoBehaviour
     public UnityEvent<int> cambioVida;
     public UnityEvent<int> sumarCorazon;
 
+    //JULIO Propiedades para conseguir la vida actual y vida máxima para guardar la info
+    public int VidaActual => vidaActual;
+    public int VidaMaxima => corazonesMax;
+
+    //JULIO Referencia al script de guardado de datos
+    [SerializeField] private CheckPointSystem _checkPointSystem;
+
     private void Start()
     {
         vidaActual = corazonesMax;
@@ -37,8 +44,20 @@ public class VidaJugador : MonoBehaviour
             //cambioVida.AddListener(_corazonesUI.CambiarCorazones);
             //sumarCorazon.AddListener(_corazonesUI.SumarCorazones);
 
-            SceneManager.LoadScene("Menu Principal");
-            Destroy(gameObject);
+
+            //JULIO Cuando la vida llege a 0, cargar el último progreso guardado
+            if (vidaActual == 0)
+            {
+                if (_checkPointSystem != null)
+                {
+                    _checkPointSystem.LoadProgress();
+                    Debug.Log("El jugador ha muerto. Cargando el último progreso guardado.");
+                }
+                else
+                {
+                    Debug.LogError("No se asignó el sistema de checkpoints al jugador.");
+                }
+            }
         }
     }
 
@@ -79,5 +98,22 @@ public class VidaJugador : MonoBehaviour
         }
         cambioVida.Invoke(vidaActual);
         Debug.Log("Vida actual: " + vidaActual);
+    }
+
+    //JULIO Para poder guardar la info de la vida
+    public void SetVidaActual(int nuevaVida)
+    {
+        vidaActual = nuevaVida;
+        Debug.Log("Vida establecida a: " + vidaActual);
+        // Invocar evento para actualizar la UI si es necesario
+        cambioVida.Invoke(vidaActual);
+    }
+
+    public void SetVidaMaxima(int nuevaVidaMaxima)
+    {
+        corazonesMax = nuevaVidaMaxima;
+        Debug.Log("Vida máxima establecida a: " + corazonesMax);
+        // Actualizar UI si es necesario
+        sumarCorazon.Invoke(corazonesMax);
     }
 }

@@ -6,6 +6,9 @@ public class PlayerExpSystem : MonoBehaviour
 {
     public int _currentExp = 100;
 
+    //JULIO Propiedad para obtener la experiencia actual
+    public int CurrentExp => _currentExp;
+
     public void AddExp(int _newExp)
     {
         _currentExp += _newExp;
@@ -34,5 +37,12 @@ public class PlayerExpSystem : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+    }
+
+    //JULIO Propiedad para obtener experiencia actual
+    public void SetCurrentExp(int newExp)
+    {
+        _currentExp = newExp;
+        Debug.Log("Experiencia establecida a: " + _currentExp);
     }
 }

@@ -26,13 +26,15 @@ public class CorazonesUI : MonoBehaviour
 
     public void CambiarCorazones(int vidaActual)
     {
+        //JULIO Si no hay corazones en la lista, los creamos
         if (!listaCorazones.Any())
         {
             CrearCorazones(vidaActual);
         }
         else
         {
-            CambiarVida(vidaActual);
+            //Actualizar corazones existentes con la vida actual
+            ActualizarCorazones(vidaActual);
         }
     }
 
@@ -43,16 +45,31 @@ public class CorazonesUI : MonoBehaviour
             Image corazon = Instantiate(prefabCorazonLleno, transform);
             listaCorazones.Add(corazon.GetComponent<Image>());
         }
-        indexActual = cantidadMaximaVida - 1;
+    }
+
+    //JULIO
+    private void ActualizarCorazones(int vidaActual)
+    {
+        //Asegúrate que la lista tiene suficientes elem para la vida actual
+        for (int i = 0; i < listaCorazones.Count; i++)
+        {
+            if (i < vidaActual)
+            {
+                //Corazón lleno
+                listaCorazones[i].sprite = vidaLlena;
+            }
+            else
+            {
+                //Corazón vacío 
+                listaCorazones[i].sprite = vidaVacia;
+            }
+        }
     }
 
     public void SumarCorazones(int sumar)
     {
-        
         Image corazon = Instantiate(prefabCorazonVacio, transform);
         listaCorazones.Add(corazon.GetComponent<Image>());
-        
-        
     }
 
     private void CambiarVida(int vidaActual)
