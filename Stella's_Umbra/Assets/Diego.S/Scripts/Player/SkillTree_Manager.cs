@@ -23,21 +23,21 @@ public class SkillTree_Manager : MonoBehaviour
         //skillPointsText.SetText("Puntos:"+ skillPoints);
     }
 
-    [System.Obsolete]
-    public void GetSkills()
-    {
-        SkillTree_Slot[] skillsSlots = FindObjectsOfType<SkillTree_Slot>();
+    //[System.Obsolete]
+    //public void GetSkills()
+    //{
+    //    SkillTree_Slot[] skillsSlots = FindObjectsOfType<SkillTree_Slot>();
        
-         //Check LearnSkill
-        foreach (SkillTree_Slot slot in skillsSlots)
-        {
-            if (slot.isLearned)
-            {
-                Debug.Log("Quedan" + skillPoints + "puntos restantes");
-                //Debug.Log("Aprendiste " + slot.skillScript.name + " lvl:" + slot.skillLevel);
-            }
-        }
+    //     //Check LearnSkill
+    //    foreach (SkillTree_Slot slot in skillsSlots)
+    //    {
+    //        if (slot.isLearned)
+    //        {
+    //            Debug.Log("Quedan" + skillPoints + "puntos restantes");
+    //            //Debug.Log("Aprendiste " + slot.skillScript.name + " lvl:" + slot.skillLevel);
+    //        }
+    //    }
 
-       gameObject.SetActive(false);
-    }
+    //   gameObject.SetActive(false);
+    //}
 }

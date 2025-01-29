@@ -8,21 +8,26 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
      , IPointerEnterHandler
      , IPointerExitHandler
 {
-    public int skillLevel = 1;
+    private PlayerMov _playerMov;
+    private PlayerAttacks _playerAttacks;
     //public SkillDescScript skillScript;
 
-    public PlayerMov _PlayerMov;
-
-    [SerializeField] string _skillName;
-
-    public RawImage rawImageSkill;
+    [SerializeField] private string _skillName;
+    [SerializeField] private int skillLevel;
+    [SerializeField] private int _skillExpValue;
+    [SerializeField] private bool isLearned;
+    
     public SkillTree_Link[] linkToThis;
-
     public SkillTree_Link[] linkGoOut;
-
-    public bool isLearned = false;    
-
+    public RawImage rawImageSkill;
     private RawImage m_RawImage;
+
+    private void Awake()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        _playerMov = player.GetComponent<PlayerMov>();
+        _playerAttacks = player.GetComponent<PlayerAttacks>();
+    }
 
     void Start()
     {
@@ -36,12 +41,11 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
         {
             isLearned = true;
             m_RawImage.color = linkToThis[0].linkedColor;
-            SkillTree_Manager.instance.skillPoints--;
-            SkillTree_Manager.instance.UpdateSkillPoints();
 
-            Debug.Log("1");
-            _PlayerMov.EnableHab(_skillName, isLearned);
-            Debug.Log("4");
+            PlayerExpSystem._playerExpSystemInstance._currentExp -= _skillExpValue;
+            PlayerExpSystem._playerExpSystemInstance.UpdateExp();
+            _playerMov.MovSkillsActivation(_skillName, isLearned);
+            _playerAttacks.AttackSkillsActivation(_skillName, isLearned);
         }
     }
     public void UnLearn()
@@ -50,10 +54,11 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
         {
             isLearned = false;
             m_RawImage.color = Color.white;
-            SkillTree_Manager.instance.skillPoints++;
-            SkillTree_Manager.instance.UpdateSkillPoints();
 
-            _PlayerMov.EnableHab(_skillName, isLearned);
+            PlayerExpSystem._playerExpSystemInstance._currentExp += _skillExpValue;
+            PlayerExpSystem._playerExpSystemInstance.UpdateExp();
+            _playerMov.MovSkillsActivation(_skillName, isLearned);
+            _playerAttacks.AttackSkillsActivation(_skillName, isLearned);
         }
     }
 
@@ -66,7 +71,6 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
        }
         return true;
     }
-
 
     void LinkedLinks()
     {
@@ -83,6 +87,7 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
             links.OpenLink();
         }
     }
+
     void CloseLinks(SkillTree_Link[] arr)
     {
         foreach (SkillTree_Link links in arr)
@@ -93,14 +98,12 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
 
     bool CheckIfAnyLinkedToThis()
     {
-        
        foreach (SkillTree_Link links in linkGoOut)
        {
             if (links.isLinked)
                 return false;
        }
         return true;
-
     }
 
     public void OnPointerClick(PointerEventData eventData) 

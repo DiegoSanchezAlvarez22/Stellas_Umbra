@@ -23,41 +23,46 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] private Vector3 _direction; //no debe ser serializable
     [SerializeField] private float _walkForce;
 
+    [Header("Bend Down")]
+
     [Header("Jump")]
-    [SerializeField] private bool _canJump; //no debe ser serializable
+    [SerializeField] private bool _canJump; //variable a la que accede el skilltree
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _jumpsLeft;
     [SerializeField] private int _jumpsLeftMax;
     [SerializeField] private bool _inFloor;
 
     [Header("SuperJump")]
-    [SerializeField] private bool _canSuperJump;
-    [SerializeField] private float _minJumpForce = 5f;
-    [SerializeField] private float _maxJumpForce = 20f;
-    //[SerializeField] private float _timeSuperJumpActive;
-    [SerializeField] private int _superJumpsLeft;
-    private bool _isJumping;
-    private float _holdStartTime;
+    [SerializeField] private bool _canSuperJump; //variable a la que accede el skilltree
+    [SerializeField] private bool _superJumpRecharged; //indica si se ha recargado el supersalto
+    [SerializeField] private float _minJumpForce = 5f; //fuerza mínima que se aplicará al supersalto
+    [SerializeField] private float _maxJumpForce = 20f; //fuerza máxima que se aplicará al supersalto
+    [SerializeField] private float _SuperJumpRechargeTime; //tiempo hasta que pueda volver a supersaltar
+    [SerializeField] private bool _finishedSuperJumping = false; //indica si ha terminado el supersalto
+    private float _timer = 0; //timer para actualizar la recarga del supersalto
+    private bool _isJumping; //indica si está saltando
+    private float _holdStartTime; //tiempo durante el que se presiona la tecla o boton asignada al supersalto
 
     [Header("Dash")]
-    [SerializeField] private bool _canDash; //no debe ser serializable
-    [SerializeField] private float _dashForce;
-    [SerializeField] private float _dashTimeRechargeNeed;
-    [SerializeField] private float _dashTimeRechargeCounter;
-    private Vector3 dashDirection;
-    public float dashForce = 20f;
-    public float dashDuration = 0.2f;
-    public float dashCooldown = 1f;
-    private bool isDashing = false;
-    private float dashTime = 0f;
-    private float lastDashTime = -Mathf.Infinity;
+    [SerializeField] private bool _canDash; //variable a la que accede el skilltree
+    [SerializeField] private float _dashForce; //fuerza con la que se ejecuta el dash
+    [SerializeField] private float _dashTimeRechargeNeed; //tiempo necesario para que se recargue el dash
+    [SerializeField] private float _dashTimeRechargeCounter; //timer para actualizar la recarga del dash
+    private Vector3 _dashDirection; //direccion en la que se realizará el dash
+    public float _dashDuration = 0.2f; //duración del dash
+    public float _dashCooldown = 1f; 
+    private bool _isDashing = false;
+    private float _dashTime = 0f;
+    private float _lastDashTime = -Mathf.Infinity;
 
     [Header("Wall")]
-    [SerializeField] protected bool _inWall;
-    private bool _canGrabWall;
+    [SerializeField] private bool _canWallJump; //variable a la que accede el skilltree
+    protected bool _inWall; //indica si está en la pared
+    private bool _canGrabWall; //indica si puede agarrarse a la pared
 
     [Header("MoveObj")]
-    private bool _canMoveObj;
+    [SerializeField] private bool _canMoveObj;
+    private bool _objCanBeMoved;
     [SerializeField] private Transform _initialObjParent;
     private GameObject _objInMove;
 
@@ -78,7 +83,7 @@ public class PlayerMov : MonoBehaviour
         _input = GetComponent<PlayerInput>();
 
         _jump = _input.actions["Jump"];
-        //_dash = _input.actions["Dash"];
+        _dash = _input.actions["Dash"];
         _superJump = _input.actions["SuperJump"];
         _grabWall = _input.actions["GrabWall"];
         _moveObj = _input.actions["MoveObj"];
@@ -89,13 +94,28 @@ public class PlayerMov : MonoBehaviour
         _direction = _input.actions["Walk"].ReadValue<Vector2>();
         float speed = _direction.x;
 
-        if (isDashing)
+        if (_isDashing)
         {
-            dashTime += Time.deltaTime;
-            if (dashTime >= dashDuration)
+            _dashTime += Time.deltaTime;
+            if (_dashTime >= _dashDuration)
             {
-                isDashing = false;
+                _isDashing = false;
                 _rb.linearVelocity = Vector3.zero; // Detiene el movimiento del dash
+            }
+        }
+
+        if (_finishedSuperJumping)
+        {
+
+            _timer += Time.deltaTime; // Sumar tiempo cada frame
+
+            Debug.Log("Tiempo transcurrido: " + _timer); // Para depuración
+
+            if (_timer >= _SuperJumpRechargeTime)
+            {
+                _superJumpRecharged = true;
+                _finishedSuperJumping = false;
+                _timer = 0; // Reiniciar el timer para futuros usos
             }
         }
 
@@ -129,17 +149,11 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
         {
             _inWall = true;
-            //if (//salto con pared desbloqueado)
-            //{
-            //    _canJump = true;
-            //}
-            _canJump = true;//quitar cuando funcione lo de arriba
-            _jumpsLeft = _jumpsLeftMax;
         }
 
         if (collision.gameObject.CompareTag("MovableObj"))
         {
-            _canMoveObj = true;
+            _objCanBeMoved = true;
             _objInMove = collision.gameObject;
         }
     }
@@ -160,7 +174,7 @@ public class PlayerMov : MonoBehaviour
 
         if (collision.gameObject.CompareTag("MovableObj"))
         {
-            _canMoveObj = false;
+            _objCanBeMoved = false;
             _objInMove = null;
         }
     }
@@ -170,9 +184,9 @@ public class PlayerMov : MonoBehaviour
         _jump.Enable();
         _jump.performed += Jump;
 
-        //_superJump.Enable();
-        //_superJump.started += OnSuperJumpStarted;
-        //_superJump.canceled += OnSuperJumpCanceled;
+        _superJump.Enable();
+        _superJump.started += OnSuperJumpStarted;
+        _superJump.canceled += OnSuperJumpCanceled;
 
         //_dash.Enable();
         //_dash.performed += Dash;
@@ -191,13 +205,13 @@ public class PlayerMov : MonoBehaviour
         _jump.performed -= Jump;
         _jump.Disable();
 
-        //_superJump.started -= OnSuperJumpStarted;
-        //_superJump.canceled -= OnSuperJumpCanceled;
-        //_superJump.Disable();
-        
+        _superJump.started -= OnSuperJumpStarted;
+        _superJump.canceled -= OnSuperJumpCanceled;
+        _superJump.Disable();
+
         //_dash.performed -= Dash;
         //_dash.Disable();
-        
+
         //_grabWall.performed -= WallGrabPerformed;
         //_grabWall.performed -= WallGrabPerformed;
         //_grabWall.Disable();
@@ -207,12 +221,10 @@ public class PlayerMov : MonoBehaviour
         //_moveObj.Disable();
     }
 
-    public bool EnableHab(string _nameSkill, bool _learned)
+    public bool MovSkillsActivation(string _skillName, bool _learned)
     {
-        Debug.Log("2");
-        if (_nameSkill == "Dash")
+        if (_skillName == "Dash")
         {
-            Debug.Log("3");
             if (_learned)
             {
                 _canDash = true;
@@ -222,46 +234,73 @@ public class PlayerMov : MonoBehaviour
             }
             else
             {
+                _canDash = false;
                 //_dash.performed -= Dash;
                 //_dash.Disable();
                 return true;
             }
         }
 
-        if (_nameSkill == "SuperJump")
+        if (_skillName == "MoveObj")
+        {
+            if (_learned)
+            {
+                _canMoveObj = true;
+                //_moveObj.Enable();
+                //_moveObj.performed += MoveObjPerformed;
+                //_moveObj.canceled += MoveObjCanceled;
+                return true;
+            }
+            else
+            {
+                _canMoveObj = false;
+                //_moveObj.performed -= MoveObjPerformed;
+                //_moveObj.canceled -= MoveObjCanceled;
+                //_moveObj.Disable();
+                return true;
+            }
+        }
+
+        if (_skillName == "WallJump")
+        {
+            if (_learned)
+            {
+                _canWallJump = true;
+            }
+            else
+            {
+                _canWallJump = false;
+            }
+        }
+
+        if (_skillName == "DoubleJump" || _skillName == "TripleJump")
+        {
+            if (_learned)
+            {
+                _jumpsLeft += 1;
+                _jumpsLeftMax += 1;
+                return true;
+            }
+            else
+            {
+                _jumpsLeft -= 1;
+                _jumpsLeftMax -= 1;
+                return true;
+            }
+        }
+
+        if (_skillName == "SuperJump")
         {
             if (_learned)
             {
                 _canSuperJump = true;
-                _superJump.Enable();
-                _superJump.started += OnSuperJumpStarted;
-                _superJump.canceled += OnSuperJumpCanceled;
+                _superJumpRecharged = true;
                 return true;
             }
             else
             {
                 _canSuperJump = false;
-                _superJump.started -= OnSuperJumpStarted;
-                _superJump.canceled -= OnSuperJumpCanceled;
-                _superJump.Disable();
-                return true;
-            }
-        }
-
-        if (_nameSkill == "MoveObj")
-        {
-            if (_learned)
-            {
-                _moveObj.Enable();
-                _moveObj.performed += MoveObjPerformed;
-                _moveObj.canceled += MoveObjCanceled;
-                return true;
-            }
-            else
-            {
-                _moveObj.performed -= MoveObjPerformed;
-                _moveObj.canceled -= MoveObjCanceled;
-                _moveObj.Disable();
+                _superJumpRecharged = false;
                 return true;
             }
         }
@@ -297,11 +336,12 @@ public class PlayerMov : MonoBehaviour
 
     private void OnSuperJumpStarted(InputAction.CallbackContext _callbackContext)
     {
-        if (_inFloor && _superJumpsLeft > 0 && _canSuperJump == true)
+        if (_inFloor && _superJumpRecharged && _canSuperJump)
         {
             // Registra el momento en que se presiona la tecla
             _holdStartTime = (float)_callbackContext.startTime;
             _isJumping = true;
+            _superJumpRecharged = false;
         }
     }
 
@@ -320,22 +360,22 @@ public class PlayerMov : MonoBehaviour
             Debug.Log("Salto realizado con una fuerza de: " + _superJumpForce);
             _isJumping = false;
 
-            _superJumpsLeft -= 1;
+            _finishedSuperJumping = true;
         }
     }
 
     public void Dash(InputAction.CallbackContext _callbackContext)
     {
-        if (_callbackContext.started && Time.time >= lastDashTime + dashCooldown && !isDashing && _canDash)
+        if (_callbackContext.started && Time.time >= _lastDashTime + _dashCooldown && !_isDashing && _canDash)
         {
-            dashDirection = new Vector3(Input.GetAxis("Horizontal"),
+            _dashDirection = new Vector3(Input.GetAxis("Horizontal"),
             0, Input.GetAxis("Vertical")).normalized;
-            if (dashDirection == Vector3.zero) dashDirection = transform.forward;
+            if (_dashDirection == Vector3.zero) _dashDirection = transform.forward;
 
-            _rb.AddForce(dashDirection * dashForce, ForceMode.Impulse);
-            isDashing = true;
-            dashTime = 0f;
-            lastDashTime = Time.time;
+            _rb.AddForce(_dashDirection * _dashForce, ForceMode.Impulse);
+            _isDashing = true;
+            _dashTime = 0f;
+            _lastDashTime = Time.time;
         }
     }
 
@@ -357,7 +397,7 @@ public class PlayerMov : MonoBehaviour
 
     private void WallJump()
     {
-        if (_inWall && !_inFloor)
+        if (_canWallJump && _inWall && !_inFloor)
         {
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
@@ -366,7 +406,7 @@ public class PlayerMov : MonoBehaviour
 
     private void MoveObjPerformed(InputAction.CallbackContext _callbackContext)
     {
-        if (_callbackContext.performed && _canMoveObj)
+        if (_callbackContext.performed && _objCanBeMoved && _canMoveObj)
         {
             _canJump = false;
             _objInMove.transform.SetParent(this.gameObject.transform);

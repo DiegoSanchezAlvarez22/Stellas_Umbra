@@ -311,6 +311,18 @@ PrefabInstance:
       propertyPath: _canDash
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _jumpsLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _jumpsLeftMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _SuperJumpRechargeTime
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6033304798287099784, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -319,11 +331,116 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: roca
+      value: 
+      objectReference: {fileID: 3294436439555821581, guid: 98000b0ebfab9ba4ab49842c19a87215, type: 3}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: Energia
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: Tornado
+      value: 
+      objectReference: {fileID: 4342673284362773583, guid: bb72fff86be93774fb3be0452f958622, type: 3}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _energy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: fijador
+      value: 
+      objectReference: {fileID: 1570510366}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _boulder
+      value: 
+      objectReference: {fileID: 3294436439555821581, guid: 98000b0ebfab9ba4ab49842c19a87215, type: 3}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _tornado
+      value: 
+      objectReference: {fileID: 4342673284362773583, guid: bb72fff86be93774fb3be0452f958622, type: 3}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5293527828824941751, guid: 7ca3a07bfc8820a40b1089c752e920af, type: 3}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _energyBoost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: shootingPoint
+      value: 
+      objectReference: {fileID: 1464957614}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: duracionAtaque
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: sphereCollider
+      value: 
+      objectReference: {fileID: 554895834}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _spriteRenderer
+      value: 
+      objectReference: {fileID: 934374267}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: "tama\xF1oAgachado"
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: alturaSobrePadre
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _boulderSpawnLeft.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _boulderSpawnLeft.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _boulderSpawnRight.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _boulderSpawnRight.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _specialAttackDuration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: newShootingPointDerecha.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: newShootingPointDerecha.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: newShootingPointIzquierda.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: newShootingPointIzquierda.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933333562012420752, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+--- !u!135 &554895834 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 2160388577919333903, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+  m_PrefabInstance: {fileID: 513655960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &674770717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4825656711054730354, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
@@ -985,6 +1102,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
   m_PrefabInstance: {fileID: 513655960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &934374258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4824259583868554319, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+  m_PrefabInstance: {fileID: 513655960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934374239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4aaeb5f0a6440c4f8f710adacaf5c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &934374267 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8907755523591804082, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+  m_PrefabInstance: {fileID: 513655960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &948773812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1422,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 44.58992, y: 2.7317362, z: 1}
   m_Center: {x: 0.056835175, y: -0.8658681, z: 0}
+--- !u!4 &1464957614 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 927611748827660408, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+  m_PrefabInstance: {fileID: 513655960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1570510366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1785737683253930734, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+  m_PrefabInstance: {fileID: 513655960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584829262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1927,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 655570696321885327, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 655570696321885327, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: BoulderAttack
       objectReference: {fileID: 0}
@@ -1803,6 +1950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkillTree
       objectReference: {fileID: 0}
+    - target: {fileID: 1118667964029081063, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1362929045610078874, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: linkedColor.b
       value: 0.8431373
@@ -1815,6 +1966,10 @@ PrefabInstance:
       propertyPath: linkedColor.r
       value: 0.8313726
       objectReference: {fileID: 0}
+    - target: {fileID: 1833322687031612693, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 1833322687031612693, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: MoreHealth1
@@ -1855,6 +2010,10 @@ PrefabInstance:
       propertyPath: linkedColor.r
       value: 0.8313726
       objectReference: {fileID: 0}
+    - target: {fileID: 2566242858119803028, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 2566242858119803028, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: WallJump
@@ -1952,9 +2111,17 @@ PrefabInstance:
       value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 3220553160523391741, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 3220553160523391741, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: Dash
       objectReference: {fileID: 0}
+    - target: {fileID: 3465103780152542956, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 3465103780152542956, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: EnergyOrbAttack
@@ -1983,6 +2150,10 @@ PrefabInstance:
       propertyPath: linkedColor.r
       value: 0.8313726
       objectReference: {fileID: 0}
+    - target: {fileID: 3997657103710621713, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 3997657103710621713, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: BasicAttack
@@ -2060,13 +2231,25 @@ PrefabInstance:
       value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 5360322590901785093, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 5360322590901785093, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: DoubleJump
       objectReference: {fileID: 0}
     - target: {fileID: 5761176480498334879, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 5761176480498334879, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: MoreHealth3
       objectReference: {fileID: 0}
+    - target: {fileID: 5868793707370079425, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 5868793707370079425, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: EnergyBoost1
@@ -2084,9 +2267,17 @@ PrefabInstance:
       value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 6707793595190965346, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 6707793595190965346, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: MoreHealth2
       objectReference: {fileID: 0}
+    - target: {fileID: 6879025392851887621, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 6879025392851887621, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: EnergyBoost3
@@ -2104,9 +2295,17 @@ PrefabInstance:
       value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 7330597277189902627, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 7330597277189902627, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: MoveObj
       objectReference: {fileID: 0}
+    - target: {fileID: 7662623267505748990, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 7662623267505748990, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: SuperJump
@@ -2124,13 +2323,25 @@ PrefabInstance:
       value: 0.8313726
       objectReference: {fileID: 0}
     - target: {fileID: 8103707431447302534, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 8103707431447302534, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: TornadoAttack
       objectReference: {fileID: 0}
     - target: {fileID: 8123863638712182910, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
+    - target: {fileID: 8123863638712182910, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: EnergyBoost2
       objectReference: {fileID: 0}
+    - target: {fileID: 8248663423354823384, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
+      propertyPath: _PlayerMov
+      value: 
+      objectReference: {fileID: 934374258}
     - target: {fileID: 8248663423354823384, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: _skillName
       value: TripleJump
