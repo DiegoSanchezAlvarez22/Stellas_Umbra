@@ -3,7 +3,12 @@ guid: 7bacbd912af29954c9c9727ddbcb545d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Borde figura
+    second: {fileID: 2100000, guid: 589c092f35e42de448716f749ed68ef1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
