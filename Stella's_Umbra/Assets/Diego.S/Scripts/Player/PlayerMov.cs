@@ -26,14 +26,14 @@ public class PlayerMov : MonoBehaviour
     [Header("Bend Down")]
 
     [Header("Jump")]
-    [SerializeField] public bool _canJump; //variable a la que accede el skilltree
+    [SerializeField] private bool _canJump; //variable a la que accede el skilltree
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _jumpsLeft;
     [SerializeField] private int _jumpsLeftMax;
     [SerializeField] private bool _inFloor;
 
     [Header("SuperJump")]
-    [SerializeField] public bool _canSuperJump; //variable a la que accede el skilltree
+    [SerializeField] private bool _canSuperJump; //variable a la que accede el skilltree
     [SerializeField] private bool _superJumpRecharged; //indica si se ha recargado el supersalto
     [SerializeField] private float _minJumpForce = 5f; //fuerza mínima que se aplicará al supersalto
     [SerializeField] private float _maxJumpForce = 20f; //fuerza máxima que se aplicará al supersalto
@@ -44,7 +44,7 @@ public class PlayerMov : MonoBehaviour
     private float _holdStartTime; //tiempo durante el que se presiona la tecla o boton asignada al supersalto
 
     [Header("Dash")]
-    [SerializeField] public bool _canDash; //variable a la que accede el skilltree
+    [SerializeField] private bool _canDash; //variable a la que accede el skilltree
     [SerializeField] private float _dashForce; //fuerza con la que se ejecuta el dash
     [SerializeField] private float _dashTimeRechargeNeed; //tiempo necesario para que se recargue el dash
     [SerializeField] private float _dashTimeRechargeCounter; //timer para actualizar la recarga del dash
@@ -56,12 +56,12 @@ public class PlayerMov : MonoBehaviour
     private float _lastDashTime = -Mathf.Infinity;
 
     [Header("Wall")]
-    [SerializeField] public bool _canWallJump; //variable a la que accede el skilltree
+    [SerializeField] private bool _canWallJump; //variable a la que accede el skilltree
     protected bool _inWall; //indica si está en la pared
     private bool _canGrabWall; //indica si puede agarrarse a la pared
 
     [Header("MoveObj")]
-    [SerializeField] public bool _canMoveObj;
+    [SerializeField] private bool _canMoveObj;
     private bool _objCanBeMoved;
     [SerializeField] private Transform _initialObjParent;
     private GameObject _objInMove;

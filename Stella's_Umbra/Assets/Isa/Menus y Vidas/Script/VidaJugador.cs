@@ -19,11 +19,9 @@ public class VidaJugador : MonoBehaviour
     //JULIO Propiedades para conseguir la vida actual y vida máxima para guardar la info
     public int VidaActual => vidaActual;
     public int VidaMaxima => corazonesMax;
-    public int CantidadActualCristales => cantidadActualCristales;
 
     //JULIO Referencia al script de guardado de datos
     [SerializeField] private CheckPointSystem _checkPointSystem;
-
 
     private void Start()
     {
@@ -48,8 +46,6 @@ public class VidaJugador : MonoBehaviour
 
 
             //JULIO Cuando la vida llege a 0, cargar el último progreso guardado
-            //Si muere y tiene alguna Key guardada, que cargue la info guardada
-            //Si muere y no tiene una Key guardada, que se reinicie la escena
             if (vidaActual == 0)
             {
                 if (_checkPointSystem != null)
@@ -59,12 +55,11 @@ public class VidaJugador : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("No se asignó el sistema de checkpoints al jugador.");
+                    Debug.LogError("No se asignó el sistema de checkpoints al jugador.");
                 }
             }
         }
     }
-
 
     // Método para recoger un item
     public void RecogerItem()
@@ -110,7 +105,7 @@ public class VidaJugador : MonoBehaviour
     {
         vidaActual = nuevaVida;
         Debug.Log("Vida establecida a: " + vidaActual);
-        // Invocar evento para actualizar la UI
+        // Invocar evento para actualizar la UI si es necesario
         cambioVida.Invoke(vidaActual);
     }
 
@@ -118,14 +113,7 @@ public class VidaJugador : MonoBehaviour
     {
         corazonesMax = nuevaVidaMaxima;
         Debug.Log("Vida máxima establecida a: " + corazonesMax);
-        // Actualizar UI
+        // Actualizar UI si es necesario
         sumarCorazon.Invoke(corazonesMax);
-    }
-
-    //JULIO Para poder guardar la info de los cristales
-    public void SetCantidadCristales(int nuevaCantidadCristales)
-    {
-        cantidadActualCristales = nuevaCantidadCristales;
-        Debug.Log("Cantidad de cristales establecida a: " + cantidadActualCristales);
     }
 }
