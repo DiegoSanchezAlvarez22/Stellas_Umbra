@@ -73,11 +73,13 @@
     <Compile Include="Assets\Julio\CheckPointSystem.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\MapaZoom.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuButtonController.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\TooltipController.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ActiveSkillTree.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\Dash.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuButton.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBehaviour.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\CorazonesUI.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour1.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
+    <Compile Include="Assets\Isa\Menus y Vidas\Script\AnimatorFunctions.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\BasicAttackAreaBehaviour.cs" />
@@ -619,14 +622,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
