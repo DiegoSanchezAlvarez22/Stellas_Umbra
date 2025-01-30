@@ -244,50 +244,50 @@ public class PlayerAttacks : MonoBehaviour
 
     #region Metodos Diego B
 
-    //Establecer Fijador
-    private void OnTriggerEnter(Collider sphereCollider)
-    {
-        if (sphereCollider.CompareTag("Interactuable") || sphereCollider.CompareTag("EnemyAir") || sphereCollider.CompareTag("EnemyFloor"))
-        {
-            Debug.Log("El objeto ha entrado en el SphereCollider del hijo.");
-            fijador.SetParent(sphereCollider.transform);
-            Debug.Log("Fijador ahora es hijo de objeto");
-            // Coloca el objeto hijo justo encima del nuevo padre
-            fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
-        }
-    }
+    ////Establecer Fijador
+    //private void OnTriggerEnter(Collider sphereCollider)
+    //{
+    //    if (sphereCollider.CompareTag("Interactuable") || sphereCollider.CompareTag("EnemyAir") || sphereCollider.CompareTag("EnemyFloor"))
+    //    {
+    //        Debug.Log("El objeto ha entrado en el SphereCollider del hijo.");
+    //        fijador.SetParent(sphereCollider.transform);
+    //        Debug.Log("Fijador ahora es hijo de objeto");
+    //        // Coloca el objeto hijo justo encima del nuevo padre
+    //        fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Interactuable") || other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
-        {
-            Debug.Log("El objeto ha salido en el SphereCollider del hijo.");
-            fijador.transform.parent = padreOriginal;
-            fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
-            Debug.Log("Fijador ya no es hijo de objeto");
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Interactuable") || other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
+    //    {
+    //        Debug.Log("El objeto ha salido en el SphereCollider del hijo.");
+    //        fijador.transform.parent = padreOriginal;
+    //        fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
+    //        Debug.Log("Fijador ya no es hijo de objeto");
+    //    }
+    //}
 
-    //Atque distancia
-    void DistanceShoot()
-    {
-        // Hacer visible el objeto hijo mientras la tecla esté presionada
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            fijador2.GetComponent<Renderer>().enabled = true;
-        }
-        else
-        {
-            fijador2.GetComponent<Renderer>().enabled = false;
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log("Disparando");
-            GameObject instantiatedBullet;
-            instantiatedBullet = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-            instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
-        }
-    }
+    ////Atque distancia
+    //void DistanceShoot()
+    //{
+    //    // Hacer visible el objeto hijo mientras la tecla esté presionada
+    //    if (Input.GetKey(KeyCode.Tab))
+    //    {
+    //        fijador2.GetComponent<Renderer>().enabled = true;
+    //    }
+    //    else
+    //    {
+    //        fijador2.GetComponent<Renderer>().enabled = false;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.T))
+    //    {
+    //        Debug.Log("Disparando");
+    //        GameObject instantiatedBullet;
+    //        instantiatedBullet = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
+    //        instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
+    //    }
+    //}
 
     private void Agacharse()
     {
