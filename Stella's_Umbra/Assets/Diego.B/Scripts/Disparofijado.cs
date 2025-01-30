@@ -6,10 +6,12 @@ public class Disparofijado : MonoBehaviour
 {
     [SerializeField] int _damage;
     [SerializeField] float _speed;
+    [SerializeField] Transform padreOriginal;
 
     private Transform _objetivoPadre; // Referencia al objeto padre de objetoFijador
     private GameObject _fijador;
     private Renderer _fijadorRenderer; // Referencia al Renderer del fijador
+    private bool vueltaPadre = false;
 
     private void Update()
     {
@@ -29,9 +31,13 @@ public class Disparofijado : MonoBehaviour
             }
             Debug.Log("Objetivo (padre) asignado: " + _objetivoPadre.name);
         }
-        else
+    }
+
+    public void VueltaPadre(Transform fijador)
+    {
+        if (vueltaPadre == true && fijador != null && fijador.parent != null)
         {
-            Debug.LogWarning("El objetoFijador no tiene un padre.");
+            padreOriginal = fijador.parent;
         }
     }
 
@@ -63,6 +69,7 @@ public class Disparofijado : MonoBehaviour
         if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
         {
             other.GetComponent<EnemyLifes>().DamageRecieved(_damage); //Perdida de vida del enemigo
+            vueltaPadre = true;
             Destroy(gameObject);
         }  
     }

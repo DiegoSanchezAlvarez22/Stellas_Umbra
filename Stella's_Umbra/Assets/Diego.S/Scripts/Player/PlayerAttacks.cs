@@ -269,25 +269,25 @@ public class PlayerAttacks : MonoBehaviour
     }
 
     //Atque distancia
-    //void DistanceShoot()
-    //{
-    //    // Hacer visible el objeto hijo mientras la tecla esté presionada
-    //    if (Input.GetKey(KeyCode.Tab))
-    //    {
-    //        fijador2.GetComponent<Renderer>().enabled = true;
-    //    }
-    //    else
-    //    {
-    //        fijador2.GetComponent<Renderer>().enabled = false;
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.T))
-    //    {
-    //        Debug.Log("Disparando");
-    //        GameObject instantiatedBullet;
-    //        instantiatedBullet = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-    //        instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
-    //    }
-    //}
+    void DistanceShoot()
+    {
+        // Hacer visible el objeto hijo mientras la tecla esté presionada
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            fijador2.GetComponent<Renderer>().enabled = true;
+        }
+        else
+        {
+            fijador2.GetComponent<Renderer>().enabled = false;
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("Disparando");
+            GameObject instantiatedBullet;
+            instantiatedBullet = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
+            instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
+        }
+    }
 
     private void Agacharse()
     {
