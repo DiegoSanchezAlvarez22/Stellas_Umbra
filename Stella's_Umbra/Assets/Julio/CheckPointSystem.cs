@@ -11,6 +11,15 @@ public class CheckPointSystem : MonoBehaviour
 
     //Referencia al Transform del jugador para guardar la posición
     [SerializeField] Transform _jugadorTransform;
+
+    //Referencia al script del PlayerMov
+    [SerializeField] PlayerMov _playerMov;
+
+    //Referencia al script del Skill Tree_Manager
+    [SerializeField] SkillTree_Manager _skillTreeManager;
+
+    //Referencia al script PlayerAttacks
+    [SerializeField] PlayerAttacks _playerAttacks;
     #endregion
 
     #region Claves
@@ -27,6 +36,29 @@ public class CheckPointSystem : MonoBehaviour
     const string PosXKey = "PlayerPosX";
     const string PosYKey = "PlayerPosY";
     const string PosZKey = "PlayerPosZ";
+
+    //Claves para guardar/cargar el dato de los cristales en PlayerPrefs
+    const string CristalesKey = "PlayerCristales";
+
+    //Claves para guardar/cargar las habilidades PlayerMov en PlayerPrefs
+    const string CanJumpKey = "PlayerCanJump";
+    const string CanSuperJumpKey = "PlayerCanSuperJump";
+    const string CanDashKey = "PlayerCanDash";
+    const string CanWallJumpKey = "PlayerCanWallJump";
+    const string CanMoveObjKey = "PlayerCanMoveObj";
+
+    const string JumpsLeftKey = "PlayerJumpsLeft";
+    const string JumpsLeftMaxKey = "PlayerJumpsLeftMax";
+
+    //Claves para guardar/cargar los puntos del árbol de habilidades en PlayerPrefs
+    const string SkillPointsKey = "PlayerSkillPoints";
+
+    //Claves para guardar/cargar los datos PlayerAttack en PlayerPrefs
+    const string EnergyKey = "PlayerEnergy";
+    const string EnergyBoostKey = "PlayerEnergyBoost";
+    const string CanBasicAttackKey = "PlayerCanBasicAttack";
+    const string CanBoulderAttackKey = "PlayerCanBoulderAttack";
+    const string CanTornadoAttackKey = "PlayerCanTornadoAttack";
     #endregion
 
     void Start()
@@ -41,6 +73,7 @@ public class CheckPointSystem : MonoBehaviour
         if (_playerExpSystem != null)
         {
             PlayerPrefs.SetInt(ExpKey, _playerExpSystem.CurrentExp);
+            Debug.Log("Experiencia guardada: " + _playerExpSystem.CurrentExp);
         }
 
         // Guardar la vida actual en PlayerPrefs
@@ -48,6 +81,10 @@ public class CheckPointSystem : MonoBehaviour
         {
             PlayerPrefs.SetInt(VidaKey, _vidaJugador.VidaActual);
             PlayerPrefs.SetInt(VidaMaxKey, _vidaJugador.VidaMaxima);
+            PlayerPrefs.SetInt(CristalesKey, _vidaJugador.CantidadActualCristales);
+            Debug.Log("Vida actual guardada: " + _vidaJugador.VidaActual);
+            Debug.Log("Vida máxima guardada: " + _vidaJugador.VidaMaxima);
+            Debug.Log("Cristales guardados: " + _vidaJugador.CantidadActualCristales);
         }
 
         // Guardar la posición del CheckPoint en PlayerPrefs
@@ -56,6 +93,49 @@ public class CheckPointSystem : MonoBehaviour
             PlayerPrefs.SetFloat(PosXKey, _jugadorTransform.position.x);
             PlayerPrefs.SetFloat(PosYKey, _jugadorTransform.position.y);
             PlayerPrefs.SetFloat(PosZKey, _jugadorTransform.position.z);
+            Debug.Log("Posición guardada: " + _jugadorTransform.position.x + _jugadorTransform.position.y + _jugadorTransform.position.z);
+        }
+
+        //Guardar la información del PlayerMov en PlayerPrefs
+        if (_playerMov != null)
+        {
+            PlayerPrefs.SetInt(CanJumpKey, _playerMov._canJump ? 1 : 0);
+            PlayerPrefs.SetInt(CanSuperJumpKey, _playerMov._canSuperJump ? 1 : 0);
+            PlayerPrefs.SetInt(CanDashKey, _playerMov._canDash ? 1 : 0);
+            PlayerPrefs.SetInt(CanWallJumpKey, _playerMov._canWallJump ? 1 : 0);
+            PlayerPrefs.SetInt(CanMoveObjKey, _playerMov._canMoveObj ? 1 : 0);
+            Debug.Log("Salto guardado: " + (_playerMov._canJump ? 1 : 0));
+            Debug.Log("Super Salto guardado: " + (_playerMov._canSuperJump ? 1 : 0));
+            Debug.Log("Dash guardado: " + (_playerMov._canDash ? 1 : 0));
+            Debug.Log("Wall Jump guardado: " + (_playerMov._canWallJump ? 1 : 0));
+            Debug.Log("Mover objeto guardado: " + (_playerMov._canMoveObj ? 1 : 0));
+
+            PlayerPrefs.SetFloat(JumpsLeftKey, _playerMov._jumpsLeft);
+            PlayerPrefs.SetInt(JumpsLeftMaxKey, _playerMov._jumpsLeftMax);
+            Debug.Log("Saltos restantes guardados: " + (_playerMov._jumpsLeft));
+            Debug.Log("Saltos máximos restantes guardados: " + (_playerMov._jumpsLeftMax));
+        }
+
+        // Guardar Skill Points del Skill Tree_Manager en PlayerPrefs
+        if (_skillTreeManager != null)
+        {
+            PlayerPrefs.SetInt(SkillPointsKey, _skillTreeManager.skillPoints);
+            Debug.Log("Skill Points guardados: " + _skillTreeManager.skillPoints);
+        }
+
+        // Guardar información de PlayerAttacks en PlayerPrefs
+        if (_playerAttacks != null)
+        {
+            PlayerPrefs.SetFloat(EnergyKey, _playerAttacks._energy);
+            PlayerPrefs.SetFloat(EnergyBoostKey, _playerAttacks._energyBoost);
+            PlayerPrefs.SetInt(CanBasicAttackKey, _playerAttacks._canBasicAttack ? 1 : 0);
+            PlayerPrefs.SetInt(CanBoulderAttackKey, _playerAttacks._canBoulderAttack ? 1 : 0);
+            PlayerPrefs.SetInt(CanTornadoAttackKey, _playerAttacks._canTornadoAttack ? 1 : 0);
+            Debug.Log("Energía del jugador: " + _playerAttacks._energy);
+            Debug.Log("Boost de energía: " + _playerAttacks._energyBoost);
+            Debug.Log("Puede hacer ataque básico: " + (_playerAttacks._canBasicAttack ? 1 : 0));
+            Debug.Log("Puede hacer ataque boulder: " + (_playerAttacks._canBoulderAttack ? 1 : 0));
+            Debug.Log("Puede hacer ataque tornado: " + (_playerAttacks._canTornadoAttack ? 1 : 0));
         }
 
         // Guardar todo en PlayerPrefs
@@ -89,6 +169,13 @@ public class CheckPointSystem : MonoBehaviour
                 int savedVidaMax = PlayerPrefs.GetInt(VidaMaxKey);
                 _vidaJugador.SetVidaMaxima(savedVidaMax);
             }
+
+            //Cargar los cristales desde PlayerPrefs
+            if (PlayerPrefs.HasKey(CristalesKey))
+            {
+                int savedCristales = PlayerPrefs.GetInt(CristalesKey);
+                _vidaJugador.SetCantidadCristales(savedCristales);
+            }
         }
 
         // Cargar la posición desde PlayerPrefs
@@ -104,6 +191,51 @@ public class CheckPointSystem : MonoBehaviour
                 Debug.Log("Posición cargada: " + _jugadorTransform.position);
             }
         }
+
+        //Cargar la info de PlayerMov desde PlayerPrefs
+        if (_playerMov != null)
+        {
+            _playerMov._canJump = PlayerPrefs.GetInt(CanJumpKey, 0) == 1;
+            _playerMov._canSuperJump = PlayerPrefs.GetInt(CanSuperJumpKey, 0) == 1;
+            _playerMov._canDash = PlayerPrefs.GetInt(CanDashKey, 0) == 1;
+            _playerMov._canWallJump = PlayerPrefs.GetInt(CanWallJumpKey, 0) == 1;
+            _playerMov._canMoveObj = PlayerPrefs.GetInt(CanMoveObjKey, 0) == 1;
+
+            if (PlayerPrefs.HasKey(JumpsLeftKey))
+            {
+                _playerMov._jumpsLeft = PlayerPrefs.GetFloat(JumpsLeftKey);
+            }
+            if (PlayerPrefs.HasKey(JumpsLeftMaxKey))
+            {
+                _playerMov._jumpsLeftMax = PlayerPrefs.GetInt(JumpsLeftMaxKey);
+            }
+        }
+
+        // Cargar Skill Points del Skill Tree_Manager desde PlayerPrefs
+        if (_skillTreeManager != null && PlayerPrefs.HasKey(SkillPointsKey))
+        {
+            _skillTreeManager.skillPoints = PlayerPrefs.GetInt(SkillPointsKey);
+            _skillTreeManager.UpdateSkillPoints();
+            Debug.Log("Skill Points cargados: " + _skillTreeManager.skillPoints);
+        }
+
+        // Cargar información de PlayerAttacks desde PlayerPrefs
+        if (_playerAttacks != null)
+        {
+            _playerAttacks._canBasicAttack = PlayerPrefs.GetInt(CanBasicAttackKey, 0) == 1;
+            _playerAttacks._canBoulderAttack = PlayerPrefs.GetInt(CanBoulderAttackKey, 0) == 1;
+            _playerAttacks._canTornadoAttack = PlayerPrefs.GetInt(CanTornadoAttackKey, 0) == 1;
+
+            if (PlayerPrefs.HasKey(EnergyKey))
+            {
+                _playerAttacks._energy = PlayerPrefs.GetFloat(EnergyKey);
+            }
+            if (PlayerPrefs.HasKey(EnergyBoostKey))
+            {
+                _playerAttacks._energyBoost = PlayerPrefs.GetFloat(EnergyBoostKey);
+            }
+        }
+
         Debug.Log("Progreso cargado.");
     }
 
@@ -116,6 +248,15 @@ public class CheckPointSystem : MonoBehaviour
         PlayerPrefs.DeleteKey(PosXKey);
         PlayerPrefs.DeleteKey(PosYKey);
         PlayerPrefs.DeleteKey(PosZKey);
+        PlayerPrefs.DeleteKey(CristalesKey);
+        PlayerPrefs.DeleteKey(CanJumpKey);
+        PlayerPrefs.DeleteKey(CanSuperJumpKey);
+        PlayerPrefs.DeleteKey(CanDashKey);
+        PlayerPrefs.DeleteKey(CanWallJumpKey);
+        PlayerPrefs.DeleteKey(CanMoveObjKey);
+        PlayerPrefs.DeleteKey(JumpsLeftKey);
+        PlayerPrefs.DeleteKey(JumpsLeftMaxKey);
+        PlayerPrefs.DeleteKey(SkillPointsKey);
 
         Debug.Log("Progreso eliminado.");
     }

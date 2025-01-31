@@ -9,11 +9,11 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer;
 
     [Header("Energy")] //ambas variables deben ser guardadas
-    [SerializeField] private float _energy = 0; //energía actual del player
-    [SerializeField] private float _energyBoost = 0; //aumenta la velocidad de obtención de energía
+    [SerializeField] public float _energy = 0; //energía actual del player
+    [SerializeField] public float _energyBoost = 0; //aumenta la velocidad de obtención de energía
 
     [Header("BasicAttack")]
-    [SerializeField] private bool _canBasicAttack; //variable a la que accede el skilltree
+    [SerializeField] public bool _canBasicAttack; //variable a la que accede el skilltree
     [SerializeField] private GameObject _attackArea; //área en la que afecta el ataque
     [SerializeField] private float _timeAttaking = 0.2f; //tiempo durante el que hace daño el área
     [SerializeField] private float _timeRechargeAttack = 0.6f; //tiempo que tarda en recargarse el ataque
@@ -23,13 +23,13 @@ public class PlayerAttacks : MonoBehaviour
     private float _timerRecharge = 0f; //tiempo desde que empieza a recargar el ataque
 
     [Header("BoulderAttack")]
-    [SerializeField] private bool _canBoulderAttack; //variable a la que accede el skilltree
+    [SerializeField] public bool _canBoulderAttack; //variable a la que accede el skilltree
     [SerializeField] private GameObject _boulder; //prefab de roca que se instancia
     [SerializeField] private Vector3 _boulderSpawnRight; //posicion en la que se instancia la roca (derecha)
     [SerializeField] private Vector3 _boulderSpawnLeft; //posicion en la que se instancia la roca (izquierda)
 
     [Header("TornadoAttack")]
-    [SerializeField] private bool _canTornadoAttack; //variable a la que accede el skilltree
+    [SerializeField] public bool _canTornadoAttack; //variable a la que accede el skilltree
     [SerializeField] private GameObject _tornado; //prefab de tornado que se instancia
     [SerializeField] private float _tornadoAttackDuration; //durancion del ataque especial
 
