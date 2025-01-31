@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckPointSystem : MonoBehaviour
 {
@@ -189,6 +190,10 @@ public class CheckPointSystem : MonoBehaviour
                 _jugadorTransform.position = new Vector3(posX, posY, posZ);
 
                 Debug.Log("Posición cargada: " + _jugadorTransform.position);
+            }
+            else
+            {
+                SceneManager.LoadScene("Manu Principal");
             }
         }
 

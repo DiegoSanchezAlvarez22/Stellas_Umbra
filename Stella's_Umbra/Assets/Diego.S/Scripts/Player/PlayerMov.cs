@@ -48,12 +48,13 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] private float _dashForce; //fuerza con la que se ejecuta el dash
     [SerializeField] private float _dashTimeRechargeNeed; //tiempo necesario para que se recargue el dash
     [SerializeField] private float _dashTimeRechargeCounter; //timer para actualizar la recarga del dash
-    private Vector3 _dashDirection; //direccion en la que se realizará el dash
     public float _dashDuration = 0.2f; //duración del dash
-    public float _dashCooldown = 1f; 
+    public float _dashCooldown = 1f;
     private bool _isDashing = false;
     private float _dashTime = 0f;
     private float _lastDashTime = -Mathf.Infinity;
+    private GameObject _trailRenderer; //rastro que deja detras de sí mísmo
+    private Vector3 _dashDirection; //direccion en la que se realizará el dash
 
     [Header("Wall")]
     [SerializeField] public bool _canWallJump; //variable a la que accede el skilltree
@@ -76,11 +77,13 @@ public class PlayerMov : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
 
         _rb = GetComponent<Rigidbody>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _input = GetComponent<PlayerInput>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _trailRenderer = GameObject.FindWithTag("PlayerTrail");
 
         _jump = _input.actions["Jump"];
         _dash = _input.actions["Dash"];
@@ -101,6 +104,7 @@ public class PlayerMov : MonoBehaviour
             {
                 _isDashing = false;
                 _rb.linearVelocity = Vector3.zero; // Detiene el movimiento del dash
+                _trailRenderer.GetComponent<TrailRenderer>().emitting = false; //activa la estela que sigue al player
             }
         }
 
@@ -188,16 +192,16 @@ public class PlayerMov : MonoBehaviour
         _superJump.started += OnSuperJumpStarted;
         _superJump.canceled += OnSuperJumpCanceled;
 
-        //_dash.Enable();
-        //_dash.performed += Dash;
+        _dash.Enable();
+        _dash.performed += Dash;
 
-        //_grabWall.Enable();
-        //_grabWall.performed += WallGrabPerformed;
-        //_grabWall.canceled += WallGrabCanceled;
+        _grabWall.Enable();
+        _grabWall.performed += WallGrabPerformed;
+        _grabWall.canceled += WallGrabCanceled;
 
-        //_moveObj.Enable();
-        //_moveObj.performed += MoveObjPerformed;
-        //_moveObj.canceled += MoveObjCanceled;
+        _moveObj.Enable();
+        _moveObj.performed += MoveObjPerformed;
+        _moveObj.canceled += MoveObjCanceled;
     }
 
     private void OnDisable()
@@ -209,16 +213,16 @@ public class PlayerMov : MonoBehaviour
         _superJump.canceled -= OnSuperJumpCanceled;
         _superJump.Disable();
 
-        //_dash.performed -= Dash;
-        //_dash.Disable();
+        _dash.performed -= Dash;
+        _dash.Disable();
 
-        //_grabWall.performed -= WallGrabPerformed;
-        //_grabWall.performed -= WallGrabPerformed;
-        //_grabWall.Disable();
+        _grabWall.performed -= WallGrabPerformed;
+        _grabWall.performed -= WallGrabPerformed;
+        _grabWall.Disable();
 
-        //_moveObj.performed -= MoveObjPerformed;
-        //_moveObj.canceled -= MoveObjCanceled;
-        //_moveObj.Disable();
+        _moveObj.performed -= MoveObjPerformed;
+        _moveObj.canceled -= MoveObjCanceled;
+        _moveObj.Disable();
     }
 
     public bool MovSkillsActivation(string _skillName, bool _learned)
@@ -371,6 +375,8 @@ public class PlayerMov : MonoBehaviour
             _dashDirection = new Vector3(Input.GetAxis("Horizontal"),
             0, Input.GetAxis("Vertical")).normalized;
             if (_dashDirection == Vector3.zero) _dashDirection = transform.forward;
+
+            _trailRenderer.GetComponent<TrailRenderer>().emitting = true;
 
             _rb.AddForce(_dashDirection * _dashForce, ForceMode.Impulse);
             _isDashing = true;

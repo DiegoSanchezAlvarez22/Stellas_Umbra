@@ -8,6 +8,8 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
      , IPointerEnterHandler
      , IPointerExitHandler
 {
+    #region Variables
+    private PlayerExpSystem _playerExpSystem;
     private PlayerMov _playerMov;
     private PlayerAttacks _playerAttacks;
     //public SkillDescScript skillScript;
@@ -21,10 +23,12 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
     public SkillTree_Link[] linkGoOut;
     public RawImage rawImageSkill;
     private RawImage m_RawImage;
+    #endregion
 
     private void Awake()
     {
         GameObject player = GameObject.FindWithTag("Player");
+        _playerExpSystem = player.GetComponent<PlayerExpSystem>();
         _playerMov = player.GetComponent<PlayerMov>();
         _playerAttacks = player.GetComponent<PlayerAttacks>();
     }
@@ -110,7 +114,7 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
     {
         if (CheckLinkToThis())
         {
-            if (!isLearned && SkillTree_Manager.instance.skillPoints > 0)
+            if (!isLearned && _playerExpSystem._currentExp > 0)
             {
                 if (linkGoOut.Length > 0)
                 {

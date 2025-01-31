@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 1
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -423,12 +423,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: MoveObj
   skillLevel: 1
-  rawImageSkill: {fileID: 5596536754245264297}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 707223728577543575}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 5596536754245264297}
 --- !u!114 &4377052580603042071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,13 +531,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: EnergyOrbAttack
   skillLevel: 2
-  rawImageSkill: {fileID: 3166726448620344575}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 3606804829342636501}
   linkGoOut:
   - {fileID: 4612499348746189308}
-  isLearned: 0
+  rawImageSkill: {fileID: 3166726448620344575}
 --- !u!114 &1766355923851882027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,14 +625,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3372549, g: 0.38431373, b: 0.85882354, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: ff78319565aab2546b73d1abc12b5061, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -647,14 +651,13 @@ GameObject:
   - component: {fileID: 2962787970538268703}
   - component: {fileID: 6690065501802918895}
   - component: {fileID: 1813496715190087053}
-  - component: {fileID: 8758491925548986900}
   m_Layer: 5
   m_Name: SkillTree
-  m_TagString: Untagged
+  m_TagString: SkillTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2677712294633464084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -741,19 +744,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8758491925548986900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118667964029081063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cd857434750cd46bba07cd3acb46a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillPoints: 10
 --- !u!1 &1130684615795591678
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,12 +817,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: Dash
   skillLevel: 1
-  rawImageSkill: {fileID: 5113445403219634989}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 2451718187289430153}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 5113445403219634989}
 --- !u!114 &6005111981225404911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,14 +910,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3372549, g: 0.38431376, b: 0.8588236, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: b871af6007a6bd84198444f17c567ba5, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1369,7 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 1
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -1432,14 +1424,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7647059, g: 0.6431373, b: 0.47058824, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: b75683f7fb8a70a49b4204e846455a39, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1519,13 +1511,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: BoulderAttack
   skillLevel: 2
-  rawImageSkill: {fileID: 4442202646701142074}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 6989917028755677168}
   linkGoOut:
   - {fileID: 1362929045610078874}
-  isLearned: 0
+  rawImageSkill: {fileID: 4442202646701142074}
 --- !u!114 &1722280095048713456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,7 +1708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -1805,7 +1799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -1976,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -2054,12 +2048,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: SuperJump
   skillLevel: 2
-  rawImageSkill: {fileID: 6380864373766809038}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 5139970709678150020}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 6380864373766809038}
 --- !u!114 &4699535542131747810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,14 +2141,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93333334, g: 0.42745098, b: 0.42745098, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 62c181ab12e215748b9bddd424a40911, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2371,14 +2367,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3372549, g: 0.38431373, b: 0.85882354, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 3c645a8b89e6f374ba5672e7b133c754, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2537,14 +2533,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: BasicAttack
   skillLevel: 1
-  rawImageSkill: {fileID: 4291287840731606380}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 6141448917763652507}
   linkGoOut:
   - {fileID: 6989917028755677168}
   - {fileID: 3606804829342636501}
-  isLearned: 0
+  rawImageSkill: {fileID: 4291287840731606380}
 --- !u!114 &231282462640632912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,14 +2740,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.63529414, b: 0.84705883, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 463be6400a7a9d34483d684bb966f095, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3058,13 +3056,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: MoreHealth1
   skillLevel: 1
-  rawImageSkill: {fileID: 5545911056087833256}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 2343894540223798606}
   linkGoOut:
   - {fileID: 4662559388089901726}
-  isLearned: 0
+  rawImageSkill: {fileID: 5545911056087833256}
 --- !u!114 &7328934493448482669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3412,7 +3412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -3554,14 +3554,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4862745, g: 0.8980392, b: 0.54901963, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: f9dad52663e0ec64c97f3dafd215ee5f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3626,14 +3626,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.63529414, b: 0.84705883, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 42cc28b15d05c26408015754edc2bd48, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3713,13 +3713,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: EnergyBoost2
   skillLevel: 2
-  rawImageSkill: {fileID: 5706653641551005809}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 2948516997388250076}
   linkGoOut:
   - {fileID: 5185371943565338978}
-  isLearned: 0
+  rawImageSkill: {fileID: 5706653641551005809}
 --- !u!114 &1315836841290928602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3805,14 +3807,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93333334, g: 0.42745098, b: 0.42745098, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: dae9a17d6c1c83b4b9378fe5cdec71af, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3892,13 +3894,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: TornadoAttack
   skillLevel: 3
-  rawImageSkill: {fileID: 8665698551296917673}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 1362929045610078874}
   - {fileID: 4612499348746189308}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 8665698551296917673}
 --- !u!114 &265720093915768885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,7 +4091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -4315,14 +4319,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93333334, g: 0.42745098, b: 0.42745098, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 538a80d6f5eb1384bbe9dece3efbfb52, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4424,14 +4428,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4862745, g: 0.8980392, b: 0.54901963, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: f60d73b2aac5bbd4e95b497849bc5a1d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4511,12 +4515,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: TripleJump
   skillLevel: 3
-  rawImageSkill: {fileID: 7213360740631796732}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 3629839504117312580}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 7213360740631796732}
 --- !u!114 &5587753353825846603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4879,12 +4885,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: MoreHealth3
   skillLevel: 3
-  rawImageSkill: {fileID: 795024321100012657}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 2486309887979938339}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 795024321100012657}
 --- !u!114 &5552552332003393761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4985,12 +4993,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: EnergyBoost3
   skillLevel: 3
-  rawImageSkill: {fileID: 845981594238275086}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 5185371943565338978}
   linkGoOut: []
-  isLearned: 0
+  rawImageSkill: {fileID: 845981594238275086}
 --- !u!114 &3532920422565283464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5179,7 +5189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -5336,13 +5346,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: DoubleJump
   skillLevel: 2
-  rawImageSkill: {fileID: 7476483587043035195}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 7841856644552962800}
   linkGoOut:
   - {fileID: 3629839504117312580}
-  isLearned: 0
+  rawImageSkill: {fileID: 7476483587043035195}
 --- !u!114 &4296318108484795046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5507,14 +5519,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93333334, g: 0.42745098, b: 0.42745098, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 84fcfd6f65bb47a4cb6b080e270f09f1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5952,7 +5964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 1
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -6314,7 +6326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 1
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -6377,14 +6389,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4862745, g: 0.8980392, b: 0.54901963, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 89202e54c14a7eb489656c2d52231aca, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6464,13 +6476,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: MoreHealth2
   skillLevel: 2
-  rawImageSkill: {fileID: 471878498102513586}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 4662559388089901726}
   linkGoOut:
   - {fileID: 2486309887979938339}
-  isLearned: 0
+  rawImageSkill: {fileID: 471878498102513586}
 --- !u!114 &4015247609467394472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6571,13 +6585,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: EnergyBoost1
   skillLevel: 1
-  rawImageSkill: {fileID: 3678659892483205718}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 4387884943638005410}
   linkGoOut:
   - {fileID: 2948516997388250076}
-  isLearned: 0
+  rawImageSkill: {fileID: 3678659892483205718}
 --- !u!114 &351453258142702029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6678,14 +6694,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e255b48dcbc370445a15297de2e052cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skillName: WallJump
   skillLevel: 1
-  rawImageSkill: {fileID: 2513579575293803339}
+  _skillExpValue: 0
+  isLearned: 0
   linkToThis:
   - {fileID: 4943769949569167579}
   linkGoOut:
   - {fileID: 7841856644552962800}
   - {fileID: 5139970709678150020}
-  isLearned: 0
+  rawImageSkill: {fileID: 2513579575293803339}
 --- !u!114 &2715380791469092193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6799,7 +6817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -6890,7 +6908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -7019,7 +7037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -7157,14 +7175,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.8901961, b: 0.9137255, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 7f9abc3bc6c9c9b4080ee3757bc2968b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7445,7 +7463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -7615,7 +7633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 1
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -7706,7 +7724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 1
-  linkedColor: {r: 0.90588236, g: 0.59607846, b: 0.078431375, a: 1}
+  linkedColor: {r: 0.8313726, g: 0.67058825, b: 0.8431373, a: 1}
   openColor: {r: 1, g: 1, b: 1, a: 1}
   closeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   isOpen: 0
@@ -7843,14 +7861,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4862745, g: 0.8980392, b: 0.54901963, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 5920f05f8a37ba84e96d6bc04cd6919c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8140,14 +8158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.63529414, b: 0.84705883, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 58940daddb9d425479f695b1e916e7ce, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
