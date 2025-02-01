@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5150826862664587599}
   - component: {fileID: 9065863601491066425}
   - component: {fileID: 9188842916223402528}
+  - component: {fileID: 641305439356685123}
   m_Layer: 0
   m_Name: EnemyFloor(Tree)
   m_TagString: EnemyFloor
@@ -32,8 +33,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.55, y: 11.2568, z: 0}
-  m_LocalScale: {x: 6, y: 11.2926, z: 6}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 6, y: 11.2926, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1109792155473956720}
   m_Father: {fileID: 0}
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: a6465882e447a7346b1d80709f6094be, type: 3}
+  m_Sprite: {fileID: -497288444, guid: 49c46d9c1fbf4a74eb71ccd7fb81f565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.32, y: 0.31999996, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.43892366, y: 0.3408592, z: 0.2}
+  m_Center: {x: -0.006860765, y: -0.04606734, z: 0}
 --- !u!114 &5150826862664587599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +198,29 @@ MonoBehaviour:
   _currentHealth: 15
   _damageDuration: 0.15
   _expToAdd: 50
+  _dyingEffect: {fileID: 0}
+--- !u!95 &641305439356685123
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565127718906850028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eeb37c65cc1d71d408ae1be4766382fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3750456353904048128
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.002, y: 0.077}
+  m_AnchoredPosition: {x: -0.002, y: 0.162}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4889505218789295502

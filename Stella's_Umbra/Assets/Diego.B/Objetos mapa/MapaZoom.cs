@@ -6,20 +6,23 @@ public class MapaZoom : MonoBehaviour, IScrollHandler
     public RectTransform mapa; // RectTransform del mapa
     public RectTransform contenedor; // RectTransform del contenedor (con la máscara)
     public float zoomSpeed = 0.1f; // Velocidad de zoom
-    private float minZoom; // Escala mínima (se definirá dinámicamente)
+    private float minZoomx; // Escala mínima (se definirá dinámicamente)
+    private float minZoomy; // Escala mínima (se definirá dinámicamente)
     public float maxZoom = 2.0f; // Escala máxima
 
     private void Start()
     {
         // Establece el mínimo nivel de zoom como la escala inicial del mapa
-        minZoom = mapa.localScale.x;
+        minZoomx = mapa.localScale.x;
+        minZoomy = mapa.localScale.y;
     }
 
     public void OnScroll(PointerEventData eventData)
     {
         // Calcula el nuevo tamaño de escala
-        float newScale = Mathf.Clamp(mapa.localScale.x + eventData.scrollDelta.y * zoomSpeed, minZoom, maxZoom);
-        mapa.localScale = new Vector3(newScale, newScale, 1);
+        float newScalex = Mathf.Clamp(mapa.localScale.x + eventData.scrollDelta.y * zoomSpeed, minZoomx, maxZoom);
+        float newScaley = Mathf.Clamp(mapa.localScale.y + eventData.scrollDelta.y * zoomSpeed, minZoomy, maxZoom);
+        mapa.localScale = new Vector3(newScalex, newScaley, 1);
 
         // Limita la posición del mapa dentro del contenedor
         LimitarPosicion();
