@@ -146,6 +146,16 @@ public class CheckPointSystem : MonoBehaviour
 
     public void LoadProgress()
     {
+        //if (_vidaJugador != null && _vidaJugador.VidaActual == 0)
+        //{
+            //if (!PlayerPrefs.HasKey(VidaKey))
+            //{
+                //SceneManager.LoadScene("Menu Principal");
+                //return;
+            //}
+        //}
+
+
         // Cargar la experiencia desde PlayerPrefs
         if (_playerExpSystem != null && PlayerPrefs.HasKey(ExpKey))
         {

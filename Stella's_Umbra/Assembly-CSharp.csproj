@@ -74,6 +74,7 @@
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\MapaZoom.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Disparofijado.cs" />
+    <Compile Include="Assets\Julio\VolumeSettings.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\TooltipController.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ActiveSkillTree.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour.cs" />
@@ -92,16 +93,20 @@
     <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
+    <Compile Include="Assets\Julio\ApplyBrightness.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ImageHover.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
+    <Compile Include="Assets\Julio\AudioManagerBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\Teletransporte.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\VidaJugador.cs" />
+    <Compile Include="Assets\Julio\MainMenu.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Potion.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Sonidos.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
+    <Compile Include="Assets\Julio\BrightnessSettings.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour1.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
@@ -619,6 +624,14 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
