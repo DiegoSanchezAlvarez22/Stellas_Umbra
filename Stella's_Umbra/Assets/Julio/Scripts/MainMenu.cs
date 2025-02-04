@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject _menuControlMando;
     [SerializeField] GameObject _menuAjustes;
 
+    [SerializeField] Animator _warningAnimator;
+
     CheckPointSystem _checkPointSystem;
     #endregion
 
@@ -32,10 +34,12 @@ public class MainMenu : MonoBehaviour
 
     public void IniciarJuego()
     {
-        if (_checkPointSystem != null)
-        {
-            _checkPointSystem.ClearProgress();
-        }
+        // Guardamos que es un nuevo juego
+        PlayerPrefs.SetInt("NewGame", 1);
+        PlayerPrefs.SetInt("LoadGame", 0);
+        PlayerPrefs.Save();
+
+        // Cargar la escena
         SceneManager.LoadScene("DiseñoNivel1.1");
     }
 
@@ -43,18 +47,19 @@ public class MainMenu : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("PlayerVida"))
         {
-            if (_checkPointSystem != null)
-            {
-                SceneManager.LoadScene("DiseñoNivel1.1");
-                _checkPointSystem.LoadProgress();
-            }
+            PlayerPrefs.SetInt("NewGame", 0);
+            // Guardamos que queremos cargar la partida
+            PlayerPrefs.SetInt("LoadGame", 1);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene("DiseñoNivel1.1");
         }
         else 
         {
             StartCoroutine(MostrarMensajeWarning());
         }
     }
-    
+
     public void SalirJuego()
     {
         Application.Quit();
@@ -64,7 +69,13 @@ public class MainMenu : MonoBehaviour
     {
         _menuPrincipal.SetActive(false);
         _menuWarning.SetActive (true);
-        yield return new WaitForSeconds(2);
+
+        //Reproduce la animación
+        _warningAnimator.Play("WarningAnimation");
+
+        // Espera la duración de la animación
+        yield return new WaitForSeconds(_warningAnimator.GetCurrentAnimatorStateInfo(0).length);
+
         _menuWarning.SetActive(false);
         _menuPrincipal.SetActive(true);
 

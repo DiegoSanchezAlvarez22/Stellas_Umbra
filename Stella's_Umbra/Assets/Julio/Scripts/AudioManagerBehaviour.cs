@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AudioManagerBehaviour : MonoBehaviour
 {
+    public static AudioManagerBehaviour instance;
+
     [Header("---------- Audio Source ----------")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
@@ -21,7 +23,17 @@ public class AudioManagerBehaviour : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            //Destruye el nuevo AudioManager si ya existe uno
+            Destroy(gameObject);
+            return;
+        }
     }
 
     void Start()
