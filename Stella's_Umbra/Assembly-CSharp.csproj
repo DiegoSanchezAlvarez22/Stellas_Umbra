@@ -81,6 +81,7 @@
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\Dash.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBehaviour.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Player\PlayerDestroyLoads.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\CorazonesUI.cs" />
     <Compile Include="Assets\Diego.S\Scripts\SceneChangerSpace.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\Jump.cs" />
