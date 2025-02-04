@@ -32,29 +32,29 @@ public class MainMenu : MonoBehaviour
 
     public void IniciarJuego()
     {
-        if (_checkPointSystem != null)
-        {
-            _checkPointSystem.ClearProgress();
-        }
-        SceneManager.LoadScene("DiseñoNivel1.1");
+        PlayerPrefs.SetInt("NewGame", 1); // Guardamos que es un nuevo juego
+        PlayerPrefs.SetInt("LoadGame", 0);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("DiseñoNivel1.1"); // Cargar la escena
     }
 
     public void CargarPartida()
     {
         if (PlayerPrefs.HasKey("PlayerVida"))
         {
-            if (_checkPointSystem != null)
-            {
-                SceneManager.LoadScene("DiseñoNivel1.1");
-                _checkPointSystem.LoadProgress();
-            }
+            PlayerPrefs.SetInt("NewGame", 0);
+            PlayerPrefs.SetInt("LoadGame", 1); // Guardamos que queremos cargar la partida
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene("DiseñoNivel1.1");
         }
         else 
         {
             StartCoroutine(MostrarMensajeWarning());
         }
     }
-    
+
     public void SalirJuego()
     {
         Application.Quit();

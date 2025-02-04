@@ -146,14 +146,16 @@ public class CheckPointSystem : MonoBehaviour
 
     public void LoadProgress()
     {
-        //if (_vidaJugador != null && _vidaJugador.VidaActual == 0)
-        //{
-            //if (!PlayerPrefs.HasKey(VidaKey))
-            //{
-                //SceneManager.LoadScene("Menu Principal");
-                //return;
-            //}
-        //}
+
+        //Si mueres sin pasar por checkpoints te lleva a la escena de menu principal
+        if (_vidaJugador != null && _vidaJugador.VidaActual == 0)
+        {
+            if (!PlayerPrefs.HasKey(VidaKey))
+            {
+                SceneManager.LoadScene("Menu Principal");
+                return;
+            }
+        }
 
 
         // Cargar la experiencia desde PlayerPrefs
@@ -276,11 +278,11 @@ public class CheckPointSystem : MonoBehaviour
         Debug.Log("Progreso eliminado.");
     }
 
-    private void OnApplicationQuit()
-    {
-        ClearProgress();
-        Debug.Log("Progreso borrado al cerrar el juego");
-    }
+    //private void OnApplicationQuit()
+    //{
+        //ClearProgress();
+        //Debug.Log("Progreso borrado al cerrar el juego");
+    //}
 
 
     private void OnTriggereEnter(Collider other)
