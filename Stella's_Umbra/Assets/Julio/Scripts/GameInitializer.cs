@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameInitializer : MonoBehaviour
 {
+    [System.Obsolete]
     void Start()
     {
         CheckPointSystem checkPointSystem = FindObjectOfType<CheckPointSystem>();

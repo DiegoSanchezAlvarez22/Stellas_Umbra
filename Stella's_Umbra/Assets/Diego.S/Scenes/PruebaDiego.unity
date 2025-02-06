@@ -311,6 +311,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _energy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _energyBoost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _tornadoAttackDuration
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1869,7 +1885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8236314902353714900, guid: 686d18f74515ed24c828956fc5333a11, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1927,10 +1943,6 @@ PrefabInstance:
     - target: {fileID: 2245127494552187500, guid: 9066ffc1781387342ae04fe11c5f0f2f, type: 3}
       propertyPath: m_Name
       value: EnemyAir(Bat)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2245127494552187500, guid: 9066ffc1781387342ae04fe11c5f0f2f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3508399214007403201, guid: 9066ffc1781387342ae04fe11c5f0f2f, type: 3}
       propertyPath: _playerTarget
@@ -1997,10 +2009,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFloor(Slime)
       objectReference: {fileID: 0}
-    - target: {fileID: 1783306359334640410, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4518908779635938166, guid: 9a12416e390570c41839f0c175dc8c7a, type: 3}
       propertyPath: _playerTarget
       value: 
@@ -2020,11 +2028,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2620617557790943998, guid: c0007440346ab304daf324eb5f20080e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0800004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2620617557790943998, guid: c0007440346ab304daf324eb5f20080e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.9832
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 2620617557790943998, guid: c0007440346ab304daf324eb5f20080e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2061,10 +2069,6 @@ PrefabInstance:
     - target: {fileID: 3565127718906850028, guid: c0007440346ab304daf324eb5f20080e, type: 3}
       propertyPath: m_Name
       value: EnemyFloor(Tree)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3565127718906850028, guid: c0007440346ab304daf324eb5f20080e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9188842916223402528, guid: c0007440346ab304daf324eb5f20080e, type: 3}
       propertyPath: _playerTarget
@@ -2126,10 +2130,6 @@ PrefabInstance:
     - target: {fileID: 8066546691838169684, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
       propertyPath: m_Name
       value: EnemyAir(Tree)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066546691838169684, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240719851379132850, guid: 76577bec172f47340b751f9a7b2c4799, type: 3}
       propertyPath: _playerTarget

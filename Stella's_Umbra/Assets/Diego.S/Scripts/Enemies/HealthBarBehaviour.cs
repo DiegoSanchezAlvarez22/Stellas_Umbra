@@ -5,7 +5,20 @@ using UnityEngine.UI;
 public class HealthBarBehaviour : MonoBehaviour
 {
     [SerializeField] private Image _healthBarImage;
- 
+    private Quaternion initialRotation;
+
+    void Start()
+    {
+        //guarda la rotación inicial
+        initialRotation = transform.rotation;
+    }
+
+    void LateUpdate()
+    {
+        //mantén la rotación inicial sin importar la rotación del enemigo
+        transform.rotation = initialRotation;
+    }
+
     public void UpdateHealthBar(float _maxHealth, float _currentHealth, float _previousHealth)
     {
         float _targetHealth = _currentHealth / _maxHealth;

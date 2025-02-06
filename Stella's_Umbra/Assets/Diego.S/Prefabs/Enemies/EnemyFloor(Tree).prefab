@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2620617557790943998
 Transform:
   m_ObjectHideFlags: 0
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.55, y: 11.2568, z: 0}
-  m_LocalScale: {x: 6, y: 11.2926, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1109792155473956720}
@@ -140,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.43892366, y: 0.3408592, z: 0.2}
-  m_Center: {x: -0.006860765, y: -0.04606734, z: 0}
+  m_Size: {x: 0.4389237, y: 0.34472388, z: 0.2}
+  m_Center: {x: -0.006860773, y: -0.04799962, z: 0}
 --- !u!114 &5150826862664587599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   _currentHealth: 15
   _damageDuration: 0.15
   _expToAdd: 50
-  _dyingEffect: {fileID: 0}
+  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
 --- !u!95 &641305439356685123
 Animator:
   serializedVersion: 7

@@ -27,17 +27,20 @@ public class EnemyLifes : MonoBehaviour
         Debug.Log("Vidas actuales enemigo = " + _currentHealth);
 
         _healthBarBehaviour.UpdateHealthBar(_maxHealth, _currentHealth, _previousHealth);
+        Debug.Log("1");
 
         if (_currentHealth > 0)
         {
+            Debug.Log("2");
             StartCoroutine(DamageChangeColor());
         }
+
         else
         {
+            Debug.Log("3");
             _playerTarget.GetComponent<PlayerExpSystem>().AddExp(_expToAdd);
             Instantiate(_dyingEffect, transform.position, transform.rotation);
             Destroy(gameObject);
-
         }
     }
 

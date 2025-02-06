@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using System.Threading;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerAttacks : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerAttacks : MonoBehaviour
 
     [Header("Energy")] //ambas variables deben ser guardadas
     [SerializeField] public float _energy = 0; //energía actual del player
-    [SerializeField] public float _energyBoost = 0; //aumenta la velocidad de obtención de energía
+    [SerializeField] public float _energyBoost = 1; //aumenta la velocidad de obtención de energía
 
     [Header("BasicAttack")]
     [SerializeField] public bool _canBasicAttack; //variable a la que accede el skilltree
@@ -32,6 +33,9 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] public bool _canTornadoAttack; //variable a la que accede el skilltree
     [SerializeField] private GameObject _tornado; //prefab de tornado que se instancia
     [SerializeField] private float _tornadoAttackDuration; //durancion del ataque especial
+    //[SerializeField] private float _damage; //daño que hace el tornado
+    //[SerializeField] private float _damageInterval; //cada cuánto tiempo hace daño
+    //private List<EnemyLifes> enemiesInTornado = new List<EnemyLifes>();
 
     #region Variables Diego B
 
@@ -44,7 +48,7 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] SphereCollider sphereCollider;
     [SerializeField] GameObject projectile;
     [SerializeField] Transform fijador;
-    [SerializeField] float alturaSobrePadre = 1.0f; // Altura deseada encima del nuevo padre
+    //[SerializeField] float alturaSobrePadre = 1.0f; // Altura deseada encima del nuevo padre
     private Transform fijador2;
     private Transform padreOriginal;
     private GameObject rangoDeApuntado;
@@ -219,6 +223,37 @@ public class PlayerAttacks : MonoBehaviour
                 (_boulder, shootingPoint.position, shootingPoint.rotation);
         }
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    EnemyLifes _enemyLifes = other.GetComponent<EnemyLifes>();
+    //    if (_enemyLifes != null)
+    //    {
+    //        if (!enemiesInTornado.Contains(_enemyLifes))
+    //        {
+    //            enemiesInTornado.Add(_enemyLifes);
+    //            StartCoroutine(DamageOverTime(_enemyLifes));
+    //        }
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    EnemyLifes _enemyLifes = other.GetComponent<EnemyLifes>();
+    //    if (_enemyLifes != null && enemiesInTornado.Contains(_enemyLifes))
+    //    {
+    //        enemiesInTornado.Remove(_enemyLifes);
+    //    }
+    //}
+
+    //private IEnumerator DamageOverTime(EnemyLifes _enemyLifes)
+    //{
+    //    while (enemiesInTornado.Contains(_enemyLifes))
+    //    {
+    //        _enemyLifes.DamageRecieved(_damage);
+    //        yield return new WaitForSeconds(_damageInterval);
+    //    }
+    //}
 
     private IEnumerator TornadoAttack()
     {

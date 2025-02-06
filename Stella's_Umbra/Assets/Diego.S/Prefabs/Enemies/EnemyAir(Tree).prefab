@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4825656711054730354
 Transform:
   m_ObjectHideFlags: 0
@@ -540,3 +540,4 @@ MonoBehaviour:
   _currentHealth: 8
   _damageDuration: 0.2
   _expToAdd: 40
+  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
