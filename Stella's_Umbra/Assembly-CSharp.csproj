@@ -69,6 +69,7 @@
     <Compile Include="Assets\Diego.B\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\MenuPausa.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\SuperJump.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\PlatformDetectBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\ParticleTrigger.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Item.cs" />
     <Compile Include="Assets\Julio\Scripts\MainMenu.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Enemies\HealthBarBehaviour.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\PlatformBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ImageHover.cs" />

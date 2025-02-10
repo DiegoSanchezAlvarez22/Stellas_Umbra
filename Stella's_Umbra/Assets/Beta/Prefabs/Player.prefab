@@ -385,6 +385,7 @@ Transform:
   - {fileID: 927611748827660408}
   - {fileID: 2138041638762339840}
   - {fileID: 4667883726698539653}
+  - {fileID: 6879590342283612963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8989181431500479314
@@ -433,8 +434,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.68087435, y: 1.1127005, z: 1}
-  m_Center: {x: 0, y: -0.12711382, z: 0}
+  m_Size: {x: 0.68087435, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!212 &8907755523591804082
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -608,6 +609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _direction: {x: 0, y: 0, z: 0}
   _walkForce: 10
+  _platDetector: {fileID: 8764253071956446505}
+  _floorIsPlat: 0
+  _otherCollider: {fileID: 0}
   _canJump: 1
   _jumpForce: 35
   _jumpsLeft: 1
@@ -630,6 +634,7 @@ MonoBehaviour:
   _initialObjParent: {fileID: 0}
   animator: {fileID: 2549569791863814557}
   _spriteRenderer: {fileID: 8907755523591804082}
+  _collider: {fileID: 0}
 --- !u!114 &2089185292222206164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,8 +709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 8907755523591804082}
-  _energy: 0
-  _energyBoost: 0
+  _energy: 100
+  _energyBoost: 1
   _canBasicAttack: 0
   _attackArea: {fileID: 2618874094644614927}
   _timeAttaking: 0.25
@@ -716,13 +721,11 @@ MonoBehaviour:
   _boulderSpawnLeft: {x: -4, y: 3, z: 0}
   _canTornadoAttack: 0
   _tornado: {fileID: 4342673284362773583, guid: bb72fff86be93774fb3be0452f958622, type: 3}
-  _tornadoAttackDuration: 0
-  "tama\xF1oAgachado": 0.5
+  _tornadoAttackDuration: 7
   shootingPoint: {fileID: 927611748827660408}
   sphereCollider: {fileID: 2160388577919333903}
   projectile: {fileID: 5293527828824941751, guid: 7ca3a07bfc8820a40b1089c752e920af, type: 3}
   fijador: {fileID: 1785737683253930734}
-  alturaSobrePadre: 0.34
 --- !u!114 &6033304798287099784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,3 +916,70 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &8764253071956446505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6879590342283612963}
+  - component: {fileID: 456632272275366663}
+  - component: {fileID: 5416626114265216589}
+  m_Layer: 9
+  m_Name: PlatformDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6879590342283612963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764253071956446505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 290188763919154300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &456632272275366663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764253071956446505}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9, y: 0.07, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5416626114265216589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764253071956446505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d44d133c59031b47ad8fbb09895f6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMov: {fileID: 4824259583868554319}

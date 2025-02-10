@@ -40,8 +40,6 @@ public class PlayerAttacks : MonoBehaviour
     #region Variables Diego B
 
     private Vector3 shootingPointOriginal;
-    private BoxCollider boxCollider;
-    [SerializeField] float tamañoAgachado;
 
     [Header("Ataque a Distancia")]
     [SerializeField] private Transform shootingPoint; //posicion desde la que se dispara
@@ -122,8 +120,6 @@ public class PlayerAttacks : MonoBehaviour
         {
             StartCoroutine(TornadoAttack());
         }
-
-        Agacharse();
     }
 
     public bool AttackSkillsActivation(string _skillName, bool _learned)
@@ -323,19 +319,6 @@ public class PlayerAttacks : MonoBehaviour
     //        instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
     //    }
     //}
-
-    private void Agacharse()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            boxCollider = GetComponent<BoxCollider>();
-            boxCollider.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * tamañoAgachado, transform.localScale.z);
-        }
-        else if (Input.GetKeyUp(KeyCode.S))
-        {
-            boxCollider.transform.localScale = new Vector3(1, 1, 1);
-        }
-    }
 
     //Atravesar plataformas
     //private void OnCollisionStay(Collision collision)

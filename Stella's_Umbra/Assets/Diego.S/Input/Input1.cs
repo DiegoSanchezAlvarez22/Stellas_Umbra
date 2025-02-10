@@ -37,6 +37,15 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""BendDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""2799a3c6-0889-4ae2-abc1-8cbc2d02794d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""26ba4627-86dc-47c4-a966-da4bcf402b64"",
@@ -76,7 +85,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""MoveObj"",
                     ""type"": ""Button"",
                     ""id"": ""d3fbc44b-3755-4c2d-9521-97628c1cc43c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -142,6 +151,39 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""right"",
                     ""id"": ""d745d4b2-fe1d-472a-af78-8e96ca659797"",
                     ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right PS5"",
+                    ""id"": ""dbb9048e-b2cb-4ee6-8eef-ce82cc8c4eff"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a4b9f374-3223-4dca-85df-0f4d12906ddc"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2855dd52-5d51-4c60-b5e4-79a6a75a9a3f"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -236,6 +278,50 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""action"": ""MoveObj"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2df1bfa7-5532-49da-8780-09a0f5671c0e"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveObj"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ead9ca3-5f33-40d0-9806-7bdba7556c53"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BendDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af3fdd5d-e663-453c-8e1a-c5d470941230"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BendDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c51702c9-5b8d-49be-af7c-787b9d63dd0f"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BendDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -273,6 +359,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         // Playing
         m_Playing = asset.FindActionMap("Playing", throwIfNotFound: true);
         m_Playing_Walk = m_Playing.FindAction("Walk", throwIfNotFound: true);
+        m_Playing_BendDown = m_Playing.FindAction("BendDown", throwIfNotFound: true);
         m_Playing_Jump = m_Playing.FindAction("Jump", throwIfNotFound: true);
         m_Playing_Dash = m_Playing.FindAction("Dash", throwIfNotFound: true);
         m_Playing_SuperJump = m_Playing.FindAction("SuperJump", throwIfNotFound: true);
@@ -349,6 +436,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Playing;
     private List<IPlayingActions> m_PlayingActionsCallbackInterfaces = new List<IPlayingActions>();
     private readonly InputAction m_Playing_Walk;
+    private readonly InputAction m_Playing_BendDown;
     private readonly InputAction m_Playing_Jump;
     private readonly InputAction m_Playing_Dash;
     private readonly InputAction m_Playing_SuperJump;
@@ -359,6 +447,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         private @Input1 m_Wrapper;
         public PlayingActions(@Input1 wrapper) { m_Wrapper = wrapper; }
         public InputAction @Walk => m_Wrapper.m_Playing_Walk;
+        public InputAction @BendDown => m_Wrapper.m_Playing_BendDown;
         public InputAction @Jump => m_Wrapper.m_Playing_Jump;
         public InputAction @Dash => m_Wrapper.m_Playing_Dash;
         public InputAction @SuperJump => m_Wrapper.m_Playing_SuperJump;
@@ -376,6 +465,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @Walk.started += instance.OnWalk;
             @Walk.performed += instance.OnWalk;
             @Walk.canceled += instance.OnWalk;
+            @BendDown.started += instance.OnBendDown;
+            @BendDown.performed += instance.OnBendDown;
+            @BendDown.canceled += instance.OnBendDown;
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
@@ -398,6 +490,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @Walk.started -= instance.OnWalk;
             @Walk.performed -= instance.OnWalk;
             @Walk.canceled -= instance.OnWalk;
+            @BendDown.started -= instance.OnBendDown;
+            @BendDown.performed -= instance.OnBendDown;
+            @BendDown.canceled -= instance.OnBendDown;
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
@@ -479,6 +574,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     public interface IPlayingActions
     {
         void OnWalk(InputAction.CallbackContext context);
+        void OnBendDown(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnSuperJump(InputAction.CallbackContext context);

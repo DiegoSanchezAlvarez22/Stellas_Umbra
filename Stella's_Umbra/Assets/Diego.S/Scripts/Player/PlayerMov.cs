@@ -13,6 +13,7 @@ public class PlayerMov : MonoBehaviour
 
     [Header("New Input System")]
     PlayerInput _input;
+    InputAction _bendDown;
     InputAction _jump;
     InputAction _superJump;
     InputAction _dash;
@@ -24,6 +25,10 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] private float _walkForce;
 
     [Header("Bend Down")]
+    [SerializeField] private GameObject _platDetector; //obj que detecta si se esta sobre una plataforma
+    private float _platDetectorTimer = 0f;
+    public bool _floorIsPlat; //indica si el suelo es una plataforma
+    public Collider _otherCollider; //collider del objeto que se presupone es una plataforma
 
     [Header("Jump")]
     [SerializeField] public bool _canJump; //variable a la que accede el skilltree
@@ -73,6 +78,9 @@ public class PlayerMov : MonoBehaviour
     [Header("Render")]
     [SerializeField] SpriteRenderer _spriteRenderer;
 
+    [Header("Collider")]
+    [SerializeField] BoxCollider _collider;
+
     #endregion
 
     private void Awake()
@@ -82,9 +90,11 @@ public class PlayerMov : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _input = GetComponent<PlayerInput>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<BoxCollider>();
 
         _trailRenderer = GameObject.FindWithTag("PlayerTrail");
 
+        _bendDown = _input.actions["BendDown"];
         _jump = _input.actions["Jump"];
         _dash = _input.actions["Dash"];
         _superJump = _input.actions["SuperJump"];
@@ -96,6 +106,12 @@ public class PlayerMov : MonoBehaviour
     {
         _direction = _input.actions["Walk"].ReadValue<Vector2>();
         float speed = _direction.x;
+
+        if (_floorIsPlat == true)
+        {
+            _canJump = true;
+            _jumpsLeft = _jumpsLeftMax;
+        }
 
         if (_isDashing)
         {
@@ -133,6 +149,8 @@ public class PlayerMov : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
+
+        BendDown(_otherCollider, _floorIsPlat);
     }
 
     private void FixedUpdate()
@@ -312,6 +330,42 @@ public class PlayerMov : MonoBehaviour
         return false;
     }
 
+    private void BendDown(Collider _collision, bool _isPlat)
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (!_isPlat && _inFloor)
+            {
+                _collider.center = new Vector3(0, -0.45f, 0);
+                _collider.size = new Vector3(0.6808743f, 0.5f, 1);
+                _walkForce = 5f;
+            }
+            else if (_isPlat)
+            {
+                _platDetector.SetActive(false); // Desactiva el detector de plataformas
+                _collision.isTrigger = true;
+                _platDetectorTimer = 1f; // Inicia el temporizador
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            _collider.center = new Vector3(0, -0.2f, 0);
+            _collider.size = new Vector3(0.6808743f, 1, 1);
+            _walkForce = 10f;
+            _floorIsPlat = false;
+        }
+
+        // Reactivar el detector de plataformas después del tiempo definido
+        if (_platDetectorTimer > 0)
+        {
+            _platDetectorTimer -= Time.deltaTime;
+            if (_platDetectorTimer <= 0)
+            {
+                _platDetector.SetActive(true);
+            }
+        }
+    }
+
     public void Jump(InputAction.CallbackContext _callbackContext)
     {
         WallJump();
@@ -429,4 +483,38 @@ public class PlayerMov : MonoBehaviour
             _canJump = true;
         }
     }
+
+    //private void BendDown(Collider _collision, bool _isPlat)
+    //{
+    //    if (Input.GetKeyDown(KeyCode.S))
+    //    {
+    //        if (!_isPlat && _inFloor)
+    //        {
+    //            //_collider.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * _newColliderScale, transform.localScale.z);
+    //            _collider.center = new Vector3(0, -0.45f, 0);
+    //            _collider.size = new Vector3(0.6808743f, 0.5f, 1);
+    //            _walkForce = 5f;
+    //        }
+    //        else if (_isPlat)
+    //        {
+    //            _platDetector.SetActive(false);
+    //            Invoke("DisablePlatDetector", 1f);
+    //            _collision.isTrigger = true;
+    //        }
+    //    }
+    //    else if (Input.GetKeyUp(KeyCode.S))
+    //    {
+    //        //_collider.transform.localScale = new Vector3(1, 1, 1);
+    //        _collider.center = new Vector3(0, -0.2f, 0);
+    //        _collider.size = new Vector3(0.6808743f, 1, 1);
+    //        _walkForce = 10f;
+    //        _floorIsPlat = false;
+    //    }
+    //}
+
+    //private void DisablePlatDetector()
+    //{
+    //    _platDetector.SetActive(true);
+    //}
+
 }

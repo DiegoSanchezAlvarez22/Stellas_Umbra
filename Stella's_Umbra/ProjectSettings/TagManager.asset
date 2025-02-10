@@ -17,6 +17,7 @@ TagManager:
   - SueloInestable
   - SkillTree
   - PlayerTrail
+  - Platform
   layers:
   - Default
   - TransparentFX
