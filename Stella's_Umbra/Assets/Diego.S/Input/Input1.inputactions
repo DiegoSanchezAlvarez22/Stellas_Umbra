@@ -2,6 +2,34 @@
     "name": "Input1",
     "maps": [
         {
+            "name": "Menus",
+            "id": "73e7cf8b-fe56-4fff-8873-50fb5e625ece",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "cdbe5fe2-eed1-400e-9e8a-4f40a5326b77",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "494066fa-ecd0-4130-a504-0a031b374815",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Playing",
             "id": "70f05654-33db-4c84-857f-c9f62b3c215c",
             "actions": [
@@ -72,6 +100,42 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "a2ba59f4-71e1-4402-a66f-fadff55d2cfe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BasicAttack",
+                    "type": "Button",
+                    "id": "f32215b6-27a6-4c20-848a-051986585335",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BoulderAttack",
+                    "type": "Button",
+                    "id": "814371dc-7b0a-4052-89ae-fd97ed7b10b3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TornadoAttack",
+                    "type": "Button",
+                    "id": "95248428-c7bc-43ca-bc72-8e579b19d215",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillTreeAction",
+                    "type": "Button",
+                    "id": "308090d5-6e98-4410-a2dd-fd0637237ecb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -269,7 +333,7 @@
                 {
                     "name": "",
                     "id": "2df1bfa7-5532-49da-8780-09a0f5671c0e",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -331,32 +395,92 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Menus",
-            "id": "73e7cf8b-fe56-4fff-8873-50fb5e625ece",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "cdbe5fe2-eed1-400e-9e8a-4f40a5326b77",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "494066fa-ecd0-4130-a504-0a031b374815",
-                    "path": "",
+                    "id": "5b65b5a6-aa44-4b7d-9afd-3af0875ce30c",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "SkillTreeAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "663d47dc-86cc-4f58-8f26-c12b97babe16",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillTreeAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d2c95a97-b9c4-4456-8f5b-a5a62a50c763",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BasicAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9cffbd70-16eb-4c18-b70d-b867ef66643e",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BasicAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afd36076-c9d5-4c45-a611-c9ac9d470224",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BoulderAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9ed9bcb-d0be-4289-8d81-9961e9496dde",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BoulderAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34f8e119-bba5-49d3-95b2-7b15c20caf3b",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TornadoAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c9f29b0-b292-4a17-8f98-f10316e69217",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TornadoAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

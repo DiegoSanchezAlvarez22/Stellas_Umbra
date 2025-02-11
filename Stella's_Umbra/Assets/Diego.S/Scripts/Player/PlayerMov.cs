@@ -107,11 +107,22 @@ public class PlayerMov : MonoBehaviour
         _direction = _input.actions["Walk"].ReadValue<Vector2>();
         float speed = _direction.x;
 
+        #region Platforms
         if (_floorIsPlat == true)
         {
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
         }
+
+        if (_platDetectorTimer > 0) //Reactivar el detector de plataformas después del tiempo definido
+        {
+            _platDetectorTimer -= Time.deltaTime;
+            if (_platDetectorTimer <= 0)
+            {
+                _platDetector.SetActive(true);
+            }
+        }
+        #endregion
 
         if (_isDashing)
         {
@@ -149,8 +160,6 @@ public class PlayerMov : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
-
-        BendDown(_otherCollider, _floorIsPlat);
     }
 
     private void FixedUpdate()
@@ -203,6 +212,9 @@ public class PlayerMov : MonoBehaviour
 
     private void OnEnable()
     {
+        _bendDown.performed += BendDownStarted;
+        _bendDown.canceled += BendDownCanceled;
+
         _jump.Enable();
         _jump.performed += Jump;
 
@@ -224,6 +236,9 @@ public class PlayerMov : MonoBehaviour
 
     private void OnDisable()
     {
+        _bendDown.performed -= BendDownStarted;
+        _bendDown.canceled -= BendDownCanceled;
+
         _jump.performed -= Jump;
         _jump.Disable();
 
@@ -332,37 +347,36 @@ public class PlayerMov : MonoBehaviour
 
     private void BendDown(Collider _collision, bool _isPlat)
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (!_isPlat && _inFloor)
         {
-            if (!_isPlat && _inFloor)
-            {
-                _collider.center = new Vector3(0, -0.45f, 0);
-                _collider.size = new Vector3(0.6808743f, 0.5f, 1);
-                _walkForce = 5f;
-            }
-            else if (_isPlat)
-            {
-                _platDetector.SetActive(false); // Desactiva el detector de plataformas
-                _collision.isTrigger = true;
-                _platDetectorTimer = 1f; // Inicia el temporizador
-            }
+            _collider.center = new Vector3(0, -0.45f, 0);
+            _collider.size = new Vector3(0.6808743f, 0.5f, 1);
+            _walkForce = 5f;
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (_isPlat)
+        {
+            _platDetector.SetActive(false); // Desactiva el detector de plataformas
+            _collision.isTrigger = true;
+            _platDetectorTimer = 0.5f; // Inicia el temporizador
+        }
+    }
+
+    private void BendDownStarted(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.performed)
+        {
+            BendDown(_otherCollider, _floorIsPlat);
+        }
+    }
+
+    private void BendDownCanceled(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.canceled)
         {
             _collider.center = new Vector3(0, -0.2f, 0);
             _collider.size = new Vector3(0.6808743f, 1, 1);
             _walkForce = 10f;
             _floorIsPlat = false;
-        }
-
-        // Reactivar el detector de plataformas después del tiempo definido
-        if (_platDetectorTimer > 0)
-        {
-            _platDetectorTimer -= Time.deltaTime;
-            if (_platDetectorTimer <= 0)
-            {
-                _platDetector.SetActive(true);
-            }
         }
     }
 
@@ -483,38 +497,4 @@ public class PlayerMov : MonoBehaviour
             _canJump = true;
         }
     }
-
-    //private void BendDown(Collider _collision, bool _isPlat)
-    //{
-    //    if (Input.GetKeyDown(KeyCode.S))
-    //    {
-    //        if (!_isPlat && _inFloor)
-    //        {
-    //            //_collider.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * _newColliderScale, transform.localScale.z);
-    //            _collider.center = new Vector3(0, -0.45f, 0);
-    //            _collider.size = new Vector3(0.6808743f, 0.5f, 1);
-    //            _walkForce = 5f;
-    //        }
-    //        else if (_isPlat)
-    //        {
-    //            _platDetector.SetActive(false);
-    //            Invoke("DisablePlatDetector", 1f);
-    //            _collision.isTrigger = true;
-    //        }
-    //    }
-    //    else if (Input.GetKeyUp(KeyCode.S))
-    //    {
-    //        //_collider.transform.localScale = new Vector3(1, 1, 1);
-    //        _collider.center = new Vector3(0, -0.2f, 0);
-    //        _collider.size = new Vector3(0.6808743f, 1, 1);
-    //        _walkForce = 10f;
-    //        _floorIsPlat = false;
-    //    }
-    //}
-
-    //private void DisablePlatDetector()
-    //{
-    //    _platDetector.SetActive(true);
-    //}
-
 }

@@ -24,6 +24,34 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     ""name"": ""Input1"",
     ""maps"": [
         {
+            ""name"": ""Menus"",
+            ""id"": ""73e7cf8b-fe56-4fff-8873-50fb5e625ece"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdbe5fe2-eed1-400e-9e8a-4f40a5326b77"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""494066fa-ecd0-4130-a504-0a031b374815"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Playing"",
             ""id"": ""70f05654-33db-4c84-857f-c9f62b3c215c"",
             ""actions"": [
@@ -94,6 +122,42 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""a2ba59f4-71e1-4402-a66f-fadff55d2cfe"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BasicAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""f32215b6-27a6-4c20-848a-051986585335"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BoulderAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""814371dc-7b0a-4052-89ae-fd97ed7b10b3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TornadoAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""95248428-c7bc-43ca-bc72-8e579b19d215"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillTreeAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""308090d5-6e98-4410-a2dd-fd0637237ecb"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -291,7 +355,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2df1bfa7-5532-49da-8780-09a0f5671c0e"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -353,32 +417,92 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Menus"",
-            ""id"": ""73e7cf8b-fe56-4fff-8873-50fb5e625ece"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""cdbe5fe2-eed1-400e-9e8a-4f40a5326b77"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""494066fa-ecd0-4130-a504-0a031b374815"",
-                    ""path"": """",
+                    ""id"": ""5b65b5a6-aa44-4b7d-9afd-3af0875ce30c"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""SkillTreeAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""663d47dc-86cc-4f58-8f26-c12b97babe16"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillTreeAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2c95a97-b9c4-4456-8f5b-a5a62a50c763"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BasicAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9cffbd70-16eb-4c18-b70d-b867ef66643e"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BasicAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""afd36076-c9d5-4c45-a611-c9ac9d470224"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BoulderAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9ed9bcb-d0be-4289-8d81-9961e9496dde"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BoulderAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""34f8e119-bba5-49d3-95b2-7b15c20caf3b"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TornadoAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c9f29b0-b292-4a17-8f98-f10316e69217"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TornadoAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -387,6 +511,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
+        // Menus
+        m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
+        m_Menus_Newaction = m_Menus.FindAction("New action", throwIfNotFound: true);
         // Playing
         m_Playing = asset.FindActionMap("Playing", throwIfNotFound: true);
         m_Playing_Walk = m_Playing.FindAction("Walk", throwIfNotFound: true);
@@ -397,15 +524,16 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         m_Playing_GrabWall = m_Playing.FindAction("GrabWall", throwIfNotFound: true);
         m_Playing_MoveObj = m_Playing.FindAction("MoveObj", throwIfNotFound: true);
         m_Playing_Interact = m_Playing.FindAction("Interact", throwIfNotFound: true);
-        // Menus
-        m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
-        m_Menus_Newaction = m_Menus.FindAction("New action", throwIfNotFound: true);
+        m_Playing_BasicAttack = m_Playing.FindAction("BasicAttack", throwIfNotFound: true);
+        m_Playing_BoulderAttack = m_Playing.FindAction("BoulderAttack", throwIfNotFound: true);
+        m_Playing_TornadoAttack = m_Playing.FindAction("TornadoAttack", throwIfNotFound: true);
+        m_Playing_SkillTreeAction = m_Playing.FindAction("SkillTreeAction", throwIfNotFound: true);
     }
 
     ~@Input1()
     {
-        UnityEngine.Debug.Assert(!m_Playing.enabled, "This will cause a leak and performance issues, Input1.Playing.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Menus.enabled, "This will cause a leak and performance issues, Input1.Menus.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Playing.enabled, "This will cause a leak and performance issues, Input1.Playing.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -464,108 +592,6 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Playing
-    private readonly InputActionMap m_Playing;
-    private List<IPlayingActions> m_PlayingActionsCallbackInterfaces = new List<IPlayingActions>();
-    private readonly InputAction m_Playing_Walk;
-    private readonly InputAction m_Playing_BendDown;
-    private readonly InputAction m_Playing_Jump;
-    private readonly InputAction m_Playing_Dash;
-    private readonly InputAction m_Playing_SuperJump;
-    private readonly InputAction m_Playing_GrabWall;
-    private readonly InputAction m_Playing_MoveObj;
-    private readonly InputAction m_Playing_Interact;
-    public struct PlayingActions
-    {
-        private @Input1 m_Wrapper;
-        public PlayingActions(@Input1 wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Walk => m_Wrapper.m_Playing_Walk;
-        public InputAction @BendDown => m_Wrapper.m_Playing_BendDown;
-        public InputAction @Jump => m_Wrapper.m_Playing_Jump;
-        public InputAction @Dash => m_Wrapper.m_Playing_Dash;
-        public InputAction @SuperJump => m_Wrapper.m_Playing_SuperJump;
-        public InputAction @GrabWall => m_Wrapper.m_Playing_GrabWall;
-        public InputAction @MoveObj => m_Wrapper.m_Playing_MoveObj;
-        public InputAction @Interact => m_Wrapper.m_Playing_Interact;
-        public InputActionMap Get() { return m_Wrapper.m_Playing; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayingActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayingActions instance)
-        {
-            if (instance == null || m_Wrapper.m_PlayingActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayingActionsCallbackInterfaces.Add(instance);
-            @Walk.started += instance.OnWalk;
-            @Walk.performed += instance.OnWalk;
-            @Walk.canceled += instance.OnWalk;
-            @BendDown.started += instance.OnBendDown;
-            @BendDown.performed += instance.OnBendDown;
-            @BendDown.canceled += instance.OnBendDown;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
-            @Dash.started += instance.OnDash;
-            @Dash.performed += instance.OnDash;
-            @Dash.canceled += instance.OnDash;
-            @SuperJump.started += instance.OnSuperJump;
-            @SuperJump.performed += instance.OnSuperJump;
-            @SuperJump.canceled += instance.OnSuperJump;
-            @GrabWall.started += instance.OnGrabWall;
-            @GrabWall.performed += instance.OnGrabWall;
-            @GrabWall.canceled += instance.OnGrabWall;
-            @MoveObj.started += instance.OnMoveObj;
-            @MoveObj.performed += instance.OnMoveObj;
-            @MoveObj.canceled += instance.OnMoveObj;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
-        }
-
-        private void UnregisterCallbacks(IPlayingActions instance)
-        {
-            @Walk.started -= instance.OnWalk;
-            @Walk.performed -= instance.OnWalk;
-            @Walk.canceled -= instance.OnWalk;
-            @BendDown.started -= instance.OnBendDown;
-            @BendDown.performed -= instance.OnBendDown;
-            @BendDown.canceled -= instance.OnBendDown;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
-            @Dash.started -= instance.OnDash;
-            @Dash.performed -= instance.OnDash;
-            @Dash.canceled -= instance.OnDash;
-            @SuperJump.started -= instance.OnSuperJump;
-            @SuperJump.performed -= instance.OnSuperJump;
-            @SuperJump.canceled -= instance.OnSuperJump;
-            @GrabWall.started -= instance.OnGrabWall;
-            @GrabWall.performed -= instance.OnGrabWall;
-            @GrabWall.canceled -= instance.OnGrabWall;
-            @MoveObj.started -= instance.OnMoveObj;
-            @MoveObj.performed -= instance.OnMoveObj;
-            @MoveObj.canceled -= instance.OnMoveObj;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
-        }
-
-        public void RemoveCallbacks(IPlayingActions instance)
-        {
-            if (m_Wrapper.m_PlayingActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IPlayingActions instance)
-        {
-            foreach (var item in m_Wrapper.m_PlayingActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_PlayingActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public PlayingActions @Playing => new PlayingActions(this);
-
     // Menus
     private readonly InputActionMap m_Menus;
     private List<IMenusActions> m_MenusActionsCallbackInterfaces = new List<IMenusActions>();
@@ -611,6 +637,144 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         }
     }
     public MenusActions @Menus => new MenusActions(this);
+
+    // Playing
+    private readonly InputActionMap m_Playing;
+    private List<IPlayingActions> m_PlayingActionsCallbackInterfaces = new List<IPlayingActions>();
+    private readonly InputAction m_Playing_Walk;
+    private readonly InputAction m_Playing_BendDown;
+    private readonly InputAction m_Playing_Jump;
+    private readonly InputAction m_Playing_Dash;
+    private readonly InputAction m_Playing_SuperJump;
+    private readonly InputAction m_Playing_GrabWall;
+    private readonly InputAction m_Playing_MoveObj;
+    private readonly InputAction m_Playing_Interact;
+    private readonly InputAction m_Playing_BasicAttack;
+    private readonly InputAction m_Playing_BoulderAttack;
+    private readonly InputAction m_Playing_TornadoAttack;
+    private readonly InputAction m_Playing_SkillTreeAction;
+    public struct PlayingActions
+    {
+        private @Input1 m_Wrapper;
+        public PlayingActions(@Input1 wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Walk => m_Wrapper.m_Playing_Walk;
+        public InputAction @BendDown => m_Wrapper.m_Playing_BendDown;
+        public InputAction @Jump => m_Wrapper.m_Playing_Jump;
+        public InputAction @Dash => m_Wrapper.m_Playing_Dash;
+        public InputAction @SuperJump => m_Wrapper.m_Playing_SuperJump;
+        public InputAction @GrabWall => m_Wrapper.m_Playing_GrabWall;
+        public InputAction @MoveObj => m_Wrapper.m_Playing_MoveObj;
+        public InputAction @Interact => m_Wrapper.m_Playing_Interact;
+        public InputAction @BasicAttack => m_Wrapper.m_Playing_BasicAttack;
+        public InputAction @BoulderAttack => m_Wrapper.m_Playing_BoulderAttack;
+        public InputAction @TornadoAttack => m_Wrapper.m_Playing_TornadoAttack;
+        public InputAction @SkillTreeAction => m_Wrapper.m_Playing_SkillTreeAction;
+        public InputActionMap Get() { return m_Wrapper.m_Playing; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayingActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayingActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlayingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayingActionsCallbackInterfaces.Add(instance);
+            @Walk.started += instance.OnWalk;
+            @Walk.performed += instance.OnWalk;
+            @Walk.canceled += instance.OnWalk;
+            @BendDown.started += instance.OnBendDown;
+            @BendDown.performed += instance.OnBendDown;
+            @BendDown.canceled += instance.OnBendDown;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
+            @SuperJump.started += instance.OnSuperJump;
+            @SuperJump.performed += instance.OnSuperJump;
+            @SuperJump.canceled += instance.OnSuperJump;
+            @GrabWall.started += instance.OnGrabWall;
+            @GrabWall.performed += instance.OnGrabWall;
+            @GrabWall.canceled += instance.OnGrabWall;
+            @MoveObj.started += instance.OnMoveObj;
+            @MoveObj.performed += instance.OnMoveObj;
+            @MoveObj.canceled += instance.OnMoveObj;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @BasicAttack.started += instance.OnBasicAttack;
+            @BasicAttack.performed += instance.OnBasicAttack;
+            @BasicAttack.canceled += instance.OnBasicAttack;
+            @BoulderAttack.started += instance.OnBoulderAttack;
+            @BoulderAttack.performed += instance.OnBoulderAttack;
+            @BoulderAttack.canceled += instance.OnBoulderAttack;
+            @TornadoAttack.started += instance.OnTornadoAttack;
+            @TornadoAttack.performed += instance.OnTornadoAttack;
+            @TornadoAttack.canceled += instance.OnTornadoAttack;
+            @SkillTreeAction.started += instance.OnSkillTreeAction;
+            @SkillTreeAction.performed += instance.OnSkillTreeAction;
+            @SkillTreeAction.canceled += instance.OnSkillTreeAction;
+        }
+
+        private void UnregisterCallbacks(IPlayingActions instance)
+        {
+            @Walk.started -= instance.OnWalk;
+            @Walk.performed -= instance.OnWalk;
+            @Walk.canceled -= instance.OnWalk;
+            @BendDown.started -= instance.OnBendDown;
+            @BendDown.performed -= instance.OnBendDown;
+            @BendDown.canceled -= instance.OnBendDown;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
+            @SuperJump.started -= instance.OnSuperJump;
+            @SuperJump.performed -= instance.OnSuperJump;
+            @SuperJump.canceled -= instance.OnSuperJump;
+            @GrabWall.started -= instance.OnGrabWall;
+            @GrabWall.performed -= instance.OnGrabWall;
+            @GrabWall.canceled -= instance.OnGrabWall;
+            @MoveObj.started -= instance.OnMoveObj;
+            @MoveObj.performed -= instance.OnMoveObj;
+            @MoveObj.canceled -= instance.OnMoveObj;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @BasicAttack.started -= instance.OnBasicAttack;
+            @BasicAttack.performed -= instance.OnBasicAttack;
+            @BasicAttack.canceled -= instance.OnBasicAttack;
+            @BoulderAttack.started -= instance.OnBoulderAttack;
+            @BoulderAttack.performed -= instance.OnBoulderAttack;
+            @BoulderAttack.canceled -= instance.OnBoulderAttack;
+            @TornadoAttack.started -= instance.OnTornadoAttack;
+            @TornadoAttack.performed -= instance.OnTornadoAttack;
+            @TornadoAttack.canceled -= instance.OnTornadoAttack;
+            @SkillTreeAction.started -= instance.OnSkillTreeAction;
+            @SkillTreeAction.performed -= instance.OnSkillTreeAction;
+            @SkillTreeAction.canceled -= instance.OnSkillTreeAction;
+        }
+
+        public void RemoveCallbacks(IPlayingActions instance)
+        {
+            if (m_Wrapper.m_PlayingActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayingActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PlayingActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PlayingActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PlayingActions @Playing => new PlayingActions(this);
+    public interface IMenusActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
+    }
     public interface IPlayingActions
     {
         void OnWalk(InputAction.CallbackContext context);
@@ -621,9 +785,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         void OnGrabWall(InputAction.CallbackContext context);
         void OnMoveObj(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-    }
-    public interface IMenusActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnBasicAttack(InputAction.CallbackContext context);
+        void OnBoulderAttack(InputAction.CallbackContext context);
+        void OnTornadoAttack(InputAction.CallbackContext context);
+        void OnSkillTreeAction(InputAction.CallbackContext context);
     }
 }

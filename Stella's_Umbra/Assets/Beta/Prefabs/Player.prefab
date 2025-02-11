@@ -590,6 +590,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e4c11d79-bc08-4230-87b0-b90dc817b64d
     m_ActionName: 'Playing/GrabWall[/Keyboard/m]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2799a3c6-0889-4ae2-abc1-8cbc2d02794d
+    m_ActionName: 'Playing/BendDown[/Keyboard/s,/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/leftStick/down]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2ba59f4-71e1-4402-a66f-fadff55d2cfe
+    m_ActionName: 'Playing/Interact[/Keyboard/tab,/DualSenseGamepadHID/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f32215b6-27a6-4c20-848a-051986585335
+    m_ActionName: 'Playing/BasicAttack[/Keyboard/f,/DualSenseGamepadHID/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 814371dc-7b0a-4052-89ae-fd97ed7b10b3
+    m_ActionName: 'Playing/BoulderAttack[/Keyboard/e,/DualSenseGamepadHID/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95248428-c7bc-43ca-bc72-8e579b19d215
+    m_ActionName: 'Playing/TornadoAttack[/Keyboard/r,/DualSenseGamepadHID/rightTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 308090d5-6e98-4410-a2dd-fd0637237ecb
+    m_ActionName: 'Playing/SkillTreeAction[/Keyboard/i,/DualSenseGamepadHID/select]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Playing
@@ -943,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 8764253071956446505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.72, z: 0}
+  m_LocalPosition: {x: 0, y: -0.744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

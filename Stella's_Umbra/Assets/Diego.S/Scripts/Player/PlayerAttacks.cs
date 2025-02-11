@@ -3,9 +3,18 @@ using Unity.VisualScripting;
 using System.Threading;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class PlayerAttacks : MonoBehaviour
 {
+    #region Variables
+
+    [Header("New Input System")]
+    PlayerInput _input;
+    InputAction _basicAttack;
+    InputAction _boulderAttack;
+    InputAction _tornadoAttack;
+
     [Header("Sprite Renderer")]
     [SerializeField] SpriteRenderer _spriteRenderer;
 
@@ -37,6 +46,8 @@ public class PlayerAttacks : MonoBehaviour
     //[SerializeField] private float _damageInterval; //cada cuánto tiempo hace daño
     //private List<EnemyLifes> enemiesInTornado = new List<EnemyLifes>();
 
+    #endregion
+
     #region Variables Diego B
 
     private Vector3 shootingPointOriginal;
@@ -56,7 +67,12 @@ public class PlayerAttacks : MonoBehaviour
 
     void Awake()
     {
+        _input = GetComponent<PlayerInput>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _basicAttack = _input.actions["BasicAttack"];
+        _boulderAttack = _input.actions["BoulderAttack"];
+        _tornadoAttack = _input.actions["TornadoAttack"];
     }
 
     void Start()
@@ -81,11 +97,6 @@ public class PlayerAttacks : MonoBehaviour
         #endregion
 
         #region BasicAttack
-        if (Input.GetKeyDown(KeyCode.G) && _basicAttackRecharged)
-        {
-            BasicAttack();
-        }
-
         if (_isAttacking)
         {
             _timer += Time.deltaTime;
@@ -110,16 +121,30 @@ public class PlayerAttacks : MonoBehaviour
         #endregion
 
         //DistanceShoot();
+    }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            UpShoot();
-        }
+    private void OnEnable()
+    {
+        _basicAttack.Enable();
+        _basicAttack.performed += BasicAttack;
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartCoroutine(TornadoAttack());
-        }
+        _boulderAttack.Enable();
+        _boulderAttack.performed += UpShoot;
+
+        _tornadoAttack.Enable();
+        _tornadoAttack.performed += TornadoAttackStarted;
+    }
+
+    private void OnDisable()
+    {
+        _basicAttack.performed -= BasicAttack;
+        _basicAttack.Disable();
+
+        _boulderAttack.performed -= UpShoot;
+        _boulderAttack.Disable();
+
+        _tornadoAttack.performed -= TornadoAttackStarted;
+        _tornadoAttack.Disable();
     }
 
     public bool AttackSkillsActivation(string _skillName, bool _learned)
@@ -191,32 +216,38 @@ public class PlayerAttacks : MonoBehaviour
         return false;
     }
 
-    private void BasicAttack()
+    private void BasicAttack(InputAction.CallbackContext _callbackContext)
     {
-        if (_canBasicAttack)
+        if (_callbackContext.performed && _basicAttackRecharged)
         {
-            _isAttacking = true;
-            _attackArea.SetActive(_isAttacking);
+            if (_canBasicAttack)
+            {
+                _isAttacking = true;
+                _attackArea.SetActive(_isAttacking);
 
-            _basicAttackRecharged = false;
-            _timerRecharge = 0;
+                _basicAttackRecharged = false;
+                _timerRecharge = 0;
+            }
         }
     }
 
-    private void UpShoot()
+    private void UpShoot(InputAction.CallbackContext _callbackContext)
     {
-        if (_canBoulderAttack == true)
+        if (_callbackContext.performed)
         {
-            if (_spriteRenderer.flipX == true)
+            if (_canBoulderAttack == true)
             {
-                shootingPoint.localPosition = _boulderSpawnRight;
+                if (_spriteRenderer.flipX == true)
+                {
+                    shootingPoint.localPosition = _boulderSpawnRight;
+                }
+                else
+                {
+                    shootingPoint.localPosition = _boulderSpawnLeft;
+                }
+                GameObject instantiatedRoca = GameObject.Instantiate
+                    (_boulder, shootingPoint.position, shootingPoint.rotation);
             }
-            else
-            {
-                shootingPoint.localPosition = _boulderSpawnLeft;
-            }
-            GameObject instantiatedRoca = GameObject.Instantiate
-                (_boulder, shootingPoint.position, shootingPoint.rotation);
         }
     }
 
@@ -250,6 +281,14 @@ public class PlayerAttacks : MonoBehaviour
     //        yield return new WaitForSeconds(_damageInterval);
     //    }
     //}
+
+    private void TornadoAttackStarted(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.performed)
+        {
+            StartCoroutine(TornadoAttack());
+        }
+    }
 
     private IEnumerator TornadoAttack()
     {

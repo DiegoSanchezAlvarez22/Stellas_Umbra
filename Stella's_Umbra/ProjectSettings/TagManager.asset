@@ -14,7 +14,6 @@ TagManager:
   - Interactuable
   - Ataque
   - Destruible
-  - SueloInestable
   - SkillTree
   - PlayerTrail
   - Platform
