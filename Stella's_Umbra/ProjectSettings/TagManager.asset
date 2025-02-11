@@ -18,6 +18,7 @@ TagManager:
   - SkillTree
   - PlayerTrail
   - Platform
+  - Acceso Jefe
   layers:
   - Default
   - TransparentFX
