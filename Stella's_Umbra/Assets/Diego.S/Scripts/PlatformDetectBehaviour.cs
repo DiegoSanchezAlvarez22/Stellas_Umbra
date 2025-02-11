@@ -16,6 +16,15 @@ public class PlatformDetectBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        _playerMov._floorIsPlat = false;
+        if (other.gameObject.tag == "Platform")
+        {
+            EnableTrigger(other);
+            _playerMov._floorIsPlat = false;
+        }
+    }
+
+    private void EnableTrigger(Collider other)
+    {
+        other.isTrigger = true;
     }
 }

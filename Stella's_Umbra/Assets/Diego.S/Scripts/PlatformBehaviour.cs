@@ -9,16 +9,21 @@ public class PlatformBehaviour : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
     }
 
-    private void OnCollisionExit(Collision collision)
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+            
+    //    }
+    //}
+
+    private void EnableTrigger()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            Invoke("DisableTrigger", 1);
-        }
+        _boxCollider.isTrigger = true;
     }
 
     private void DisableTrigger()
     {
-        _boxCollider.isTrigger = true;
+        _boxCollider.isTrigger = false;
     }
 }
