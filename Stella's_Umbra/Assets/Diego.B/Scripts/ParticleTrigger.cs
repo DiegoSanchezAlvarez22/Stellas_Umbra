@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ParticleTrigger : MonoBehaviour
@@ -7,6 +8,7 @@ public class ParticleTrigger : MonoBehaviour
     public Light lightSource;
     public float maxIntensity = 5f;       // Intensidad máxima de la luz
     public float minIntensity = 0f;       // Intensidad mínima de la luz
+
 
     void Start()
     {

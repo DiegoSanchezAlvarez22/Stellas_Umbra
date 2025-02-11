@@ -49,7 +49,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""26ba4627-86dc-47c4-a966-da4bcf402b64"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -67,7 +67,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""SuperJump"",
                     ""type"": ""Button"",
                     ""id"": ""a35b19e7-12b3-4924-a974-b76ad0d83296"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -76,7 +76,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""GrabWall"",
                     ""type"": ""Button"",
                     ""id"": ""e4c11d79-bc08-4230-87b0-b90dc817b64d"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -85,6 +85,15 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""MoveObj"",
                     ""type"": ""Button"",
                     ""id"": ""d3fbc44b-3755-4c2d-9521-97628c1cc43c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""a2ba59f4-71e1-4402-a66f-fadff55d2cfe"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -322,6 +331,28 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""action"": ""BendDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b202a1a-c77c-44a5-a375-4122dcb90acb"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99da50d7-8061-414e-8580-7eb4f10600d1"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -333,7 +364,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""New action"",
                     ""type"": ""Button"",
                     ""id"": ""cdbe5fe2-eed1-400e-9e8a-4f40a5326b77"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -365,6 +396,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         m_Playing_SuperJump = m_Playing.FindAction("SuperJump", throwIfNotFound: true);
         m_Playing_GrabWall = m_Playing.FindAction("GrabWall", throwIfNotFound: true);
         m_Playing_MoveObj = m_Playing.FindAction("MoveObj", throwIfNotFound: true);
+        m_Playing_Interact = m_Playing.FindAction("Interact", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_Newaction = m_Menus.FindAction("New action", throwIfNotFound: true);
@@ -442,6 +474,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     private readonly InputAction m_Playing_SuperJump;
     private readonly InputAction m_Playing_GrabWall;
     private readonly InputAction m_Playing_MoveObj;
+    private readonly InputAction m_Playing_Interact;
     public struct PlayingActions
     {
         private @Input1 m_Wrapper;
@@ -453,6 +486,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         public InputAction @SuperJump => m_Wrapper.m_Playing_SuperJump;
         public InputAction @GrabWall => m_Wrapper.m_Playing_GrabWall;
         public InputAction @MoveObj => m_Wrapper.m_Playing_MoveObj;
+        public InputAction @Interact => m_Wrapper.m_Playing_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Playing; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -483,6 +517,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @MoveObj.started += instance.OnMoveObj;
             @MoveObj.performed += instance.OnMoveObj;
             @MoveObj.canceled += instance.OnMoveObj;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IPlayingActions instance)
@@ -508,6 +545,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @MoveObj.started -= instance.OnMoveObj;
             @MoveObj.performed -= instance.OnMoveObj;
             @MoveObj.canceled -= instance.OnMoveObj;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IPlayingActions instance)
@@ -580,6 +620,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         void OnSuperJump(InputAction.CallbackContext context);
         void OnGrabWall(InputAction.CallbackContext context);
         void OnMoveObj(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IMenusActions
     {
