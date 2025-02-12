@@ -101,6 +101,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ImageHover.cs" />
+    <Compile Include="Assets\Julio\Scripts\KeyboardMenu.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
     <Compile Include="Assets\Julio\Scripts\BrightnessSettings.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\Teletransporte.cs" />
