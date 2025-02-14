@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraPos : MonoBehaviour
 {
-    [SerializeField] private GameObject _target;
+    private GameObject _target;
 
     private void Start()
     {
@@ -13,6 +13,13 @@ public class CameraPos : MonoBehaviour
 
     void Update()
     {
-        this.gameObject.transform.position = new Vector3(_target.transform.position.x, _target.transform.position.y + 2.5f, _target.transform.position.z - 10f);
+        if (_target == null)
+        {
+            _target = GameObject.Find("Player");
+        }
+        gameObject.transform.position = new Vector3
+            (_target.transform.position.x,
+            _target.transform.position.y + 2.5f,
+            _target.transform.position.z - 10f);
     }
 }

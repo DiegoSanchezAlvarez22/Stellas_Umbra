@@ -107,13 +107,6 @@ public class PlayerMov : MonoBehaviour
         _direction = _input.actions["Walk"].ReadValue<Vector2>();
         float speed = _direction.x;
 
-        #region Platforms
-        if (_floorIsPlat == true)
-        {
-            _canJump = true;
-            _jumpsLeft = _jumpsLeftMax;
-        }
-
         if (_platDetectorTimer > 0) //Reactivar el detector de plataformas después del tiempo definido
         {
             _platDetectorTimer -= Time.deltaTime;
@@ -122,7 +115,6 @@ public class PlayerMov : MonoBehaviour
                 _platDetector.SetActive(true);
             }
         }
-        #endregion
 
         if (_isDashing)
         {
@@ -173,6 +165,13 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             _inFloor = true;
+            _canJump = true;
+            _jumpsLeft = _jumpsLeftMax;
+        }
+
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            _floorIsPlat = true;
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
         }
