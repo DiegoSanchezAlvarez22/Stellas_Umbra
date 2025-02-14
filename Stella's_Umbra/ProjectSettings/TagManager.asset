@@ -18,6 +18,7 @@ TagManager:
   - PlayerTrail
   - Platform
   - Acceso Jefe
+  - Audio
   layers:
   - Default
   - TransparentFX
