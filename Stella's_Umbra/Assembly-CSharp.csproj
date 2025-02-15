@@ -79,7 +79,6 @@
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\TooltipController.cs" />
     <Compile Include="Assets\Julio\Scripts\ApplyBrightness.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ActiveSkillTree.cs" />
-    <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Utiles\Dash.cs" />
     <Compile Include="Assets\Julio\Scripts\CheckPointSystem.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
@@ -97,6 +96,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerAttacks.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\HealthBarBehaviour.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\SalirDelJuego.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\EnemiesAreaBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PlatformBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
@@ -114,7 +114,6 @@
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
-    <Compile Include="Assets\Diego.S\Scripts\Enemies\TreeBehaviour1.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />

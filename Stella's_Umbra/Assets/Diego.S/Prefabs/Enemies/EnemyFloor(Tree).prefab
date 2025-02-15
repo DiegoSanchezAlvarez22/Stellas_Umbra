@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3263673510340003990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865337090865598886}
+  - component: {fileID: 2458168971845462218}
+  m_Layer: 10
+  m_Name: ColliderBranch
+  m_TagString: EnemyFloor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &865337090865598886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263673510340003990}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.091994286, w: 0.99575955}
+  m_LocalPosition: {x: 0.008, y: 0.010179281, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2620617557790943998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.557}
+--- !u!65 &2458168971845462218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263673510340003990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013475617, y: 0.14435464, z: 0.227277}
+  m_Center: {x: -0.05654401, y: -0.02738777, z: -0.04621873}
 --- !u!1 &3565127718906850028
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,11 +65,11 @@ GameObject:
   - component: {fileID: 4523379820179835077}
   - component: {fileID: 6024538392630687016}
   - component: {fileID: 2346679697041382263}
-  - component: {fileID: 5150826862664587599}
-  - component: {fileID: 9065863601491066425}
-  - component: {fileID: 9188842916223402528}
   - component: {fileID: 641305439356685123}
-  m_Layer: 0
+  - component: {fileID: 9065863601491066425}
+  - component: {fileID: 5150826862664587599}
+  - component: {fileID: 9188842916223402528}
+  m_Layer: 10
   m_Name: EnemyFloor(Tree)
   m_TagString: EnemyFloor
   m_Icon: {fileID: 0}
@@ -37,6 +90,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1109792155473956720}
+  - {fileID: 865337090865598886}
+  - {fileID: 9023801519321851646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4523379820179835077
@@ -140,65 +195,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4389237, y: 0.34472388, z: 0.2}
-  m_Center: {x: -0.006860773, y: -0.04799962, z: 0}
---- !u!114 &5150826862664587599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3565127718906850028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12faf9eca3b976409cb56c039824882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyType: 0
-  _currentState: 0
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  _searchRange: 6
-  _maxDistance: 9
-  _attackDistance: 3.5
-  _speed: 2
-  _speedReductor: 3
-  _projectilePrefab: {fileID: 1799812100026369324, guid: 07895ce589d33414d9d8d3405be894f3, type: 3}
-  _firePoint: {fileID: 2620617557790943998}
-  _reloadTime: 2
---- !u!114 &9065863601491066425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3565127718906850028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9862c8893f28f14ca51ae1a2b6ade07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
---- !u!114 &9188842916223402528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3565127718906850028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerTarget: {fileID: 0}
-  _healthBarBehaviour: {fileID: 7817854477098232877}
-  _maxHealth: 15
-  _currentHealth: 15
-  _damageDuration: 0.15
-  _expToAdd: 50
-  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
+  m_Size: {x: 0.10150393, y: 0.31856203, z: 0.2}
+  m_Center: {x: 0.07054802, y: -0.061080538, z: 0}
 --- !u!95 &641305439356685123
 Animator:
   serializedVersion: 7
@@ -221,6 +219,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9065863601491066425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565127718906850028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9862c8893f28f14ca51ae1a2b6ade07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+--- !u!114 &5150826862664587599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565127718906850028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12faf9eca3b976409cb56c039824882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyType: 0
+  _currentState: 0
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _searchRange: 9
+  _maxDistance: 9
+  _attackDistance: 3.5
+  _speed: 1
+  _speedReductor: 1
+  _projectilePrefab: {fileID: 1799812100026369324, guid: 07895ce589d33414d9d8d3405be894f3, type: 3}
+  _firePoint: {fileID: 2620617557790943998}
+  _reloadTime: 2
+--- !u!114 &9188842916223402528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565127718906850028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBarBehaviour: {fileID: 7817854477098232877}
+  _maxHealth: 15
+  _currentHealth: 15
+  _damageDuration: 0.15
+  _expToAdd: 50
+  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
 --- !u!1 &3750456353904048128
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +286,7 @@ GameObject:
   - component: {fileID: 8692301774609931028}
   - component: {fileID: 5918867379965621881}
   - component: {fileID: 3837021758704512189}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +362,7 @@ GameObject:
   - component: {fileID: 5672042562658519751}
   - component: {fileID: 3353796952143223785}
   - component: {fileID: 8803741826564702076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +440,7 @@ GameObject:
   - component: {fileID: 303423834629325927}
   - component: {fileID: 3219979335678196875}
   - component: {fileID: 7817854477098232877}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.002, y: 0.162}
+  m_AnchoredPosition: {x: 0.03, y: 0.162}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4889505218789295502
@@ -489,6 +543,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarImage: {fileID: 6596684642626239146}
+--- !u!1 &8249362590634983129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9023801519321851646}
+  - component: {fileID: 6694222757549969938}
+  m_Layer: 10
+  m_Name: ColliderRoots
+  m_TagString: EnemyFloor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9023801519321851646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249362590634983129}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.121, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2620617557790943998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6694222757549969938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249362590634983129}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.37312, y: 0.08560642, z: 0.227277}
+  m_Center: {x: 0.0069851084, y: -0.29180837, z: -0.04621873}
 --- !u!1 &9005648716637828654
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +607,7 @@ GameObject:
   - component: {fileID: 2665133768388896310}
   - component: {fileID: 1732972360423658247}
   - component: {fileID: 6596684642626239146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

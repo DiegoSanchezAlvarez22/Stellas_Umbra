@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 806526145798193443}
   - component: {fileID: 3418475496294252210}
   - component: {fileID: 2023318133452360551}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3779219701235170069}
   - component: {fileID: 8755160260100505958}
   - component: {fileID: 3508399214007403201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyAir(Bat)
   m_TagString: EnemyAir
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2245127494552187500}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9862c8893f28f14ca51ae1a2b6ade07, type: 3}
   m_Name: 
@@ -279,7 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTarget: {fileID: 0}
   _healthBarBehaviour: {fileID: 8098963396622793422}
   _maxHealth: 5
   _currentHealth: 5
@@ -299,7 +298,7 @@ GameObject:
   - component: {fileID: 3048722323621399140}
   - component: {fileID: 7327159773158161839}
   - component: {fileID: 8098963396622793422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +412,7 @@ GameObject:
   - component: {fileID: 8637148078643289744}
   - component: {fileID: 8502300115608749826}
   - component: {fileID: 7591969439901326302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +487,7 @@ GameObject:
   - component: {fileID: 3015352997419485756}
   - component: {fileID: 2031366565123497616}
   - component: {fileID: 3927726485744988779}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

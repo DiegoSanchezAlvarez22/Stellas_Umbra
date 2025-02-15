@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927611748827660408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6476017311252408313}
   - component: {fileID: 1727789903408520935}
   - component: {fileID: 7867063368993676032}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fijador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1785737683253930734}
   - component: {fileID: 5605249175322668487}
   - component: {fileID: 940792875308884791}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fijador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621681249974944011}
   - component: {fileID: 2160388577919333903}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rango apuntado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,14 +353,14 @@ GameObject:
   - component: {fileID: 2549569791863814557}
   - component: {fileID: 3113360202126277540}
   - component: {fileID: 4824259583868554319}
-  - component: {fileID: 2089185292222206164}
-  - component: {fileID: 1692272324648021538}
   - component: {fileID: 8280908493845885683}
   - component: {fileID: 6033304798287099784}
+  - component: {fileID: 1692272324648021538}
   - component: {fileID: 612874926118024614}
   - component: {fileID: 7988612050019788970}
-  - component: {fileID: 5056717825675563424}
   - component: {fileID: 6967456595877116603}
+  - component: {fileID: 2089185292222206164}
+  - component: {fileID: 5056717825675563424}
   - component: {fileID: 2210075135008936845}
   m_Layer: 9
   m_Name: Player
@@ -633,71 +633,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aaeb5f0a6440c4f8f710adacaf5c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _direction: {x: 0, y: 0, z: 0}
   _walkForce: 10
+  _bounce: {x: 7, y: 7}
+  _canMove: 1
   _platDetector: {fileID: 8764253071956446505}
-  _floorIsPlat: 0
   _otherCollider: {fileID: 0}
-  _canJump: 1
+  _floorIsPlat: 0
   _jumpForce: 35
   _jumpsLeft: 1
   _jumpsLeftMax: 1
-  _inFloor: 0
-  _canSuperJump: 0
-  _superJumpRecharged: 0
+  _canJump: 1
   _minJumpForce: 5
   _maxJumpForce: 20
   _SuperJumpRechargeTime: 7
-  _finishedSuperJumping: 0
-  _canDash: 0
+  _canSuperJump: 0
   _dashForce: 10
   _dashTimeRechargeNeed: 3
   _dashTimeRechargeCounter: 0
+  _canDash: 0
   _dashDuration: 0.2
   _dashCooldown: 1
   _canWallJump: 0
-  _canMoveObj: 0
   _initialObjParent: {fileID: 0}
+  _canMoveObj: 0
   animator: {fileID: 2549569791863814557}
   _spriteRenderer: {fileID: 8907755523591804082}
-  _collider: {fileID: 0}
---- !u!114 &2089185292222206164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671716360910017017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4108f7db2efdb940921a242bb48f8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _respawnPoint: {fileID: 0}
---- !u!114 &1692272324648021538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671716360910017017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992a0b09f0df30e49bf6c1a90ec6ac89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cristalesRequeridos: 5
-  regenerarVida: 1
-  cantidadActualCristales: 0
-  vidaActual: 4
-  corazonesMax: 4
-  cambioVida:
-    m_PersistentCalls:
-      m_Calls: []
-  sumarCorazon:
-    m_PersistentCalls:
-      m_Calls: []
-  _checkPointSystem: {fileID: 6967456595877116603}
+  _collider: {fileID: 3194450582138999176}
 --- !u!114 &8280908493845885683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,6 +702,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentExp: 100
+--- !u!114 &1692272324648021538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671716360910017017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992a0b09f0df30e49bf6c1a90ec6ac89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cristalesRequeridos: 5
+  regenerarVida: 1
+  cantidadActualCristales: 0
+  vidaActual: 4
+  corazonesMax: 4
+  cambioVida:
+    m_PersistentCalls:
+      m_Calls: []
+  sumarCorazon:
+    m_PersistentCalls:
+      m_Calls: []
+  _checkPointSystem: {fileID: 6967456595877116603}
+  _spriteRenderer: {fileID: 0}
+  _playerMov: {fileID: 4824259583868554319}
+  _looseControlTime: 1.5
 --- !u!114 &612874926118024614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +760,37 @@ MonoBehaviour:
   - "Dise\xF1oNivel1.1"
   - BossRoom
   - PruebaDiego
+--- !u!114 &6967456595877116603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671716360910017017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ce234051ed44040864558c5e4c65ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerExpSystem: {fileID: 6033304798287099784}
+  _vidaJugador: {fileID: 1692272324648021538}
+  _jugadorTransform: {fileID: 290188763919154300}
+  _playerMov: {fileID: 4824259583868554319}
+  _skillTreeManager: {fileID: 0}
+  _playerAttacks: {fileID: 8280908493845885683}
+--- !u!114 &2089185292222206164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671716360910017017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4108f7db2efdb940921a242bb48f8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _respawnPoint: {fileID: 0}
 --- !u!114 &5056717825675563424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,24 +814,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8c6abf7f0c162664db9b8450c63b7b45, type: 3}
   - {fileID: 8300000, guid: d4dce330a5f96b24288967e87dac82fb, type: 3}
   miMixer: {fileID: 24100000, guid: 6cf1992c84ed81a43a2a8702b3095bc6, type: 2}
---- !u!114 &6967456595877116603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671716360910017017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ce234051ed44040864558c5e4c65ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerExpSystem: {fileID: 6033304798287099784}
-  _vidaJugador: {fileID: 1692272324648021538}
-  _jugadorTransform: {fileID: 290188763919154300}
-  _playerMov: {fileID: 4824259583868554319}
-  _skillTreeManager: {fileID: 0}
-  _playerAttacks: {fileID: 8280908493845885683}
 --- !u!82 &2210075135008936845
 AudioSource:
   m_ObjectHideFlags: 0
