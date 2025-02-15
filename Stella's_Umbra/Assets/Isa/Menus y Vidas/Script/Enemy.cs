@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int _damage; // Cantidad de vida que el enemigo quita al jugador
     [Tooltip("Este valor solo es necesario modificarlo en caso de que se " +
         "quiera destruir el objeto al pasar el valor indicado.")]
+    [SerializeField] int _damage; // Cantidad de vida que el enemigo quita al jugador
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Verifica si el objeto que colisiona es el jugador
+        if (other.gameObject.CompareTag("Player")) // Verifica si el objeto que colisiona es el jugador
         {
             VidaJugador vidaJugador = other.GetComponent<VidaJugador>();
 

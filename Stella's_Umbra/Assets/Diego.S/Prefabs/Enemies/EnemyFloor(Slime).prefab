@@ -210,14 +210,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rightMovement: 1
   _speed: 2
-  _actualSpeed: 2
-  _distanceLineDown: 1
-  _distanceLineRight: 0.1
   _floorFinder: {fileID: 7260564164522905473}
+  _floorLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _wallLayer:
+    serializedVersion: 2
+    m_Bits: 256
   _contactDamage: 0
-  _attackDamage: 0
-  _rechargeAttackTime: 0
-  _distanceMoveToPlayer: 0
+  _attackDamage: 1
+  _rechargeAttackTime: 1
+  _distanceMoveToPlayer: 4
   _attackDistance: 2.5
   _tiempoAtacando: 1
 --- !u!114 &6030523707101182581
