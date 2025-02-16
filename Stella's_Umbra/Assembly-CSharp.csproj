@@ -118,6 +118,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Interactuable.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\VirtualMouseUI.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\BasicAttackAreaBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Slot.cs" />
     <Compile Include="Assets\Julio\Scripts\AudioManagerBehaviour.cs" />
