@@ -157,6 +157,13 @@ public class PlayerMov : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
+
+        //Verificar si está cayendo (JULIO)
+        if (_rb.linearVelocity.y < -0.1f && !_inFloor)
+        {
+            animator.SetBool("isFalling", true);
+            animator.SetBool("isJumping", false);
+        }
     }
 
     private void FixedUpdate()
@@ -175,6 +182,10 @@ public class PlayerMov : MonoBehaviour
             _inFloor = true;
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
+
+            //Resetear las animaciones de salto y caída (JULIO)
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
         }
 
         if (collision.gameObject.CompareTag("Platform"))
@@ -182,6 +193,10 @@ public class PlayerMov : MonoBehaviour
             _floorIsPlat = true;
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
+
+            //Resetear las animaciones de salto y caída (JULIO)
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
         }
 
         if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
@@ -402,6 +417,10 @@ public class PlayerMov : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * _jumpForce * 10);
                 _jumpsLeft = _jumpsLeft - 1f;
+
+                //Activar la animación de salto (JULIO)
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
             }
         }
     }
