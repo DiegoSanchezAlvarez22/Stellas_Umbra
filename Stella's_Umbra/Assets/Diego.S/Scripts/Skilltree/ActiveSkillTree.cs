@@ -7,6 +7,7 @@ public class ActiveSkillTree : MonoBehaviour
     private InputAction _skilltreeAction;
 
     [SerializeField] private GameObject _skilltree;
+    [SerializeField] private GameObject _starsBackground;
     private bool juegoPausado = false;
 
     private void Awake()
@@ -47,9 +48,17 @@ public class ActiveSkillTree : MonoBehaviour
 
     public void ActivateSkillTree()
     {
-        juegoPausado = true;
-        Time.timeScale = 0f;
-        _skilltree.SetActive(true);
+        if (_skilltree != null)
+        {
+            juegoPausado = true;
+            Time.timeScale = 0f;
+            _skilltree.SetActive(true);
+            _starsBackground.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("No se puede usar el skilltree");
+        }
     }
 
     public void DeactivateSkillTree()
@@ -57,5 +66,6 @@ public class ActiveSkillTree : MonoBehaviour
         juegoPausado = false;
         Time.timeScale = 1f;
         _skilltree.SetActive(false);
+        _starsBackground.SetActive(false);
     }
 }

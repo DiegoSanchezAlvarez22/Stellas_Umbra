@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ParticleTrigger : MonoBehaviour
 {
-    [SerializeField] ParticleSystem particleSystem;  // Referencia al sistema de partículas
+    [SerializeField] ParticleSystem _particleSystem;  // Referencia al sistema de partículas
     public float newSpeed = 5f; // Nueva velocidad de las partículas
     public Light lightSource;
     public float maxIntensity = 5f;       // Intensidad máxima de la luz
@@ -12,12 +12,12 @@ public class ParticleTrigger : MonoBehaviour
 
     void Start()
     {
-        var main = particleSystem.main;  // Obtener el módulo Main
+        var main = _particleSystem.main;  // Obtener el módulo Main
         main.startSpeed = newSpeed;      // Cambiar la velocidad de emisión
     }
     private void Update()
     {
-        if (particleSystem.isPlaying)
+        if (_particleSystem.isPlaying)
         {
             // Aumentar intensidad basado en la cantidad de partículas activas
             lightSource.intensity = Mathf.Lerp(lightSource.intensity, maxIntensity, Time.deltaTime * 1f);
@@ -32,7 +32,7 @@ public class ParticleTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Asegurar que es el personaje
         {
-            particleSystem.Play(); // Activar partículas
+            _particleSystem.Play(); // Activar partículas
         }
     }
 
@@ -40,7 +40,7 @@ public class ParticleTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            particleSystem.Stop(); // Detener partículas
+            _particleSystem.Stop(); // Detener partículas
         }
     }
 }

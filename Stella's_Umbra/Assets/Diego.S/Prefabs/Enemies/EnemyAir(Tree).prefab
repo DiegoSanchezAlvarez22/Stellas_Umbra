@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 118466433686113553}
   - component: {fileID: 8629675393297362153}
   - component: {fileID: 9146150432500346389}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 6070101214427750192}
   - component: {fileID: 3447405199999104245}
   - component: {fileID: 1793293284830136590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 8350507665154606486}
   - component: {fileID: 7484311733465631827}
   - component: {fileID: 5887539242763032874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 3052849960437048309}
   - component: {fileID: 7149327732836518167}
   - component: {fileID: 9205282420194875999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 279257214912267705}
   - component: {fileID: 1064853150759307303}
   - component: {fileID: 8240719851379132850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyAir(Tree)
   m_TagString: EnemyAir
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
-  _searchRange: 12
+  _searchRange: 9
   _maxDistance: 12
   _attackDistance: 9
   _speed: 2
@@ -534,7 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTarget: {fileID: 0}
   _healthBarBehaviour: {fileID: 5887539242763032874}
   _maxHealth: 8
   _currentHealth: 8

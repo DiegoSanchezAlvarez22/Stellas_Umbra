@@ -205,7 +205,7 @@ public class CheckPointSystem : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Manu Principal");
+                //SceneManager.LoadScene("Manu Principal");
             }
         }
 

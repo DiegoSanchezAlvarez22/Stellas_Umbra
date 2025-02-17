@@ -4,12 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class EnemyLifes : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerTarget;
     [SerializeField] private HealthBarBehaviour _healthBarBehaviour;
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _damageDuration;
     [SerializeField] private int _expToAdd;
+    private GameObject _playerTarget;
     private SpriteRenderer _spriteRenderer;
     [SerializeField] public GameObject _dyingEffect;
 
@@ -18,6 +18,8 @@ public class EnemyLifes : MonoBehaviour
         _currentHealth = _maxHealth;
         _healthBarBehaviour.UpdateHealthBar(_maxHealth, _currentHealth, _currentHealth);
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _playerTarget = GameObject.Find("Player");
     }
 
     public void DamageRecieved(float _dmg)

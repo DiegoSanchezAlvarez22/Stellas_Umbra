@@ -23,10 +23,17 @@ public class VidaJugador : MonoBehaviour
 
     //JULIO Referencia al script de guardado de datos
     [SerializeField] private CheckPointSystem _checkPointSystem;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private PlayerMov _playerMov;
+
+    [SerializeField] private float _looseControlTime;
 
 
     private void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _playerMov = GetComponent<PlayerMov>();
+
         vidaActual = corazonesMax;
         cambioVida.Invoke(vidaActual);
     }
@@ -46,10 +53,10 @@ public class VidaJugador : MonoBehaviour
             //cambioVida.AddListener(_corazonesUI.CambiarCorazones);
             //sumarCorazon.AddListener(_corazonesUI.SumarCorazones);
 
-
             //JULIO Cuando la vida llege a 0, cargar el último progreso guardado
             //Si muere y tiene alguna Key guardada, que cargue la info guardada
             //Si muere y no tiene una Key guardada, que se reinicie la escena
+
             if (vidaActual == 0)
             {
                 if (_checkPointSystem != null)
@@ -93,8 +100,10 @@ public class VidaJugador : MonoBehaviour
     }
 
     // Método para disminuir la vida
-    public void PerderVida(int daño)
+    public void PerderVida(int daño, Vector2 _pos)
     {
+        StartCoroutine(DamageChangeColor());
+
         vidaActual -= daño;
         if (vidaActual <= 0)
         {
@@ -103,6 +112,10 @@ public class VidaJugador : MonoBehaviour
         }
         cambioVida.Invoke(vidaActual);
         Debug.Log("Vida actual: " + vidaActual);
+
+        StartCoroutine(LooseControl());
+        StartCoroutine(DisableCollision());
+        _playerMov.Bounce(_pos);
     }
 
     //JULIO Para poder guardar la info de la vida
@@ -127,5 +140,27 @@ public class VidaJugador : MonoBehaviour
     {
         cantidadActualCristales = nuevaCantidadCristales;
         Debug.Log("Cantidad de cristales establecida a: " + cantidadActualCristales);
+    }
+
+    private IEnumerator LooseControl()
+    {
+        _playerMov._canMove = false;
+        yield return new WaitForSeconds(_looseControlTime);
+        _playerMov._canMove = true;
+    }
+
+    private IEnumerator DisableCollision()
+    {
+        Physics.IgnoreLayerCollision(9, 10, true);
+        yield return new WaitForSeconds(_looseControlTime);
+        Physics.IgnoreLayerCollision(9, 10, false);
+    }
+
+    private IEnumerator DamageChangeColor()
+    {
+        Debug.Log("Cambio de color");
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        _spriteRenderer.color = Color.white;
     }
 }

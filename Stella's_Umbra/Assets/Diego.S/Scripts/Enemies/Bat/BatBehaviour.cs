@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(EnemyLifes))]
 public class BatBehaviour : MonoBehaviour
 {
-    [SerializeField] private Transform _player;
+    #region Variables
+
     [SerializeField] private float _distance;
-    public Vector3 _startingPoint;
+    [HideInInspector] public Vector3 _startingPoint;
+    private Transform _player;
     private Animator _anim;
     private SpriteRenderer _renderer;
+
+    #endregion
 
     void Start()
     {
         _anim = GetComponent<Animator>();
-        _startingPoint = transform.position;
         _renderer = GetComponent<SpriteRenderer>();
+
+        _player = GameObject.Find("Player").transform;
+        _startingPoint = transform.position;
     }
 
     void Update()

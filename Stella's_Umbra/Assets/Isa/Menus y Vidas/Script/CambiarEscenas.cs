@@ -7,16 +7,18 @@ public class CambiarEscenas : MonoBehaviour
 {
     public void IrMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu Principal");
     }
-    public void IrAOpciones()
+    /*public void IrAOpciones()
     {
         SceneManager.LoadScene("Opciones");
     }
     public void IrACreditos()
     {
         SceneManager.LoadScene("Creditos");
-    }
+    }*/
+
     public void IrJuego()
     {
         SceneManager.LoadScene("DiseñoNivel1.1");

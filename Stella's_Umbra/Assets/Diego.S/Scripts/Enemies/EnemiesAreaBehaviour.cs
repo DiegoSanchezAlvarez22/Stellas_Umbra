@@ -6,24 +6,26 @@ using UnityEngine;
 //[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(EnemyLifes))]
-public class TreeBehaviour1 : MonoBehaviour
+public class EnemiesAreaBehaviour : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private EnemyType _enemyType;
-    [SerializeField] private MovementState _currentState;
-    private Vector3 _startingPos;
-    [SerializeField] private LayerMask _playerLayer;
-    private Transform _playerTransform;
-    [SerializeField] private float _searchRange, _maxDistance, _attackDistance;
-    [SerializeField] private float _speed, _speedReductor;
-    private float _maxSpeed;
-    private bool _lookingRight;
+    [SerializeField] private EnemyType _enemyType; // Tipo de enemigo (determina qué tipo de ataque usar)
+    [SerializeField] private MovementState _currentState; // Estado actual del movimiento (esperando, siguiendo, etc.)
+    private Vector3 _startingPos; // Posición inicial del enemigo (cuando vuelve a esta posición)
+    [SerializeField] private LayerMask _playerLayer; // Capa para detectar al jugador (usado en OverlapSphere para verificar si el jugador está cerca)
+    private Transform _playerTransform; // Referencia al transform del jugador
+    [SerializeField] private float _searchRange; // Rango de búsqueda
+    [SerializeField] private float _maxDistance; // Distancia máxima
+    [SerializeField] private float _attackDistance; // Distancia para atacar
+    [SerializeField] private float _speed, _speedReductor; // Velocidad de movimiento y factor para reducir la velocidad al atacar
+    private float _maxSpeed; // Velocidad máxima (inicializada con la velocidad normal)
+    private bool _lookingRight; // Variable para saber si el enemigo está mirando a la derecha (para invertir la dirección)
 
     [Header("Attack")]
-    [SerializeField] private GameObject _projectilePrefab; // Prefab del proyectil
-    [SerializeField] private Transform _firePoint; // Punto desde donde se dispara el proyectil
+    [SerializeField] private GameObject _projectilePrefab; // Prefab del proyectil a disparar
+    [SerializeField] private Transform _firePoint; // Punto desde donde se disparan los proyectiles
     [SerializeField] private float _reloadTime = 2f; // Tiempo de recarga entre disparos
-    private float _lastAttackTime; // Momento del �ltimo ataque
+    private float _lastAttackTime; // Momento del último ataque
 
     enum EnemyType
     {
@@ -88,8 +90,9 @@ public class TreeBehaviour1 : MonoBehaviour
             return;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, 
-            _playerTransform.position, _speed * Time.deltaTime);
+        Vector3 _posToFollow = new Vector3(_playerTransform.position.x, _playerTransform.position.y + 4, _playerTransform.position.z);
+        transform.position = Vector2.MoveTowards(transform.position, _posToFollow, _speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
 
         FlipToTarget(_playerTransform.position);
 
@@ -128,8 +131,9 @@ public class TreeBehaviour1 : MonoBehaviour
 
     private void AttackingState()
     {
-        transform.position = Vector2.MoveTowards(transform.position,
-            _playerTransform.position, _speed / _speedReductor * Time.deltaTime);
+        Vector3 _posToFollow = new Vector3(_playerTransform.position.x, _playerTransform.position.y + 4, _playerTransform.position.z);
+        transform.position = Vector2.MoveTowards(transform.position, _posToFollow, _speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _speed / _speedReductor * Time.deltaTime);
 
         if (_playerTransform == null)
         {
@@ -236,9 +240,11 @@ public class TreeBehaviour1 : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _searchRange);
-        //Gizmos.DrawWireSphere(_startingPos, _maxDistance);
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _attackDistance);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, _maxDistance);
     }
 }

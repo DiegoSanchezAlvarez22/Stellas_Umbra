@@ -18,8 +18,9 @@ public class AudioManagerBehaviour : MonoBehaviour
     public AudioClip aterrizaje;
     public AudioClip correr;
     public AudioClip dash;
-    public AudioClip Interactuar;
+    public AudioClip interactuar;
     public AudioClip salto;
+    public AudioClip buttonClick;
 
     void Awake()
     {

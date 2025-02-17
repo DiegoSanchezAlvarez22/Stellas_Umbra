@@ -21,38 +21,40 @@ public class PlayerMov : MonoBehaviour
     InputAction _moveObj;
 
     [Header("Walk")]
-    [SerializeField] private Vector3 _direction; //no debe ser serializable
     [SerializeField] private float _walkForce;
+    [SerializeField] private Vector2 _bounce; //rebote del player al recibir daño
+    [HideInInspector] public bool _canMove = true;
+    private Vector3 _direction; //no debe ser serializable
 
     [Header("Bend Down")]
     [SerializeField] private GameObject _platDetector; //obj que detecta si se esta sobre una plataforma
+    [HideInInspector] public Collider _otherCollider; //collider del objeto que se presupone es una plataforma
+    [HideInInspector] public bool _floorIsPlat; //indica si el suelo es una plataforma
     private float _platDetectorTimer = 0f;
-    public bool _floorIsPlat; //indica si el suelo es una plataforma
-    public Collider _otherCollider; //collider del objeto que se presupone es una plataforma
 
     [Header("Jump")]
-    [SerializeField] public bool _canJump; //variable a la que accede el skilltree
-    [SerializeField] private float _jumpForce;
-    [SerializeField] public float _jumpsLeft;
-    [SerializeField] public int _jumpsLeftMax;
-    [SerializeField] private bool _inFloor;
+    [SerializeField] private float _jumpForce; //indica la potencia del salto
+    [SerializeField] public float _jumpsLeft; //indica el numero de saltos que aun puede realizar
+    [SerializeField] public int _jumpsLeftMax; //indica el numero de saltos que puede realizar
+    [HideInInspector] private bool _inFloor; //indica si esta sobre el suelo
+    [HideInInspector] public bool _canJump = true; //variable a la que accede el skilltree
 
     [Header("SuperJump")]
-    [SerializeField] public bool _canSuperJump; //variable a la que accede el skilltree
-    [SerializeField] private bool _superJumpRecharged; //indica si se ha recargado el supersalto
     [SerializeField] private float _minJumpForce = 5f; //fuerza mínima que se aplicará al supersalto
     [SerializeField] private float _maxJumpForce = 20f; //fuerza máxima que se aplicará al supersalto
     [SerializeField] private float _SuperJumpRechargeTime; //tiempo hasta que pueda volver a supersaltar
-    [SerializeField] private bool _finishedSuperJumping = false; //indica si ha terminado el supersalto
+    [HideInInspector] public bool _canSuperJump; //variable a la que accede el skilltree
+    [HideInInspector] private bool _superJumpRecharged; //indica si se ha recargado el supersalto
+    [HideInInspector] private bool _finishedSuperJumping = false; //indica si ha terminado el supersalto
     private float _timer = 0; //timer para actualizar la recarga del supersalto
     private bool _isJumping; //indica si está saltando
     private float _holdStartTime; //tiempo durante el que se presiona la tecla o boton asignada al supersalto
 
     [Header("Dash")]
-    [SerializeField] public bool _canDash; //variable a la que accede el skilltree
     [SerializeField] private float _dashForce; //fuerza con la que se ejecuta el dash
     [SerializeField] private float _dashTimeRechargeNeed; //tiempo necesario para que se recargue el dash
     [SerializeField] private float _dashTimeRechargeCounter; //timer para actualizar la recarga del dash
+    [HideInInspector] public bool _canDash; //variable a la que accede el skilltree
     public float _dashDuration = 0.2f; //duración del dash
     public float _dashCooldown = 1f;
     private bool _isDashing = false;
@@ -62,14 +64,14 @@ public class PlayerMov : MonoBehaviour
     private Vector3 _dashDirection; //direccion en la que se realizará el dash
 
     [Header("Wall")]
-    [SerializeField] public bool _canWallJump; //variable a la que accede el skilltree
+    [HideInInspector] public bool _canWallJump; //variable a la que accede el skilltree
     protected bool _inWall; //indica si está en la pared
     private bool _canGrabWall; //indica si puede agarrarse a la pared
 
     [Header("MoveObj")]
-    [SerializeField] public bool _canMoveObj;
-    private bool _objCanBeMoved;
     [SerializeField] private Transform _initialObjParent;
+    [HideInInspector] public bool _canMoveObj;
+    [HideInInspector] private bool _objCanBeMoved;
     private GameObject _objInMove;
 
     [Header("Animaciones")]
@@ -104,15 +106,11 @@ public class PlayerMov : MonoBehaviour
 
     private void Update()
     {
-        _direction = _input.actions["Walk"].ReadValue<Vector2>();
-        float speed = _direction.x;
-
-        #region Platforms
-        if (_floorIsPlat == true)
+        if (_canMove)
         {
-            _canJump = true;
-            _jumpsLeft = _jumpsLeftMax;
+            _direction = _input.actions["Walk"].ReadValue<Vector2>();
         }
+        float speed = _direction.x;
 
         if (_platDetectorTimer > 0) //Reactivar el detector de plataformas después del tiempo definido
         {
@@ -122,7 +120,6 @@ public class PlayerMov : MonoBehaviour
                 _platDetector.SetActive(true);
             }
         }
-        #endregion
 
         if (_isDashing)
         {
@@ -160,12 +157,22 @@ public class PlayerMov : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
+
+        //Verificar si está cayendo (JULIO)
+        if (_rb.linearVelocity.y < -0.1f && !_inFloor)
+        {
+            animator.SetBool("isFalling", true);
+            animator.SetBool("isJumping", false);
+        }
     }
 
     private void FixedUpdate()
     {
-        Vector3 movimiento = _direction * _walkForce * Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + movimiento);
+        if (_canMove)
+        {
+            Vector3 movimiento = _direction * _walkForce * Time.fixedDeltaTime;
+            _rb.MovePosition(_rb.position + movimiento);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -175,6 +182,21 @@ public class PlayerMov : MonoBehaviour
             _inFloor = true;
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
+
+            //Resetear las animaciones de salto y caída (JULIO)
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+        }
+
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            _floorIsPlat = true;
+            _canJump = true;
+            _jumpsLeft = _jumpsLeftMax;
+
+            //Resetear las animaciones de salto y caída (JULIO)
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
         }
 
         if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
@@ -345,6 +367,11 @@ public class PlayerMov : MonoBehaviour
         return false;
     }
 
+    public void Bounce(Vector2 _hitSpot)
+    {
+        _rb.linearVelocity = new Vector2 (-_bounce.x * _hitSpot.x, _bounce.y);
+    }
+
     private void BendDown(Collider _collision, bool _isPlat)
     {
         if (!_isPlat && _inFloor)
@@ -390,6 +417,10 @@ public class PlayerMov : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * _jumpForce * 10);
                 _jumpsLeft = _jumpsLeft - 1f;
+
+                //Activar la animación de salto (JULIO)
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
             }
         }
     }

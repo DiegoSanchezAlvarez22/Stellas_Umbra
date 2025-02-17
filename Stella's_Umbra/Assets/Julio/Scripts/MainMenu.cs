@@ -17,7 +17,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Animator _warningAnimator;
 
     CheckPointSystem _checkPointSystem;
+
+    AudioManagerBehaviour _audioManagerBehaviour;
     #endregion
+
+    private void Awake()
+    {
+        _audioManagerBehaviour = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerBehaviour>();
+    }
 
     void Start()
     {
@@ -34,6 +41,8 @@ public class MainMenu : MonoBehaviour
 
     public void IniciarJuego()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         // Guardamos que es un nuevo juego
         PlayerPrefs.SetInt("NewGame", 1);
         PlayerPrefs.SetInt("LoadGame", 0);
@@ -45,6 +54,8 @@ public class MainMenu : MonoBehaviour
 
     public void CargarPartida()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         if (PlayerPrefs.HasKey("PlayerVida"))
         {
             PlayerPrefs.SetInt("NewGame", 0);
@@ -62,6 +73,8 @@ public class MainMenu : MonoBehaviour
 
     public void SalirJuego()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         Application.Quit();
     }
 
@@ -82,6 +95,8 @@ public class MainMenu : MonoBehaviour
     }
     public void VolverMenuPrincipal()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuOpciones.SetActive(false);
         _menuCreditos.SetActive(false);
         _menuPrincipal.SetActive(true);
@@ -89,6 +104,8 @@ public class MainMenu : MonoBehaviour
 
     public void VolverMenuOpciones()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuControlTeclado.SetActive(false);
         _menuControlMando.SetActive(false);
         _menuAjustes.SetActive(false);
@@ -97,30 +114,40 @@ public class MainMenu : MonoBehaviour
 
     public void MenuOpciones()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuPrincipal.SetActive(false);
         _menuOpciones.SetActive(true);
     }
 
     public void MenuCreditos()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuPrincipal.SetActive(false);
         _menuCreditos.SetActive(true);
     }
 
     public void MenuControlTeclado()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuOpciones.SetActive(false);
         _menuControlTeclado.SetActive(true);
     }
 
     public void MenuControlMando()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuOpciones.SetActive(false);
         _menuControlMando.SetActive(true);
     }
 
     public void MenuAjustes()
     {
+        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+
         _menuOpciones.SetActive(false);
         _menuAjustes.SetActive(true);
     }
