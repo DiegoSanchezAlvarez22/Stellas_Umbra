@@ -1902,7 +1902,7 @@ GameObject:
   - component: {fileID: 257215318}
   m_Layer: 0
   m_Name: ColliderSuelo (2)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5521,7 +5521,7 @@ GameObject:
   - component: {fileID: 926468387}
   m_Layer: 0
   m_Name: ColliderSuelo (4)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8612,7 +8612,7 @@ GameObject:
   - component: {fileID: 1621693812}
   m_Layer: 0
   m_Name: ColliderSuelo (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10181,7 +10181,7 @@ GameObject:
   - component: {fileID: 1830824976}
   m_Layer: 0
   m_Name: ColliderSuelo (3)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

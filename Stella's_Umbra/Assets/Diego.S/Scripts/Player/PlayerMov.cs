@@ -418,7 +418,14 @@ public class PlayerMov : MonoBehaviour
                 _rb.AddForce(Vector3.up * _jumpForce * 10);
                 _jumpsLeft = _jumpsLeft - 1f;
 
-                //Activar la animación de salto (JULIO)
+                //Se reinicia la velocidad vertical (JULIO)
+                _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
+
+                //Animación se apaga antes de reiniciarla (JULIO)
+                animator.SetBool("isJumping", false);
+
+                //Se reproduce la animación desde cero (JULIO)
+                animator.Play("LyraJump", -1, 0f);
                 animator.SetBool("isJumping", true);
                 animator.SetBool("isFalling", false);
             }
