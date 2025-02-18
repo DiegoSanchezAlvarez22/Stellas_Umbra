@@ -7,8 +7,8 @@ using UnityEngine.Windows;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] private GameObject menuPausa;
-    [SerializeField] private GameObject menuVidas;
+    [SerializeField] GameObject menuPausa;
+    [SerializeField] GameObject menuVidas;
 
     private bool juegoPausado = false;
 
@@ -54,7 +54,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 0f;
         menuPausa.SetActive(true);
         menuVidas.SetActive(false);
-        _pInput.Disable();
+        _pInput.Enable();
     }
     public void Reanudar()
     {
