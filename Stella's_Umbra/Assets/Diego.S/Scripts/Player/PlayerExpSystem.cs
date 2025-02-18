@@ -40,6 +40,5 @@ public class PlayerExpSystem : MonoBehaviour
     public void SetCurrentExp(int newExp)
     {
         _currentExp = newExp;
-        Debug.Log("Experiencia establecida a: " + _currentExp);
     }
 }

@@ -122,7 +122,6 @@ public class VidaJugador : MonoBehaviour
     public void SetVidaActual(int nuevaVida)
     {
         vidaActual = nuevaVida;
-        Debug.Log("Vida establecida a: " + vidaActual);
         // Invocar evento para actualizar la UI
         cambioVida.Invoke(vidaActual);
     }
@@ -130,7 +129,6 @@ public class VidaJugador : MonoBehaviour
     public void SetVidaMaxima(int nuevaVidaMaxima)
     {
         corazonesMax = nuevaVidaMaxima;
-        Debug.Log("Vida máxima establecida a: " + corazonesMax);
         // Actualizar UI
         sumarCorazon.Invoke(corazonesMax);
     }
@@ -139,7 +137,6 @@ public class VidaJugador : MonoBehaviour
     public void SetCantidadCristales(int nuevaCantidadCristales)
     {
         cantidadActualCristales = nuevaCantidadCristales;
-        Debug.Log("Cantidad de cristales establecida a: " + cantidadActualCristales);
     }
 
     private IEnumerator LooseControl()

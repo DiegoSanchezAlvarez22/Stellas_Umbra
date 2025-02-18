@@ -58,8 +58,8 @@ public class MainMenu : MonoBehaviour
 
         if (PlayerPrefs.HasKey("PlayerVida"))
         {
-            PlayerPrefs.SetInt("NewGame", 0);
             // Guardamos que queremos cargar la partida
+            PlayerPrefs.SetInt("NewGame", 0);
             PlayerPrefs.SetInt("LoadGame", 1);
             PlayerPrefs.Save();
 

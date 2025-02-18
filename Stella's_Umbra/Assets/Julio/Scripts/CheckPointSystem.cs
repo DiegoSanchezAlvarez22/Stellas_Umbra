@@ -65,7 +65,7 @@ public class CheckPointSystem : MonoBehaviour
     void Start()
     {
         // Se carga el progreso al iniciar el juego
-        LoadProgress();
+        //LoadProgress();
     }
 
     public void SaveProgress()
@@ -200,8 +200,6 @@ public class CheckPointSystem : MonoBehaviour
                 float posY = PlayerPrefs.GetFloat(PosYKey);
                 float posZ = PlayerPrefs.GetFloat(PosZKey);
                 _jugadorTransform.position = new Vector3(posX, posY, posZ);
-
-                Debug.Log("Posición cargada: " + _jugadorTransform.position);
             }
             else
             {

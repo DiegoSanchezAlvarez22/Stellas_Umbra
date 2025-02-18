@@ -471,6 +471,12 @@ public class PlayerMov : MonoBehaviour
             _isJumping = false;
 
             _finishedSuperJumping = true;
+
+            //Reinicia la animación de salto (JULIO)
+            animator.SetBool("isJumping", false);
+            animator.Play("LyraJump", -1, 0f);
+            animator.SetBool("isJumping", true);
+            animator.SetBool("isFalling", false);
         }
     }
 
@@ -513,6 +519,12 @@ public class PlayerMov : MonoBehaviour
         {
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
+
+            //Reinicia la animación de salto (JULIO)
+            animator.SetBool("isJumping", false);
+            animator.Play("LyraJump", -1, 0f);
+            animator.SetBool("isJumping", true);
+            animator.SetBool("isFalling", false);
         }
     }
 
