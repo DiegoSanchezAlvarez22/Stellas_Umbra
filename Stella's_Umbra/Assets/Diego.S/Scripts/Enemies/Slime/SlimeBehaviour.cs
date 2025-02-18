@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Enemy))]
@@ -31,7 +32,6 @@ public class SlimeBehaviour : MonoBehaviour
     private float _distanceToPlayer; // Distancia actual entre el enemigo y el jugador
     private Animator _anim; // Referencia al Animator para controlar animaciones
     private Transform _player; // Referencia al transform del jugador
-
     #endregion
 
     void Start()

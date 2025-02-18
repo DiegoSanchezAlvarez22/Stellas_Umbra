@@ -14,6 +14,8 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private InputActionAsset _pInput;
 
+    AudioManagerBehaviour _audioManagerBehaviour;
+
     public void EnableControls()
     {
         _pInput.Enable();
@@ -24,6 +26,10 @@ public class MenuPausa : MonoBehaviour
         _pInput.Disable();
     }
 
+    private void Awake()
+    {
+        _audioManagerBehaviour = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerBehaviour>();
+    }
 
     private void Start()
     {
@@ -64,5 +70,10 @@ public class MenuPausa : MonoBehaviour
         menuVidas.SetActive(true);
         _pInput.Enable();
 
+    }
+
+    public void PlaySound()
+    {
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
     }
 }

@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
 
     public void IniciarJuego()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         // Guardamos que es un nuevo juego
         PlayerPrefs.SetInt("NewGame", 1);
@@ -54,7 +54,7 @@ public class MainMenu : MonoBehaviour
 
     public void CargarPartida()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         if (PlayerPrefs.HasKey("PlayerVida"))
         {
@@ -73,7 +73,7 @@ public class MainMenu : MonoBehaviour
 
     public void SalirJuego()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         Application.Quit();
     }
@@ -95,7 +95,7 @@ public class MainMenu : MonoBehaviour
     }
     public void VolverMenuPrincipal()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuOpciones.SetActive(false);
         _menuCreditos.SetActive(false);
@@ -104,7 +104,7 @@ public class MainMenu : MonoBehaviour
 
     public void VolverMenuOpciones()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuControlTeclado.SetActive(false);
         _menuControlMando.SetActive(false);
@@ -114,7 +114,7 @@ public class MainMenu : MonoBehaviour
 
     public void MenuOpciones()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuPrincipal.SetActive(false);
         _menuOpciones.SetActive(true);
@@ -122,7 +122,7 @@ public class MainMenu : MonoBehaviour
 
     public void MenuCreditos()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuPrincipal.SetActive(false);
         _menuCreditos.SetActive(true);
@@ -130,7 +130,7 @@ public class MainMenu : MonoBehaviour
 
     public void MenuControlTeclado()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuOpciones.SetActive(false);
         _menuControlTeclado.SetActive(true);
@@ -138,7 +138,7 @@ public class MainMenu : MonoBehaviour
 
     public void MenuControlMando()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuOpciones.SetActive(false);
         _menuControlMando.SetActive(true);
@@ -146,7 +146,7 @@ public class MainMenu : MonoBehaviour
 
     public void MenuAjustes()
     {
-        _audioManagerBehaviour.PlaySFX(_audioManagerBehaviour.buttonClick);
+        _audioManagerBehaviour.PlaySFX("ButtonClick");
 
         _menuOpciones.SetActive(false);
         _menuAjustes.SetActive(true);

@@ -44206,16 +44206,23 @@ MonoBehaviour:
   musicSource: {fileID: 777372552}
   SFXSource: {fileID: 1423890181}
   background: {fileID: 8300000, guid: 8788f0c9d28319c40a9150488c731aa2, type: 3}
-  ataqueDistancia: {fileID: 8300000, guid: 8c6abf7f0c162664db9b8450c63b7b45, type: 3}
-  ataqueBasico: {fileID: 8300000, guid: b04e1d03c09b6a3439bb34b5c00ca2fa, type: 3}
-  ataquePiedra: {fileID: 8300000, guid: c759e77254236e743b3e69ad87592907, type: 3}
-  ataqueTornado: {fileID: 8300000, guid: d4dce330a5f96b24288967e87dac82fb, type: 3}
-  aterrizaje: {fileID: 8300000, guid: 11d808e36a859664c9cf06f433d6a104, type: 3}
-  correr: {fileID: 8300000, guid: dff1452ec902846478a1e1d8fa8beef2, type: 3}
-  dash: {fileID: 8300000, guid: 18859b18383b63341856ed174a532537, type: 3}
-  interactuar: {fileID: 8300000, guid: 5a40dd4d4bb206f4fa055b1bd63d1f9d, type: 3}
-  salto: {fileID: 8300000, guid: 45da0109a87c60945bfd0a74fb9c5b1e, type: 3}
-  buttonClick: {fileID: 8300000, guid: bebc851e2af70374788302b7ae85eb12, type: 3}
+  soundEffects:
+  - {fileID: 8300000, guid: bebc851e2af70374788302b7ae85eb12, type: 3}
+  - {fileID: 8300000, guid: dff1452ec902846478a1e1d8fa8beef2, type: 3}
+  - {fileID: 8300000, guid: 45da0109a87c60945bfd0a74fb9c5b1e, type: 3}
+  - {fileID: 8300000, guid: 5a40dd4d4bb206f4fa055b1bd63d1f9d, type: 3}
+  - {fileID: 8300000, guid: 18859b18383b63341856ed174a532537, type: 3}
+  - {fileID: 8300000, guid: 11d808e36a859664c9cf06f433d6a104, type: 3}
+  - {fileID: 8300000, guid: d4dce330a5f96b24288967e87dac82fb, type: 3}
+  - {fileID: 8300000, guid: c759e77254236e743b3e69ad87592907, type: 3}
+  - {fileID: 8300000, guid: b04e1d03c09b6a3439bb34b5c00ca2fa, type: 3}
+  - {fileID: 8300000, guid: 8c6abf7f0c162664db9b8450c63b7b45, type: 3}
+  - {fileID: 8300000, guid: 2220c957e0809ec438652d30839f0c01, type: 3}
+  - {fileID: 8300000, guid: e6b026736b4cd0a48a3d84c4f244c44a, type: 3}
+  - {fileID: 8300000, guid: f040dab788caf884ebe3af1e1383147f, type: 3}
+  - {fileID: 8300000, guid: 52aeae454c117d54cb8cf8d7f5b14643, type: 3}
+  - {fileID: 8300000, guid: 0b281c425022e904cb45857b1d9670e8, type: 3}
+  - {fileID: 0}
 --- !u!4 &1652051253
 Transform:
   m_ObjectHideFlags: 0

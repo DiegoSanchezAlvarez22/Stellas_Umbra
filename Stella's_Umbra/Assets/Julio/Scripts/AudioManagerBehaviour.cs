@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManagerBehaviour : MonoBehaviour
@@ -5,22 +6,15 @@ public class AudioManagerBehaviour : MonoBehaviour
     public static AudioManagerBehaviour instance;
 
     [Header("---------- Audio Source ----------")]
+
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 
     [Header("---------- Audio Clip ----------")]
-    //[SerializeField] AudioClip[] audios;
-    public AudioClip background;
-    public AudioClip ataqueDistancia;
-    public AudioClip ataqueBasico;
-    public AudioClip ataquePiedra;
-    public AudioClip ataqueTornado;
-    public AudioClip aterrizaje;
-    public AudioClip correr;
-    public AudioClip dash;
-    public AudioClip interactuar;
-    public AudioClip salto;
-    public AudioClip buttonClick;
+
+    [SerializeField] public AudioClip background;
+    [SerializeField] public List<AudioClip> soundEffects;
+
 
     void Awake()
     {
@@ -43,8 +37,15 @@ public class AudioManagerBehaviour : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(string soundName)
     {
-        SFXSource.PlayOneShot(clip);
+        foreach (var clip in soundEffects)
+        {
+            if (clip.name == soundName)
+            {
+                SFXSource.PlayOneShot(clip);
+                return;
+            }
+        }
     }
 }
