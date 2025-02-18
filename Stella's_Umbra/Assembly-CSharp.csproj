@@ -83,6 +83,7 @@
     <Compile Include="Assets\Julio\Scripts\CheckPointSystem.cs" />
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBehaviour.cs" />
+    <Compile Include="Assets\Julio\Scripts\DeadzoneBehaviour.cs" />
     <Compile Include="Assets\Julio\Scripts\Banderilla.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerDestroyLoads.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\CorazonesUI.cs" />
