@@ -7,7 +7,6 @@ public class InteractuableBoss : MonoBehaviour
     private bool jugadorDentro = false;
     private PlayerInput playerInput;
     [SerializeField] BoxCollider interactuar;
-    [SerializeField] BoxCollider hitBox;
     [SerializeField] Animator Boss;
 
     private void OnTriggerEnter(Collider interactuar)
