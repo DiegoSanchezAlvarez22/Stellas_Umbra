@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1217447834025170339}
   - component: {fileID: 8442370393086890969}
   - component: {fileID: 8717553317979262192}
-  - component: {fileID: 2567417044325705028}
+  - component: {fileID: 6752786211684049378}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brightnessPanel: {fileID: 0}
---- !u!114 &2567417044325705028
+--- !u!114 &6752786211684049378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

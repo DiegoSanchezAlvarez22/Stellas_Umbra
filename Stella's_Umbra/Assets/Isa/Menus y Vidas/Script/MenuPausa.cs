@@ -9,6 +9,13 @@ public class MenuPausa : MonoBehaviour
 {
     [SerializeField] GameObject menuPausa;
     [SerializeField] GameObject menuVidas;
+    [SerializeField] GameObject fondoPausa;
+    [SerializeField] GameObject menuOpciones;
+    [SerializeField] GameObject menuTeclado;
+    [SerializeField] GameObject menuMando;
+    [SerializeField] GameObject menuAjustes;
+    [SerializeField] GameObject brillo;
+
 
     private bool juegoPausado = false;
 
@@ -35,6 +42,12 @@ public class MenuPausa : MonoBehaviour
     {
         menuPausa.SetActive(false);
         menuVidas.SetActive(true);
+        fondoPausa.SetActive(false);
+        menuOpciones.SetActive(false);
+        menuTeclado.SetActive(false);
+        menuMando.SetActive(false);
+        menuAjustes.SetActive(false);
+        brillo.SetActive(false);
         _pInput.Enable();
 
         Time.timeScale = 1f;
@@ -60,7 +73,13 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 0f;
         menuPausa.SetActive(true);
         menuVidas.SetActive(false);
-        _pInput.Enable();
+        fondoPausa.SetActive(true);
+        menuOpciones.SetActive(false);
+        menuTeclado.SetActive(false);
+        menuMando.SetActive(false);
+        menuAjustes.SetActive(false);
+        brillo.SetActive(true);
+        _pInput.Enable(); 
     }
     public void Reanudar()
     {
@@ -68,6 +87,12 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         menuPausa.SetActive(false);
         menuVidas.SetActive(true);
+        fondoPausa.SetActive(false);
+        menuOpciones.SetActive(false);
+        menuTeclado.SetActive(false);
+        menuMando.SetActive(false);
+        menuAjustes.SetActive(false);
+        brillo.SetActive(false);
         _pInput.Enable();
 
     }
@@ -75,5 +100,61 @@ public class MenuPausa : MonoBehaviour
     public void PlaySound()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
+    }
+
+    public void Opciones()
+    {
+        menuPausa.SetActive(false);
+        menuOpciones.SetActive(true);
+        brillo.SetActive(true);
+        Time.timeScale = 0f;
+        _pInput.Enable();
+    }
+
+    public void VolverPausa()
+    {
+        menuPausa.SetActive(true);
+        menuOpciones.SetActive(false);
+        brillo.SetActive(true);
+        Time.timeScale = 0f;
+        _pInput.Enable();
+    }
+
+    public void VolverOpciones()
+    {
+        menuOpciones.SetActive(true);
+        menuTeclado.SetActive(false);
+        menuMando.SetActive(false);
+        menuAjustes.SetActive(false);
+        brillo.SetActive(true);
+        Time.timeScale = 0f;
+        _pInput.Enable();
+    }
+
+    public void Teclado()
+    {
+        menuOpciones.SetActive(false);
+        menuTeclado.SetActive(true);
+        brillo.SetActive(true);
+        Time.timeScale = 0f;
+        _pInput.Enable();
+    }
+
+    public void Mando()
+    {
+        menuOpciones.SetActive(false);
+        menuMando.SetActive(true);
+        brillo.SetActive(true);
+        Time.timeScale = 0f;
+        _pInput.Enable();
+    }
+
+    public void Ajustes()
+    {
+        menuOpciones.SetActive(false);
+        menuAjustes.SetActive(true);
+        brillo.SetActive(true);
+        Time.timeScale = 0f;
+        _pInput.Enable();
     }
 }
