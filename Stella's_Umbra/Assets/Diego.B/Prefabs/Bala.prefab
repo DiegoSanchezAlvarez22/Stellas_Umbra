@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1652431018173190424}
   - component: {fileID: 6074576780525506499}
   - component: {fileID: -2859536973752038707}
-  - component: {fileID: 8366792149196797897}
+  - component: {fileID: 8499807245369526529}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Ataque
@@ -312,7 +312,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8366792149196797897
+--- !u!114 &8499807245369526529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,12 +321,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5293527828824941751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee64caad79f42f443b13b14f8c776689, type: 3}
+  m_Script: {fileID: 11500000, guid: 8977d3051e7c898428f9a8f581525733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
   _speed: 10
-  padreOriginal: {fileID: 0}
+  _damage: 2
 --- !u!1 &7868058403910373648
 GameObject:
   m_ObjectHideFlags: 0

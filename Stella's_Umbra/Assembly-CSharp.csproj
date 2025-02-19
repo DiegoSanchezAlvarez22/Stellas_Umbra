@@ -112,9 +112,11 @@
     <Compile Include="Assets\Isa\Menus y Vidas\Script\Potion.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Sonidos.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />
+    <Compile Include="Assets\Julio\Scripts\AtaqueFijado.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
     <Compile Include="Assets\Beta\Prefabs\Enemies\Boss\BossDamage.cs" />
+    <Compile Include="Assets\Julio\Scripts\BulletBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />

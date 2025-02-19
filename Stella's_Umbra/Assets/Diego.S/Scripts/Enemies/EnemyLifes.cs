@@ -42,6 +42,14 @@ public class EnemyLifes : MonoBehaviour
             Debug.Log("3");
             _playerTarget.GetComponent<PlayerExpSystem>().AddExp(_expToAdd);
             Instantiate(_dyingEffect, transform.position, transform.rotation);
+
+            //Avisar a AtaqueFijado que el enemigo ha muerto
+            AtaqueFijado _ataqueFijado = FindObjectOfType<AtaqueFijado>();
+            if (_ataqueFijado != null)
+            {
+                _ataqueFijado.RemoveEnemyFromList(this.gameObject);
+            }
+
             Destroy(gameObject);
         }
     }
