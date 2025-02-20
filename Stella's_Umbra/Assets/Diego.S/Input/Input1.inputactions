@@ -634,6 +634,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "EnergyOrbAttack",
+                    "type": "Button",
+                    "id": "f800882f-79e1-4f90-9164-e84cf72d8dbe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "TornadoAttack",
                     "type": "Button",
                     "id": "95248428-c7bc-43ca-bc72-8e579b19d215",
@@ -969,6 +978,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "BoulderAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91eb4342-61c9-4680-9419-b036431226d2",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EnergyOrbAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a659fc61-5780-4b81-82e2-2df173ed0daf",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EnergyOrbAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

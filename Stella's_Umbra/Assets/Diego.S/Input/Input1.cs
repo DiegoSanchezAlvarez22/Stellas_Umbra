@@ -656,6 +656,15 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""EnergyOrbAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""f800882f-79e1-4f90-9164-e84cf72d8dbe"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""TornadoAttack"",
                     ""type"": ""Button"",
                     ""id"": ""95248428-c7bc-43ca-bc72-8e579b19d215"",
@@ -996,6 +1005,28 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""91eb4342-61c9-4680-9419-b036431226d2"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EnergyOrbAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a659fc61-5780-4b81-82e2-2df173ed0daf"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EnergyOrbAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""34f8e119-bba5-49d3-95b2-7b15c20caf3b"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
@@ -1045,6 +1076,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         m_Playing_Interact = m_Playing.FindAction("Interact", throwIfNotFound: true);
         m_Playing_BasicAttack = m_Playing.FindAction("BasicAttack", throwIfNotFound: true);
         m_Playing_BoulderAttack = m_Playing.FindAction("BoulderAttack", throwIfNotFound: true);
+        m_Playing_EnergyOrbAttack = m_Playing.FindAction("EnergyOrbAttack", throwIfNotFound: true);
         m_Playing_TornadoAttack = m_Playing.FindAction("TornadoAttack", throwIfNotFound: true);
         m_Playing_SkillTreeAction = m_Playing.FindAction("SkillTreeAction", throwIfNotFound: true);
     }
@@ -1242,6 +1274,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     private readonly InputAction m_Playing_Interact;
     private readonly InputAction m_Playing_BasicAttack;
     private readonly InputAction m_Playing_BoulderAttack;
+    private readonly InputAction m_Playing_EnergyOrbAttack;
     private readonly InputAction m_Playing_TornadoAttack;
     private readonly InputAction m_Playing_SkillTreeAction;
     public struct PlayingActions
@@ -1258,6 +1291,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Playing_Interact;
         public InputAction @BasicAttack => m_Wrapper.m_Playing_BasicAttack;
         public InputAction @BoulderAttack => m_Wrapper.m_Playing_BoulderAttack;
+        public InputAction @EnergyOrbAttack => m_Wrapper.m_Playing_EnergyOrbAttack;
         public InputAction @TornadoAttack => m_Wrapper.m_Playing_TornadoAttack;
         public InputAction @SkillTreeAction => m_Wrapper.m_Playing_SkillTreeAction;
         public InputActionMap Get() { return m_Wrapper.m_Playing; }
@@ -1299,6 +1333,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @BoulderAttack.started += instance.OnBoulderAttack;
             @BoulderAttack.performed += instance.OnBoulderAttack;
             @BoulderAttack.canceled += instance.OnBoulderAttack;
+            @EnergyOrbAttack.started += instance.OnEnergyOrbAttack;
+            @EnergyOrbAttack.performed += instance.OnEnergyOrbAttack;
+            @EnergyOrbAttack.canceled += instance.OnEnergyOrbAttack;
             @TornadoAttack.started += instance.OnTornadoAttack;
             @TornadoAttack.performed += instance.OnTornadoAttack;
             @TornadoAttack.canceled += instance.OnTornadoAttack;
@@ -1339,6 +1376,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @BoulderAttack.started -= instance.OnBoulderAttack;
             @BoulderAttack.performed -= instance.OnBoulderAttack;
             @BoulderAttack.canceled -= instance.OnBoulderAttack;
+            @EnergyOrbAttack.started -= instance.OnEnergyOrbAttack;
+            @EnergyOrbAttack.performed -= instance.OnEnergyOrbAttack;
+            @EnergyOrbAttack.canceled -= instance.OnEnergyOrbAttack;
             @TornadoAttack.started -= instance.OnTornadoAttack;
             @TornadoAttack.performed -= instance.OnTornadoAttack;
             @TornadoAttack.canceled -= instance.OnTornadoAttack;
@@ -1387,6 +1427,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnBasicAttack(InputAction.CallbackContext context);
         void OnBoulderAttack(InputAction.CallbackContext context);
+        void OnEnergyOrbAttack(InputAction.CallbackContext context);
         void OnTornadoAttack(InputAction.CallbackContext context);
         void OnSkillTreeAction(InputAction.CallbackContext context);
     }

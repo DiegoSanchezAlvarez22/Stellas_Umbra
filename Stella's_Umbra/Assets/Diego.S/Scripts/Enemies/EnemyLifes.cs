@@ -9,9 +9,9 @@ public class EnemyLifes : MonoBehaviour
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _damageDuration;
     [SerializeField] private int _expToAdd;
-    private GameObject _playerTarget;
-    private SpriteRenderer _spriteRenderer;
     [SerializeField] public GameObject _dyingEffect;
+    private SpriteRenderer _spriteRenderer;
+    private GameObject _playerTarget;
 
     private void Start()
     {
@@ -44,10 +44,10 @@ public class EnemyLifes : MonoBehaviour
             Instantiate(_dyingEffect, transform.position, transform.rotation);
 
             //Avisar a AtaqueFijado que el enemigo ha muerto
-            AtaqueFijado _ataqueFijado = FindObjectOfType<AtaqueFijado>();
-            if (_ataqueFijado != null)
+            PlayerAttacks _playerAttacks = FindAnyObjectByType<PlayerAttacks>();
+            if (_playerAttacks != null)
             {
-                _ataqueFijado.RemoveEnemyFromList(this.gameObject);
+                _playerAttacks.RemoveEnemyFromList(this.gameObject);
             }
 
             Destroy(gameObject);

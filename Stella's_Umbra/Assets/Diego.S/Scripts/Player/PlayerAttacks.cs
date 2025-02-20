@@ -1,9 +1,8 @@
 using System.Collections;
-using Unity.VisualScripting;
-using System.Threading;
 using UnityEngine;
-using System.Linq;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerAttacks : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class PlayerAttacks : MonoBehaviour
     PlayerInput _input;
     InputAction _basicAttack;
     InputAction _boulderAttack;
+    InputAction _energyOrbAttack;
     InputAction _tornadoAttack;
 
     [Header("Sprite Renderer")]
@@ -35,8 +35,17 @@ public class PlayerAttacks : MonoBehaviour
     [Header("BoulderAttack")]
     [SerializeField] public bool _canBoulderAttack; //variable a la que accede el skilltree
     [SerializeField] private GameObject _boulder; //prefab de roca que se instancia
+    [SerializeField] private Transform shootingPoint; //posicion desde la que se dispara
     [SerializeField] private Vector3 _boulderSpawnRight; //posicion en la que se instancia la roca (derecha)
     [SerializeField] private Vector3 _boulderSpawnLeft; //posicion en la que se instancia la roca (izquierda)
+
+    [Header("EnergyOrbAttack")]
+    [SerializeField] private bool _canEnergyOrbAttack;
+    [SerializeField] SphereCollider _detectionCollider;
+    [SerializeField] Image _enemyIndicator;
+    [SerializeField] GameObject _bulletPrefab;
+    [SerializeField] Transform _shootingPoint;
+    [SerializeField] List<Collider> _enemiesInside = new List<Collider>(); //Lista para detectar a los enemigos dentro del Sphere Collider
 
     [Header("TornadoAttack")]
     [SerializeField] public bool _canTornadoAttack; //variable a la que accede el skilltree
@@ -48,23 +57,6 @@ public class PlayerAttacks : MonoBehaviour
 
     #endregion
 
-    #region Variables Diego B
-
-    private Vector3 shootingPointOriginal;
-
-    [Header("Ataque a Distancia")]
-    [SerializeField] private Transform shootingPoint; //posicion desde la que se dispara
-    [SerializeField] SphereCollider sphereCollider;
-    [SerializeField] GameObject projectile;
-    [SerializeField] Transform fijador;
-    //[SerializeField] float alturaSobrePadre = 1.0f; // Altura deseada encima del nuevo padre
-    private Transform fijador2;
-    private Transform padreOriginal;
-    private GameObject rangoDeApuntado;
-    private Vector3 posicionOriginal;
-
-    #endregion
-
     void Awake()
     {
         _input = GetComponent<PlayerInput>();
@@ -72,19 +64,21 @@ public class PlayerAttacks : MonoBehaviour
 
         _basicAttack = _input.actions["BasicAttack"];
         _boulderAttack = _input.actions["BoulderAttack"];
+        _energyOrbAttack = _input.actions["EnergyOrbAttack"];
         _tornadoAttack = _input.actions["TornadoAttack"];
     }
 
     void Start()
     {
-        #region Start Diego B
-        fijador2 = fijador.GetChild(0);
-        // Guardamos el padre y la posición original del objeto hijo
-        posicionOriginal = fijador.localPosition;
-        fijador2.GetComponent<Renderer>().enabled = false;
-        padreOriginal = fijador.transform.parent;
-        shootingPointOriginal = shootingPoint.localPosition;
-        #endregion
+        //#region Start Diego B
+        //fijador2 = fijador.GetChild(0);
+        //// Guardamos el padre y la posición original del objeto hijo
+        //posicionOriginal = fijador.localPosition;
+        //fijador2.GetComponent<Renderer>().enabled = false;
+        //padreOriginal = fijador.transform.parent;
+        //shootingPointOriginal = shootingPoint.localPosition;
+        //#endregion
+        _enemyIndicator.gameObject.SetActive(false);
     }
 
     void Update()
@@ -120,7 +114,65 @@ public class PlayerAttacks : MonoBehaviour
         }
         #endregion
 
-        //DistanceShoot();
+        #region EnergyOrbAttack
+
+        if (_canEnergyOrbAttack)
+        {
+            //Desactiva el indicador del enemigo al estar el juego en pausa
+            if (Time.timeScale == 0f)
+            {
+                _enemyIndicator.gameObject.SetActive(false);
+                return;
+            }
+
+            //Muestra/Oculta la imagen si hay enemigos en la 1º posición o no
+            if (_enemiesInside.Count > 0)
+            {
+                //Habilita la imagen
+                _enemyIndicator.gameObject.SetActive(true);
+
+                //Posiciona la imagen en la pantalla encima del enemigo
+                PositionIndicator(_enemiesInside[0]);
+
+                //Detectar si pulsas la tecla C
+                //if (Input.GetKeyDown(KeyCode.C))
+                //{
+                //    Debug.Log("Has pulsado la tecla C");
+                //    ShootBullet();
+                //}
+            }
+            else
+            {
+                //Deshabilita la imagen
+                _enemyIndicator.gameObject.SetActive(false);
+            }
+        }
+        
+        #endregion
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir"))
+        {
+            //Añade al enemigo en la lista
+            _enemiesInside.Add(other);
+
+            Debug.Log("Ha entrado un enemigo: " + other.gameObject.name);
+            Debug.Log("Total de enemigos dentro: " + _enemiesInside.Count);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir"))
+        {
+            //Elimina al enemigo de la lista
+            _enemiesInside.Remove(other);
+
+            Debug.Log("Ha salido un enemigo: " + other.gameObject.name);
+            Debug.Log("Total de enemigos dentro: " + _enemiesInside.Count);
+        }
     }
 
     private void OnEnable()
@@ -129,7 +181,10 @@ public class PlayerAttacks : MonoBehaviour
         _basicAttack.performed += BasicAttack;
 
         _boulderAttack.Enable();
-        _boulderAttack.performed += UpShoot;
+        _boulderAttack.performed += BoulderAttack;
+
+        _energyOrbAttack.Enable();
+        _energyOrbAttack.performed += ShootBullet;
 
         _tornadoAttack.Enable();
         _tornadoAttack.performed += TornadoAttackStarted;
@@ -140,8 +195,11 @@ public class PlayerAttacks : MonoBehaviour
         _basicAttack.performed -= BasicAttack;
         _basicAttack.Disable();
 
-        _boulderAttack.performed -= UpShoot;
+        _boulderAttack.performed -= BoulderAttack;
         _boulderAttack.Disable();
+
+        _energyOrbAttack.performed -= ShootBullet;
+        _energyOrbAttack.Disable();
 
         _tornadoAttack.performed -= TornadoAttackStarted;
         _tornadoAttack.Disable();
@@ -200,6 +258,19 @@ public class PlayerAttacks : MonoBehaviour
             return true;
         }
 
+        if (_skillName == "EnergyOrbAttack")
+        {
+            if (_learned)
+            {
+                _canEnergyOrbAttack = true;
+            }
+            else
+            {
+                _canEnergyOrbAttack = false;
+            }
+            return true;
+        }
+
         if (_skillName == "TornadoAttack")
         {
             if (_learned)
@@ -231,7 +302,7 @@ public class PlayerAttacks : MonoBehaviour
         }
     }
 
-    private void UpShoot(InputAction.CallbackContext _callbackContext)
+    private void BoulderAttack(InputAction.CallbackContext _callbackContext)
     {
         if (_callbackContext.performed)
         {
@@ -251,36 +322,68 @@ public class PlayerAttacks : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    EnemyLifes _enemyLifes = other.GetComponent<EnemyLifes>();
-    //    if (_enemyLifes != null)
-    //    {
-    //        if (!enemiesInTornado.Contains(_enemyLifes))
-    //        {
-    //            enemiesInTornado.Add(_enemyLifes);
-    //            StartCoroutine(DamageOverTime(_enemyLifes));
-    //        }
-    //    }
-    //}
+    private void PositionIndicator(Collider enemy)
+    {
+        //Convertir la posición del enemigo en una posición de la pantalla
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(enemy.transform.position);
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    EnemyLifes _enemyLifes = other.GetComponent<EnemyLifes>();
-    //    if (_enemyLifes != null && enemiesInTornado.Contains(_enemyLifes))
-    //    {
-    //        enemiesInTornado.Remove(_enemyLifes);
-    //    }
-    //}
+        //Ajusta la posición de la imagen un poco por encima
+        screenPos.y += 90f;
+        _enemyIndicator.transform.position = screenPos;
+    }
 
-    //private IEnumerator DamageOverTime(EnemyLifes _enemyLifes)
-    //{
-    //    while (enemiesInTornado.Contains(_enemyLifes))
-    //    {
-    //        _enemyLifes.DamageRecieved(_damage);
-    //        yield return new WaitForSeconds(_damageInterval);
-    //    }
-    //}
+    private void ShootBullet(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.performed)
+        {
+            if (_canEnergyOrbAttack == true)
+            {
+                if (_bulletPrefab != null && _shootingPoint != null && _enemiesInside.Count > 0)
+                {
+                    //Obtiene al primer enemigo de la lista
+                    Transform targetEnemy = _enemiesInside[0].transform;
+
+                    //Calcula la dirección hacia el enemigo
+                    Vector3 direction = (targetEnemy.position - _shootingPoint.position).normalized;
+
+                    //Instancia la bala
+                    GameObject bulletInstance = Instantiate(_bulletPrefab, _shootingPoint.position, _shootingPoint.rotation);
+
+                    //Configura la dirección de la bala
+                    BulletBehaviour _bulletBehaviour = bulletInstance.GetComponent<BulletBehaviour>();
+
+                    if (_bulletBehaviour != null)
+                    {
+                        _bulletBehaviour.SetDirection(direction);
+                    }
+                    Debug.Log("Se ha disparado la bala");
+                }
+                else
+                {
+                    Debug.LogWarning("Falta asignar el prefab de la bala o el shootingPoint al Inspector");
+                }
+            }
+        }
+    }
+
+    public void RemoveEnemyFromList(GameObject enemy)
+    {
+        //Buscar el collider del enemigo en la lista y eliminarlo
+        for (int i = 0; i < _enemiesInside.Count; i++)
+        {
+            if (_enemiesInside[i].gameObject == enemy)
+            {
+                _enemiesInside.RemoveAt(i);
+                break;
+            }
+        }
+
+        //Si no quedan enemigos, ocultar la imagen
+        if (_enemiesInside.Count == 0)
+        {
+            _enemyIndicator.gameObject.SetActive(false);
+        }
+    }
 
     private void TornadoAttackStarted(InputAction.CallbackContext _callbackContext)
     {
@@ -311,75 +414,4 @@ public class PlayerAttacks : MonoBehaviour
             }
         }
     }
-
-    #region Metodos Diego B
-
-    ////Establecer Fijador
-    //private void OnTriggerEnter(Collider sphereCollider)
-    //{
-    //    if (sphereCollider.CompareTag("Interactuable") || sphereCollider.CompareTag("EnemyAir") || sphereCollider.CompareTag("EnemyFloor"))
-    //    {
-    //        Debug.Log("El objeto ha entrado en el SphereCollider del hijo.");
-    //        fijador.SetParent(sphereCollider.transform);
-    //        Debug.Log("Fijador ahora es hijo de objeto");
-    //        // Coloca el objeto hijo justo encima del nuevo padre
-    //        fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Interactuable") || other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
-    //    {
-    //        Debug.Log("El objeto ha salido en el SphereCollider del hijo.");
-    //        fijador.transform.parent = padreOriginal;
-    //        fijador.localPosition = new Vector3(0, alturaSobrePadre, 0);
-    //        Debug.Log("Fijador ya no es hijo de objeto");
-    //    }
-    //}
-
-    ////Atque distancia
-    //void DistanceShoot()
-    //{
-    //    // Hacer visible el objeto hijo mientras la tecla esté presionada
-    //    if (Input.GetKey(KeyCode.Tab))
-    //    {
-    //        fijador2.GetComponent<Renderer>().enabled = true;
-    //    }
-    //    else
-    //    {
-    //        fijador2.GetComponent<Renderer>().enabled = false;
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.T))
-    //    {
-    //        Debug.Log("Disparando");
-    //        GameObject instantiatedBullet;
-    //        instantiatedBullet = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-    //        instantiatedBullet.GetComponent<Disparofijado>().SetFijador(fijador);
-    //    }
-    //}
-
-    //Atravesar plataformas
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("SueloInestable"))
-    //    {
-    //        if (Input.GetKeyDown(KeyCode.S))
-    //        {
-    //            Debug.Log("Bajar la plataforma");
-    //            Physics.IgnoreCollision(collision.collider, boxCollider, true);
-    //        }
-    //    }
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("SueloInestable"))
-    //    {
-    //        Debug.Log("Reactiva plataforma");
-    //        // Reactiva las colisiones con el objeto
-    //        Physics.IgnoreCollision(collision.collider, boxCollider, true);
-    //    }
-    //}
-    #endregion
 }
