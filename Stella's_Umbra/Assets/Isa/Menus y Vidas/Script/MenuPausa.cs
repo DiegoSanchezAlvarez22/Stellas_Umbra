@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
+using UnityEngine.UI;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] GameObject menuMando;
     [SerializeField] GameObject menuAjustes;
     [SerializeField] GameObject brillo;
-
 
     private bool juegoPausado = false;
 
@@ -79,7 +79,7 @@ public class MenuPausa : MonoBehaviour
         menuMando.SetActive(false);
         menuAjustes.SetActive(false);
         brillo.SetActive(true);
-        _pInput.Enable(); 
+        _pInput.Enable();
     }
     public void Reanudar()
     {
@@ -94,7 +94,6 @@ public class MenuPausa : MonoBehaviour
         menuAjustes.SetActive(false);
         brillo.SetActive(false);
         _pInput.Enable();
-
     }
 
     public void PlaySound()

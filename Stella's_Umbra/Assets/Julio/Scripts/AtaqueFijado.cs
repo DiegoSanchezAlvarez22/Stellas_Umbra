@@ -23,6 +23,13 @@ public class AtaqueFijado : MonoBehaviour
 
     void Update()
     {
+        //Desactiva el indicador del enemigo al estar el juego en pausa
+        if (Time.timeScale == 0f)
+        {
+            _enemyIndicator.gameObject.SetActive(false);
+            return;
+        }
+
         //Muestra/Oculta la imagen si hay enemigos en la 1º posición o no
         if (_enemiesInside.Count > 0)
         {
