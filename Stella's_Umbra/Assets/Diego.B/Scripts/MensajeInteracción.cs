@@ -3,14 +3,18 @@ using UnityEngine.Video;
 
 public class MensajeInteracción : MonoBehaviour
 {
-    [SerializeField] VideoPlayer videoPlayer;
+    [SerializeField] GameObject Icono;
     [SerializeField] BoxCollider RangoInteracción;
 
+    private void Start()
+    {
+        Icono.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Interactuable") || other.CompareTag("Acceso Jefe"))
         {
-            videoPlayer.Play();
+            Icono.SetActive(true);
             Debug.Log("Puede interactuar");
         }
     }
@@ -19,7 +23,7 @@ public class MensajeInteracción : MonoBehaviour
     {
         if (other.CompareTag("Interactuable") || other.CompareTag("Acceso Jefe"))
         {
-            videoPlayer.Stop();
+            Icono.SetActive(false);
         }
     }
 }
