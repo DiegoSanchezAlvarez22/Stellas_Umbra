@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\beta\\prefabs\\enemies\\boss\\interactuableboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\diego.b\\objetos mapa\\teletransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\beta\\prefabs\\enemies\\boss\\bossdamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\beta\\prefabs\\enemies\\boss\\bossdamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\isa\\menus y vidas\\script\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\isa\\menus y vidas\\script\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\beta\\prefabs\\enemies\\boss\\interactuableboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\beta\\prefabs\\enemies\\boss\\interactuableboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|f:\\3d juego\\juego demo\\stellas_umbra\\stella\u0027s_umbra\\assets\\isa\\menus y vidas\\script\\menupausa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\assets\\isa\\menus y vidas\\script\\menupausa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83DDC56-16D6-8924-AC5C-80C227BB8963}|Assembly-CSharp.csproj|solutionrelative:assets\\isa\\menus y vidas\\script\\menupausa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,19 +35,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Teletransporte.cs",
+              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "RelativeDocumentMoniker": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "RelativeToolTip": "Assets\\Diego.B\\Objetos mapa\\Teletransporte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T01:36:43.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Isa\\Menus y Vidas\\Script\\Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T13:45:36.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BossDamage.cs",
+              "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Beta\\Prefabs\\Enemies\\Boss\\BossDamage.cs",
+              "RelativeDocumentMoniker": "Assets\\Beta\\Prefabs\\Enemies\\Boss\\BossDamage.cs",
+              "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Beta\\Prefabs\\Enemies\\Boss\\BossDamage.cs",
+              "RelativeToolTip": "Assets\\Beta\\Prefabs\\Enemies\\Boss\\BossDamage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T13:44:14.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "InteractuableBoss.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Beta\\Prefabs\\Enemies\\Boss\\InteractuableBoss.cs",
               "RelativeDocumentMoniker": "Assets\\Beta\\Prefabs\\Enemies\\Boss\\InteractuableBoss.cs",
               "ToolTip": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Beta\\Prefabs\\Enemies\\Boss\\InteractuableBoss.cs",
               "RelativeToolTip": "Assets\\Beta\\Prefabs\\Enemies\\Boss\\InteractuableBoss.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T13:39:18.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T13:39:18.747Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MenuPausa.cs",
               "DocumentMoniker": "F:\\3D JUEGO\\Juego Demo\\Stellas_Umbra\\Stella\u0027s_Umbra\\Assets\\Isa\\Menus y Vidas\\Script\\MenuPausa.cs",
               "RelativeDocumentMoniker": "Assets\\Isa\\Menus y Vidas\\Script\\MenuPausa.cs",
@@ -43,8 +92,7 @@
               "RelativeToolTip": "Assets\\Isa\\Menus y Vidas\\Script\\MenuPausa.cs",
               "ViewState": "AgIAAIcAAAAAAAAAAAAowJkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T13:39:17.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T13:39:17.717Z"
             }
           ]
         }

@@ -105,6 +105,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\ImageHover.cs" />
     <Compile Include="Assets\Julio\Scripts\KeyboardMenu.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
+    <Compile Include="Assets\Diego.B\Objetos mapa\CambiarSpriteUI.cs" />
     <Compile Include="Assets\Julio\Scripts\BrightnessSettings.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\Teletransporte.cs" />
     <Compile Include="Assets\Isa\Menus y Vidas\Script\VidaJugador.cs" />
