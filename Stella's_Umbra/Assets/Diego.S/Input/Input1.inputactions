@@ -659,6 +659,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MenuActivation",
+                    "type": "Button",
+                    "id": "a78c6aaf-4756-4dc7-b854-1f324ce87f9e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -934,6 +943,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SkillTreeAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2c82e8d5-af0e-42a9-9cba-3c8ef123aa84",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuActivation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0de0beb7-f202-44d0-9452-0c75d02891fd",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuActivation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

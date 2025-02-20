@@ -1,45 +1,51 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
-using UnityEngine.UI;
+using static UnityEngine.InputSystem.InputAction;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] GameObject menuPausa;
-    [SerializeField] GameObject menuVidas;
-    [SerializeField] GameObject fondoPausa;
-    [SerializeField] GameObject menuOpciones;
-    [SerializeField] GameObject menuTeclado;
-    [SerializeField] GameObject menuMando;
-    [SerializeField] GameObject menuAjustes;
-    [SerializeField] GameObject brillo;
+    private AudioManagerBehaviour _audioManagerBehaviour;
+
+    [Header("Input")]
+    private PlayerInput _input;
+    private InputAction _openPauseMenu;
+
+    [Header("Scenes")]
+    [SerializeField] private GameObject menuPausa;
+    [SerializeField] private GameObject menuVidas;
+    [SerializeField] private GameObject fondoPausa;
+    [SerializeField] private GameObject menuOpciones;
+    [SerializeField] private GameObject menuTeclado;
+    [SerializeField] private GameObject menuMando;
+    [SerializeField] private GameObject menuAjustes;
+    [SerializeField] private GameObject brillo;
+    [SerializeField] private GameObject puntero;
 
     private bool juegoPausado = false;
-
-    [SerializeField] private InputActionAsset _pInput;
-
-    AudioManagerBehaviour _audioManagerBehaviour;
-
-    public void EnableControls()
-    {
-        _pInput.Enable();
-    }
-
-    public void DisableControls()
-    {
-        _pInput.Disable();
-    }
+    private string lastControlScheme;
 
     private void Awake()
     {
-        _audioManagerBehaviour = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerBehaviour>();
+        // Buscar el PlayerInput y validar si se encontró
+        _input = FindAnyObjectByType<PlayerInput>();
+        if (_input == null)
+        {
+            Debug.LogError("PlayerInput no encontrado en la escena.");
+            return;
+        }
+
+        // Obtener la acción correcta desde el Input System
+        _openPauseMenu = _input.actions["MenuActivation"];
+
+        // Buscar el AudioManager
+        _audioManagerBehaviour = GameObject.FindGameObjectWithTag("Audio")?.GetComponent<AudioManagerBehaviour>();
     }
 
     private void Start()
     {
+        // Inicializar la visibilidad de los menús
         menuPausa.SetActive(false);
         menuVidas.SetActive(true);
         fondoPausa.SetActive(false);
@@ -48,41 +54,72 @@ public class MenuPausa : MonoBehaviour
         menuMando.SetActive(false);
         menuAjustes.SetActive(false);
         brillo.SetActive(false);
-        _pInput.Enable();
 
-        Time.timeScale = 1f;
-    }
-    private void Update()
-    {
-        if (UnityEngine.Input.GetKeyUp(KeyCode.Escape)) 
-        { 
-            if (juegoPausado)
-            {
-                Reanudar();
-            }
-            else
-            {
-                Pausa();
-            }
+        // Pausar la escena si es el "Menu Principal"
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "Menu Principal")
+        {
+            Time.timeScale = 0;
+            puntero.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            puntero.SetActive(false);
         }
     }
 
-    public void Pausa()
+    private void OnEnable()
     {
-        juegoPausado = true;
-        Time.timeScale = 0f;
-        menuPausa.SetActive(true);
-        menuVidas.SetActive(false);
-        fondoPausa.SetActive(true);
-        menuOpciones.SetActive(false);
-        menuTeclado.SetActive(false);
-        menuMando.SetActive(false);
-        menuAjustes.SetActive(false);
-        brillo.SetActive(true);
-        _pInput.Enable();
+        _openPauseMenu.Enable();
+        _openPauseMenu.performed += TogglePausa;  // Ahora usamos solo un método
     }
+
+    private void OnDisable()
+    {
+        _openPauseMenu.performed -= TogglePausa;
+        _openPauseMenu.Disable();
+    }
+
+    private void TogglePausa(InputAction.CallbackContext _callbackContext)
+    {
+        if (!_callbackContext.performed) return;
+
+        if (juegoPausado)
+        {
+            Debug.Log("Reanudando...");
+            juegoPausado = false;
+            Time.timeScale = 1f;
+            menuPausa.SetActive(false);
+            menuVidas.SetActive(true);
+            fondoPausa.SetActive(false);
+            menuOpciones.SetActive(false);
+            menuTeclado.SetActive(false);
+            menuMando.SetActive(false);
+            menuAjustes.SetActive(false);
+            brillo.SetActive(false);
+            puntero.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Pausando...");
+            juegoPausado = true;
+            Time.timeScale = 0f;
+            menuPausa.SetActive(true);
+            menuVidas.SetActive(false);
+            fondoPausa.SetActive(true);
+            menuOpciones.SetActive(false);
+            menuTeclado.SetActive(false);
+            menuMando.SetActive(false);
+            menuAjustes.SetActive(false);
+            brillo.SetActive(true);
+            puntero.SetActive(true);
+        }
+    }
+
     public void Reanudar()
     {
+        Debug.Log("Reanudando...");
         juegoPausado = false;
         Time.timeScale = 1f;
         menuPausa.SetActive(false);
@@ -93,7 +130,7 @@ public class MenuPausa : MonoBehaviour
         menuMando.SetActive(false);
         menuAjustes.SetActive(false);
         brillo.SetActive(false);
-        _pInput.Enable();
+        puntero.SetActive(false);
     }
 
     public void PlaySound()
@@ -107,7 +144,6 @@ public class MenuPausa : MonoBehaviour
         menuOpciones.SetActive(true);
         brillo.SetActive(true);
         Time.timeScale = 0f;
-        _pInput.Enable();
     }
 
     public void VolverPausa()
@@ -116,7 +152,6 @@ public class MenuPausa : MonoBehaviour
         menuOpciones.SetActive(false);
         brillo.SetActive(true);
         Time.timeScale = 0f;
-        _pInput.Enable();
     }
 
     public void VolverOpciones()
@@ -127,7 +162,6 @@ public class MenuPausa : MonoBehaviour
         menuAjustes.SetActive(false);
         brillo.SetActive(true);
         Time.timeScale = 0f;
-        _pInput.Enable();
     }
 
     public void Teclado()
@@ -136,7 +170,6 @@ public class MenuPausa : MonoBehaviour
         menuTeclado.SetActive(true);
         brillo.SetActive(true);
         Time.timeScale = 0f;
-        _pInput.Enable();
     }
 
     public void Mando()
@@ -145,7 +178,6 @@ public class MenuPausa : MonoBehaviour
         menuMando.SetActive(true);
         brillo.SetActive(true);
         Time.timeScale = 0f;
-        _pInput.Enable();
     }
 
     public void Ajustes()
@@ -154,6 +186,5 @@ public class MenuPausa : MonoBehaviour
         menuAjustes.SetActive(true);
         brillo.SetActive(true);
         Time.timeScale = 0f;
-        _pInput.Enable();
     }
 }

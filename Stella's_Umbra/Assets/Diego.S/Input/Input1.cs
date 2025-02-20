@@ -681,6 +681,15 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MenuActivation"",
+                    ""type"": ""Button"",
+                    ""id"": ""a78c6aaf-4756-4dc7-b854-1f324ce87f9e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -961,6 +970,28 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2c82e8d5-af0e-42a9-9cba-3c8ef123aa84"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuActivation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0de0beb7-f202-44d0-9452-0c75d02891fd"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuActivation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d2c95a97-b9c4-4456-8f5b-a5a62a50c763"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -1079,6 +1110,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         m_Playing_EnergyOrbAttack = m_Playing.FindAction("EnergyOrbAttack", throwIfNotFound: true);
         m_Playing_TornadoAttack = m_Playing.FindAction("TornadoAttack", throwIfNotFound: true);
         m_Playing_SkillTreeAction = m_Playing.FindAction("SkillTreeAction", throwIfNotFound: true);
+        m_Playing_MenuActivation = m_Playing.FindAction("MenuActivation", throwIfNotFound: true);
     }
 
     ~@Input1()
@@ -1277,6 +1309,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     private readonly InputAction m_Playing_EnergyOrbAttack;
     private readonly InputAction m_Playing_TornadoAttack;
     private readonly InputAction m_Playing_SkillTreeAction;
+    private readonly InputAction m_Playing_MenuActivation;
     public struct PlayingActions
     {
         private @Input1 m_Wrapper;
@@ -1294,6 +1327,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         public InputAction @EnergyOrbAttack => m_Wrapper.m_Playing_EnergyOrbAttack;
         public InputAction @TornadoAttack => m_Wrapper.m_Playing_TornadoAttack;
         public InputAction @SkillTreeAction => m_Wrapper.m_Playing_SkillTreeAction;
+        public InputAction @MenuActivation => m_Wrapper.m_Playing_MenuActivation;
         public InputActionMap Get() { return m_Wrapper.m_Playing; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1342,6 +1376,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @SkillTreeAction.started += instance.OnSkillTreeAction;
             @SkillTreeAction.performed += instance.OnSkillTreeAction;
             @SkillTreeAction.canceled += instance.OnSkillTreeAction;
+            @MenuActivation.started += instance.OnMenuActivation;
+            @MenuActivation.performed += instance.OnMenuActivation;
+            @MenuActivation.canceled += instance.OnMenuActivation;
         }
 
         private void UnregisterCallbacks(IPlayingActions instance)
@@ -1385,6 +1422,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @SkillTreeAction.started -= instance.OnSkillTreeAction;
             @SkillTreeAction.performed -= instance.OnSkillTreeAction;
             @SkillTreeAction.canceled -= instance.OnSkillTreeAction;
+            @MenuActivation.started -= instance.OnMenuActivation;
+            @MenuActivation.performed -= instance.OnMenuActivation;
+            @MenuActivation.canceled -= instance.OnMenuActivation;
         }
 
         public void RemoveCallbacks(IPlayingActions instance)
@@ -1430,5 +1470,6 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         void OnEnergyOrbAttack(InputAction.CallbackContext context);
         void OnTornadoAttack(InputAction.CallbackContext context);
         void OnSkillTreeAction(InputAction.CallbackContext context);
+        void OnMenuActivation(InputAction.CallbackContext context);
     }
 }
