@@ -117,6 +117,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
     <Compile Include="Assets\Beta\Prefabs\Enemies\Boss\BossDamage.cs" />
+    <Compile Include="Assets\Diego.B\Scripts\MensajeInteracción.cs" />
     <Compile Include="Assets\Julio\Scripts\BulletBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
