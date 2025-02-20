@@ -26,6 +26,12 @@ public class MenuPausa : MonoBehaviour
     private bool juegoPausado = false;
     private string lastControlScheme;
 
+    [SerializeField] GameObject _botonMapa;
+    [SerializeField] MapaDesplegable _mapaDesplegable;
+    //Guardar estado del mapa
+    bool mapaEstabaAbierto = false;
+
+
     private void Awake()
     {
         // Buscar el PlayerInput y validar si se encontró
@@ -99,6 +105,13 @@ public class MenuPausa : MonoBehaviour
             menuAjustes.SetActive(false);
             brillo.SetActive(false);
             puntero.SetActive(false);
+            _botonMapa.SetActive(true);
+
+            //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
+            if (mapaEstabaAbierto)
+            {
+                _mapaDesplegable.mapaAnimator.Play("MapaAbierto");
+            }
         }
         else
         {
@@ -114,6 +127,15 @@ public class MenuPausa : MonoBehaviour
             menuAjustes.SetActive(false);
             brillo.SetActive(true);
             puntero.SetActive(true);
+            _botonMapa.SetActive(false);
+
+            //Guarda si el mapa estaba abierto antes de pausar
+            mapaEstabaAbierto = _mapaDesplegable.estaAbierto;
+            if (mapaEstabaAbierto)
+            {
+                //Cierra el mapa
+                _mapaDesplegable.mapaAnimator.Play("MapaCerrado");
+            }
         }
     }
 
@@ -131,6 +153,14 @@ public class MenuPausa : MonoBehaviour
         menuAjustes.SetActive(false);
         brillo.SetActive(false);
         puntero.SetActive(false);
+
+        _botonMapa.SetActive(true);
+
+        //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
+        if (mapaEstabaAbierto)
+        {
+            _mapaDesplegable.mapaAnimator.Play("MapaAbierto");
+        }
     }
 
     public void PlaySound()

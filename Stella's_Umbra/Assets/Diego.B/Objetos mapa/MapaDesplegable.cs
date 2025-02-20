@@ -3,7 +3,7 @@ using UnityEngine;
 public class MapaDesplegable : MonoBehaviour
 {
     public Animator mapaAnimator;
-    private bool estaAbierto = false;
+    public bool estaAbierto = false;
 
     private void Start()
     {

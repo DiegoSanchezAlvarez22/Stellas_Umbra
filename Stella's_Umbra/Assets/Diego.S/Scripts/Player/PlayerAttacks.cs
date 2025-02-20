@@ -328,7 +328,7 @@ public class PlayerAttacks : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(enemy.transform.position);
 
         //Ajusta la posición de la imagen un poco por encima
-        screenPos.y += 90f;
+        screenPos.y += 110f;
         _enemyIndicator.transform.position = screenPos;
     }
 
