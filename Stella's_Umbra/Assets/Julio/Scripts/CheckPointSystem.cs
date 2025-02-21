@@ -60,6 +60,7 @@ public class CheckPointSystem : MonoBehaviour
     const string CanBasicAttackKey = "PlayerCanBasicAttack";
     const string CanBoulderAttackKey = "PlayerCanBoulderAttack";
     const string CanTornadoAttackKey = "PlayerCanTornadoAttack";
+    const string CanEnergyOrbAttackKey = "PlayerCanEnergyOrbAttack";
     #endregion
 
     void Start()
@@ -132,11 +133,14 @@ public class CheckPointSystem : MonoBehaviour
             PlayerPrefs.SetInt(CanBasicAttackKey, _playerAttacks._canBasicAttack ? 1 : 0);
             PlayerPrefs.SetInt(CanBoulderAttackKey, _playerAttacks._canBoulderAttack ? 1 : 0);
             PlayerPrefs.SetInt(CanTornadoAttackKey, _playerAttacks._canTornadoAttack ? 1 : 0);
+            PlayerPrefs.SetInt(CanEnergyOrbAttackKey, _playerAttacks._canEnergyOrbAttack ? 1 : 0);
+
             Debug.Log("Energía del jugador: " + _playerAttacks._energy);
             Debug.Log("Boost de energía: " + _playerAttacks._energyBoost);
             Debug.Log("Puede hacer ataque básico: " + (_playerAttacks._canBasicAttack ? 1 : 0));
             Debug.Log("Puede hacer ataque boulder: " + (_playerAttacks._canBoulderAttack ? 1 : 0));
             Debug.Log("Puede hacer ataque tornado: " + (_playerAttacks._canTornadoAttack ? 1 : 0));
+            Debug.Log("Puede hacer ataque fijado: " + (_playerAttacks._canEnergyOrbAttack ? 1 : 0));
         }
 
         // Guardar todo en PlayerPrefs
@@ -240,6 +244,7 @@ public class CheckPointSystem : MonoBehaviour
             _playerAttacks._canBasicAttack = PlayerPrefs.GetInt(CanBasicAttackKey, 0) == 1;
             _playerAttacks._canBoulderAttack = PlayerPrefs.GetInt(CanBoulderAttackKey, 0) == 1;
             _playerAttacks._canTornadoAttack = PlayerPrefs.GetInt(CanTornadoAttackKey, 0) == 1;
+            _playerAttacks._canEnergyOrbAttack = PlayerPrefs.GetInt(CanEnergyOrbAttackKey, 0) == 1;
 
             if (PlayerPrefs.HasKey(EnergyKey))
             {
@@ -272,6 +277,12 @@ public class CheckPointSystem : MonoBehaviour
         PlayerPrefs.DeleteKey(JumpsLeftKey);
         PlayerPrefs.DeleteKey(JumpsLeftMaxKey);
         PlayerPrefs.DeleteKey(SkillPointsKey);
+        PlayerPrefs.DeleteKey(EnergyKey);
+        PlayerPrefs.DeleteKey(EnergyBoostKey);
+        PlayerPrefs.DeleteKey(CanBasicAttackKey);
+        PlayerPrefs.DeleteKey(CanBoulderAttackKey);
+        PlayerPrefs.DeleteKey(CanTornadoAttackKey);
+        PlayerPrefs.DeleteKey(CanEnergyOrbAttackKey);
 
         Debug.Log("Progreso eliminado.");
     }

@@ -40,7 +40,7 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] private Vector3 _boulderSpawnLeft; //posicion en la que se instancia la roca (izquierda)
 
     [Header("EnergyOrbAttack")]
-    [SerializeField] private bool _canEnergyOrbAttack;
+    [SerializeField] public bool _canEnergyOrbAttack;
     [SerializeField] SphereCollider _detectionCollider;
     [SerializeField] Image _enemyIndicator;
     [SerializeField] GameObject _bulletPrefab;
