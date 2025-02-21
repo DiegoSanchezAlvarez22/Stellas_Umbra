@@ -8,6 +8,13 @@ public class ActiveSkillTree : MonoBehaviour
 
     [SerializeField] private GameObject _skilltree;
     [SerializeField] private GameObject _starsBackground;
+
+    [SerializeField] GameObject _lifeCanvas;
+    [SerializeField] GameObject _mapIcon;
+    [SerializeField] MapaDesplegable _mapaDesplegable;
+
+    bool mapWasOpen = false;
+
     private bool juegoPausado = false;
 
     private void Awake()
@@ -54,6 +61,16 @@ public class ActiveSkillTree : MonoBehaviour
             Time.timeScale = 0f;
             _skilltree.SetActive(true);
             _starsBackground.SetActive(true);
+
+            _lifeCanvas.SetActive(false);
+            _mapIcon.SetActive(false);
+            //Guarda si el mapa estaba abierto antes de pausar
+            mapWasOpen = _mapaDesplegable.estaAbierto;
+            if (mapWasOpen)
+            {
+                //Cierra el mapa
+                _mapaDesplegable.mapaAnimator.Play("MapaCerrado");
+            }
         }
         else
         {
@@ -67,5 +84,13 @@ public class ActiveSkillTree : MonoBehaviour
         Time.timeScale = 1f;
         _skilltree.SetActive(false);
         _starsBackground.SetActive(false);
+
+        _lifeCanvas.SetActive(true);
+        _mapIcon.SetActive(true);
+        //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
+        if (mapWasOpen)
+        {
+            _mapaDesplegable.mapaAnimator.Play("MapaAbierto");
+        }
     }
 }

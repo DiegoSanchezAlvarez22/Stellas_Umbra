@@ -44957,6 +44957,7 @@ MonoBehaviour:
   musicSource: {fileID: 777372552}
   SFXSource: {fileID: 1423890181}
   background: {fileID: 8300000, guid: 8788f0c9d28319c40a9150488c731aa2, type: 3}
+  bossBackground: {fileID: 8300000, guid: 1747ac4e664b6af419cf0c577b95f8bc, type: 3}
   soundEffects:
   - {fileID: 8300000, guid: bebc851e2af70374788302b7ae85eb12, type: 3}
   - {fileID: 8300000, guid: dff1452ec902846478a1e1d8fa8beef2, type: 3}

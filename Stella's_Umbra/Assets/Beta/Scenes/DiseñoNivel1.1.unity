@@ -1436,7 +1436,7 @@ PrefabInstance:
       objectReference: {fileID: 468557950}
     - target: {fileID: 5885170143619853654, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6650463157542210900, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -9642,7 +9642,7 @@ GameObject:
   - component: {fileID: 279131862}
   - component: {fileID: 279131861}
   m_Layer: 0
-  m_Name: AudioManagerPRUEBA
+  m_Name: AudioManagerNivel1
   m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9663,6 +9663,7 @@ MonoBehaviour:
   musicSource: {fileID: 1978087028}
   SFXSource: {fileID: 538646654}
   background: {fileID: 8300000, guid: 8788f0c9d28319c40a9150488c731aa2, type: 3}
+  bossBackground: {fileID: 0}
   soundEffects:
   - {fileID: 8300000, guid: bebc851e2af70374788302b7ae85eb12, type: 3}
   - {fileID: 8300000, guid: dff1452ec902846478a1e1d8fa8beef2, type: 3}
@@ -43883,9 +43884,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _mapIcon
+      value: 
+      objectReference: {fileID: 522869617}
+    - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: _skilltree
       value: 
       objectReference: {fileID: 1349018493}
+    - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _lifeCanvas
+      value: 
+      objectReference: {fileID: 1378665513}
+    - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _mapaDesplegable
+      value: 
+      objectReference: {fileID: 2067874636}
     - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: _starsBackground
       value: 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManagerBehaviour : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class AudioManagerBehaviour : MonoBehaviour
     [Header("---------- Audio Clip ----------")]
 
     [SerializeField] public AudioClip background;
+    [SerializeField] public AudioClip bossBackground;
     [SerializeField] public List<AudioClip> soundEffects;
 
+    private bool isBossFight = false;
 
     void Awake()
     {
@@ -22,6 +25,7 @@ public class AudioManagerBehaviour : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded; // Suscribirse al evento de carga de escena
         }
         else
         {
@@ -37,6 +41,11 @@ public class AudioManagerBehaviour : MonoBehaviour
         musicSource.Play();
     }
 
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded; // Desuscribirse para evitar errores
+    }
+
     public void PlaySFX(string soundName)
     {
         foreach (var clip in soundEffects)
@@ -45,6 +54,36 @@ public class AudioManagerBehaviour : MonoBehaviour
             {
                 SFXSource.PlayOneShot(clip);
                 return;
+            }
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "BossRoom")
+        {
+            if (!isBossFight)
+            {
+                isBossFight = true;
+
+                musicSource.clip = background;
+                musicSource.Stop();
+
+                musicSource.clip = bossBackground;
+                musicSource.Play();
+            }
+        }
+        else
+        {
+            //Si venimos de la escena del jefe, restauramos la música
+            if (isBossFight)
+            {
+                isBossFight = false;
+                musicSource.clip = bossBackground;
+                musicSource.Stop();
+
+                musicSource.clip = background;
+                musicSource.Play();
             }
         }
     }
