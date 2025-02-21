@@ -9,11 +9,11 @@ public class Item : MonoBehaviour
         // Verifica si el objeto que colisiona es el jugador
         if (other.CompareTag("Player"))
         {
-            VidaJugador itemCollector = other.GetComponent<VidaJugador>();
+            PlayerLife itemCollector = other.GetComponent<PlayerLife>();
 
             if (itemCollector != null)
             {
-                itemCollector.RecogerItem();
+                itemCollector.TakeItem();
                 Destroy(gameObject); // Destruye el item después de recogerlo
             }
         }

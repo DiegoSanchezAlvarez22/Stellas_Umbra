@@ -40,7 +40,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""14f01410-008f-4756-8806-8a7ac38174cd"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -49,7 +49,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""abad536a-681f-4b1b-bfeb-1a724cffa67c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -113,6 +113,15 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""01aef43f-0521-479d-9e3c-5feb1a84f891"",
                     ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillTreeActionUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""9de9c9a1-93ca-4988-959e-d09acb3cfae6"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -558,6 +567,28 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7d4e36e5-08ae-4d60-807b-a9fa5e10ecde"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillTreeActionUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef4b05f6-594d-4d83-8aaa-23eb7a3588d2"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillTreeActionUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -593,19 +624,19 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Dash"",
+                    ""name"": ""SuperJump"",
                     ""type"": ""Button"",
-                    ""id"": ""65b9474a-98a2-41be-9e38-0a6dae389f0c"",
-                    ""expectedControlType"": ""Button"",
+                    ""id"": ""a35b19e7-12b3-4924-a974-b76ad0d83296"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SuperJump"",
+                    ""name"": ""Dash"",
                     ""type"": ""Button"",
-                    ""id"": ""a35b19e7-12b3-4924-a974-b76ad0d83296"",
-                    ""expectedControlType"": """",
+                    ""id"": ""65b9474a-98a2-41be-9e38-0a6dae389f0c"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -938,7 +969,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""99da50d7-8061-414e-8580-7eb4f10600d1"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1095,13 +1126,14 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        m_UI_SkillTreeActionUI = m_UI.FindAction("SkillTreeActionUI", throwIfNotFound: true);
         // Playing
         m_Playing = asset.FindActionMap("Playing", throwIfNotFound: true);
         m_Playing_Walk = m_Playing.FindAction("Walk", throwIfNotFound: true);
         m_Playing_BendDown = m_Playing.FindAction("BendDown", throwIfNotFound: true);
         m_Playing_Jump = m_Playing.FindAction("Jump", throwIfNotFound: true);
-        m_Playing_Dash = m_Playing.FindAction("Dash", throwIfNotFound: true);
         m_Playing_SuperJump = m_Playing.FindAction("SuperJump", throwIfNotFound: true);
+        m_Playing_Dash = m_Playing.FindAction("Dash", throwIfNotFound: true);
         m_Playing_GrabWall = m_Playing.FindAction("GrabWall", throwIfNotFound: true);
         m_Playing_MoveObj = m_Playing.FindAction("MoveObj", throwIfNotFound: true);
         m_Playing_Interact = m_Playing.FindAction("Interact", throwIfNotFound: true);
@@ -1188,6 +1220,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
+    private readonly InputAction m_UI_SkillTreeActionUI;
     public struct UIActions
     {
         private @Input1 m_Wrapper;
@@ -1202,6 +1235,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+        public InputAction @SkillTreeActionUI => m_Wrapper.m_UI_SkillTreeActionUI;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1241,6 +1275,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+            @SkillTreeActionUI.started += instance.OnSkillTreeActionUI;
+            @SkillTreeActionUI.performed += instance.OnSkillTreeActionUI;
+            @SkillTreeActionUI.canceled += instance.OnSkillTreeActionUI;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -1275,6 +1312,9 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
+            @SkillTreeActionUI.started -= instance.OnSkillTreeActionUI;
+            @SkillTreeActionUI.performed -= instance.OnSkillTreeActionUI;
+            @SkillTreeActionUI.canceled -= instance.OnSkillTreeActionUI;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -1299,8 +1339,8 @@ public partial class @Input1: IInputActionCollection2, IDisposable
     private readonly InputAction m_Playing_Walk;
     private readonly InputAction m_Playing_BendDown;
     private readonly InputAction m_Playing_Jump;
-    private readonly InputAction m_Playing_Dash;
     private readonly InputAction m_Playing_SuperJump;
+    private readonly InputAction m_Playing_Dash;
     private readonly InputAction m_Playing_GrabWall;
     private readonly InputAction m_Playing_MoveObj;
     private readonly InputAction m_Playing_Interact;
@@ -1317,8 +1357,8 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         public InputAction @Walk => m_Wrapper.m_Playing_Walk;
         public InputAction @BendDown => m_Wrapper.m_Playing_BendDown;
         public InputAction @Jump => m_Wrapper.m_Playing_Jump;
-        public InputAction @Dash => m_Wrapper.m_Playing_Dash;
         public InputAction @SuperJump => m_Wrapper.m_Playing_SuperJump;
+        public InputAction @Dash => m_Wrapper.m_Playing_Dash;
         public InputAction @GrabWall => m_Wrapper.m_Playing_GrabWall;
         public InputAction @MoveObj => m_Wrapper.m_Playing_MoveObj;
         public InputAction @Interact => m_Wrapper.m_Playing_Interact;
@@ -1346,12 +1386,12 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @Dash.started += instance.OnDash;
-            @Dash.performed += instance.OnDash;
-            @Dash.canceled += instance.OnDash;
             @SuperJump.started += instance.OnSuperJump;
             @SuperJump.performed += instance.OnSuperJump;
             @SuperJump.canceled += instance.OnSuperJump;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
             @GrabWall.started += instance.OnGrabWall;
             @GrabWall.performed += instance.OnGrabWall;
             @GrabWall.canceled += instance.OnGrabWall;
@@ -1392,12 +1432,12 @@ public partial class @Input1: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @Dash.started -= instance.OnDash;
-            @Dash.performed -= instance.OnDash;
-            @Dash.canceled -= instance.OnDash;
             @SuperJump.started -= instance.OnSuperJump;
             @SuperJump.performed -= instance.OnSuperJump;
             @SuperJump.canceled -= instance.OnSuperJump;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
             @GrabWall.started -= instance.OnGrabWall;
             @GrabWall.performed -= instance.OnGrabWall;
             @GrabWall.canceled -= instance.OnGrabWall;
@@ -1454,14 +1494,15 @@ public partial class @Input1: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        void OnSkillTreeActionUI(InputAction.CallbackContext context);
     }
     public interface IPlayingActions
     {
         void OnWalk(InputAction.CallbackContext context);
         void OnBendDown(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnDash(InputAction.CallbackContext context);
         void OnSuperJump(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
         void OnGrabWall(InputAction.CallbackContext context);
         void OnMoveObj(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);

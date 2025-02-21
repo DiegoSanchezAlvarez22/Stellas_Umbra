@@ -9,7 +9,7 @@ public class DeadzoneBehaviour : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Llamas al script de la vida y al del checkpoint
-            VidaJugador vidaJugador = other.GetComponent<VidaJugador>();
+            PlayerLife vidaJugador = other.GetComponent<PlayerLife>();
             CheckPointSystem checkPointSystem = other.GetComponent<CheckPointSystem>();
 
             //Comprobar si hay un dato guardado

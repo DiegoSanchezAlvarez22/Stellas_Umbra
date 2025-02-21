@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Banderilla : MonoBehaviour
+public class Flag : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

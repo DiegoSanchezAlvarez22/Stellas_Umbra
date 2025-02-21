@@ -74,8 +74,8 @@ public class PlayerMov : MonoBehaviour
     [HideInInspector] private bool _objCanBeMoved;
     private GameObject _objInMove;
 
-    [Header("Animaciones")]
-    [SerializeField] Animator animator;
+    [Header("Animations")]
+    [SerializeField] Animator _anim;
 
     [Header("Render")]
     [SerializeField] SpriteRenderer _spriteRenderer;
@@ -147,7 +147,7 @@ public class PlayerMov : MonoBehaviour
             }
         }
 
-        animator.SetFloat("Movement", speed);
+        _anim.SetFloat("Movement", speed);
 
         if (_direction.x > 0)
         {
@@ -161,8 +161,8 @@ public class PlayerMov : MonoBehaviour
         //Verificar si está cayendo (JULIO)
         if (_rb.linearVelocity.y < -0.1f && !_inFloor)
         {
-            animator.SetBool("isFalling", true);
-            animator.SetBool("isJumping", false);
+            _anim.SetBool("isFalling", true);
+            _anim.SetBool("isJumping", false);
         }
     }
 
@@ -184,8 +184,8 @@ public class PlayerMov : MonoBehaviour
             _jumpsLeft = _jumpsLeftMax;
 
             //Resetear las animaciones de salto y caída (JULIO)
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
+            _anim.SetBool("isJumping", false);
+            _anim.SetBool("isFalling", false);
         }
 
         if (collision.gameObject.CompareTag("Platform"))
@@ -195,8 +195,8 @@ public class PlayerMov : MonoBehaviour
             _jumpsLeft = _jumpsLeftMax;
 
             //Resetear las animaciones de salto y caída (JULIO)
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
+            _anim.SetBool("isJumping", false);
+            _anim.SetBool("isFalling", false);
         }
 
         if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
@@ -287,15 +287,11 @@ public class PlayerMov : MonoBehaviour
             if (_learned)
             {
                 _canDash = true;
-                //_dash.Enable();
-                //_dash.performed += Dash;
                 return true;
             }
             else
             {
                 _canDash = false;
-                //_dash.performed -= Dash;
-                //_dash.Disable();
                 return true;
             }
         }
@@ -305,17 +301,11 @@ public class PlayerMov : MonoBehaviour
             if (_learned)
             {
                 _canMoveObj = true;
-                //_moveObj.Enable();
-                //_moveObj.performed += MoveObjPerformed;
-                //_moveObj.canceled += MoveObjCanceled;
                 return true;
             }
             else
             {
                 _canMoveObj = false;
-                //_moveObj.performed -= MoveObjPerformed;
-                //_moveObj.canceled -= MoveObjCanceled;
-                //_moveObj.Disable();
                 return true;
             }
         }
@@ -422,12 +412,12 @@ public class PlayerMov : MonoBehaviour
                 _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
 
                 //Animación se apaga antes de reiniciarla (JULIO)
-                animator.SetBool("isJumping", false);
+                _anim.SetBool("isJumping", false);
 
                 //Se reproduce la animación desde cero (JULIO)
-                animator.Play("LyraJump", -1, 0f);
-                animator.SetBool("isJumping", true);
-                animator.SetBool("isFalling", false);
+                _anim.Play("LyraJump", -1, 0f);
+                _anim.SetBool("isJumping", true);
+                _anim.SetBool("isFalling", false);
             }
         }
     }
@@ -446,7 +436,7 @@ public class PlayerMov : MonoBehaviour
 
     private void OnSuperJumpStarted(InputAction.CallbackContext _callbackContext)
     {
-        if (_inFloor && _superJumpRecharged && _canSuperJump)
+        if ((_inFloor || _floorIsPlat) && _superJumpRecharged && _canSuperJump)
         {
             // Registra el momento en que se presiona la tecla
             _holdStartTime = (float)_callbackContext.startTime;
@@ -473,10 +463,10 @@ public class PlayerMov : MonoBehaviour
             _finishedSuperJumping = true;
 
             //Reinicia la animación de salto (JULIO)
-            animator.SetBool("isJumping", false);
-            animator.Play("LyraJump", -1, 0f);
-            animator.SetBool("isJumping", true);
-            animator.SetBool("isFalling", false);
+            _anim.SetBool("isJumping", false);
+            _anim.Play("LyraJump", -1, 0f);
+            _anim.SetBool("isJumping", true);
+            _anim.SetBool("isFalling", false);
         }
     }
 
@@ -521,10 +511,10 @@ public class PlayerMov : MonoBehaviour
             _jumpsLeft = _jumpsLeftMax;
 
             //Reinicia la animación de salto (JULIO)
-            animator.SetBool("isJumping", false);
-            animator.Play("LyraJump", -1, 0f);
-            animator.SetBool("isJumping", true);
-            animator.SetBool("isFalling", false);
+            _anim.SetBool("isJumping", false);
+            _anim.Play("LyraJump", -1, 0f);
+            _anim.SetBool("isJumping", true);
+            _anim.SetBool("isFalling", false);
         }
     }
 

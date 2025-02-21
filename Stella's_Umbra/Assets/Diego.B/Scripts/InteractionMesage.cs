@@ -1,20 +1,20 @@
 using UnityEngine;
 using UnityEngine.Video;
 
-public class MensajeInteracción : MonoBehaviour
+public class InteractionMesage : MonoBehaviour
 {
-    [SerializeField] GameObject Icono;
-    [SerializeField] BoxCollider RangoInteracción;
+    [SerializeField] GameObject _icon;
+    [SerializeField] BoxCollider _interactionCollider;
 
     private void Start()
     {
-        Icono.SetActive(false);
+        _icon.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Interactuable") || other.CompareTag("Acceso Jefe"))
         {
-            Icono.SetActive(true);
+            _icon.SetActive(true);
             Debug.Log("Puede interactuar");
         }
     }
@@ -23,7 +23,7 @@ public class MensajeInteracción : MonoBehaviour
     {
         if (other.CompareTag("Interactuable") || other.CompareTag("Acceso Jefe"))
         {
-            Icono.SetActive(false);
+            _icon.SetActive(false);
         }
     }
 }

@@ -11,11 +11,11 @@ public class Potion : MonoBehaviour
         // Verifica si el objeto que colisiona es el jugador
         if (other.CompareTag("Player"))
         {
-            VidaJugador vidaJugador = other.GetComponent<VidaJugador>();
+            PlayerLife vidaJugador = other.GetComponent<PlayerLife>();
 
             if (vidaJugador != null)
             {
-                vidaJugador.AumentarVida(heal); // Quita vida al jugador
+                vidaJugador.IncreaseLife(heal); // Quita vida al jugador
                 Debug.Log("Jugador recibió una cura: " + heal);
             }
         }

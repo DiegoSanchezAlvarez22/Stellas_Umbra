@@ -2,12 +2,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class InteractuableTeleports : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
-    [SerializeField] private MapBehaviour _mapBehaviour;
-    private PlayerInput _input;
-
     private bool _isPlayerIn = false;
+    private PlayerInput _input;
+    public string _sceneName; // Nombre de la escena a cargar
 
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +43,9 @@ public class InteractuableTeleports : MonoBehaviour
     {
         if (_isPlayerIn)
         {
-            _mapBehaviour.ChangeMap();
+            Debug.Log("Interacción realizada con el objeto.");
+            // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
+            SceneManager.LoadScene(_sceneName);
         }
     }
 }

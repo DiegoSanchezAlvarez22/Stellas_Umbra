@@ -4,23 +4,23 @@ using UnityEngine.SceneManagement;
 public class CheckPointSystem : MonoBehaviour
 {
     #region Referencias
-    //Referencia al Script de la experiencia
-    [SerializeField] PlayerExpSystem _playerExpSystem;
-
-    //Referencia al script de vida del jugador
-    [SerializeField] VidaJugador _vidaJugador;
-
     //Referencia al Transform del jugador para guardar la posición
-    [SerializeField] Transform _jugadorTransform;
+    [SerializeField] Transform _playerTransform;
 
     //Referencia al script del PlayerMov
     [SerializeField] PlayerMov _playerMov;
 
-    //Referencia al script del Skill Tree_Manager
-    [SerializeField] SkillTree_Manager _skillTreeManager;
-
     //Referencia al script PlayerAttacks
     [SerializeField] PlayerAttacks _playerAttacks;
+
+    //Referencia al script de vida del jugador
+    [SerializeField] PlayerLife _playerLifes;
+
+    //Referencia al Script de la experiencia
+    [SerializeField] PlayerExpSystem _playerExpSystem;
+
+    //Referencia al script del Skill Tree_Manager
+    private SkillTree_Manager _skillTreeManager;
     #endregion
 
     #region Claves
@@ -79,23 +79,23 @@ public class CheckPointSystem : MonoBehaviour
         }
 
         // Guardar la vida actual en PlayerPrefs
-        if (_vidaJugador != null)
+        if (_playerLifes != null)
         {
-            PlayerPrefs.SetInt(VidaKey, _vidaJugador.VidaActual);
-            PlayerPrefs.SetInt(VidaMaxKey, _vidaJugador.VidaMaxima);
-            PlayerPrefs.SetInt(CristalesKey, _vidaJugador.CantidadActualCristales);
-            Debug.Log("Vida actual guardada: " + _vidaJugador.VidaActual);
-            Debug.Log("Vida máxima guardada: " + _vidaJugador.VidaMaxima);
-            Debug.Log("Cristales guardados: " + _vidaJugador.CantidadActualCristales);
+            PlayerPrefs.SetInt(VidaKey, _playerLifes.ActualLife);
+            PlayerPrefs.SetInt(VidaMaxKey, _playerLifes.MaxLife);
+            PlayerPrefs.SetInt(CristalesKey, _playerLifes.ActualCrystalsTaken);
+            Debug.Log("Vida actual guardada: " + _playerLifes.ActualLife);
+            Debug.Log("Vida máxima guardada: " + _playerLifes.MaxLife);
+            Debug.Log("Cristales guardados: " + _playerLifes.ActualCrystalsTaken);
         }
 
         // Guardar la posición del CheckPoint en PlayerPrefs
-        if (_jugadorTransform != null)
+        if (_playerTransform != null)
         {
-            PlayerPrefs.SetFloat(PosXKey, _jugadorTransform.position.x);
-            PlayerPrefs.SetFloat(PosYKey, _jugadorTransform.position.y);
-            PlayerPrefs.SetFloat(PosZKey, _jugadorTransform.position.z);
-            Debug.Log("Posición guardada: " + _jugadorTransform.position.x + _jugadorTransform.position.y + _jugadorTransform.position.z);
+            PlayerPrefs.SetFloat(PosXKey, _playerTransform.position.x);
+            PlayerPrefs.SetFloat(PosYKey, _playerTransform.position.y);
+            PlayerPrefs.SetFloat(PosZKey, _playerTransform.position.z);
+            Debug.Log("Posición guardada: " + _playerTransform.position.x + _playerTransform.position.y + _playerTransform.position.z);
         }
 
         //Guardar la información del PlayerMov en PlayerPrefs
@@ -152,7 +152,7 @@ public class CheckPointSystem : MonoBehaviour
     {
 
         //Si mueres sin pasar por checkpoints te lleva a la escena de menu principal
-        if (_vidaJugador != null && _vidaJugador.VidaActual == 0)
+        if (_playerLifes != null && _playerLifes.ActualLife == 0)
         {
             if (!PlayerPrefs.HasKey(VidaKey))
             {
@@ -170,40 +170,43 @@ public class CheckPointSystem : MonoBehaviour
         }
 
         //Cargar la vida desde PlayerPrefs
-        if (_vidaJugador != null)
+        if (_playerLifes != null)
         {
             // Cargar la vida actual desde PlayerPrefs
             if (PlayerPrefs.HasKey(VidaKey))
             {
                 int savedVida = PlayerPrefs.GetInt(VidaKey);
-                _vidaJugador.SetVidaActual(savedVida);
-                _vidaJugador.cambioVida.Invoke(savedVida);
+                _playerLifes.SetActualLife(savedVida);
+                _playerLifes._changeLife.Invoke(savedVida);
             }
 
             // Cargar la vida máxima desde PlayerPrefs
             if (PlayerPrefs.HasKey(VidaMaxKey))
             {
                 int savedVidaMax = PlayerPrefs.GetInt(VidaMaxKey);
-                _vidaJugador.SetVidaMaxima(savedVidaMax);
+                _playerLifes.SetMaxLife(savedVidaMax);
             }
 
             //Cargar los cristales desde PlayerPrefs
             if (PlayerPrefs.HasKey(CristalesKey))
             {
                 int savedCristales = PlayerPrefs.GetInt(CristalesKey);
-                _vidaJugador.SetCantidadCristales(savedCristales);
+                _playerLifes.SetCrystalsNumber(savedCristales);
             }
         }
 
         // Cargar la posición desde PlayerPrefs
-        if (_jugadorTransform != null)
+        if (_playerTransform != null)
         {
             if (PlayerPrefs.HasKey(PosXKey) && PlayerPrefs.HasKey(PosYKey) && PlayerPrefs.HasKey(PosZKey))
             {
                 float posX = PlayerPrefs.GetFloat(PosXKey);
                 float posY = PlayerPrefs.GetFloat(PosYKey);
                 float posZ = PlayerPrefs.GetFloat(PosZKey);
-                _jugadorTransform.position = new Vector3(posX, posY, posZ);
+                _playerTransform.position = new Vector3(posX, posY, posZ);
+
+                _playerLifes._deathCanvas.SetActive(false);
+                _playerLifes._starsBackground.SetActive(false);
             }
             else
             {

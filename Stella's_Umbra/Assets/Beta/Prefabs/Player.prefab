@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc59982fbaec3842a1940a9329db5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icono: {fileID: 0}
-  "RangoInteracci\xF3n": {fileID: 5436066803066713571}
+  _icon: {fileID: 0}
+  _interactionCollider: {fileID: 0}
 --- !u!1 &6671716360910017017
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +581,7 @@ MonoBehaviour:
   _canWallJump: 0
   _initialObjParent: {fileID: 0}
   _canMoveObj: 0
-  animator: {fileID: 2549569791863814557}
+  _anim: {fileID: 2549569791863814557}
   _spriteRenderer: {fileID: 8907755523591804082}
   _collider: {fileID: 3194450582138999176}
 --- !u!114 &8280908493845885683
@@ -671,6 +671,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skilltree: {fileID: 0}
   _starsBackground: {fileID: 0}
+  _lifeCanvas: {fileID: 0}
+  _mapIcon: {fileID: 0}
+  _mapaDesplegable: {fileID: 0}
 --- !u!114 &7988612050019788970
 MonoBehaviour:
   m_ObjectHideFlags: 0

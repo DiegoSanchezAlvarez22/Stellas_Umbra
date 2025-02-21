@@ -3584,7 +3584,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: MenuControlMando
+        m_MethodName: GamepadControlMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5299,7 +5299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: MenuOpciones
+        m_MethodName: OptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12240,7 +12240,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: CargarPartida
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18103,7 +18103,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: SalirJuego
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20788,7 +20788,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: IniciarJuego
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22364,7 +22364,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: VolverMenuPrincipal
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41041,7 +41041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: MenuCreditos
+        m_MethodName: CreditsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44270,7 +44270,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: VolverMenuOpciones
+        m_MethodName: BackToOptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47786,7 +47786,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: VolverMenuPrincipal
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47943,7 +47943,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: VolverMenuOpciones
+        m_MethodName: BackToOptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50933,7 +50933,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: MenuAjustes
+        m_MethodName: ConfigMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51374,7 +51374,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: MenuControlTeclado
+        m_MethodName: KeyboardControlMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55458,7 +55458,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1445130907}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: VolverMenuOpciones
+        m_MethodName: BackToOptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

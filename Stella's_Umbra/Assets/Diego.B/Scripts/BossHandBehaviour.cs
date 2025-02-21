@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class BossHandBehaviour : MonoBehaviour
 {
-    private Animator Animator;
-    private bool animatorTriggered = false; // Flag para saber si se activó el trigger
-    private bool dañable = false;
-    [SerializeField] GameObject objectToSpawn; // El prefab del objeto que quieres instanciar
-    private int numberOfObjects = 4; // Cantidad de objetos a instanciar
-    private float minX = -10f; // Límite inferior en el eje X
-    private float maxX = 10f; // Límite superior en el eje X
-    private float fixedY = 0f; // Posición fija en el eje Y
-    private float fixedZ = 0f; // Posición fija en el eje Z
-    public float minDistance = 4f; // Distancia mínima entre objetos
+    private Animator _anim;
+    private bool _animTriggered = false; // Flag para saber si se activó el trigger
+    private bool _damagable = false; //Indica si puede recibir daño
+    [SerializeField] GameObject _objToSpawn; // El prefab del objeto que quieres instanciar
+    private int _nObj = 4; // Cantidad de objetos a instanciar
+    private float _minX = -10f; // Límite inferior en el eje X
+    private float _maxX = 10f; // Límite superior en el eje X
+    private float _fixedY = 0f; // Posición fija en el eje Y
+    private float _fixedZ = 0f; // Posición fija en el eje Z
+    public float _minDistance = 4f; // Distancia mínima entre objetos
 
-    private List<Vector3> spawnedPositions = new List<Vector3>(); // Lista de posiciones generadas
-    private List<GameObject> spawnedObjects = new List<GameObject>(); // Lista de objetos instanciados
+    private List<Vector3> _spawnedPositions = new List<Vector3>(); // Lista de posiciones generadas
+    private List<GameObject> _spawnedObj = new List<GameObject>(); // Lista de objetos instanciados
 
-    [SerializeField] float fallDelay = 2f; // Tiempo antes de que la mano caiga
+    [SerializeField] float _fallDelay = 2f; // Tiempo antes de que la mano caiga
 
-    [SerializeField] Transform player; // Referencia al jugador
-    [SerializeField] GameObject Boss;
-    private Animator BossBody;
+    [SerializeField] Transform _player; // Referencia al jugador
+    [SerializeField] GameObject _boss;
+    private Animator _animBossBody;
     void Start()
     {
-        Animator = GetComponent<Animator>();
-        BossBody = Boss.GetComponent<Animator>();
+        _anim = GetComponent<Animator>();
+        _animBossBody = _boss.GetComponent<Animator>();
         StartCoroutine(Fase1());
-        BossBody.SetBool("BossAttack", false);
+        _animBossBody.SetBool("BossAttack", false);
     }
 
 
@@ -39,10 +39,10 @@ public class BossHandBehaviour : MonoBehaviour
         {
             //Quitar vida
         }
-        else if (other.gameObject.CompareTag("Ataque") && dañable == true)
+        else if (other.gameObject.CompareTag("Ataque") && _damagable == true)
         {
             Debug.Log("Mano recibe daño");
-            animatorTriggered = true;
+            _animTriggered = true;
         }
     }
 
@@ -50,56 +50,56 @@ public class BossHandBehaviour : MonoBehaviour
     {
         while (true)
         {
-            if (animatorTriggered == true)
+            if (_animTriggered == true)
             {
-                Animator.SetTrigger("BarridoRecibeDaño");
-                animatorTriggered = false; // Resetea el flag.
+                _anim.SetTrigger("BarridoRecibeDaño");
+                _animTriggered = false; // Resetea el flag.
 
                 yield return new WaitForSeconds(2f);
 
-                dañable = false;
+                _damagable = false;
                 DestroyAllObjects();
 
                 yield return new WaitForSeconds(5f);
 
-                Animator.SetTrigger("JefeAcerca");
+                _anim.SetTrigger("JefeAcerca");
             }
 
             // Configurar Idle
             Debug.Log("Cambiando a Idle");
-            Animator.SetBool("Barrido", false);
+            _anim.SetBool("Barrido", false);
 
             yield return new WaitForSeconds(5f);
 
             Debug.Log("Cambiando a BarridoMano");
-            Animator.SetBool("Barrido", true);
+            _anim.SetBool("Barrido", true);
 
             yield return new WaitForSeconds(1f);
 
             Debug.Log("Regresando a Idle");
-            Animator.SetBool("Barrido", false);
+            _anim.SetBool("Barrido", false);
 
             yield return new WaitForSeconds(5f);
 
             Debug.Log("Invoca pinchos");
-            Animator.SetTrigger("SacarPinchos");
+            _anim.SetTrigger("SacarPinchos");
             SpawnObjects();
 
             yield return new WaitForSeconds(2f);
 
             // Levantar la mano
             Debug.Log("Activando Levantada");
-            Animator.SetTrigger("Levantada");
-            dañable = true;
+            _anim.SetTrigger("Levantada");
+            _damagable = true;
 
-            if (dañable == true)
+            if (_damagable == true)
             {
-                Animator.SetBool("Arriba",true);
+                _anim.SetBool("Arriba",true);
 
-                yield return new WaitForSeconds(fallDelay);
+                yield return new WaitForSeconds(_fallDelay);
 
-                Animator.SetBool("Arriba", false);
-                Animator.SetTrigger("Atacando");
+                _anim.SetBool("Arriba", false);
+                _anim.SetTrigger("Atacando");
             }
 
             //StartCoroutine(ReiniciarCourutine());
@@ -111,7 +111,7 @@ public class BossHandBehaviour : MonoBehaviour
 
         int attempts = 1000; // Número máximo de intentos para encontrar una posición válida
 
-        for (int i = 0; i < numberOfObjects; i++)
+        for (int i = 0; i < _nObj; i++)
         {
             Vector3 randomPosition;
             bool validPosition = false;
@@ -120,8 +120,8 @@ public class BossHandBehaviour : MonoBehaviour
             do
             {
                 // Generar una nueva posición aleatoria
-                float randomX = Random.Range(minX, maxX);
-                randomPosition = new Vector3(randomX, fixedY, fixedZ);
+                float randomX = Random.Range(_minX, _maxX);
+                randomPosition = new Vector3(randomX, _fixedY, _fixedZ);
 
                 // Verificar si la posición cumple con la distancia mínima
                 validPosition = IsPositionValid(randomPosition);
@@ -132,9 +132,9 @@ public class BossHandBehaviour : MonoBehaviour
             // Si se encuentra una posición válida, instanciar el objeto
             if (validPosition)
             {
-                GameObject newObject = Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
-                spawnedPositions.Add(randomPosition); // Guardar la posición
-                spawnedObjects.Add(newObject); // Guardar referencia al objeto instanciado
+                GameObject newObject = Instantiate(_objToSpawn, randomPosition, Quaternion.identity);
+                _spawnedPositions.Add(randomPosition); // Guardar la posición
+                _spawnedObj.Add(newObject); // Guardar referencia al objeto instanciado
             }
         }
     }
@@ -142,9 +142,9 @@ public class BossHandBehaviour : MonoBehaviour
    
     private bool IsPositionValid(Vector3 position)
     {
-        foreach (Vector3 spawnedPosition in spawnedPositions)
+        foreach (Vector3 spawnedPosition in _spawnedPositions)
         {
-            if (Vector3.Distance(position, spawnedPosition) < minDistance)
+            if (Vector3.Distance(position, spawnedPosition) < _minDistance)
             {
                 return false;
             }
@@ -153,14 +153,14 @@ public class BossHandBehaviour : MonoBehaviour
     }
     public void DestroyAllObjects()
     {
-        foreach (GameObject obj in spawnedObjects)
+        foreach (GameObject obj in _spawnedObj)
         {
             if (obj != null)
             {
                 Destroy(obj);
             }
         }
-        spawnedObjects.Clear(); // Limpiar la lista después de destruir los objetos
+        _spawnedObj.Clear(); // Limpiar la lista después de destruir los objetos
     }
     private IEnumerator ReiniciarCourutine()
     {
@@ -173,7 +173,7 @@ public class BossHandBehaviour : MonoBehaviour
     }
     bool IsPlaying(string animName)
     {
-        var animState = Animator.GetCurrentAnimatorStateInfo(0);
+        var animState = _anim.GetCurrentAnimatorStateInfo(0);
         return animState.IsName(animName) && animState.normalizedTime < 1.0f;
     }
 

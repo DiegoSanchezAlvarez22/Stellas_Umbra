@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CambiarEscenas : MonoBehaviour
+public class ChangeScenes : MonoBehaviour
 {
     AudioManagerBehaviour _audioManagerBehaviour;
 
@@ -12,7 +12,7 @@ public class CambiarEscenas : MonoBehaviour
         _audioManagerBehaviour = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerBehaviour>();
     }
 
-    public void IrMenu()
+    public void GoMenu()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
         Time.timeScale = 1f;
@@ -27,27 +27,27 @@ public class CambiarEscenas : MonoBehaviour
         SceneManager.LoadScene("Creditos");
     }*/
 
-    public void IrJuego()
+    public void GoGame()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
         SceneManager.LoadScene("DiseñoNivel1.1");
     }
-    public void IrAjustes()
+    public void GoConfig()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
         SceneManager.LoadScene("Ajustes");
     }
-    public void IrTeclado()
+    public void GoKeyboard()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
         SceneManager.LoadScene("ControlesTeclado");
     }
-    public void IrMando()
+    public void GoGamepad()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
         SceneManager.LoadScene("ControlesMando");
     }
-    public void Salir()
+    public void Exit()
     {
         _audioManagerBehaviour.PlaySFX("ButtonClick");
         Application.Quit();

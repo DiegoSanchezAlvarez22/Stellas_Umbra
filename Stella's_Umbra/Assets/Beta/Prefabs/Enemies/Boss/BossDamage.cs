@@ -3,18 +3,18 @@ using UnityEngine.InputSystem;
 
 public class BossDamage : MonoBehaviour
 {
-    [SerializeField] BoxCollider hitBoxJefe;
+    [SerializeField] BoxCollider _colliderBoss;
     [SerializeField] int _damage;
 
-    private void OnTriggerEnter(Collider hitBoxJefe)
+    private void OnTriggerEnter(Collider _colliderBoss)
     {
-        if (hitBoxJefe.gameObject.CompareTag("Player"))
+        if (_colliderBoss.gameObject.CompareTag("Player"))
         {
-            VidaJugador vidaJugador = gameObject.GetComponent<VidaJugador>();
+            PlayerLife vidaJugador = gameObject.GetComponent<PlayerLife>();
 
             if (vidaJugador != null)
             {
-                vidaJugador.PerderVida(_damage, gameObject.transform.position); // Quita vida al jugador
+                vidaJugador.LooseLife(_damage, gameObject.transform.position); // Quita vida al jugador
                 Debug.Log("Jugador recibió daño: " + _damage);
             }
         }

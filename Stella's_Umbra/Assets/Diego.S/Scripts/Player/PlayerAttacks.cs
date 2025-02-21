@@ -70,14 +70,6 @@ public class PlayerAttacks : MonoBehaviour
 
     void Start()
     {
-        //#region Start Diego B
-        //fijador2 = fijador.GetChild(0);
-        //// Guardamos el padre y la posición original del objeto hijo
-        //posicionOriginal = fijador.localPosition;
-        //fijador2.GetComponent<Renderer>().enabled = false;
-        //padreOriginal = fijador.transform.parent;
-        //shootingPointOriginal = shootingPoint.localPosition;
-        //#endregion
         _enemyIndicator.gameObject.SetActive(false);
     }
 
