@@ -7,6 +7,7 @@ public class Sonidos : MonoBehaviour
     [SerializeField] AudioClip[] audioClips; // Agrega aquí los clips de audio desde el inspector.
     [SerializeField] AudioMixer miMixer; //Referencia al Audio Mixer
     private bool isJumping = false;
+    private bool isOnGround = false;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class Sonidos : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (isOnGround && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
             if (!audioSource.isPlaying)
             {
@@ -58,12 +59,24 @@ public class Sonidos : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Verificar si el personaje choca contra el suelo
-        if (collision.gameObject.CompareTag("Floor") && isJumping)
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform"))
         {
-            PlaySpecificClip(2);
-            isJumping = false; // Resetear estado de salto
+            isOnGround = true; // El jugador está en el suelo
+            if (isJumping) // Solo reproduce el sonido si ha saltado
+            {
+                PlaySpecificClip(2);
+                isJumping = false; // Resetear estado de salto
+            }
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        // Verificar si el jugador deja de tocar el suelo
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform"))
+        {
+            isOnGround = false; // El jugador ya no está en el suelo
+        }
+    }
 }
 

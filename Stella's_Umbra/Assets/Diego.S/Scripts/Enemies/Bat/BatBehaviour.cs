@@ -16,6 +16,8 @@ public class BatBehaviour : MonoBehaviour
     private Animator _anim;
     private SpriteRenderer _renderer;
 
+    private bool isPlayingFlySound = false;
+    private bool isPlayingAttackSound = false;
     #endregion
 
     void Start()
@@ -31,6 +33,15 @@ public class BatBehaviour : MonoBehaviour
     {
         _distance = Vector2.Distance(transform.position, _player.position);
         _anim.SetFloat("Distance", _distance);
+
+        //Si está cerca del jugador, reproducir sonido de vuelo
+        if (_distance < 10f && !isPlayingFlySound)
+        {
+            isPlayingFlySound = true;
+            AudioManagerBehaviour.instance.PlaySFX("Bat movimiento");
+            //Se reproduce cada 1s
+            Invoke("ResetFlySound", 1f);
+        }
     }
 
     public void FlipSprite(Vector3 _target)
@@ -43,5 +54,26 @@ public class BatBehaviour : MonoBehaviour
         {
             _renderer.flipX = false;
         }
+    }
+
+    public void Attack()
+    {
+        if (!isPlayingAttackSound)
+        {
+            isPlayingAttackSound = true;
+            AudioManagerBehaviour.instance.PlaySFX("Bat ataque");
+            //Suena cada 0.4s
+            Invoke("ResetAttackSound", 0.4f);
+        }
+    }
+
+    void ResetFlySound()
+    {
+        isPlayingFlySound = false;
+    }
+
+    void ResetAttackSound()
+    {
+        isPlayingAttackSound = false;
     }
 }

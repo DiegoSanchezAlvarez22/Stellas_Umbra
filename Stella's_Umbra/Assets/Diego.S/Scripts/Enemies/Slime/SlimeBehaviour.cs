@@ -32,6 +32,10 @@ public class SlimeBehaviour : MonoBehaviour
     private float _distanceToPlayer; // Distancia actual entre el enemigo y el jugador
     private Animator _anim; // Referencia al Animator para controlar animaciones
     private Transform _player; // Referencia al transform del jugador
+
+    //Variables para la música
+    bool isPlayingWalkSound = false;
+    bool isPlayingAttackSound = false;
     #endregion
 
     void Start()
@@ -87,6 +91,15 @@ public class SlimeBehaviour : MonoBehaviour
         if (_distanceToPlayer >= _distanceMoveToPlayer)
         {
             _rb.linearVelocity = new Vector3(_actualSpeed, _rb.linearVelocity.y, _rb.linearVelocity.z);
+
+            //Solo suena el sonido de caminar si no se está reproduciendo
+            if (_distanceToPlayer < 10f && !isPlayingWalkSound)
+            {
+                isPlayingWalkSound = true;
+                AudioManagerBehaviour.instance.PlaySFX("Slime movimiento");
+                //Se reinicia después de 1.5s
+                Invoke("ResetWalkSound", 1.5f);
+            }
         }
 
         // Si el jugador está cerca, seguir moviéndose
@@ -101,8 +114,28 @@ public class SlimeBehaviour : MonoBehaviour
             _actualSpeed = 0; // Detiene el movimiento
             _anim.SetTrigger("isAttack"); // Activa la animación de ataque
             Invoke("Timer", _tiempoAtacando); // Espera antes de volver a moverse
+
+            //Solo suena el sonido de ataque si no se ha activado recientemente
+            if (!isPlayingAttackSound)
+            {
+                isPlayingAttackSound = true;
+                AudioManagerBehaviour.instance.PlaySFX("Slime ataque");
+                // Se reinicia después de 1s
+                Invoke("ResetAttackSound", 1f);
+            }
         }
     }
+
+    void ResetWalkSound()
+    {
+        isPlayingWalkSound = false;
+    }
+
+    void ResetAttackSound()
+    {
+        isPlayingAttackSound = false;
+    }
+
 
     void Timer()
     {
