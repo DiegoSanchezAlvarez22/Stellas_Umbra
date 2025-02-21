@@ -121,6 +121,7 @@
     <Compile Include="Assets\Julio\Scripts\BulletBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
+    <Compile Include="Assets\Diego.B\Scripts\InteractuableTeleports.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Interactuable.cs" />
