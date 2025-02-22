@@ -25,7 +25,7 @@ public class HeartsUI : MonoBehaviour
 
     public void ChangeHearts(int vidaActual)
     {
-        //JULIO Si no hay corazones en la lista, los creamos
+        //Si no hay corazones en la lista, los creamos
         if (!_heartsList.Any())
         {
             CreateHearts(vidaActual);
@@ -37,7 +37,7 @@ public class HeartsUI : MonoBehaviour
         }
     }
 
-    private void CreateHearts(int cantidadMaximaVida)
+    public void CreateHearts(int cantidadMaximaVida)
     {
         for (int i = 0; i < cantidadMaximaVida; i++)
         {
@@ -46,7 +46,6 @@ public class HeartsUI : MonoBehaviour
         }
     }
 
-    //JULIO
     private void ActualizeHearts(int vidaActual)
     {
         //Asegúrate que la lista tiene suficientes elem para la vida actual
@@ -67,8 +66,11 @@ public class HeartsUI : MonoBehaviour
 
     public void MoreHearts(int sumar)
     {
-        Image corazon = Instantiate(_emptyHeartPrefab, transform);
-        _heartsList.Add(corazon.GetComponent<Image>());
+        for (int i = 0; i < sumar; i++)
+        {
+            Image corazon = Instantiate(_emptyHeartPrefab, transform); //Crea un nuevo corazón vacío
+            _heartsList.Add(corazon.GetComponent<Image>()); //Lo añade a la lista
+        }
     }
 
     private void ChangeLife(int vidaActual)

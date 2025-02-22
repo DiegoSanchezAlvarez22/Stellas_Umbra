@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject _mapButton;
     [SerializeField] MapBehaviour _dropdownMap;
     //Guardar estado del mapa
-    bool mapaEstabaAbierto = false;
+    bool mapWasOpen = false;
 
     #region InputActionsDisabled
     private InputAction _walk;
@@ -165,7 +165,7 @@ public class PauseMenu : MonoBehaviour
             _mapButton.SetActive(true);
 
             //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
-            if (mapaEstabaAbierto)
+            if (mapWasOpen)
             {
                 _dropdownMap._anim.Play("MapaAbierto");
             }
@@ -188,8 +188,8 @@ public class PauseMenu : MonoBehaviour
             _mapButton.SetActive(false);
 
             //Guarda si el mapa estaba abierto antes de pausar
-            mapaEstabaAbierto = _dropdownMap._isOpen;
-            if (mapaEstabaAbierto)
+            mapWasOpen = _dropdownMap._isOpen;
+            if (mapWasOpen)
             {
                 //Cierra el mapa
                 _dropdownMap._anim.Play("MapaCerrado");
@@ -216,7 +216,7 @@ public class PauseMenu : MonoBehaviour
         _mapButton.SetActive(true);
 
         //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
-        if (mapaEstabaAbierto)
+        if (mapWasOpen)
         {
             _dropdownMap._anim.Play("MapaAbierto");
         }

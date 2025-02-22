@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -15,12 +16,12 @@ public class PlayerLife : MonoBehaviour
     public UnityEvent<int> _changeLife;
     public UnityEvent<int> _increaseHeart;
 
-    //JULIO Propiedades para conseguir la vida actual y vida máxima para guardar la info
+    //Propiedades para conseguir la vida actual y vida máxima para guardar la info
     public int ActualLife => _actualLife;
     public int MaxLife => _maxHearts;
     public int ActualCrystalsTaken => _actualCrystalsTaken;
 
-    //JULIO Referencia al script de guardado de datos
+    //Referencia al script de guardado de datos
     [SerializeField] private CheckPointSystem _checkPointSystem;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerMov _playerMov;
@@ -29,6 +30,10 @@ public class PlayerLife : MonoBehaviour
 
     public GameObject _deathCanvas;
     public GameObject _starsBackground;
+
+    [SerializeField] HeartsUI _heartsUI;
+    [SerializeField] RectTransform _uiHeartsCnavas;
+    [SerializeField] float _moveCanvas = 250f;
 
     private void Start()
     {
@@ -93,9 +98,18 @@ public class PlayerLife : MonoBehaviour
         // Verifica si ya tiene suficientes items para aumentar vida
         if (_actualCrystalsTaken >= _requieredCrystals)
         {
-            _maxHearts = _maxHearts + 1;
-            _actualCrystalsTaken = 0;
-            _increaseHeart.Invoke(_maxHearts);
+            _maxHearts = _maxHearts + 1; //Aumenta la vida max
+            _actualLife = _actualLife + 1; //Aumenta la vida actual
+            _actualCrystalsTaken = 0; //Resetea cristales guardados
+
+            _increaseHeart.Invoke(_maxHearts); //Actualiza la UI
+            _changeLife.Invoke(_actualLife); //Actualiza la vida actual en UI
+            _heartsUI.MoreHearts(1); //Añade 1 corazón a la UI
+
+            Vector3 newPosition = _uiHeartsCnavas.localPosition;
+            newPosition.x -= _moveCanvas; // Mueve en el eje X
+            _uiHeartsCnavas.localPosition = newPosition;
+            Debug.Log("Has recogido 4 items, tu vida: " + _maxHearts);
         }
     }
 
@@ -135,7 +149,7 @@ public class PlayerLife : MonoBehaviour
         
     }
 
-    //JULIO Para poder guardar la info de la vida
+    //Para poder guardar la info de la vida
     public void SetActualLife(int nuevaVida)
     {
         _actualLife = nuevaVida;
@@ -150,7 +164,7 @@ public class PlayerLife : MonoBehaviour
         _increaseHeart.Invoke(_maxHearts);
     }
 
-    //JULIO Para poder guardar la info de los cristales
+    //Para poder guardar la info de los cristales
     public void SetCrystalsNumber(int nuevaCantidadCristales)
     {
         _actualCrystalsTaken = nuevaCantidadCristales;

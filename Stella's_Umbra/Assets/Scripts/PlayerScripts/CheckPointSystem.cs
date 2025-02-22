@@ -21,6 +21,9 @@ public class CheckPointSystem : MonoBehaviour
 
     //Referencia al script del Skill Tree_Manager
     private SkillTree_Manager _skillTreeManager;
+
+    //Referencia al Transform del canvas de Corazones
+    [SerializeField] Transform _heartsCanvasTransform;
     #endregion
 
     #region Claves
@@ -61,6 +64,11 @@ public class CheckPointSystem : MonoBehaviour
     const string CanBoulderAttackKey = "PlayerCanBoulderAttack";
     const string CanTornadoAttackKey = "PlayerCanTornadoAttack";
     const string CanEnergyOrbAttackKey = "PlayerCanEnergyOrbAttack";
+
+    //Clave para guardar/cargar la posición del canvas de corazones
+    const string HeartPosXKey = "HeartCanvasPosX";
+    const string HeartPosYKey = "HeartCanvasPosY";
+    const string HeartPosZKey = "HeartCanvasPosZ";
     #endregion
 
     void Start()
@@ -141,6 +149,13 @@ public class CheckPointSystem : MonoBehaviour
             Debug.Log("Puede hacer ataque boulder: " + (_playerAttacks._canBoulderAttack ? 1 : 0));
             Debug.Log("Puede hacer ataque tornado: " + (_playerAttacks._canTornadoAttack ? 1 : 0));
             Debug.Log("Puede hacer ataque fijado: " + (_playerAttacks._canEnergyOrbAttack ? 1 : 0));
+        }
+
+        if (_heartsCanvasTransform != null)
+        {
+            PlayerPrefs.SetFloat(HeartPosXKey, _heartsCanvasTransform.position.x);
+            PlayerPrefs.SetFloat(HeartPosYKey, _heartsCanvasTransform.position.y);
+            PlayerPrefs.SetFloat(HeartPosZKey, _heartsCanvasTransform.position.z);
         }
 
         // Guardar todo en PlayerPrefs
@@ -259,6 +274,17 @@ public class CheckPointSystem : MonoBehaviour
             }
         }
 
+        if (_heartsCanvasTransform != null)
+        {
+            if (PlayerPrefs.HasKey(HeartPosXKey) && PlayerPrefs.HasKey(HeartPosYKey) && PlayerPrefs.HasKey(HeartPosZKey))
+            {
+                float heartPosX = PlayerPrefs.GetFloat(HeartPosXKey);
+                float heartPosY = PlayerPrefs.GetFloat(HeartPosYKey);
+                float heartPosZ = PlayerPrefs.GetFloat(HeartPosZKey);
+                _heartsCanvasTransform.position = new Vector3(heartPosX, heartPosY, heartPosZ);
+            }
+        }
+
         Debug.Log("Progreso cargado.");
     }
 
@@ -286,6 +312,9 @@ public class CheckPointSystem : MonoBehaviour
         PlayerPrefs.DeleteKey(CanBoulderAttackKey);
         PlayerPrefs.DeleteKey(CanTornadoAttackKey);
         PlayerPrefs.DeleteKey(CanEnergyOrbAttackKey);
+        PlayerPrefs.DeleteKey(HeartPosXKey);
+        PlayerPrefs.DeleteKey(HeartPosYKey);
+        PlayerPrefs.DeleteKey(HeartPosZKey);
 
         Debug.Log("Progreso eliminado.");
     }
