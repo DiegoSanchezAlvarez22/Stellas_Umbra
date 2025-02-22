@@ -25,6 +25,7 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] private Vector2 _bounce; //rebote del player al recibir daño
     [HideInInspector] public bool _canMove = true;
     private Vector3 _direction; //no debe ser serializable
+    private bool _wasWalkingBeforeFall = false; //Caminar antes de caer
 
     [Header("Bend Down")]
     [SerializeField] private GameObject _platDetector; //obj que detecta si se esta sobre una plataforma
@@ -158,11 +159,16 @@ public class PlayerMov : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        //Verificar si está cayendo (JULIO)
+        //Verificar si está cayendo al saltar
         if (_rb.linearVelocity.y < -0.1f && !_inFloor)
         {
             _anim.SetBool("isFalling", true);
             _anim.SetBool("isJumping", false);
+        }
+
+        if (_inFloor || _floorIsPlat)
+        {
+            _wasWalkingBeforeFall = Mathf.Abs(_direction.x) > 0.1f;// Si se está moviendo en X, estaba caminando
         }
     }
 
@@ -183,9 +189,11 @@ public class PlayerMov : MonoBehaviour
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
 
-            //Resetear las animaciones de salto y caída (JULIO)
+            //Resetear las animaciones de salto y caída
             _anim.SetBool("isJumping", false);
             _anim.SetBool("isFalling", false);
+
+            _wasWalkingBeforeFall = false;
         }
 
         if (collision.gameObject.CompareTag("Platform"))
@@ -194,7 +202,7 @@ public class PlayerMov : MonoBehaviour
             _canJump = true;
             _jumpsLeft = _jumpsLeftMax;
 
-            //Resetear las animaciones de salto y caída (JULIO)
+            //Resetear las animaciones de salto y caída
             _anim.SetBool("isJumping", false);
             _anim.SetBool("isFalling", false);
         }
@@ -217,6 +225,11 @@ public class PlayerMov : MonoBehaviour
         {   
             _inFloor = false;
             _canJump = false;
+
+            if (_wasWalkingBeforeFall) //Activar animación caída si caminaba
+            {
+                _anim.SetBool("isFalling", true);
+            }
         }
 
         if (collision.gameObject.CompareTag("Wall"))
