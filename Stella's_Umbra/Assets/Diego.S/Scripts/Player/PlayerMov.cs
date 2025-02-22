@@ -213,7 +213,7 @@ public class PlayerMov : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform"))
         {   
             _inFloor = false;
             _canJump = false;
