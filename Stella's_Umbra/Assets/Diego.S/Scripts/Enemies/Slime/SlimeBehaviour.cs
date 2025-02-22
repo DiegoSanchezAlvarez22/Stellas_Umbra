@@ -96,7 +96,7 @@ public class SlimeBehaviour : MonoBehaviour
             if (_distanceToPlayer < 10f && !isPlayingWalkSound)
             {
                 isPlayingWalkSound = true;
-                AudioManagerBehaviour.instance.PlaySFX("Slime movimiento");
+                AudioManagerBehaviour.instance.PlaySFX("Slime Walking");
                 //Se reinicia después de 1.5s
                 Invoke("ResetWalkSound", 1.5f);
             }
@@ -119,7 +119,7 @@ public class SlimeBehaviour : MonoBehaviour
             if (!isPlayingAttackSound)
             {
                 isPlayingAttackSound = true;
-                AudioManagerBehaviour.instance.PlaySFX("Slime ataque");
+                AudioManagerBehaviour.instance.PlaySFX("Slime Attack");
                 // Se reinicia después de 1s
                 Invoke("ResetAttackSound", 1f);
             }

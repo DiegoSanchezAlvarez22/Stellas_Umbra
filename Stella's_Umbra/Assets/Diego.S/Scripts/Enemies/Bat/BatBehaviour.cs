@@ -38,7 +38,7 @@ public class BatBehaviour : MonoBehaviour
         if (_distance < 10f && !isPlayingFlySound)
         {
             isPlayingFlySound = true;
-            AudioManagerBehaviour.instance.PlaySFX("Bat movimiento");
+            AudioManagerBehaviour.instance.PlaySFX("Bat Flying");
             //Se reproduce cada 1s
             Invoke("ResetFlySound", 1f);
         }
@@ -61,7 +61,7 @@ public class BatBehaviour : MonoBehaviour
         if (!isPlayingAttackSound)
         {
             isPlayingAttackSound = true;
-            AudioManagerBehaviour.instance.PlaySFX("Bat ataque");
+            AudioManagerBehaviour.instance.PlaySFX("Bat Attack");
             //Suena cada 0.4s
             Invoke("ResetAttackSound", 0.4f);
         }
