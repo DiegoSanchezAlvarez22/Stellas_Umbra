@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a073a8a89fe886148bbd570a982916b0
+guid: 703f50e4db5b5364798801f51200a8d5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 700
+  spritePixelsToUnits: 2000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: muashroma_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 409
-        width: 1049
-        height: 1049
+        x: 126
+        y: 84
+        width: 788
+        height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,74 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49874919705c235498256b4d9baadc00
-      internalID: 280649839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_1
-      rect:
-        serializedVersion: 2
-        x: 1107
-        y: 409
-        width: 1049
-        height: 1049
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52baf846c354c2a4fb2dd266ddfebdc8
-      internalID: -1514360557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_2
-      rect:
-        serializedVersion: 2
-        x: 2191
-        y: 409
-        width: 1049
-        height: 1049
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a10797aa19fc171409fc2834a32e5941
-      internalID: -1212623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_3
-      rect:
-        serializedVersion: 2
-        x: 3278
-        y: 409
-        width: 1049
-        height: 1049
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5525638e12a423146bd855b6dcc16e3d
-      internalID: -1370581757
+      spriteID: 24a31367011cedf4ca6ddf6495751162
+      internalID: -1589952305
       vertices: []
       indices: 
       edges: []
@@ -201,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b29ce9e74d555db4db1d05fb8d095cf8
+    spriteID: 48bf19f459e2adf47a64b12119a5fa07
     internalID: 0
     vertices: []
     indices: 
@@ -211,10 +132,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      idle_0: 280649839
-      idle_1: -1514360557
-      idle_2: -1212623
-      idle_3: -1370581757
+      muashroma_0: -1589952305
+      muashroma_1: 731895386
+      muashroma_2: -1344713989
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,6 +26,7 @@ public class EnemiesAreaBehaviour : MonoBehaviour
     [SerializeField] private Transform _firePoint; // Punto desde donde se disparan los proyectiles
     [SerializeField] private float _reloadTime = 2f; // Tiempo de recarga entre disparos
     private float _lastAttackTime; // Momento del último ataque
+    private Animator _anim;
 
     enum EnemyType
     {
@@ -46,6 +47,7 @@ public class EnemiesAreaBehaviour : MonoBehaviour
     {
         _startingPos = transform.position;
         _maxSpeed = _speed;
+        _anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -142,6 +144,8 @@ public class EnemiesAreaBehaviour : MonoBehaviour
         }
 
         FlipToTarget(_playerTransform.position);
+
+        _anim.SetTrigger("isAttack"); // Activa la animación de ataque
 
         Attack();
 

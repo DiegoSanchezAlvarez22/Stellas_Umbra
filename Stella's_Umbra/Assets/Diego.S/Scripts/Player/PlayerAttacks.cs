@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerAttacks : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class PlayerAttacks : MonoBehaviour
 
     [Header("Sprite Renderer")]
     [SerializeField] SpriteRenderer _spriteRenderer;
+
+    [Header("Animator")]
+    [SerializeField] Animator _anim;
 
     [Header("Energy")] //ambas variables deben ser guardadas
     [SerializeField] public float _energy = 0; //energía actual del player
@@ -61,6 +65,7 @@ public class PlayerAttacks : MonoBehaviour
     {
         _input = GetComponent<PlayerInput>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
 
         _basicAttack = _input.actions["BasicAttack"];
         _boulderAttack = _input.actions["BoulderAttack"];
@@ -167,13 +172,16 @@ public class PlayerAttacks : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         _basicAttack.Enable();
         _basicAttack.performed += BasicAttack;
 
         _boulderAttack.Enable();
         _boulderAttack.performed += BoulderAttack;
+
+        //_boulderAttackStarted.Enable();
+        //_boulderAttackStarted.started += BoulderAttackStarted;
 
         _energyOrbAttack.Enable();
         _energyOrbAttack.performed += ShootBullet;
@@ -182,13 +190,16 @@ public class PlayerAttacks : MonoBehaviour
         _tornadoAttack.performed += TornadoAttackStarted;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         _basicAttack.performed -= BasicAttack;
         _basicAttack.Disable();
 
         _boulderAttack.performed -= BoulderAttack;
         _boulderAttack.Disable();
+
+        //_boulderAttackStarted.started -= BoulderAttackStarted;
+        //_boulderAttackStarted.Disable();
 
         _energyOrbAttack.performed -= ShootBullet;
         _energyOrbAttack.Disable();
@@ -303,14 +314,27 @@ public class PlayerAttacks : MonoBehaviour
                 if (_spriteRenderer.flipX == true)
                 {
                     shootingPoint.localPosition = _boulderSpawnRight;
+                    
                 }
                 else
                 {
                     shootingPoint.localPosition = _boulderSpawnLeft;
+                    
                 }
+                
                 GameObject instantiatedRoca = GameObject.Instantiate
                     (_boulder, shootingPoint.position, shootingPoint.rotation);
             }
+            
+        }
+
+    }
+
+    private void BoulderAttackStarted(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.started)
+        {
+        _anim.SetBool("BoulderAttack", true); //Isa  
         }
     }
 

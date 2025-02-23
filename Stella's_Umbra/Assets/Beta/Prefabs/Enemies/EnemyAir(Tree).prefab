@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1211793775725558967}
   - component: {fileID: 279257214912267705}
   - component: {fileID: 1064853150759307303}
+  - component: {fileID: 8240719851379132850}
+  - component: {fileID: 8045144147378146371}
   m_Layer: 0
   m_Name: EnemyAir(Tree)
   m_TagString: EnemyAir
@@ -80,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5329246166822893987, guid: f729d6acae7cd754a864abda75a4bbd7, type: 3}
+  m_Sprite: {fileID: 763112662, guid: 74201db3c263f3046a09f3529694bdaf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -176,5 +178,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9862c8893f28f14ca51ae1a2b6ade07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1o": 2
-  _time: 0
+  _damage: 0
+--- !u!114 &8240719851379132850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066546691838169684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBarBehaviour: {fileID: 0}
+  _maxHealth: 0
+  _currentHealth: 0
+  _damageDuration: 0
+  _expToAdd: 0
+  _dyingEffect: {fileID: 0}
+--- !u!95 &8045144147378146371
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066546691838169684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70aafd957de14f34aa491eae364bf461, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
