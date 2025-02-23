@@ -31918,6 +31918,10 @@ PrefabInstance:
       value: CerraduraTexture
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 930c08d8cb3a67a4d9f8ee9eebb23c0f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 930c08d8cb3a67a4d9f8ee9eebb23c0f, type: 3}
       propertyPath: m_TagString
       value: Acceso Jefe
       objectReference: {fileID: 0}
@@ -97381,9 +97385,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 624153525}
     m_Modifications:
+    - target: {fileID: 963284808426167918, guid: bde526514857a8242baf99455db11ef2, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4063471526999525636, guid: bde526514857a8242baf99455db11ef2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.839
+      value: -39.55
       objectReference: {fileID: 0}
     - target: {fileID: 4063471526999525636, guid: bde526514857a8242baf99455db11ef2, type: 3}
       propertyPath: m_LocalPosition.y

@@ -43,6 +43,8 @@ public class Interactable : MonoBehaviour
     {
         if (_isPlayerIn)
         {
+            AudioManagerBehaviour.instance.PlaySFX("Interact");
+
             Debug.Log("Interacción realizada con el objeto.");
 
             SceneManager.LoadScene(_sceneName);

@@ -226,6 +226,8 @@ public class EnemiesAreaBehaviour : MonoBehaviour
             return;
         }
 
+        AudioManagerBehaviour.instance.PlaySFX("Slime Attack");
+
         GameObject projectile = Instantiate(_projectilePrefab, _firePoint.position,
             Quaternion.identity); // Instanciar el disparo desde la posicion de disparo
         Vector3 direction = (_playerTransform.position - 

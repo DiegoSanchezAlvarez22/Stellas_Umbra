@@ -134,10 +134,15 @@ public class PlayerLife : MonoBehaviour
         if (_actualLife <= 0)
         {
             _actualLife = 0;
+
+            AudioManagerBehaviour.instance.PlaySFX("Player Death");
+
             Debug.Log("Has muerto");
         }
         else if (_actualLife > 0)
         {
+            AudioManagerBehaviour.instance.PlaySFX("Player Hurt");
+
             StartCoroutine(LooseControl());
             StartCoroutine(DisableCollision());
             _playerMov.Bounce(_pos);

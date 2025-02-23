@@ -299,6 +299,8 @@ public class PlayerAttacks : MonoBehaviour
                 _isAttacking = true;
                 _attackArea.SetActive(_isAttacking);
 
+                AudioManagerBehaviour.instance.PlaySFX("BasicAttack");
+
                 _basicAttackRecharged = false;
                 _timerRecharge = 0;
             }
@@ -311,6 +313,8 @@ public class PlayerAttacks : MonoBehaviour
         {
             if (_canBoulderAttack == true)
             {
+                AudioManagerBehaviour.instance.PlaySFX("BoulderAttack");
+
                 if (_spriteRenderer.flipX == true)
                 {
                     shootingPoint.localPosition = _boulderSpawnRight;
@@ -359,6 +363,9 @@ public class PlayerAttacks : MonoBehaviour
                     //Obtiene al primer enemigo de la lista
                     Transform targetEnemy = _enemiesInside[0].transform;
 
+                    //Modifica el shootingPoint
+                    _shootingPoint.localPosition = new Vector3(0, 0, 0);
+
                     //Calcula la dirección hacia el enemigo
                     Vector3 direction = (targetEnemy.position - _shootingPoint.position).normalized;
 
@@ -372,6 +379,10 @@ public class PlayerAttacks : MonoBehaviour
                     {
                         _bulletBehaviour.SetDirection(direction);
                     }
+
+                    //Reproduce el sonido
+                    AudioManagerBehaviour.instance.PlaySFX("EnergyOrbAttack");
+
                     Debug.Log("Se ha disparado la bala");
                 }
                 else
@@ -415,6 +426,7 @@ public class PlayerAttacks : MonoBehaviour
         {
             if (_energy >= 100)
             {
+                AudioManagerBehaviour.instance.PlaySFX("Tornado Attack");
                 GameObject instantiatedTornado;
                 instantiatedTornado = GameObject.Instantiate(_tornado, new Vector3(transform.localPosition.x, (float)2.5, transform.localPosition.z),
                     shootingPoint.rotation);

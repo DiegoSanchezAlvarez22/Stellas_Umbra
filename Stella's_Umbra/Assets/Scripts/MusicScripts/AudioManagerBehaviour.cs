@@ -16,7 +16,6 @@ public class AudioManagerBehaviour : MonoBehaviour
     [SerializeField] public AudioClip background;
     [SerializeField] public AudioClip bossBackground;
     [SerializeField] public List<AudioClip> soundEffects;
-
     private bool isBossFight = false;
 
     void Awake()

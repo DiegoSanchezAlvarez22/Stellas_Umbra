@@ -129,7 +129,7 @@ public class SlimeBehaviour : MonoBehaviour
             if (!isPlayingAttackSound)
             {
                 isPlayingAttackSound = true;
-                AudioManagerBehaviour.instance.PlaySFX("Slime Attack");
+                AudioManagerBehaviour.instance.PlaySFX("Gas Attack");
                 // Se reinicia después de 1s
                 Invoke("ResetAttackSound", 1f);
             }

@@ -40,8 +40,12 @@ public class EnemyLifes : MonoBehaviour
         else
         {
             Debug.Log("3");
+
             _playerTarget.GetComponent<PlayerExpSystem>().AddExp(_expToAdd);
             Instantiate(_dyingEffect, transform.position, transform.rotation);
+
+            //Sonido de muerte
+            AudioManagerBehaviour.instance.PlaySFX("Enemies Deaths");
 
             //Avisar a AtaqueFijado que el enemigo ha muerto
             PlayerAttacks _playerAttacks = FindAnyObjectByType<PlayerAttacks>();
