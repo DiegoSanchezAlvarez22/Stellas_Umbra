@@ -13,7 +13,7 @@ public class Sonidos : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        //JULIO Aplica el volumen guardado del Audio Mixer, al AudioSource del Player
+        //Aplica el volumen guardado del Audio Mixer, al AudioSource del Player
         float savedVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
         miMixer.SetFloat("SFX", Mathf.Log10(savedVolume) * 20);
     }

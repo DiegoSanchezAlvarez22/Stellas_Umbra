@@ -36,6 +36,8 @@ public class SlimeBehaviour : MonoBehaviour
     //Variables para la música
     bool isPlayingWalkSound = false;
     bool isPlayingAttackSound = false;
+
+    private bool _canAttack = false;
     #endregion
 
     void Start()
@@ -44,6 +46,14 @@ public class SlimeBehaviour : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _anim = GetComponent<Animator>();
         _player = GameObject.Find("Player").transform; // Busca al jugador en la escena
+
+        _actualSpeed = _speed;
+        Invoke("EnableAttack", 2f);
+    }
+
+    void EnableAttack()
+    {
+        _canAttack = true;
     }
 
     void Update()
@@ -109,7 +119,7 @@ public class SlimeBehaviour : MonoBehaviour
         }
 
         // Si el jugador está lo suficientemente cerca para atacar
-        if (_distanceToPlayer < _attackDistance)
+        if (_distanceToPlayer < _attackDistance && _canAttack)
         {
             _actualSpeed = 0; // Detiene el movimiento
             _anim.SetTrigger("isAttack"); // Activa la animación de ataque
@@ -129,11 +139,13 @@ public class SlimeBehaviour : MonoBehaviour
     void ResetWalkSound()
     {
         isPlayingWalkSound = false;
+        Debug.Log("ResetWalkSound ejecutado");
     }
 
     void ResetAttackSound()
     {
         isPlayingAttackSound = false;
+        Debug.Log("ResetAttackSound ejecutado");
     }
 
 

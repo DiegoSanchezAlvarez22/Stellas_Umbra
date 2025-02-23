@@ -187,19 +187,18 @@ public class CheckPointSystem : MonoBehaviour
         //Cargar la vida desde PlayerPrefs
         if (_playerLifes != null)
         {
-            // Cargar la vida actual desde PlayerPrefs
-            if (PlayerPrefs.HasKey(VidaKey))
-            {
-                int savedVida = PlayerPrefs.GetInt(VidaKey);
-                _playerLifes.SetActualLife(savedVida);
-                _playerLifes._changeLife.Invoke(savedVida);
-            }
-
             // Cargar la vida máxima desde PlayerPrefs
             if (PlayerPrefs.HasKey(VidaMaxKey))
             {
                 int savedVidaMax = PlayerPrefs.GetInt(VidaMaxKey);
                 _playerLifes.SetMaxLife(savedVidaMax);
+            }
+
+            // Cargar la vida actual desde PlayerPrefs
+            if (PlayerPrefs.HasKey(VidaKey))
+            {
+                int savedVida = PlayerPrefs.GetInt(VidaKey);
+                _playerLifes.SetActualLife(savedVida);
             }
 
             //Cargar los cristales desde PlayerPrefs

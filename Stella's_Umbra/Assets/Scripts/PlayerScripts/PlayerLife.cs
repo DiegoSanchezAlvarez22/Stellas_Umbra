@@ -40,7 +40,7 @@ public class PlayerLife : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerMov = GetComponent<PlayerMov>();
 
-        _actualLife = _maxHearts;
+        _checkPointSystem.LoadProgress();
         _changeLife.Invoke(_actualLife);
 
         _deathCanvas.SetActive(false);
@@ -152,7 +152,9 @@ public class PlayerLife : MonoBehaviour
     //Para poder guardar la info de la vida
     public void SetActualLife(int nuevaVida)
     {
+        Debug.Log($"[SetActualLife] Intentando asignar vida: {nuevaVida}, Vida máxima: {_maxHearts}");
         _actualLife = nuevaVida;
+        Debug.Log($"[SetActualLife] Vida después de asignación: {_actualLife}");
         // Invocar evento para actualizar la UI
         _changeLife.Invoke(_actualLife);
     }

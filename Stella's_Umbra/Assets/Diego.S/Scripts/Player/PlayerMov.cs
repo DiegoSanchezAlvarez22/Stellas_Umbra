@@ -83,7 +83,6 @@ public class PlayerMov : MonoBehaviour
 
     [Header("Collider")]
     [SerializeField] BoxCollider _collider;
-
     #endregion
 
     private void Awake()
@@ -421,13 +420,13 @@ public class PlayerMov : MonoBehaviour
                 _rb.AddForce(Vector3.up * _jumpForce * 10);
                 _jumpsLeft = _jumpsLeft - 1f;
 
-                //Se reinicia la velocidad vertical (JULIO)
+                //Se reinicia la velocidad vertical
                 _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
 
-                //Animación se apaga antes de reiniciarla (JULIO)
+                //Animación se apaga antes de reiniciarla
                 _anim.SetBool("isJumping", false);
 
-                //Se reproduce la animación desde cero (JULIO)
+                //Se reproduce la animación desde cero
                 _anim.Play("LyraJump", -1, 0f);
                 _anim.SetBool("isJumping", true);
                 _anim.SetBool("isFalling", false);

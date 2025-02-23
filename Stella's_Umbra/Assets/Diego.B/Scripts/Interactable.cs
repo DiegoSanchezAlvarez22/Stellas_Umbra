@@ -44,7 +44,7 @@ public class Interactable : MonoBehaviour
         if (_isPlayerIn)
         {
             Debug.Log("Interacción realizada con el objeto.");
-            // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
+
             SceneManager.LoadScene(_sceneName);
         }
     }
