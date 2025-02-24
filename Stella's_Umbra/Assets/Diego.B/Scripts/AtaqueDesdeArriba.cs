@@ -11,5 +11,9 @@ public class AtaqueDesdeArriba : MonoBehaviour
             other.GetComponent<EnemyLifes>().DamageRecieved(_damage); //Perdida de vida del enemigo
             Destroy(gameObject); //Destruir este objeto disparable
         }
+        else if (other.CompareTag("Floor") || other.CompareTag("Wall"))
+        {
+            Destroy(gameObject); //Destruir este objeto disparable
+        }
     }
 }

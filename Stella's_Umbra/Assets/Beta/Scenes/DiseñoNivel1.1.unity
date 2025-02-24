@@ -922,7 +922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18182516}
   - component: {fileID: 18182515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (5)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -1428,7 +1428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: _destinies.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: 'destinos.Array.data[0]'
@@ -1445,7 +1445,15 @@ PrefabInstance:
     - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: '_destinies.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 275972859}
+    - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
+      propertyPath: '_destinies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1319970296}
+    - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
+      propertyPath: '_destinies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 468557950}
     - target: {fileID: 5885170143619853654, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1898,7 +1906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 43555092}
   - component: {fileID: 43555093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (25)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -3745,7 +3753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 104702826}
   - component: {fileID: 104702825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -4449,9 +4457,9 @@ GameObject:
   m_Component:
   - component: {fileID: 127467773}
   - component: {fileID: 127467774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (29)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7045,9 +7053,9 @@ GameObject:
   m_Component:
   - component: {fileID: 196467591}
   - component: {fileID: 196467592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (20)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7184,7 +7192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200640614}
   - component: {fileID: 200640615}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (10)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -8036,7 +8044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236779547}
   - component: {fileID: 236779548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (29)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -8727,7 +8735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257215317}
   - component: {fileID: 257215318}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (2)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -10618,7 +10626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321446038}
   - component: {fileID: 321446039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (6)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -12952,32 +12960,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395848516}
   m_Mesh: {fileID: 8552134717624371188, guid: a1f04db8b9e666c498c3bd417a49ac38, type: 3}
---- !u!1 &397081891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7146521406498821007, guid: c02a7797480e72845af94ebbca4e9fe4, type: 3}
-  m_PrefabInstance: {fileID: 1995097493}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &397081895
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397081891}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.05782878, y: 0.021099914, z: 0.36659166}
-  m_Center: {x: -0.018914388, y: -0.000011701135, z: -0.16277783}
 --- !u!1 &398845719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15413,9 +15395,9 @@ GameObject:
   m_Component:
   - component: {fileID: 451594644}
   - component: {fileID: 451594645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15691,7 +15673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 456413853}
   - component: {fileID: 456413854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (17)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -18227,7 +18209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515257237}
   - component: {fileID: 515257238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (20)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -19636,7 +19618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540531656}
   - component: {fileID: 540531657}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (36)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -20247,7 +20229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555556675}
   - component: {fileID: 555556676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (34)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -20374,9 +20356,9 @@ GameObject:
   m_Component:
   - component: {fileID: 559532283}
   - component: {fileID: 559532284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (32)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20427,9 +20409,9 @@ GameObject:
   m_Component:
   - component: {fileID: 563872480}
   - component: {fileID: 563872481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (30)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20612,7 +20594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eaf81863876ac748a648908e0d72767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _marker: {fileID: 0}
+  _marker: {fileID: 1477703107}
 --- !u!114 &566414717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21494,9 +21476,9 @@ GameObject:
   m_Component:
   - component: {fileID: 591744047}
   - component: {fileID: 591744048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (33)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22181,7 +22163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604670199}
   - component: {fileID: 604670200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (23)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -22372,9 +22354,9 @@ GameObject:
   m_Component:
   - component: {fileID: 606968084}
   - component: {fileID: 606968085}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (17)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23283,7 +23265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627878917}
   - component: {fileID: 627878918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (30)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -24046,9 +24028,9 @@ GameObject:
   m_Component:
   - component: {fileID: 645228586}
   - component: {fileID: 645228587}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (12)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24266,9 +24248,9 @@ GameObject:
   m_Component:
   - component: {fileID: 653185793}
   - component: {fileID: 653185794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (26)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24707,7 +24689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666054284}
   - component: {fileID: 666054285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (21)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -27086,7 +27068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 744500976}
   - component: {fileID: 744500977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (7)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -28404,9 +28386,9 @@ GameObject:
   m_Component:
   - component: {fileID: 792973051}
   - component: {fileID: 792973052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (27)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28682,7 +28664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798152157}
   - component: {fileID: 798152158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (19)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -28735,7 +28717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 800275703}
   - component: {fileID: 800275704}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (32)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -29138,9 +29120,9 @@ GameObject:
   m_Component:
   - component: {fileID: 810108281}
   - component: {fileID: 810108282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (18)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30991,7 +30973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 849269501}
   - component: {fileID: 849269502}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (11)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -31044,9 +31026,9 @@ GameObject:
   m_Component:
   - component: {fileID: 849986751}
   - component: {fileID: 849986752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (5)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32136,9 +32118,9 @@ GameObject:
   m_Component:
   - component: {fileID: 893959125}
   - component: {fileID: 893959126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (21)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32551,7 +32533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 914841721}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -32892,7 +32874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926468386}
   - component: {fileID: 926468387}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (4)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -33217,7 +33199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 948884891}
   - component: {fileID: 948884890}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (4)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -38568,9 +38550,9 @@ GameObject:
   m_Component:
   - component: {fileID: 962486196}
   - component: {fileID: 962486197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (16)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38806,7 +38788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983142239}
   - component: {fileID: 983142240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (12)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -39699,9 +39681,9 @@ GameObject:
   m_Component:
   - component: {fileID: 995103028}
   - component: {fileID: 995103029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (13)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40415,9 +40397,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1017094645}
   - component: {fileID: 1017094646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (23)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40468,9 +40450,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1017163333}
   - component: {fileID: 1017163334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (7)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40774,9 +40756,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1029116555}
   - component: {fileID: 1029116556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (22)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43112,9 +43094,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1084001414}
   - component: {fileID: 1084001415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (24)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43196,9 +43178,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1087373659}
   - component: {fileID: 1087373660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (1)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43920,7 +43902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103873336}
   - component: {fileID: 1103873337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (15)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -44771,6 +44753,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 460843216}
     - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _boulder
+      value: 
+      objectReference: {fileID: 3716904149244654803, guid: 79422fe72c83c424b96c0ab59cd99d26, type: 3}
+    - target: {fileID: 8280908493845885683, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: _enemyIndicator
       value: 
       objectReference: {fileID: 1138863689}
@@ -45275,7 +45261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129627028}
   - component: {fileID: 1129627029}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (27)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -45599,9 +45585,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1134770292}
   - component: {fileID: 1134770293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (2)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45727,7 +45713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150374865}
   - component: {fileID: 1150374866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (28)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -48076,7 +48062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225682010}
   - component: {fileID: 1225682009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (1)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -48129,9 +48115,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1226817856}
   - component: {fileID: 1226817857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (25)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49206,9 +49192,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1261918602}
   - component: {fileID: 1261918603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (3)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49595,9 +49581,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1273750654}
   - component: {fileID: 1273750655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (4)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49648,7 +49634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273991825}
   - component: {fileID: 1273991826}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (9)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -50035,7 +50021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280924828}
   - component: {fileID: 1280924829}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (26)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -51765,7 +51751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337892649}
   - component: {fileID: 1337892650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (31)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -58461,7 +58447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369880735}
   - component: {fileID: 1369880736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (22)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -59729,7 +59715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1411571420}
   - component: {fileID: 1411571419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (3)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -60085,7 +60071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412790192}
   - component: {fileID: 1412790193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (37)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -60898,9 +60884,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1429920766}
   - component: {fileID: 1429920767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (15)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61740,9 +61726,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1465347071}
   - component: {fileID: 1465347072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (11)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62039,9 +62025,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1476392055}
   - component: {fileID: 1476392056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (8)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62790,7 +62776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1498540653}
   - component: {fileID: 1498540654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (33)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -63044,7 +63030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eaf81863876ac748a648908e0d72767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _marker: {fileID: 0}
+  _marker: {fileID: 584725888}
 --- !u!114 &1508186946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68980,7 +68966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551868635}
   - component: {fileID: 1551868636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (13)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -69088,7 +69074,7 @@ Transform:
   m_GameObject: {fileID: 1552278755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.978226, y: 49.68535, z: 13}
+  m_LocalPosition: {x: -50.978226, y: 49.68535, z: 12.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69542,9 +69528,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1584111283}
   - component: {fileID: 1584111284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (28)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71244,9 +71230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1620229365}
   - component: {fileID: 1620229366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (31)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71297,7 +71283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621693811}
   - component: {fileID: 1621693812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (1)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -74295,7 +74281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682310391}
   - component: {fileID: 1682310392}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (24)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -76212,9 +76198,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1721618766}
   - component: {fileID: 1721618767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (19)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76265,9 +76251,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1725021370}
   - component: {fileID: 1725021371}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (6)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79342,7 +79328,7 @@ Transform:
   m_GameObject: {fileID: 1794930253}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.17645, y: 151.22763, z: 13}
+  m_LocalPosition: {x: -76.17645, y: 151.22763, z: 12.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81347,7 +81333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830824975}
   - component: {fileID: 1830824976}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (3)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -81613,9 +81599,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1839011988}
   - component: {fileID: 1839011989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (9)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82174,9 +82160,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1859019786}
   - component: {fileID: 1859019787}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (10)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82316,9 +82302,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1859686881}
   - component: {fileID: 1859686882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderPared (14)
-  m_TagString: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83571,7 +83557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894690092}
   - component: {fileID: 1894690093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (18)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -84738,7 +84724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1930794700}
   - component: {fileID: 1930794701}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (14)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -86946,7 +86932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992957222}
   - component: {fileID: 1992957223}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (35)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -87114,10 +87100,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4865064391339405807, guid: c02a7797480e72845af94ebbca4e9fe4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 942775174}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: -7146521406498821007, guid: c02a7797480e72845af94ebbca4e9fe4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 397081895}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02a7797480e72845af94ebbca4e9fe4, type: 3}
 --- !u!4 &1995097494 stripped
 Transform:
@@ -89087,7 +89070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2040477819}
   - component: {fileID: 2040477820}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (8)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -94773,7 +94756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2089309099}
   - component: {fileID: 2089309098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (2)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -95733,7 +95716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eaf81863876ac748a648908e0d72767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _marker: {fileID: 0}
+  _marker: {fileID: 1275378104}
 --- !u!114 &2115869868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96298,7 +96281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134010669}
   - component: {fileID: 2134010670}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ColliderSuelo (16)
   m_TagString: Floor
   m_Icon: {fileID: 0}
