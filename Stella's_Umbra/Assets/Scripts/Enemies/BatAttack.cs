@@ -23,7 +23,7 @@ public class BatAttack : MonoBehaviour
 
             if (playerLife != null)
             {
-                playerLife.LooseLife(_damage, other.gameObject.transform.position); // Quita vida al jugador
+                playerLife.LooseLife(_damage, other.gameObject.transform.position, gameObject.tag); // Quita vida al jugador
                 Debug.Log("Jugador recibió daño: " + _damage);
             }
 
@@ -45,7 +45,7 @@ public class BatAttack : MonoBehaviour
             {
                 AudioManagerBehaviour.instance.PlaySFX("Bat Attack");
                 Debug.Log("Jugador recibió daño: " + _damage);
-                playerLife.LooseLife(_damage, collision.GetContact(0).normal); // Quita vida al jugador
+                playerLife.LooseLife(_damage, collision.GetContact(0).normal, gameObject.tag); // Quita vida al jugador
             }
 
             if (gameObject.tag == "EnemyShot")

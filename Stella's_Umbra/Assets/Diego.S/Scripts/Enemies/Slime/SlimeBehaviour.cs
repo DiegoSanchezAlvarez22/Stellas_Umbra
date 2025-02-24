@@ -29,6 +29,8 @@ public class SlimeBehaviour : MonoBehaviour
     [SerializeField] private float _distanceMoveToPlayer; // Distancia a la que el enemigo comienza a moverse hacia el jugador
     [SerializeField] private float _attackDistance; // Distancia a la que el enemigo comienza a atacar
     [SerializeField] private float _tiempoAtacando; // Tiempo que dura la animación de ataque
+    [SerializeField] private GameObject _colliderAttack;
+    private float _timeToNextAttack = 0f;
     private float _distanceToPlayer; // Distancia actual entre el enemigo y el jugador
     private Animator _anim; // Referencia al Animator para controlar animaciones
     private Transform _player; // Referencia al transform del jugador
@@ -75,6 +77,8 @@ public class SlimeBehaviour : MonoBehaviour
                 Girar();
             }
         }
+
+        _timeToNextAttack += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -125,6 +129,11 @@ public class SlimeBehaviour : MonoBehaviour
             _anim.SetTrigger("isAttack"); // Activa la animación de ataque
             Invoke("Timer", _tiempoAtacando); // Espera antes de volver a moverse
 
+            if (_timeToNextAttack >= 5)
+            {
+                StartCoroutine(SlimeAttack());
+            }
+
             //Solo suena el sonido de ataque si no se ha activado recientemente
             if (!isPlayingAttackSound)
             {
@@ -134,6 +143,14 @@ public class SlimeBehaviour : MonoBehaviour
                 Invoke("ResetAttackSound", 1f);
             }
         }
+    }
+
+    private IEnumerator SlimeAttack()
+    {
+        _colliderAttack.SetActive(true);
+        yield return new WaitForSeconds(0.65f);
+        _colliderAttack.SetActive(false);
+        _timeToNextAttack = 0;
     }
 
     void ResetWalkSound()

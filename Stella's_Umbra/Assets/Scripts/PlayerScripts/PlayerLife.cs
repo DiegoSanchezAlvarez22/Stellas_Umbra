@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -34,6 +35,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] HeartsUI _heartsUI;
     [SerializeField] RectTransform _uiHeartsCnavas;
     [SerializeField] float _moveCanvas = 250f;
+
 
     private void Start()
     {
@@ -125,7 +127,7 @@ public class PlayerLife : MonoBehaviour
     }
 
     // Método para disminuir la vida
-    public void LooseLife(int daño, Vector2 _pos)
+    public void LooseLife(int daño, Vector2 _pos, string _tag)
     {
         StartCoroutine(DamageChangeColor());
 
@@ -143,15 +145,25 @@ public class PlayerLife : MonoBehaviour
         {
             AudioManagerBehaviour.instance.PlaySFX("Player Hurt");
 
-            StartCoroutine(LooseControl());
+            if(_tag != "Boss")
+            {
+                StartCoroutine(LooseControl());
+            }
+            else
+            {
+                StartCoroutine(LooseControlBoss());
+            }
+                
             StartCoroutine(DisableCollision());
-            _playerMov.Bounce(_pos);
+
+            if (_tag == "EnemyAir" || _tag == "EnemyFloor" || _tag == "Boss")
+            {
+                _playerMov.Bounce(_pos);
+            }
         }
 
         _changeLife.Invoke(_actualLife);
         Debug.Log("Vida actual: " + _actualLife);
-
-        
     }
 
     //Para poder guardar la info de la vida
@@ -184,6 +196,13 @@ public class PlayerLife : MonoBehaviour
         _playerMov._canMove = true;
     }
 
+    private IEnumerator LooseControlBoss()
+    {
+        _playerMov._canMove = false;
+        yield return new WaitForSeconds(_looseControlTime/2f);
+        _playerMov._canMove = true;
+    }
+
     private IEnumerator DisableCollision()
     {
         Physics.IgnoreLayerCollision(9, 10, true);
@@ -197,5 +216,14 @@ public class PlayerLife : MonoBehaviour
         _spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         _spriteRenderer.color = Color.white;
+    }
+
+    void EnemyRespawn()
+    {
+        // Llamar a OnPlayerDeath() en cada enemigo registrado
+        foreach (EnemyRespawn enemy in EnemyManager.Instance.GetEnemies())
+        {
+            enemy.OnPlayerDeath();
+        }
     }
 }

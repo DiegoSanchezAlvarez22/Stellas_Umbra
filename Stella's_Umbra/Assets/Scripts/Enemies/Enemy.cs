@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
 
             if (playerLife != null)
             {
-                playerLife.LooseLife(_damage, other.gameObject.transform.position); // Quita vida al jugador
+                if (gameObject.tag == "EnemyShot")
+                playerLife.LooseLife(_damage, other.gameObject.transform.position, gameObject.tag); // Quita vida al jugador
                 Debug.Log("Jugador recibió daño: " + _damage);
             }
 
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
             if (playerLife != null)
             {
                 Debug.Log("Jugador recibió daño: " + _damage);
-                playerLife.LooseLife(_damage, collision.GetContact(0).normal); // Quita vida al jugador
+                playerLife.LooseLife(_damage, collision.GetContact(0).normal, gameObject.tag); // Quita vida al jugador
             }
 
             if (gameObject.tag == "EnemyShot")

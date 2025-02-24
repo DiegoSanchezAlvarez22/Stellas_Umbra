@@ -92,7 +92,7 @@ public class EnemiesAreaBehaviour : MonoBehaviour
             return;
         }
 
-        Vector3 _posToFollow = new Vector3(_playerTransform.position.x, _playerTransform.position.y + 4, _playerTransform.position.z);
+        Vector3 _posToFollow = new Vector3(_playerTransform.position.x, _playerTransform.position.y + 4, 12.7f);
         transform.position = Vector2.MoveTowards(transform.position, _posToFollow, _speed * Time.deltaTime);
         //transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
 
@@ -133,7 +133,7 @@ public class EnemiesAreaBehaviour : MonoBehaviour
 
     private void AttackingState()
     {
-        Vector3 _posToFollow = new Vector3(_playerTransform.position.x, _playerTransform.position.y + 4, _playerTransform.position.z);
+        Vector3 _posToFollow = new Vector3(_playerTransform.position.x, _playerTransform.position.y + 4, 12.7f);
         transform.position = Vector2.MoveTowards(transform.position, _posToFollow, _speed * Time.deltaTime);
         //transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _speed / _speedReductor * Time.deltaTime);
 
@@ -242,15 +242,15 @@ public class EnemiesAreaBehaviour : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, _searchRange);
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawWireSphere(transform.position, _searchRange);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _attackDistance);
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, _attackDistance);
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, _maxDistance);
-    }
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawWireSphere(transform.position, _maxDistance);
+    //}
 }

@@ -15,7 +15,7 @@ public class EnemyLifes : MonoBehaviour
 
     private void Start()
     {
-        _currentHealth = _maxHealth;
+        _maxHealth = _currentHealth;
         _healthBarBehaviour.UpdateHealthBar(_maxHealth, _currentHealth, _currentHealth);
         _spriteRenderer = GetComponent<SpriteRenderer>();
 

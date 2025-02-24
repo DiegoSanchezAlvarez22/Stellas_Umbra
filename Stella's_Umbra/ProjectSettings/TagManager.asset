@@ -19,6 +19,7 @@ TagManager:
   - Platform
   - Acceso Jefe
   - Audio
+  - Boss
   layers:
   - Default
   - TransparentFX

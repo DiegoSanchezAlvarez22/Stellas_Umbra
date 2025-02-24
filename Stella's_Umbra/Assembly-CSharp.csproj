@@ -104,6 +104,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
     <Compile Include="Assets\Scripts\Objects\Item.cs" />
     <Compile Include="Assets\Scripts\TpScripts\Flag.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\BatAttack.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\BrightnessSettings.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\Diego.B\Scripts\InteractionMesage.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyRespawn.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\MainMenu.cs" />

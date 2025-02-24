@@ -14,7 +14,7 @@ public class BossDamage : MonoBehaviour
 
             if (vidaJugador != null)
             {
-                vidaJugador.LooseLife(_damage, gameObject.transform.position); // Quita vida al jugador
+                vidaJugador.LooseLife(_damage, gameObject.transform.position, gameObject.tag); // Quita vida al jugador
                 Debug.Log("Jugador recibió daño: " + _damage);
             }
         }
