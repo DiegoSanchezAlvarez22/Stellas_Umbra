@@ -26,8 +26,11 @@ public class PauseMenu : MonoBehaviour
     private bool pausedGame = false;
     private string lastControlScheme;
 
+    [Header("Icons")]
     [SerializeField] GameObject _mapButton;
     [SerializeField] MapBehaviour _dropdownMap;
+    [SerializeField] InteractionMesage _interactionMesage;
+
     //Guardar estado del mapa
     bool mapWasOpen = false;
 
@@ -163,6 +166,7 @@ public class PauseMenu : MonoBehaviour
             _brightness.SetActive(false);
             puntero.SetActive(false);
             _mapButton.SetActive(true);
+            _interactionMesage.OnGameResumed();
 
             //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
             if (mapWasOpen)
@@ -186,6 +190,7 @@ public class PauseMenu : MonoBehaviour
             _brightness.SetActive(true);
             puntero.SetActive(true);
             _mapButton.SetActive(false);
+            _interactionMesage.OnGamePaused();
 
             //Guarda si el mapa estaba abierto antes de pausar
             mapWasOpen = _dropdownMap._isOpen;
@@ -212,8 +217,8 @@ public class PauseMenu : MonoBehaviour
         _settingsMenu.SetActive(false);
         _brightness.SetActive(false);
         puntero.SetActive(false);
-
         _mapButton.SetActive(true);
+        _interactionMesage.OnGameResumed();
 
         //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
         if (mapWasOpen)

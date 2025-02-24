@@ -87,6 +87,7 @@
     <Compile Include="Assets\Diego.B\Scripts\Interactable.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerDestroyLoads.cs" />
     <Compile Include="Assets\Diego.S\Scripts\SceneChangerSpace.cs" />
+    <Compile Include="Assets\Scripts\Enemies\TreeWalkBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\Jump.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\Respawn.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Palanca.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
     <Compile Include="Assets\Scripts\Objects\Item.cs" />
     <Compile Include="Assets\Scripts\TpScripts\Flag.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BatAttack.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\BrightnessSettings.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatContinueAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\PauseMenu.cs" />

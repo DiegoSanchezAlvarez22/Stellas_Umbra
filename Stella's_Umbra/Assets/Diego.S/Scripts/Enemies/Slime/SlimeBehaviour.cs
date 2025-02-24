@@ -139,13 +139,11 @@ public class SlimeBehaviour : MonoBehaviour
     void ResetWalkSound()
     {
         isPlayingWalkSound = false;
-        Debug.Log("ResetWalkSound ejecutado");
     }
 
     void ResetAttackSound()
     {
         isPlayingAttackSound = false;
-        Debug.Log("ResetAttackSound ejecutado");
     }
 
 

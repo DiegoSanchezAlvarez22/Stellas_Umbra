@@ -21,11 +21,11 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) // Verifica si el objeto que colisiona es el jugador
         {
-            PlayerLife vidaJugador = other.GetComponent<PlayerLife>();
+            PlayerLife playerLife = other.GetComponent<PlayerLife>();
 
-            if (vidaJugador != null)
+            if (playerLife != null)
             {
-                vidaJugador.LooseLife(_damage, other.gameObject.transform.position); // Quita vida al jugador
+                playerLife.LooseLife(_damage, other.gameObject.transform.position); // Quita vida al jugador
                 Debug.Log("Jugador recibió daño: " + _damage);
             }
 
@@ -41,12 +41,12 @@ public class Enemy : MonoBehaviour
         // Verifica si el objeto que colisiona es el jugador
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLife vidaJugador = collision.gameObject.GetComponent<PlayerLife>();
+            PlayerLife playerLife = collision.gameObject.GetComponent<PlayerLife>();
 
-            if (vidaJugador != null)
+            if (playerLife != null)
             {
                 Debug.Log("Jugador recibió daño: " + _damage);
-                vidaJugador.LooseLife(_damage, collision.GetContact(0).normal); // Quita vida al jugador
+                playerLife.LooseLife(_damage, collision.GetContact(0).normal); // Quita vida al jugador
             }
 
             if (gameObject.tag == "EnemyShot")

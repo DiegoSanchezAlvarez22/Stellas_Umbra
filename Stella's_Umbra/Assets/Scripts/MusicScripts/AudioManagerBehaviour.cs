@@ -15,8 +15,10 @@ public class AudioManagerBehaviour : MonoBehaviour
 
     [SerializeField] public AudioClip background;
     [SerializeField] public AudioClip bossBackground;
+    [SerializeField] public AudioClip adventureBackground;
     [SerializeField] public List<AudioClip> soundEffects;
     private bool isBossFight = false;
+    private bool isLevel1 = false;
 
     void Awake()
     {
@@ -64,23 +66,33 @@ public class AudioManagerBehaviour : MonoBehaviour
             if (!isBossFight)
             {
                 isBossFight = true;
+                isLevel1 = false; // Resetear nivel 1 si estaba activo
 
-                musicSource.clip = background;
                 musicSource.Stop();
-
                 musicSource.clip = bossBackground;
                 musicSource.Play();
             }
         }
-        else
+        else if (scene.name == "DiseñoNivel1.1")
         {
-            //Si venimos de la escena del jefe, restauramos la música
-            if (isBossFight)
+            if (!isLevel1)
+            {
+                isLevel1 = true;
+                isBossFight = false; // Resetear boss fight si estaba activo
+
+                musicSource.Stop();
+                musicSource.clip = adventureBackground;
+                musicSource.Play();
+            }
+        }
+        else if (scene.name == "Menu Principal")
+        {
+            if (isBossFight || isLevel1) // Si venimos de otra música específica, restablecemos a background
             {
                 isBossFight = false;
-                musicSource.clip = bossBackground;
-                musicSource.Stop();
+                isLevel1 = false;
 
+                musicSource.Stop();
                 musicSource.clip = background;
                 musicSource.Play();
             }
