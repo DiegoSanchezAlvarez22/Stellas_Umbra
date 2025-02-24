@@ -22629,6 +22629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactuar: {fileID: 930231101}
+  hitBox: {fileID: 930231100}
   Boss: {fileID: 930231099}
 --- !u!114 &930231107
 MonoBehaviour:
@@ -52907,7 +52908,7 @@ GameObject:
   - component: {fileID: 2138586487}
   - component: {fileID: 2138586486}
   - component: {fileID: 2138586485}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Floor
   m_Icon: {fileID: 0}

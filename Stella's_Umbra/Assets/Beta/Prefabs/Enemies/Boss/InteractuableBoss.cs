@@ -8,7 +8,23 @@ public class InteractuableBoss : MonoBehaviour
     private bool jugadorDentro = false;
     private PlayerInput playerInput;
     [SerializeField] BoxCollider interactuar;
+    [SerializeField] BoxCollider hitBox;
     [SerializeField] Animator Boss;
+
+    private void Start()
+    {
+        hitBox.enabled = false;
+    }
+
+    private void Update()
+    {
+        if (Boss.GetCurrentAnimatorStateInfo(0).IsName("MuerteIdle"))
+        {
+            interactuar.enabled = true; // Desactivar el collider después de la interacción
+            hitBox.enabled = false;
+            StopCoroutine(FasesJefe());
+        }
+    }
 
     private void OnTriggerEnter(Collider interactuar)
     {
@@ -35,8 +51,6 @@ public class InteractuableBoss : MonoBehaviour
                 playerInput.actions["Interact"].performed -= Interactuar; // Desuscribirse del evento
                 playerInput = null;
             }
-
-            Debug.Log("Saliste de la zona de interacción.");
         }
     }
 
@@ -44,25 +58,43 @@ public class InteractuableBoss : MonoBehaviour
     {
         if (jugadorDentro)
         {
-            Debug.Log("Interacción realizada con el objeto.");
             // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
             Boss.SetTrigger("Awake");
             StartCoroutine(FasesJefe());  // Llamada correcta a la corrutina
             interactuar.enabled = false; // Desactivar el collider después de la interacción
+            hitBox.enabled = true;
+        }
+        else if (jugadorDentro && Boss.GetCurrentAnimatorStateInfo(0).IsName("MuerteIdle"))
+        {
+
         }
     }
 
     private IEnumerator FasesJefe()
     {
-        yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
+        while (true)
+        {
+            yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
 
-        Boss.SetTrigger("Barrido");
+            Boss.SetTrigger("Barrido");
 
-        yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
 
-        Boss.SetTrigger("Palmada");
+            Boss.SetTrigger("Palmada");
 
-        yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(2f); // Espera el tiempo de la animación
+
+            Boss.SetTrigger("Palmada");
+
+            yield return new WaitForSeconds(10f); // Espera el tiempo de la animación
+
+            Boss.SetTrigger("Barrido");
+
+            yield return new WaitForSeconds(2f); // Espera el tiempo de la animación
+
+            Boss.SetTrigger("Palmada");
+        }
+        
 
     }
 }
