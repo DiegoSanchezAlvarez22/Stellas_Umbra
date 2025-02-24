@@ -9,6 +9,7 @@ public class Teleport : MonoBehaviour
     {
         if (indiceDestino >= 0 && indiceDestino < _destinies.Length)
         {
+            AudioManagerBehaviour.instance.PlaySFX("Teletransport");
             _player.position = _destinies[indiceDestino].position;
             _player.position = new Vector3(_destinies[indiceDestino].position.x, _destinies[indiceDestino].position.y, 0);
         }

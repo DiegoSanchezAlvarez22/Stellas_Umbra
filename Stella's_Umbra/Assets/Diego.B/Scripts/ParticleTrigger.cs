@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class ParticleTrigger : MonoBehaviour
     public Light lightSource;
     public float maxIntensity = 5f;       // Intensidad máxima de la luz
     public float minIntensity = 0f;       // Intensidad mínima de la luz
+    //public float fadeDuration = 1f;
 
 
     void Start()
@@ -33,6 +35,7 @@ public class ParticleTrigger : MonoBehaviour
         if (other.CompareTag("Player")) // Asegurar que es el personaje
         {
             _particleSystem.Play(); // Activar partículas
+            //AudioManagerBehaviour.instance.PlayShineMusic("Shine");
         }
     }
 
@@ -41,6 +44,23 @@ public class ParticleTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _particleSystem.Stop(); // Detener partículas
+            //StartCoroutine(FadeOutMusic());
         }
     }
+
+   /*private IEnumerator FadeOutMusic()
+    {
+        AudioSource musicSource = AudioManagerBehaviour.instance.musicSource;
+        float startVolume = musicSource.volume;
+
+        // Disminuir el volumen gradualmente
+        while (musicSource.volume > 0)
+        {
+            musicSource.volume -= startVolume * Time.deltaTime / fadeDuration; // Reducir el volumen
+            yield return null; // Esperar hasta el siguiente frame
+        }
+
+        musicSource.Stop(); // Detener la música después de desvanecer el volumen
+        musicSource.volume = startVolume; // Restablecer el volumen a su valor original
+    }*/
 }

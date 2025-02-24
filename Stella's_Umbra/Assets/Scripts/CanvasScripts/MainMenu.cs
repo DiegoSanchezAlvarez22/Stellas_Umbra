@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Animator _warningAnimator;
 
     CheckPointSystem _checkPointSystem;
-
     AudioManagerBehaviour _audioManagerBehaviour;
     #endregion
 

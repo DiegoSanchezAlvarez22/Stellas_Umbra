@@ -98,4 +98,22 @@ public class AudioManagerBehaviour : MonoBehaviour
             }
         }
     }
+
+    public void PlayShineMusic(string musicName)
+    {
+        // Verifica si ya está sonando música
+        if (musicSource.isPlaying)
+        {
+            musicSource.Stop(); // Detener la música actual si está sonando
+        }
+
+        // Asigna el nuevo clip basado en el nombre
+        AudioClip clip = soundEffects.Find(s => s.name == musicName);
+        if (clip != null)
+        {
+            musicSource.clip = clip;
+            musicSource.loop = true; // Habilitar bucle
+            musicSource.Play(); // Reproducir música
+        }
+    }
 }

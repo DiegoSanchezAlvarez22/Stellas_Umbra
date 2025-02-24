@@ -22269,7 +22269,7 @@ GameObject:
   - component: {fileID: 973506561}
   - component: {fileID: 973506560}
   m_Layer: 5
-  m_Name: Volver Menu Principal
+  m_Name: BackToMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44311,7 +44311,7 @@ GameObject:
   - component: {fileID: 1622870550}
   - component: {fileID: 1622870549}
   m_Layer: 5
-  m_Name: Volver Menu Opciones
+  m_Name: BackToOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47980,7 +47980,7 @@ GameObject:
   - component: {fileID: 1777364992}
   - component: {fileID: 1777364991}
   m_Layer: 5
-  m_Name: Volver Menu Principal
+  m_Name: BackToMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48137,7 +48137,7 @@ GameObject:
   - component: {fileID: 1781879930}
   - component: {fileID: 1781879929}
   m_Layer: 5
-  m_Name: Volver Menu Opciones
+  m_Name: BackToOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55653,7 +55653,7 @@ GameObject:
   - component: {fileID: 2096896120}
   - component: {fileID: 2096896119}
   m_Layer: 5
-  m_Name: Volver Menu Opciones
+  m_Name: BackToOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56243,6 +56243,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2567417044325705028, guid: b421607cb2065ad4fad93066e5a8d535, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752786211684049378, guid: b421607cb2065ad4fad93066e5a8d535, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

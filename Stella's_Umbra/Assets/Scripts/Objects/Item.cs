@@ -6,15 +6,18 @@ public class Item : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que colisiona es el jugador
+        //Al colisionar con el jugador
         if (other.CompareTag("Player"))
         {
             PlayerLife itemCollector = other.GetComponent<PlayerLife>();
 
             if (itemCollector != null)
             {
-                itemCollector.TakeItem();
-                Destroy(gameObject); // Destruye el item después de recogerlo
+                AudioManagerBehaviour.instance.PlaySFX("Take Item"); //Sonido del item
+
+                itemCollector.TakeItem(); //Recoge el item
+
+                Destroy(gameObject); //Destruye el item después de recogerlo
             }
         }
     }

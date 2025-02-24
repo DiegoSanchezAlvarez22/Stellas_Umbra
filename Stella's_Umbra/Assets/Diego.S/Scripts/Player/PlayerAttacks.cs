@@ -178,10 +178,8 @@ public class PlayerAttacks : MonoBehaviour
         _basicAttack.performed += BasicAttack;
 
         _boulderAttack.Enable();
+        _boulderAttack.started += BoulderAttackStarted;
         _boulderAttack.performed += BoulderAttack;
-
-        //_boulderAttackStarted.Enable();
-        //_boulderAttackStarted.started += BoulderAttackStarted;
 
         _energyOrbAttack.Enable();
         _energyOrbAttack.performed += ShootBullet;
@@ -195,11 +193,9 @@ public class PlayerAttacks : MonoBehaviour
         _basicAttack.performed -= BasicAttack;
         _basicAttack.Disable();
 
+        _boulderAttack.started -= BoulderAttackStarted;
         _boulderAttack.performed -= BoulderAttack;
         _boulderAttack.Disable();
-
-        //_boulderAttackStarted.started -= BoulderAttackStarted;
-        //_boulderAttackStarted.Disable();
 
         _energyOrbAttack.performed -= ShootBullet;
         _energyOrbAttack.Disable();
@@ -338,8 +334,16 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (_callbackContext.started)
         {
-        _anim.SetBool("BoulderAttack", true); //Isa  
+            if (_canBoulderAttack == true)
+            {
+                _anim.SetBool("BoulderAttack", true); //Isa
+            }
         }
+    }
+
+    void StopBoulderAttackAnim()
+    {
+        _anim.SetBool("BoulderAttack", false); //Isa
     }
 
     private void PositionIndicator(Collider enemy)

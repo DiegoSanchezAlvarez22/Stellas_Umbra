@@ -20,6 +20,7 @@ TagManager:
   - Acceso Jefe
   - Audio
   - Boss
+  - Item
   layers:
   - Default
   - TransparentFX

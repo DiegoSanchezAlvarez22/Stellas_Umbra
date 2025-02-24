@@ -1449,11 +1449,11 @@ PrefabInstance:
     - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: '_destinies.Array.data[1]'
       value: 
-      objectReference: {fileID: 1319970296}
+      objectReference: {fileID: 468557950}
     - target: {fileID: 2685574637557399235, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: '_destinies.Array.data[2]'
       value: 
-      objectReference: {fileID: 468557950}
+      objectReference: {fileID: 1319970296}
     - target: {fileID: 5885170143619853654, guid: 9c59c35d62d4ee643a819ce191a2dd27, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1811,6 +1811,7 @@ MonoBehaviour:
   lightSource: {fileID: 1287620439}
   maxIntensity: 5
   minIntensity: 0
+  fadeDuration: 1
 --- !u!135 &37303481
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2801,7 +2802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8066546691838169684, guid: 8bed1d745ba47054cae8284e9e83d064, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4904,7 +4905,7 @@ GameObject:
   - component: {fileID: 136398760}
   - component: {fileID: 136398759}
   m_Layer: 5
-  m_Name: Volver Menu Principal
+  m_Name: BackToMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4998,8 +4999,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: VolverPausa
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9467,8 +9468,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: Opciones
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Options
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13358,6 +13359,7 @@ MonoBehaviour:
   lightSource: {fileID: 1744404447}
   maxIntensity: 5
   minIntensity: 0
+  fadeDuration: 1
 --- !u!135 &403823437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17439,11 +17441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.228172
+      value: -83.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: 104.575
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17480,6 +17482,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23077,8 +23083,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: Reanudar
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28794,11 +28800,12 @@ Transform:
   - {fileID: 1288339095}
   - {fileID: 1548027933}
   - {fileID: 2142585749}
+  - {fileID: 823603009}
+  - {fileID: 1303446339}
   - {fileID: 989043004}
   - {fileID: 895798647}
   - {fileID: 499868167}
-  - {fileID: 823603009}
-  - {fileID: 1303446339}
+  - {fileID: 1730836986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802555223
@@ -29346,11 +29353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4781723
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: -28.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29387,6 +29394,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31955,7 +31966,7 @@ GameObject:
   - component: {fileID: 888096944}
   - component: {fileID: 888096943}
   m_Layer: 5
-  m_Name: Volver Menu Opciones
+  m_Name: BackToOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32061,8 +32072,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: VolverOpciones
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: BackToOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32321,11 +32332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.588173
+      value: -82.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: 75.991
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32362,6 +32373,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39277,11 +39292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.85817
+      value: -43.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: 104.575
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -39318,6 +39333,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42664,8 +42683,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: Teclado
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Keyboard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50442,15 +50461,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8281708
+      value: -16.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: 0.682
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0100002
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50483,6 +50502,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50862,7 +50885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: 45.856
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50899,6 +50922,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51265,8 +51292,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: Ajustes
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Settings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -68800,11 +68827,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.208172
+      value: 29.27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68841,6 +68868,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76595,6 +76626,128 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730465259}
   m_CullTransparentMesh: 1
+--- !u!1001 &1730836985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 801698798}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15071334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15071334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15071334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 61.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0100002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_Name
+      value: Cristal_con_borde (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1730836989}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1730836988}
+  m_SourcePrefab: {fileID: 100100000, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+--- !u!4 &1730836986 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+  m_PrefabInstance: {fileID: 1730836985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1730836987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+  m_PrefabInstance: {fileID: 1730836985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1730836988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730836987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515247ad48b226440afffb6881c5a9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1730836989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730836987}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11.495726, y: 13.82813, z: 11.444395}
+  m_Center: {x: 0.044850998, y: 1.7492901, z: 0.2499456}
 --- !u!4 &1731050449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 78371b9c58d527d478da123e4a558798, type: 3}
@@ -77548,6 +77701,7 @@ MonoBehaviour:
   lightSource: {fileID: 1891345884}
   maxIntensity: 5
   minIntensity: 0
+  fadeDuration: 1
 --- !u!135 &1755099184
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -82675,7 +82829,7 @@ GameObject:
   - component: {fileID: 1866424585}
   - component: {fileID: 1866424584}
   m_Layer: 5
-  m_Name: Volver Menu Opciones
+  m_Name: BackToOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82781,8 +82935,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: VolverOpciones
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: BackToOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -84362,8 +84516,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: Mando
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Gamepad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -96513,6 +96667,7 @@ MonoBehaviour:
   lightSource: {fileID: 870901046}
   maxIntensity: 5
   minIntensity: 0
+  fadeDuration: 1
 --- !u!135 &2137948492
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -96646,11 +96801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.578171
+      value: 39.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7367592
+      value: -60.546
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -96687,6 +96842,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
       propertyPath: m_Name
       value: Cristal_con_borde (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a007d48236169934ab4b1d039a2bbde8, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96756,7 +96915,7 @@ GameObject:
   - component: {fileID: 2145496214}
   - component: {fileID: 2145496213}
   m_Layer: 5
-  m_Name: Volver Menu Opciones
+  m_Name: BackToOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96850,8 +97009,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1772328033}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
-        m_MethodName: VolverOpciones
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: BackToOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

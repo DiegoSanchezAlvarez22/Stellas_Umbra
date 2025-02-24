@@ -202,7 +202,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Reanudar()
+    public void Continue()
     {
         Debug.Log("Reanudando...");
         Enable();
@@ -232,7 +232,7 @@ public class PauseMenu : MonoBehaviour
         _audioManagerBehaviour.PlaySFX("ButtonClick");
     }
 
-    public void Opciones()
+    public void Options()
     {
         _pauseMenu.SetActive(false);
         _optionsMenu.SetActive(true);
@@ -240,7 +240,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void VolverPausa()
+    public void BackToMainMenu()
     {
         _pauseMenu.SetActive(true);
         _optionsMenu.SetActive(false);
@@ -248,7 +248,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void VolverOpciones()
+    public void BackToOptions()
     {
         _optionsMenu.SetActive(true);
         _keyboardMenu.SetActive(false);
@@ -258,7 +258,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void Teclado()
+    public void Keyboard()
     {
         _optionsMenu.SetActive(false);
         _keyboardMenu.SetActive(true);
@@ -266,7 +266,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void Mando()
+    public void Gamepad()
     {
         _optionsMenu.SetActive(false);
         _gamepadMenu.SetActive(true);
@@ -274,7 +274,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void Ajustes()
+    public void Settings()
     {
         _optionsMenu.SetActive(false);
         _settingsMenu.SetActive(true);
