@@ -204,6 +204,8 @@ public class PlayerMov : MonoBehaviour
             //Resetear las animaciones de salto y caída
             _anim.SetBool("isJumping", false);
             _anim.SetBool("isFalling", false);
+
+            _wasWalkingBeforeFall = false;
         }
 
         if (collision.gameObject.CompareTag("Wall") && _inFloor == false)
@@ -225,7 +227,7 @@ public class PlayerMov : MonoBehaviour
             _inFloor = false;
             _canJump = false;
 
-            if (_wasWalkingBeforeFall) //Activar animación caída si caminaba
+            if (_wasWalkingBeforeFall && !_inWall) //Activar animación caída si caminaba
             {
                 _anim.SetBool("isFalling", true);
             }
