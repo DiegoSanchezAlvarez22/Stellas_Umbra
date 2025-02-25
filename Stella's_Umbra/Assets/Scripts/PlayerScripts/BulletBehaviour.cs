@@ -33,7 +33,7 @@ public class BulletBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Comprueba si la bala da a un enemigo
-        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir"))
+        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir") || other.CompareTag("Boss"))
         {
             //Consigue el componente del script EnemyLifes
             EnemyLifes enemyLifes = other.GetComponent<EnemyLifes>();

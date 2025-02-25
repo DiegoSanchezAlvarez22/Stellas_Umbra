@@ -42,7 +42,7 @@ public class BossLife : MonoBehaviour
             Debug.Log("3");
 
             _playerTarget.GetComponent<PlayerExpSystem>().AddExp(_expToAdd);
-            Boss.SetTrigger("Awake");
+            Boss.SetTrigger("Muerte");
 
             //Sonido de muerte
             AudioManagerBehaviour.instance.PlaySFX("Enemies Deaths");

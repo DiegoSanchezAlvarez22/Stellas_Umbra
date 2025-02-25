@@ -8,7 +8,7 @@ public class InteractuableBoss : MonoBehaviour
 {
     private bool jugadorDentro = false;
     private PlayerInput playerInput;
-    [SerializeField] BoxCollider interactuar;
+    [SerializeField] BoxCollider interact;
     [SerializeField] BoxCollider hitBox;
     [SerializeField] Animator Boss;
     [SerializeField] VideoPlayer canvaPostMortem;
@@ -24,19 +24,24 @@ public class InteractuableBoss : MonoBehaviour
     {
         if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
         {
-            interactuar.enabled = true; // Desactivar el collider después de la interacción
+            interact.enabled = true; // Desactivar el collider después de la interacción
             hitBox.enabled = false;
             StopCoroutine(FasesJefe());
             sistemaParticulas.SetActive(true); // Activa el objeto y las partículas
         }
     }
 
-    private void OnTriggerEnter(Collider interactuar)
+    private void OnTriggerEnter(Collider other)
     {
-        if (interactuar.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             jugadorDentro = true;
-            playerInput = interactuar.GetComponent<PlayerInput>(); // Obtener PlayerInput del jugador
+            playerInput = other.GetComponent<PlayerInput>(); // Obtener PlayerInput del jugador
+
+            // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
+            Boss.SetTrigger("Awake");
+            StartCoroutine(FasesJefe());  // Llamada correcta a la corrutina
+            interact.enabled = false; // Desactivar el collider después de la interacción
 
             if (playerInput != null)
             {
@@ -66,13 +71,6 @@ public class InteractuableBoss : MonoBehaviour
         if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
         {
             canvaPostMortem.Play();
-        }
-        else
-        {
-            // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
-            Boss.SetTrigger("Awake");
-            StartCoroutine(FasesJefe());  // Llamada correcta a la corrutina
-            interactuar.enabled = false; // Desactivar el collider después de la interacción
         }
     }
 
@@ -106,8 +104,19 @@ public class InteractuableBoss : MonoBehaviour
         }
     }
 
-    //private void OndaExpansiva()
-    //{
+    void OnCollisionEnter(Collision collision)
+    {
+        // Verificamos si el objeto con el que colisionamos tiene el tag "Enemigo"
+        if (collision.gameObject.CompareTag("Floor") && Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|Palmada"))
+        {
+            Debug.Log("Hola");
+            OndaExpansiva();
+        }
+    }
 
-    //}
+
+    private void OndaExpansiva()
+    {
+
+    }
 }

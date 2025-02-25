@@ -6,7 +6,7 @@ public class AtaqueDesdeArriba : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor"))
+        if (other.CompareTag("EnemyAir") || other.CompareTag("EnemyFloor") || other.CompareTag("Boss"))
         {
             other.GetComponent<EnemyLifes>().DamageRecieved(_damage); //Perdida de vida del enemigo
             Destroy(gameObject); //Destruir este objeto disparable

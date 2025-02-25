@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\SaltoRegulable.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerExpSystem.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\ButtonBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\EnemyLifes.cs" />
     <Compile Include="Assets\Diego.S\Input\Input1.cs" />
     <Compile Include="Assets\Diego.S\Scripts\InstantiatePlayer.cs" />

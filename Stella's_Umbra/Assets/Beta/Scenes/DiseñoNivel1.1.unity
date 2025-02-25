@@ -4789,6 +4789,7 @@ GameObject:
   - component: {fileID: 136398761}
   - component: {fileID: 136398760}
   - component: {fileID: 136398759}
+  - component: {fileID: 136398763}
   m_Layer: 5
   m_Name: BackToMainMenu
   m_TagString: Untagged
@@ -4883,6 +4884,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 136398763}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: BackToMainMenu
@@ -4945,6 +4958,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136398757}
   m_CullTransparentMesh: 1
+--- !u!114 &136398763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136398757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &138505619
 GameObject:
   m_ObjectHideFlags: 0
@@ -9280,6 +9305,7 @@ GameObject:
   - component: {fileID: 268905746}
   - component: {fileID: 268905745}
   - component: {fileID: 268905748}
+  - component: {fileID: 268905749}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -9352,6 +9378,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 268905749}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Options
@@ -9436,6 +9474,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &268905749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268905743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &273290105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22894,6 +22944,7 @@ GameObject:
   - component: {fileID: 625485970}
   - component: {fileID: 625485974}
   - component: {fileID: 625485973}
+  - component: {fileID: 625485975}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -22966,6 +23017,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 625485975}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Continue
@@ -23147,6 +23210,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &625485975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625485968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &627878916
 GameObject:
   m_ObjectHideFlags: 0
@@ -31849,6 +31924,7 @@ GameObject:
   - component: {fileID: 888096945}
   - component: {fileID: 888096944}
   - component: {fileID: 888096943}
+  - component: {fileID: 888096947}
   m_Layer: 5
   m_Name: BackToOptions
   m_TagString: Untagged
@@ -31943,6 +32019,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 888096947}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PlaySound
@@ -32005,6 +32093,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888096941}
   m_CullTransparentMesh: 1
+--- !u!114 &888096947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888096941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &893959124
 GameObject:
   m_ObjectHideFlags: 0
@@ -42460,6 +42560,7 @@ GameObject:
   - component: {fileID: 1075348365}
   - component: {fileID: 1075348364}
   - component: {fileID: 1075348363}
+  - component: {fileID: 1075348367}
   m_Layer: 5
   m_Name: Keyboard
   m_TagString: Untagged
@@ -42554,6 +42655,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1075348367}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PlaySound
@@ -42616,6 +42729,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075348361}
   m_CullTransparentMesh: 1
+--- !u!114 &1075348367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075348361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076374199
 GameObject:
   m_ObjectHideFlags: 0
@@ -51069,6 +51194,7 @@ GameObject:
   - component: {fileID: 1315176249}
   - component: {fileID: 1315176248}
   - component: {fileID: 1315176247}
+  - component: {fileID: 1315176251}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -51163,6 +51289,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1315176251}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PlaySound
@@ -51225,6 +51363,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315176245}
   m_CullTransparentMesh: 1
+--- !u!114 &1315176251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315176245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1315190313
 GameObject:
   m_ObjectHideFlags: 0
@@ -76655,6 +76805,7 @@ GameObject:
   - component: {fileID: 1738323402}
   - component: {fileID: 1738323401}
   - component: {fileID: 1738323404}
+  - component: {fileID: 1738323405}
   m_Layer: 5
   m_Name: GoBackMenu
   m_TagString: Untagged
@@ -76727,9 +76878,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1738323405}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328034}
         m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
         m_MethodName: GoMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1772328033}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76799,6 +76974,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1738323405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738323399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1739035756
 GameObject:
   m_ObjectHideFlags: 0
@@ -82711,6 +82898,7 @@ GameObject:
   - component: {fileID: 1866424586}
   - component: {fileID: 1866424585}
   - component: {fileID: 1866424584}
+  - component: {fileID: 1866424588}
   m_Layer: 5
   m_Name: BackToOptions
   m_TagString: Untagged
@@ -82805,6 +82993,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1866424588}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PlaySound
@@ -82867,6 +83067,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866424582}
   m_CullTransparentMesh: 1
+--- !u!114 &1866424588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866424582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867242227
 GameObject:
   m_ObjectHideFlags: 0
@@ -84292,6 +84504,7 @@ GameObject:
   - component: {fileID: 1912734972}
   - component: {fileID: 1912734971}
   - component: {fileID: 1912734970}
+  - component: {fileID: 1912734974}
   m_Layer: 5
   m_Name: Gamepad
   m_TagString: Untagged
@@ -84386,6 +84599,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1912734974}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PlaySound
@@ -84448,6 +84673,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912734968}
   m_CullTransparentMesh: 1
+--- !u!114 &1912734974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912734968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1915817473
 GameObject:
   m_ObjectHideFlags: 0
@@ -96796,6 +97033,7 @@ GameObject:
   - component: {fileID: 2145496215}
   - component: {fileID: 2145496214}
   - component: {fileID: 2145496213}
+  - component: {fileID: 2145496217}
   m_Layer: 5
   m_Name: BackToOptions
   m_TagString: Untagged
@@ -96890,6 +97128,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2145496217}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ChangeAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1772328033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: BackToOptions
@@ -96952,6 +97202,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145496211}
   m_CullTransparentMesh: 1
+--- !u!114 &2145496217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145496211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24424f24309dc30479571ab470f2d262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2147437376
 GameObject:
   m_ObjectHideFlags: 0

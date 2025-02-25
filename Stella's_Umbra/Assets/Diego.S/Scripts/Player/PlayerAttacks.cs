@@ -150,7 +150,7 @@ public class PlayerAttacks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir"))
+        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir") || other.CompareTag("Boss"))
         {
             //Añade al enemigo en la lista
             _enemiesInside.Add(other);
@@ -162,7 +162,7 @@ public class PlayerAttacks : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir"))
+        if (other.CompareTag("EnemyFloor") || other.CompareTag("EnemyAir") || other.CompareTag("Boss"))
         {
             //Elimina al enemigo de la lista
             _enemiesInside.Remove(other);
@@ -344,10 +344,7 @@ public class PlayerAttacks : MonoBehaviour
 
     void StopBoulderAttackAnim()
     {
-        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("BoulderAttack"))
-        {
-            _anim.SetBool("BoulderAttack", false); //Isa
-        }      
+        _anim.SetBool("BoulderAttack", false); //Isa      
     }
 
     private void PositionIndicator(Collider enemy)
