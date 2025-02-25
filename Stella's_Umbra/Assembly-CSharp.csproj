@@ -114,6 +114,7 @@
     <Compile Include="Assets\Diego.B\Scripts\InteractionMesage.cs" />
     <Compile Include="Assets\Diego.B\Scripts\TornadoBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\AtaqueDesdeArriba.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Enemies\BossLife.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyRespawn.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBackAnimBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\CameraPos.cs" />
@@ -642,14 +643,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

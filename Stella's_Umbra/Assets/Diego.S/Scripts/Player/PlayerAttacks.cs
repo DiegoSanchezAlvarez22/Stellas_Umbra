@@ -337,13 +337,17 @@ public class PlayerAttacks : MonoBehaviour
             if (_canBoulderAttack == true)
             {
                 _anim.SetBool("BoulderAttack", true); //Isa
+                StopBoulderAttackAnim();
             }
         }
     }
 
     void StopBoulderAttackAnim()
     {
-        _anim.SetBool("BoulderAttack", false); //Isa
+        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("BoulderAttack"))
+        {
+            _anim.SetBool("BoulderAttack", false); //Isa
+        }      
     }
 
     private void PositionIndicator(Collider enemy)

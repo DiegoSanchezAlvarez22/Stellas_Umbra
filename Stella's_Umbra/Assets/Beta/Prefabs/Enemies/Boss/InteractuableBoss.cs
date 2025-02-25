@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class InteractuableBoss : MonoBehaviour
 {
@@ -10,19 +11,23 @@ public class InteractuableBoss : MonoBehaviour
     [SerializeField] BoxCollider interactuar;
     [SerializeField] BoxCollider hitBox;
     [SerializeField] Animator Boss;
+    [SerializeField] VideoPlayer canvaPostMortem;
+    [SerializeField] GameObject sistemaParticulas;
 
     private void Start()
     {
         hitBox.enabled = false;
+        sistemaParticulas.SetActive(false); // Desactiva completamente el objeto
     }
 
     private void Update()
     {
-        if (Boss.GetCurrentAnimatorStateInfo(0).IsName("MuerteIdle"))
+        if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
         {
             interactuar.enabled = true; // Desactivar el collider después de la interacción
             hitBox.enabled = false;
             StopCoroutine(FasesJefe());
+            sistemaParticulas.SetActive(true); // Activa el objeto y las partículas
         }
     }
 
@@ -56,22 +61,27 @@ public class InteractuableBoss : MonoBehaviour
 
     private void Interactuar(InputAction.CallbackContext context)
     {
-        if (jugadorDentro)
+        if (!jugadorDentro) return; // Si el jugador no está dentro, no hacer nada
+
+        if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
+        {
+            canvaPostMortem.Play();
+        }
+        else
         {
             // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
             Boss.SetTrigger("Awake");
             StartCoroutine(FasesJefe());  // Llamada correcta a la corrutina
             interactuar.enabled = false; // Desactivar el collider después de la interacción
-            hitBox.enabled = true;
-        }
-        else if (jugadorDentro && Boss.GetCurrentAnimatorStateInfo(0).IsName("MuerteIdle"))
-        {
-
         }
     }
 
     private IEnumerator FasesJefe()
     {
+        yield return new WaitForSeconds(1f); // Espera el tiempo de la animación
+                                             
+        hitBox.enabled = true;
+
         while (true)
         {
             yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
@@ -94,7 +104,10 @@ public class InteractuableBoss : MonoBehaviour
 
             Boss.SetTrigger("Palmada");
         }
-        
-
     }
+
+    //private void OndaExpansiva()
+    //{
+
+    //}
 }
