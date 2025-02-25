@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class Sonidos : MonoBehaviour
+public class PlayerSounds : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips; // Agrega aquí los clips de audio desde el inspector.
@@ -17,36 +17,7 @@ public class Sonidos : MonoBehaviour
         float savedVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
         miMixer.SetFloat("SFX", Mathf.Log10(savedVolume) * 20);
     }
-    private void Update()
-    {
-        if (isOnGround && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
-        {
-            if (!audioSource.isPlaying)
-            {
-                PlaySpecificClip(0);
-            }
-            else if (Input.GetKey(KeyCode.LeftShift))
-            {
-                PlaySpecificClip(3);
-            }
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            if (!audioSource.isPlaying)
-            {
-                PlaySpecificClip(1);
-                isJumping = true;
-            }
-        }
-        else
-        {
-            // Detener el sonido si no se presiona ninguna tecla relevante
-            if (audioSource.isPlaying)
-            {
-                audioSource.Stop();
-            }
-        }
-    }
+
     private void PlaySpecificClip(int index)
     {
         if (index >= 0 && index < audioClips.Length)
@@ -77,5 +48,23 @@ public class Sonidos : MonoBehaviour
         {
             isOnGround = false; // El jugador ya no está en el suelo
         }
+    }
+
+    public void MovingSound()
+    {
+        if (!audioSource.isPlaying && isOnGround == true)
+        {
+            PlaySpecificClip(0);
+        }
+    }
+
+    public void DashingSound()
+    {
+        PlaySpecificClip(3);
+    }
+
+    public void JumpingSound()
+    {
+        PlaySpecificClip(1);
     }
 }

@@ -83,6 +83,9 @@ public class PlayerMov : MonoBehaviour
 
     [Header("Collider")]
     [SerializeField] BoxCollider _collider;
+
+    [Header("Player Sounds")]
+    [SerializeField] PlayerSounds _playerSounds;
     #endregion
 
     private void Awake()
@@ -93,6 +96,7 @@ public class PlayerMov : MonoBehaviour
         _input = GetComponent<PlayerInput>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<BoxCollider>();
+        _playerSounds = GetComponent<PlayerSounds>();
 
         _trailRenderer = GameObject.FindWithTag("PlayerTrail");
 
@@ -109,6 +113,11 @@ public class PlayerMov : MonoBehaviour
         if (_canMove)
         {
             _direction = _input.actions["Walk"].ReadValue<Vector2>();
+
+            if (_direction.x != 0)
+            {
+                _playerSounds.MovingSound();
+            }
         }
         float speed = _direction.x;
 
@@ -425,6 +434,8 @@ public class PlayerMov : MonoBehaviour
                 //Se reinicia la velocidad vertical
                 _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
 
+                _playerSounds.JumpingSound();
+
                 //Animación se apaga antes de reiniciarla
                 _anim.SetBool("isJumping", false);
 
@@ -471,6 +482,8 @@ public class PlayerMov : MonoBehaviour
 
             _rb.AddForce(Vector3.up * _superJumpForce, ForceMode.Impulse);
 
+            _playerSounds.JumpingSound();
+
             Debug.Log("Salto realizado con una fuerza de: " + _superJumpForce);
             _isJumping = false;
 
@@ -496,6 +509,7 @@ public class PlayerMov : MonoBehaviour
 
             _rb.AddForce(_dashDirection * _dashForce, ForceMode.Impulse);
             _isDashing = true;
+            _playerSounds.DashingSound();
             _dashTime = 0f;
             _lastDashTime = Time.time;
         }
