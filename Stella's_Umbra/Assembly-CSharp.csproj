@@ -73,6 +73,7 @@
     <Compile Include="Assets\Diego.S\Scripts\PlatformDetectBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\ParticleTrigger.cs" />
     <Compile Include="Assets\Scripts\SceneryScripts\GameInitializer.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpawnerBehaviour.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\VolumeSettings.cs" />
     <Compile Include="Assets\Beta\Prefabs\Enemies\Boss\InteractuableBoss.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\QuitGame.cs" />

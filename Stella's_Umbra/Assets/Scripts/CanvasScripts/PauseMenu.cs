@@ -21,7 +21,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _gamepadMenu;
     [SerializeField] private GameObject _settingsMenu;
     [SerializeField] private GameObject _brightness;
-    [SerializeField] private GameObject puntero;
+    [SerializeField] private GameObject _pointer;
+    [SerializeField] private GameObject _skilTree;
 
     private bool pausedGame = false;
     private string lastControlScheme;
@@ -46,7 +47,6 @@ public class PauseMenu : MonoBehaviour
     private InputAction _energyOrbAttack;
     private InputAction _tornadoAttack;
     private InputAction _interact;
-    private InputAction _activateSkilltree;
     #endregion
 
     private void Awake()
@@ -96,12 +96,12 @@ public class PauseMenu : MonoBehaviour
         if (currentScene == "Menu Principal")
         {
             Time.timeScale = 0;
-            puntero.SetActive(true);
+            _pointer.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
-            puntero.SetActive(false);
+            _pointer.SetActive(false);
         }
     }
 
@@ -164,8 +164,9 @@ public class PauseMenu : MonoBehaviour
             _gamepadMenu.SetActive(false);
             _settingsMenu.SetActive(false);
             _brightness.SetActive(false);
-            puntero.SetActive(false);
+            _pointer.SetActive(false);
             _mapButton.SetActive(true);
+            _skilTree.SetActive(false);
             _interactionMesage.OnGameResumed();
 
             //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
@@ -188,8 +189,9 @@ public class PauseMenu : MonoBehaviour
             _gamepadMenu.SetActive(false);
             _settingsMenu.SetActive(false);
             _brightness.SetActive(true);
-            puntero.SetActive(true);
+            _pointer.SetActive(true);
             _mapButton.SetActive(false);
+            _skilTree.SetActive(false);
             _interactionMesage.OnGamePaused();
 
             //Guarda si el mapa estaba abierto antes de pausar
@@ -216,7 +218,7 @@ public class PauseMenu : MonoBehaviour
         _gamepadMenu.SetActive(false);
         _settingsMenu.SetActive(false);
         _brightness.SetActive(false);
-        puntero.SetActive(false);
+        _pointer.SetActive(false);
         _mapButton.SetActive(true);
         _interactionMesage.OnGameResumed();
 
