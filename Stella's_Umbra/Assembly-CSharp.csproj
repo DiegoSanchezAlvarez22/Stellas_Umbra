@@ -75,7 +75,6 @@
     <Compile Include="Assets\Scripts\SceneryScripts\GameInitializer.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpawnerBehaviour.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\VolumeSettings.cs" />
-    <Compile Include="Assets\Beta\Prefabs\Enemies\Boss\InteractuableBoss.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\QuitGame.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\Teleport.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\MapaZoom.cs" />
@@ -87,6 +86,7 @@
     <Compile Include="Assets\Diego.B\Scripts\BossHandBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Bat\BatBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Beta\Prefabs\Enemies\Boss\InteractableBoss.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerDestroyLoads.cs" />
     <Compile Include="Assets\Diego.S\Scripts\SceneChangerSpace.cs" />
     <Compile Include="Assets\Scripts\Enemies\TreeWalkBehaviour.cs" />

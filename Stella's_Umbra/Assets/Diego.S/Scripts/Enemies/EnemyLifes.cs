@@ -11,6 +11,8 @@ public class EnemyLifes : MonoBehaviour
     [SerializeField] private int _expToAdd;
     [SerializeField] public GameObject _dyingEffect;
     [SerializeField] Animator Boss;
+    [SerializeField] CheckPointSystem _checkPointSystem;
+    [SerializeField] InteractableBoss _interactableBoss;
     private SpriteRenderer _spriteRenderer;
     private GameObject _playerTarget;
 
@@ -54,6 +56,14 @@ public class EnemyLifes : MonoBehaviour
             if (gameObject.CompareTag("Boss"))
             {
                 Boss.SetTrigger("Muerte");
+                Debug.Log("Has matado al jefe final");
+
+                _checkPointSystem.ClearProgress();
+                Debug.Log("Borras el progreso al terminar el juego");
+
+                _interactableBoss.HideBossCanvasLife();
+                Debug.Log("Se esconde la barra de vida del jefe final"); 
+                
             }
             else
             {

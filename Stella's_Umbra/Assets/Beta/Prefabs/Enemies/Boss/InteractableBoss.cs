@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
-public class InteractuableBoss : MonoBehaviour
+public class InteractableBoss : MonoBehaviour
 {
     private bool jugadorDentro = false;
     private PlayerInput playerInput;
@@ -20,7 +20,6 @@ public class InteractuableBoss : MonoBehaviour
     {
         hitBox.enabled = false;
         sistemaParticulas.SetActive(false); //Desactiva completamente el objeto
-        _healthCanvas.SetActive(false);
     }
 
     private void Update()
@@ -75,9 +74,6 @@ public class InteractuableBoss : MonoBehaviour
         {
             canvaPostMortem.Play();
             Debug.Log("Reproduce animación final");
-
-            _checkpointSystem.ClearProgress();
-            Debug.Log("Borras el progreso al acabar la partida");
         }
     }
 

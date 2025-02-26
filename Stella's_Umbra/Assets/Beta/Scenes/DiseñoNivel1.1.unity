@@ -7303,7 +7303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba342eaa9de4b544b605f68d9284a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactuableBoss: {fileID: 1305886056}
+  _interactableBoss: {fileID: 1305886056}
   _newPlayerPosition: {x: -315.5, y: 1.429, z: -0.2}
   _bossScene: {fileID: 1735076695}
 --- !u!65 &201578956
@@ -9772,7 +9772,7 @@ GameObject:
   - component: {fileID: 279131862}
   - component: {fileID: 279131861}
   m_Layer: 0
-  m_Name: AudioManagerNivel1
+  m_Name: AudioManagerLevel1
   m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30592,6 +30592,8 @@ MonoBehaviour:
   _expToAdd: 0
   _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
   Boss: {fileID: 680098220}
+  _checkPointSystem: {fileID: 1789269180}
+  _interactableBoss: {fileID: 1305886056}
 --- !u!95 &680098220
 Animator:
   serializedVersion: 7
@@ -50461,11 +50463,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.65
+      value: -89.3
       objectReference: {fileID: 0}
     - target: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.65
+      value: 167.7
       objectReference: {fileID: 0}
     - target: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50515,6 +50517,10 @@ PrefabInstance:
       propertyPath: _lifeCanvas
       value: 
       objectReference: {fileID: 1378665513}
+    - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _bossHealthBar
+      value: 
+      objectReference: {fileID: 386333355}
     - target: {fileID: 612874926118024614, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: _mapaDesplegable
       value: 
@@ -84651,6 +84657,7 @@ MonoBehaviour:
   _brightness: {fileID: 1669655406}
   _pointer: {fileID: 2092805343}
   _skilTree: {fileID: 1349018493}
+  _bossHealthBar: {fileID: 386333355}
   _mapButton: {fileID: 522869617}
   _dropdownMap: {fileID: 2067874641}
   _interactionMesage: {fileID: 2074646318}
@@ -85196,6 +85203,7 @@ MonoBehaviour:
   _mapDropdown: {fileID: 522869617}
   _energyOrbIcon: {fileID: 1138863687}
   _interactIcon: {fileID: 30922364}
+  _bossHealthBar: {fileID: 386333355}
 --- !u!114 &1789269188 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6033304798287099784, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}

@@ -15,10 +15,13 @@ public class ActiveSkillTree : MonoBehaviour
     [SerializeField] GameObject _lifeCanvas;
     [SerializeField] GameObject _mapIcon;
     [SerializeField] MapBehaviour _mapaDesplegable;
+    [SerializeField] private GameObject _bossHealthBar;
 
     bool mapWasOpen = false;
 
     private bool juegoPausado = false;
+
+    bool bossHealthBarWasActive = false;
 
     #region InputActionsDisabled
     private InputAction _walk;
@@ -107,11 +110,21 @@ public class ActiveSkillTree : MonoBehaviour
             {
                 DeactivateSkillTree();
                 Enable();
+
+                //Reaparece la barra de vida si estaba activa antes de pausar el juego
+                if (bossHealthBarWasActive)
+                {
+                    _bossHealthBar.SetActive(true);
+                }
             }
             else
             {
                 ActivateSkillTree();
                 DisableSkills();
+
+                //Guarda si estaba activa la barra de vida del Boss antes de pausar
+                bossHealthBarWasActive = _bossHealthBar.activeSelf;
+                _bossHealthBar.SetActive(false);
             }
         }
     }

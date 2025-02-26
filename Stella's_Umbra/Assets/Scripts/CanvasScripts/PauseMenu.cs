@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _brightness;
     [SerializeField] private GameObject _pointer;
     [SerializeField] private GameObject _skilTree;
+    [SerializeField] private GameObject _bossHealthBar;
 
     private bool pausedGame = false;
     private string lastControlScheme;
@@ -32,6 +33,9 @@ public class PauseMenu : MonoBehaviour
 
     //Guardar estado del mapa
     bool mapWasOpen = false;
+
+    //Guardar estado de la barra de vida del Boss
+    bool bossHealthBarWasActive = false;
 
     #region InputActionsDisabled
     private InputAction _walk;
@@ -176,6 +180,13 @@ public class PauseMenu : MonoBehaviour
             {
                 _dropdownMap._anim.Play("MapaAbierto");
             }
+
+            //Reaparece la barra de vida si estaba activa antes de pausar el juego
+            if (bossHealthBarWasActive)
+            {
+                _bossHealthBar.SetActive(true);
+            }
+
         }
         else
         {
@@ -203,6 +214,10 @@ public class PauseMenu : MonoBehaviour
                 //Cierra el mapa
                 _dropdownMap._anim.Play("MapaCerrado");
             }
+
+            //Guarda si estaba activa la barra de vida del Boss antes de pausar
+            bossHealthBarWasActive = _bossHealthBar.activeSelf;
+            _bossHealthBar.SetActive(false);
         }
     }
 
@@ -228,6 +243,12 @@ public class PauseMenu : MonoBehaviour
         if (mapWasOpen)
         {
             _dropdownMap._anim.Play("MapaAbierto");
+        }
+
+        //Reaparece la barra de vida si estaba activa antes de pausar el juego
+        if (bossHealthBarWasActive)
+        {
+            _bossHealthBar.SetActive(true);
         }
     }
 

@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     private bool _isPlayerIn = false;
     private PlayerInput _input;
     private Transform _playerTransform;
-    [SerializeField] InteractuableBoss _interactuableBoss;
+    [SerializeField] InteractableBoss _interactableBoss;
     [SerializeField] Vector3 _newPlayerPosition;
     [SerializeField] GameObject _bossScene;
 
@@ -59,7 +59,10 @@ public class Interactable : MonoBehaviour
             _playerTransform.position = _newPlayerPosition;
 
             //Muestra la barra de vida del Boss
-            _interactuableBoss.ShowBossCanvasLife();
+            _interactableBoss.ShowBossCanvasLife();
+
+            //Reseteas la vida del Boss
+
         }
     }
 }

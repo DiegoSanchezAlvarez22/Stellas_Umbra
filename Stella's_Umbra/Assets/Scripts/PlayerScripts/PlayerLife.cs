@@ -42,6 +42,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] GameObject _mapDropdown;
     [SerializeField] GameObject _energyOrbIcon;
     [SerializeField] GameObject _interactIcon;
+    [SerializeField] GameObject _bossHealthBar;
     #endregion 
 
     private void Start()
@@ -70,6 +71,7 @@ public class PlayerLife : MonoBehaviour
                     _mapDropdown.SetActive(false);
                     _energyOrbIcon.SetActive(false);
                     _interactIcon.SetActive(false);
+                    _bossHealthBar.SetActive(false);
                     _starsBackground.SetActive(true);
                     Invoke("LoadProgressWithDeathCanvas", 1.5f);
                     Debug.Log("El jugador ha muerto. Cargando el último progreso guardado.");
@@ -86,6 +88,9 @@ public class PlayerLife : MonoBehaviour
     private void LoadProgressWithDeathCanvas()
     {
         _checkPointSystem.LoadProgress();
+        _heartsCanvas.SetActive(true);
+        _mapDropdown.SetActive(true);
+        AudioManagerBehaviour.instance.PlayAdventureMusic();
     }
 
     // Método para recoger un item
