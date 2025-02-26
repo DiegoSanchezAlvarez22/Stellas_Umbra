@@ -10,6 +10,7 @@ public class ActiveSkillTree : MonoBehaviour
 
     [SerializeField] private GameObject _skilltree;
     [SerializeField] private GameObject _starsBackground;
+    [SerializeField] private GameObject _pointer;
 
     [SerializeField] GameObject _lifeCanvas;
     [SerializeField] GameObject _mapIcon;
@@ -95,6 +96,7 @@ public class ActiveSkillTree : MonoBehaviour
     private void Start()
     {
         _skilltree.SetActive(false);
+        _pointer.SetActive(false);
     }
 
     private void ToggleSkillTree(InputAction.CallbackContext context)
@@ -122,6 +124,7 @@ public class ActiveSkillTree : MonoBehaviour
             juegoPausado = true;
             Time.timeScale = 0f;
             _skilltree.SetActive(true);
+            _pointer.SetActive(true);
             _starsBackground.SetActive(true);
 
             _lifeCanvas.SetActive(false);
@@ -146,21 +149,16 @@ public class ActiveSkillTree : MonoBehaviour
         juegoPausado = false;
         Time.timeScale = 1f;
         _skilltree.SetActive(false);
+        _pointer.SetActive(false);
         _starsBackground.SetActive(false);
 
         _lifeCanvas.SetActive(true);
         _mapIcon.SetActive(true);
+
         //Si el mapa estaba abierto antes de pausar, lo volvemos a abrir
         if (mapWasOpen)
         {
             _mapaDesplegable._anim.Play("MapaAbierto");
         }
-    }
-
-    private IEnumerator LooseControl()
-    {
-        _playerMov._canMove = false;
-        yield return new WaitForSeconds(1);
-        _playerMov._canMove = true;
     }
 }

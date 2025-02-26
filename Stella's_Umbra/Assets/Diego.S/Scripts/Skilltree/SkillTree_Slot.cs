@@ -116,12 +116,19 @@ public class SkillTree_Slot : MonoBehaviour, IPointerClickHandler
         {
             if (!isLearned && _playerExpSystem._currentExp > 0)
             {
-                if (linkGoOut.Length > 0)
+                if (_playerExpSystem._currentExp - _skillExpValue >= 0)
                 {
-                    OpenLinks(linkGoOut);
+                    if (linkGoOut.Length > 0)
+                    {
+                        OpenLinks(linkGoOut);
+                    }
+                    LinkedLinks();
+                    Learn();
                 }
-                LinkedLinks();
-                Learn();
+                else
+                {
+                    Debug.Log("No tiene exp suficiente");
+                }
             }
             else
             {

@@ -53908,6 +53908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasRectTransform: {fileID: 780471420}
+  _cursorImage: {fileID: 2099020727}
 --- !u!1 &1961092078
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
-using static UnityEngine.InputSystem.InputAction;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -47,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     private InputAction _energyOrbAttack;
     private InputAction _tornadoAttack;
     private InputAction _interact;
+    private InputAction _skilltreeAction;
     #endregion
 
     private void Awake()
@@ -90,6 +89,7 @@ public class PauseMenu : MonoBehaviour
         _boulderAttack = _input.actions["BoulderAttack"];
         _energyOrbAttack = _input.actions["EnergyOrbAttack"];
         _tornadoAttack = _input.actions["TornadoAttack"];
+        _skilltreeAction = _input.actions["SkillTreeAction"];
 
         // Pausar la escena si es el "Menu Principal"
         string currentScene = SceneManager.GetActiveScene().name;
@@ -118,6 +118,7 @@ public class PauseMenu : MonoBehaviour
         _boulderAttack.Disable();
         _energyOrbAttack.Disable();
         _tornadoAttack.Disable();
+        _skilltreeAction.Disable();
     }
     private void Enable()
     {
@@ -132,6 +133,7 @@ public class PauseMenu : MonoBehaviour
         _boulderAttack.Enable();
         _energyOrbAttack.Enable();
         _tornadoAttack.Enable();
+        _skilltreeAction.Enable();
     }
 
     private void OnEnable()

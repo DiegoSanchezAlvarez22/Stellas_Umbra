@@ -105,6 +105,7 @@
     <Compile Include="Assets\Diego.S\Scripts\PlatformBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\SkillTree_Manager.cs" />
     <Compile Include="Assets\Scripts\Objects\Item.cs" />
+    <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTreePointsView.cs" />
     <Compile Include="Assets\Scripts\TpScripts\Flag.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\BatAttack.cs" />

@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
     private Transform _playerTransform;
     [SerializeField] InteractuableBoss _interactuableBoss;
     [SerializeField] Vector3 _newPlayerPosition;
-
+    [SerializeField] GameObject _bossScene;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -50,6 +50,8 @@ public class Interactable : MonoBehaviour
             AudioManagerBehaviour.instance.PlaySFX("Interact");
 
             Debug.Log("Interacción realizada con el objeto.");
+
+            _bossScene.SetActive(true);
 
             AudioManagerBehaviour.instance.PlayBossMusic(); //Cambia la música al interactuar
 
