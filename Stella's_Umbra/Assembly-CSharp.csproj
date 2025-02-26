@@ -127,12 +127,12 @@
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Scripts\MusicScripts\PlayerSounds.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Link.cs" />
-    <Compile Include="Assets\Diego.B\Scripts\InteractuableTeleports.cs" />
     <Compile Include="Assets\Scripts\MusicScripts\AudioManagerBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\Slime\SlimeBehaviour.cs" />
     <Compile Include="Assets\Diego.B\Scripts\Apuntado.cs" />
     <Compile Include="Assets\Diego.S\Scripts\VirtualMouseUI.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\BasicAttackAreaBehaviour.cs" />
+    <Compile Include="Assets\Diego.B\Scripts\InteractableTeleports.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Skilltree\SkillTree_Slot.cs" />
     <Compile Include="Assets\Diego.B\Objetos mapa\MapBehaviour.cs" />
   </ItemGroup>

@@ -13,21 +13,24 @@ public class InteractuableBoss : MonoBehaviour
     [SerializeField] Animator Boss;
     [SerializeField] VideoPlayer canvaPostMortem;
     [SerializeField] GameObject sistemaParticulas;
+    [SerializeField] GameObject _healthCanvas;
+    [SerializeField] CheckPointSystem _checkpointSystem;
 
     private void Start()
     {
         hitBox.enabled = false;
-        sistemaParticulas.SetActive(false); // Desactiva completamente el objeto
+        sistemaParticulas.SetActive(false); //Desactiva completamente el objeto
+        _healthCanvas.SetActive(false);
     }
 
     private void Update()
     {
         if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
         {
-            interact.enabled = true; // Desactivar el collider después de la interacción
+            interact.enabled = true; //Desactivar el collider después de la interacción
             hitBox.enabled = false;
             StopCoroutine(FasesJefe());
-            sistemaParticulas.SetActive(true); // Activa el objeto y las partículas
+            sistemaParticulas.SetActive(true); //Activa el objeto y las partículas
         }
     }
 
@@ -36,16 +39,16 @@ public class InteractuableBoss : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorDentro = true;
-            playerInput = other.GetComponent<PlayerInput>(); // Obtener PlayerInput del jugador
+            playerInput = other.GetComponent<PlayerInput>(); //Obtienes el PlayerInput del jugador
 
-            // Aquí puedes poner la lógica de interacción (abrir puerta, recoger objeto, etc.)
+            //A
             Boss.SetTrigger("Awake");
-            StartCoroutine(FasesJefe());  // Llamada correcta a la corrutina
-            interact.enabled = false; // Desactivar el collider después de la interacción
+            StartCoroutine(FasesJefe());  //Llamas a la corrutina
+            interact.enabled = false; //Desactiva el collider después de la interacción
 
             if (playerInput != null)
             {
-                playerInput.actions["Interact"].performed += Interactuar; // Suscribirse al evento
+                playerInput.actions["Interact"].performed += Interactuar; //Suscribirse al evento
             }
         }
     }
@@ -58,7 +61,7 @@ public class InteractuableBoss : MonoBehaviour
 
             if (playerInput != null)
             {
-                playerInput.actions["Interact"].performed -= Interactuar; // Desuscribirse del evento
+                playerInput.actions["Interact"].performed -= Interactuar; //Desuscribirse del evento
                 playerInput = null;
             }
         }
@@ -66,39 +69,43 @@ public class InteractuableBoss : MonoBehaviour
 
     private void Interactuar(InputAction.CallbackContext context)
     {
-        if (!jugadorDentro) return; // Si el jugador no está dentro, no hacer nada
+        if (!jugadorDentro) return; //Si el jugador no está dentro, no hacer nada
 
         if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
         {
             canvaPostMortem.Play();
+            Debug.Log("Reproduce animación final");
+
+            _checkpointSystem.ClearProgress();
+            Debug.Log("Borras el progreso al acabar la partida");
         }
     }
 
     private IEnumerator FasesJefe()
     {
-        yield return new WaitForSeconds(1f); // Espera el tiempo de la animación
+        yield return new WaitForSeconds(1f); //Espera el tiempo de la animación
                                              
         hitBox.enabled = true;
 
         while (true)
         {
-            yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(5f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Barrido");
 
-            yield return new WaitForSeconds(5f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(5f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Palmada");
 
-            yield return new WaitForSeconds(2f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(2f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Palmada");
 
-            yield return new WaitForSeconds(10f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(10f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Barrido");
 
-            yield return new WaitForSeconds(2f); // Espera el tiempo de la animación
+            yield return new WaitForSeconds(2f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Palmada");
         }
@@ -106,7 +113,7 @@ public class InteractuableBoss : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // Verificamos si el objeto con el que colisionamos tiene el tag "Enemigo"
+        //Verifica si el objeto con el que se choca tiene el tag "Enemigo"
         if (collision.gameObject.CompareTag("Floor") && Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|Palmada"))
         {
             Debug.Log("Hola");
@@ -118,5 +125,14 @@ public class InteractuableBoss : MonoBehaviour
     private void OndaExpansiva()
     {
 
+    }
+
+    public void ShowBossCanvasLife()
+    {
+        _healthCanvas.SetActive(true);
+    }
+    public void HideBossCanvasLife()
+    {
+        _healthCanvas.SetActive(false);
     }
 }

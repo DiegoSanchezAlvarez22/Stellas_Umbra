@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    #region Variables y referencias
     [SerializeField] int _requieredCrystals;    // Cantidad de items necesarios para aumentar vida
     [SerializeField] int _regenerateLife;     // heal
     [SerializeField] int _actualCrystalsTaken;  // Items actuales recogidos
@@ -36,6 +37,12 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] RectTransform _uiHeartsCnavas;
     [SerializeField] float _moveCanvas = 250f;
 
+    [Header ("Icons")]
+    [SerializeField] GameObject _heartsCanvas;
+    [SerializeField] GameObject _mapDropdown;
+    [SerializeField] GameObject _energyOrbIcon;
+    [SerializeField] GameObject _interactIcon;
+    #endregion 
 
     private void Start()
     {
@@ -47,32 +54,22 @@ public class PlayerLife : MonoBehaviour
 
         _deathCanvas.SetActive(false);
         _starsBackground.SetActive(false);
+        _heartsCanvas.SetActive(true);
     }
 
     private void Update()
     {
         if (_actualLife == 0)
         {
-            //Respawn _respawn;
-            //_respawn = gameObject.GetComponent<Respawn>();
-            //_respawn.RespawnPosition();
-            //vidaActual = corazonesMax;
-            //cambioVida.Invoke(vidaActual);
-
-            //CorazonesUI _corazonesUI;
-            //_corazonesUI = gameObject.GetComponent<CorazonesUI>();
-            //cambioVida.AddListener(_corazonesUI.CambiarCorazones);
-            //sumarCorazon.AddListener(_corazonesUI.SumarCorazones);
-
-            //JULIO Cuando la vida llege a 0, cargar el último progreso guardado
-            //Si muere y tiene alguna Key guardada, que cargue la info guardada
-            //Si muere y no tiene una Key guardada, que se reinicie la escena
-
             if (_actualLife == 0)
             {
                 if (_checkPointSystem != null)
                 {
                     _deathCanvas.SetActive(true);
+                    _heartsCanvas.SetActive(false);
+                    _mapDropdown.SetActive(false);
+                    _energyOrbIcon.SetActive(false);
+                    _interactIcon.SetActive(false);
                     _starsBackground.SetActive(true);
                     Invoke("LoadProgressWithDeathCanvas", 1.5f);
                     Debug.Log("El jugador ha muerto. Cargando el último progreso guardado.");

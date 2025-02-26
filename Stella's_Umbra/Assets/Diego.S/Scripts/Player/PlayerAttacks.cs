@@ -58,7 +58,6 @@ public class PlayerAttacks : MonoBehaviour
     //[SerializeField] private float _damage; //daño que hace el tornado
     //[SerializeField] private float _damageInterval; //cada cuánto tiempo hace daño
     //private List<EnemyLifes> enemiesInTornado = new List<EnemyLifes>();
-
     #endregion
 
     void Awake()

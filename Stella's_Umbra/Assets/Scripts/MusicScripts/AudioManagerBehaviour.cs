@@ -38,7 +38,7 @@ public class AudioManagerBehaviour : MonoBehaviour
 
     void Start()
     {
-        musicSource.clip = background;
+        musicSource.clip = adventureBackground;
         musicSource.Play();
     }
 
@@ -61,42 +61,47 @@ public class AudioManagerBehaviour : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "BossRoom")
-        {
-            if (!isBossFight)
-            {
-                isBossFight = true;
-                isLevel1 = false; // Resetear nivel 1 si estaba activo
-
-                musicSource.Stop();
-                musicSource.clip = bossBackground;
-                musicSource.Play();
-            }
-        }
-        else if (scene.name == "DiseñoNivel1.1")
+        if (scene.name == "DiseñoNivel1.1")
         {
             if (!isLevel1)
             {
                 isLevel1 = true;
-                isBossFight = false; // Resetear boss fight si estaba activo
+                isBossFight = false; //Resetear boss fight si estaba activo
 
-                musicSource.Stop();
-                musicSource.clip = adventureBackground;
-                musicSource.Play();
+                PlayAdventureMusic(); //Reproduce la música del nivel principal
             }
         }
         else if (scene.name == "Menu Principal")
         {
-            if (isBossFight || isLevel1) // Si venimos de otra música específica, restablecemos a background
+            if (isBossFight || isLevel1) //Si venimos de otra música específica, restablece a background
             {
                 isBossFight = false;
                 isLevel1 = false;
 
-                musicSource.Stop();
-                musicSource.clip = background;
-                musicSource.Play();
+                PlayBackgroundMusic(); //Reproduce la música del menú principal
             }
         }
+    }
+
+    public void PlayAdventureMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = adventureBackground;
+        musicSource.Play();
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = background;
+        musicSource.Play();
+    }
+
+    public void PlayBossMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = bossBackground;
+        musicSource.Play();
     }
 
     public void PlayShineMusic(string musicName)

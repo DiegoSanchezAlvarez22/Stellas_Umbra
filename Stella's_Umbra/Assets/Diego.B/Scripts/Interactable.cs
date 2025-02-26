@@ -6,7 +6,9 @@ public class Interactable : MonoBehaviour
 {
     private bool _isPlayerIn = false;
     private PlayerInput _input;
-    public string _sceneName; // Nombre de la escena a cargar
+    private Transform _playerTransform;
+    [SerializeField] InteractuableBoss _interactuableBoss;
+    [SerializeField] Vector3 _newPlayerPosition;
 
 
     private void OnTriggerEnter(Collider other)
@@ -14,7 +16,8 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _isPlayerIn = true;
-            _input = other.GetComponent<PlayerInput>(); // Obtener PlayerInput del jugador
+            _input = other.GetComponent<PlayerInput>(); //Obtener PlayerInput del jugador
+            _playerTransform = other.transform; //Guarda referencia al transform del player
 
             if (_input != null)
             {
@@ -35,19 +38,26 @@ public class Interactable : MonoBehaviour
                 _input = null;
             }
 
+            _playerTransform = null; //Elimina la referencia al transform
             Debug.Log("Saliste de la zona de interacción.");
         }
     }
 
-    private void Interact(InputAction.CallbackContext context)
+    public void Interact(InputAction.CallbackContext context)
     {
-        if (_isPlayerIn)
+        if (_isPlayerIn && _playerTransform != null)
         {
             AudioManagerBehaviour.instance.PlaySFX("Interact");
 
             Debug.Log("Interacción realizada con el objeto.");
 
-            SceneManager.LoadScene(_sceneName);
+            AudioManagerBehaviour.instance.PlayBossMusic(); //Cambia la música al interactuar
+
+            //Mueve al Player a la posición de la escena del Boss
+            _playerTransform.position = _newPlayerPosition;
+
+            //Muestra la barra de vida del Boss
+            _interactuableBoss.ShowBossCanvasLife();
         }
     }
 }

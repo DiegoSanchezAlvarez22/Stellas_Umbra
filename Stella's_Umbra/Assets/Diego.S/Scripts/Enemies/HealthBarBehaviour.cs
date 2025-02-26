@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class HealthBarBehaviour : MonoBehaviour
 {
     [SerializeField] private Image _healthBarImage;
+
     private Quaternion initialRotation;
 
     void Start()
