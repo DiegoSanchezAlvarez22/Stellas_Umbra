@@ -16,6 +16,8 @@ public class EnemyLifes : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private GameObject _playerTarget;
 
+    public bool isDead = false;
+
     private void Start()
     {
         _maxHealth = _currentHealth;
@@ -58,6 +60,8 @@ public class EnemyLifes : MonoBehaviour
                 Boss.SetTrigger("Muerte");
                 Debug.Log("Has matado al jefe final");
 
+                isDead = true; //Variable si está muerto o no el Boss (Lo está)
+
                 _checkPointSystem.ClearProgress();
                 Debug.Log("Borras el progreso al terminar el juego");
 
@@ -80,5 +84,14 @@ public class EnemyLifes : MonoBehaviour
         _spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(_damageDuration);
         _spriteRenderer.color = Color.white;
+    }
+
+    public void ResetBossLifes()
+    {
+        //Reseteas la vida del Boss
+        _currentHealth = _maxHealth;
+
+        //Actualizas la barra de vida del Boss
+        _healthBarBehaviour.UpdateHealthBar(100,100,0);
     }
 }

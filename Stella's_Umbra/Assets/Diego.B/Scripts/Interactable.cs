@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
     private PlayerInput _input;
     private Transform _playerTransform;
     [SerializeField] InteractableBoss _interactableBoss;
+    [SerializeField] EnemyLifes _enemyLifes;
     [SerializeField] Vector3 _newPlayerPosition;
     [SerializeField] GameObject _bossScene;
 
@@ -62,7 +63,7 @@ public class Interactable : MonoBehaviour
             _interactableBoss.ShowBossCanvasLife();
 
             //Reseteas la vida del Boss
-
+            _enemyLifes.ResetBossLifes();
         }
     }
 }

@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
         "quiera destruir el objeto al pasar el valor indicado.")]
     [SerializeField] int _damage; // Cantidad de vida que el enemigo quita al jugador
 
+    [SerializeField] EnemyLifes _enemyLifes;
+
     private void Start()
     {
         if (gameObject.tag == "EnemyShot")
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour
         {
             PlayerLife playerLife = other.GetComponent<PlayerLife>();
 
-            if (playerLife != null)
+            if (playerLife != null && _enemyLifes.isDead == false)
             {
                 if (gameObject.tag == "EnemyShot")
                 playerLife.LooseLife(_damage, other.gameObject.transform.position, gameObject.tag); // Quita vida al jugador
@@ -44,7 +46,7 @@ public class Enemy : MonoBehaviour
         {
             PlayerLife playerLife = collision.gameObject.GetComponent<PlayerLife>();
 
-            if (playerLife != null)
+            if (playerLife != null && _enemyLifes.isDead == false)
             {
                 Debug.Log("Jugador recibió daño: " + _damage);
                 playerLife.LooseLife(_damage, collision.GetContact(0).normal, gameObject.tag); // Quita vida al jugador
