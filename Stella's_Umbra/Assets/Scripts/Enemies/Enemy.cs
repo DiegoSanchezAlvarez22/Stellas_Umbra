@@ -25,7 +25,16 @@ public class Enemy : MonoBehaviour
         {
             PlayerLife playerLife = other.GetComponent<PlayerLife>();
 
-            if (playerLife != null && _enemyLifes.isDead == false)
+            if (gameObject.CompareTag("Boss"))
+            {
+                if (playerLife != null && _enemyLifes.isDead == false)
+                {
+                    if (gameObject.tag == "EnemyShot")
+                        playerLife.LooseLife(_damage, other.gameObject.transform.position, gameObject.tag); // Quita vida al jugador
+                    Debug.Log("Jugador recibió daño: " + _damage);
+                }
+            }
+            if (playerLife != null)
             {
                 if (gameObject.tag == "EnemyShot")
                 playerLife.LooseLife(_damage, other.gameObject.transform.position, gameObject.tag); // Quita vida al jugador
@@ -46,10 +55,21 @@ public class Enemy : MonoBehaviour
         {
             PlayerLife playerLife = collision.gameObject.GetComponent<PlayerLife>();
 
-            if (playerLife != null && _enemyLifes.isDead == false)
+            if (gameObject.CompareTag("Boss"))
             {
-                Debug.Log("Jugador recibió daño: " + _damage);
-                playerLife.LooseLife(_damage, collision.GetContact(0).normal, gameObject.tag); // Quita vida al jugador
+                if (playerLife != null && _enemyLifes.isDead == false)
+                {
+                    Debug.Log("Jugador recibió daño: " + _damage);
+                    playerLife.LooseLife(_damage, collision.GetContact(0).normal, gameObject.tag); // Quita vida al jugador
+                }
+            }
+            else
+            {
+                if (playerLife != null)
+                {
+                    Debug.Log("Jugador recibió daño: " + _damage);
+                    playerLife.LooseLife(_damage, collision.GetContact(0).normal, gameObject.tag); // Quita vida al jugador
+                }
             }
 
             if (gameObject.tag == "EnemyShot")

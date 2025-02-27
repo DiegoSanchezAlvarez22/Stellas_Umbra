@@ -42,6 +42,9 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] private Transform shootingPoint; //posicion desde la que se dispara
     [SerializeField] private Vector3 _boulderSpawnRight; //posicion en la que se instancia la roca (derecha)
     [SerializeField] private Vector3 _boulderSpawnLeft; //posicion en la que se instancia la roca (izquierda)
+    [SerializeField] private float _timeRechargeBoulderAttack = 1.0f; // Ajusta según sea necesario
+    private bool _boulderAttackRecharged = false;
+    private float _timerRechargeBoulder = 0f;
 
     [Header("EnergyOrbAttack")]
     [SerializeField] public bool _canEnergyOrbAttack;
@@ -50,11 +53,15 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] Transform _shootingPoint;
     [SerializeField] List<Collider> _enemiesInside = new List<Collider>(); //Lista para detectar a los enemigos dentro del Sphere Collider
+    [SerializeField] private float _timeRechargeEnergyOrbAttack = 1.5f; // Ajusta según sea necesario
+    private bool _energyOrbAttackRecharged = false;
+    private float _timerRechargeEnergyOrb = 0f;
 
     [Header("TornadoAttack")]
     [SerializeField] public bool _canTornadoAttack; //variable a la que accede el skilltree
     [SerializeField] private GameObject _tornado; //prefab de tornado que se instancia
     [SerializeField] private float _tornadoAttackDuration; //durancion del ataque especial
+    private bool _tornadoAttackRecharged;
     //[SerializeField] private float _damage; //daño que hace el tornado
     //[SerializeField] private float _damageInterval; //cada cuánto tiempo hace daño
     //private List<EnemyLifes> enemiesInTornado = new List<EnemyLifes>();
@@ -86,7 +93,7 @@ public class PlayerAttacks : MonoBehaviour
         }
         #endregion
 
-        #region BasicAttack
+        #region BasicAttack Recharge
         if (_isAttacking)
         {
             _timer += Time.deltaTime;
@@ -106,6 +113,28 @@ public class PlayerAttacks : MonoBehaviour
             if (_timerRecharge >= _timeRechargeAttack)
             {
                 _basicAttackRecharged = true;
+            }
+        }
+        #endregion
+
+        #region BoulderAttack Recharge
+        if (!_boulderAttackRecharged)
+        {
+            _timerRechargeBoulder += Time.deltaTime;
+            if (_timerRechargeBoulder >= _timeRechargeBoulderAttack)
+            {
+                _boulderAttackRecharged = true;
+            }
+        }
+        #endregion
+
+        #region EnergyOrbAttack Recharge
+        if (!_energyOrbAttackRecharged)
+        {
+            _timerRechargeEnergyOrb += Time.deltaTime;
+            if (_timerRechargeEnergyOrb >= _timeRechargeEnergyOrbAttack)
+            {
+                _energyOrbAttackRecharged = true;
             }
         }
         #endregion
@@ -143,7 +172,18 @@ public class PlayerAttacks : MonoBehaviour
                 _enemyIndicator.gameObject.SetActive(false);
             }
         }
-        
+
+        #endregion
+
+        #region Tornado Recharge
+        if (_energy >= 100)
+        {
+            _tornadoAttackRecharged = true;
+        }
+        else
+        {
+            _tornadoAttackRecharged = false;
+        }
         #endregion
     }
 
@@ -292,7 +332,7 @@ public class PlayerAttacks : MonoBehaviour
 
     private void BasicAttack(InputAction.CallbackContext _callbackContext)
     {
-        if (_callbackContext.performed && _basicAttackRecharged)
+        if (_callbackContext.performed && _basicAttackRecharged == true)
         {
             if (_canBasicAttack)
             {
@@ -300,6 +340,8 @@ public class PlayerAttacks : MonoBehaviour
                 _attackArea.SetActive(_isAttacking);
 
                 AudioManagerBehaviour.instance.PlaySFX("BasicAttack");
+
+                _anim.SetBool("BasicAttack", true); //Isa
 
                 _basicAttackRecharged = false;
                 _timerRecharge = 0;
@@ -310,10 +352,9 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (_callbackContext.started)
         {
-            if (_canBasicAttack == true)
+            if (_canBasicAttack == true && _basicAttackRecharged == true)
             {
                 _anim.SetBool("BasicAttack", true); //Isa
-
             }
         }
     }
@@ -325,39 +366,37 @@ public class PlayerAttacks : MonoBehaviour
 
     private void BoulderAttack(InputAction.CallbackContext _callbackContext)
     {
-        if (_callbackContext.performed)
+        if (_callbackContext.performed && _boulderAttackRecharged)
         {
-            if (_canBoulderAttack == true)
+            if (_canBoulderAttack)
             {
                 AudioManagerBehaviour.instance.PlaySFX("BoulderAttack");
 
-                if (_spriteRenderer.flipX == true)
+                if (_spriteRenderer.flipX)
                 {
                     shootingPoint.localPosition = _boulderSpawnRight;
-                    
                 }
                 else
                 {
                     shootingPoint.localPosition = _boulderSpawnLeft;
-                    
                 }
-                
-                GameObject instantiatedRoca = GameObject.Instantiate
-                    (_boulder, shootingPoint.position, shootingPoint.rotation);
-            }
-            
-        }
 
+                GameObject instantiatedRoca = Instantiate(_boulder, shootingPoint.position, shootingPoint.rotation);
+
+                // Reiniciar la recarga
+                _boulderAttackRecharged = false;
+                _timerRechargeBoulder = 0;
+            }
+        }
     }
 
     private void BoulderAttackStarted(InputAction.CallbackContext _callbackContext)
     {
         if (_callbackContext.started)
         {
-            if (_canBoulderAttack == true)
+            if (_canBoulderAttack == true && _boulderAttackRecharged)
             {
-                _anim.SetBool("BoulderAttack", true); //Isa
-               
+                _anim.SetBool("BoulderAttack", true); //Is
             }
         }
     }
@@ -379,49 +418,43 @@ public class PlayerAttacks : MonoBehaviour
 
     private void ShootBullet(InputAction.CallbackContext _callbackContext)
     {
-        if (_callbackContext.performed)
+        if (_callbackContext.performed && _energyOrbAttackRecharged)
         {
-            if (_canEnergyOrbAttack == true)
+            if (_canEnergyOrbAttack && _bulletPrefab != null && _shootingPoint != null && _enemiesInside.Count > 0)
             {
-                if (_bulletPrefab != null && _shootingPoint != null && _enemiesInside.Count > 0)
+                Transform targetEnemy = _enemiesInside[0].transform;
+                _shootingPoint.localPosition = new Vector3(0, 0, 0);
+
+                Vector3 direction = (targetEnemy.position - _shootingPoint.position).normalized;
+
+                GameObject bulletInstance = Instantiate(_bulletPrefab, _shootingPoint.position, _shootingPoint.rotation);
+                BulletBehaviour _bulletBehaviour = bulletInstance.GetComponent<BulletBehaviour>();
+
+                if (_bulletBehaviour != null)
                 {
-                    //Obtiene al primer enemigo de la lista
-                    Transform targetEnemy = _enemiesInside[0].transform;
-
-                    //Modifica el shootingPoint
-                    _shootingPoint.localPosition = new Vector3(0, 0, 0);
-
-                    //Calcula la dirección hacia el enemigo
-                    Vector3 direction = (targetEnemy.position - _shootingPoint.position).normalized;
-
-                    //Instancia la bala
-                    GameObject bulletInstance = Instantiate(_bulletPrefab, _shootingPoint.position, _shootingPoint.rotation);
-
-                    //Configura la dirección de la bala
-                    BulletBehaviour _bulletBehaviour = bulletInstance.GetComponent<BulletBehaviour>();
-
-                    if (_bulletBehaviour != null)
-                    {
-                        _bulletBehaviour.SetDirection(direction);
-                    }
-
-                    //Reproduce el sonido
-                    AudioManagerBehaviour.instance.PlaySFX("EnergyOrbAttack");
-
-                    Debug.Log("Se ha disparado la bala");
+                    _bulletBehaviour.SetDirection(direction);
                 }
-                else
-                {
-                    Debug.LogWarning("Falta asignar el prefab de la bala o el shootingPoint al Inspector");
-                }
+
+                AudioManagerBehaviour.instance.PlaySFX("EnergyOrbAttack");
+
+                // Reiniciar la recarga
+                _energyOrbAttackRecharged = false;
+                _timerRechargeEnergyOrb = 0;
+
+                Debug.Log("Se ha disparado la bala");
+            }
+            else
+            {
+                Debug.LogWarning("Falta asignar el prefab de la bala o el shootingPoint al Inspector");
             }
         }
     }
+
     private void ShootBulletStarted(InputAction.CallbackContext _callbackContext)
     {
         if (_callbackContext.started)
         {
-            if (_canEnergyOrbAttack == true)
+            if (_canEnergyOrbAttack == true && _energyOrbAttackRecharged)
             {
                 _anim.SetBool("EnergyOrbAttack", true); //Isa
 
@@ -460,12 +493,10 @@ public class PlayerAttacks : MonoBehaviour
             if (_canTornadoAttack == true)
             {
                 _anim.SetBool("TornadoAttack", true); //Isa
-
             }
         }
     }
    
-
     void StopTornadoAttackAnim()
     {
         _anim.SetBool("TornadoAttack", false); //Isa      
@@ -473,17 +504,17 @@ public class PlayerAttacks : MonoBehaviour
 
     private IEnumerator TornadoAttack()
     {
-        if (_canTornadoAttack == true)
+        if (_canTornadoAttack == true && _tornadoAttackRecharged)
         {
             if (_energy >= 100)
             {
+                _energy = 0;
                 AudioManagerBehaviour.instance.PlaySFX("Tornado Attack");
                 GameObject instantiatedTornado;
                 instantiatedTornado = GameObject.Instantiate(_tornado, new Vector3(transform.localPosition.x, (float)2.5, transform.localPosition.z),
                     shootingPoint.rotation);
                 instantiatedTornado.transform.SetParent(transform);
                 yield return new WaitForSeconds(_tornadoAttackDuration);
-                _energy = 0;
                 Destroy(instantiatedTornado);
             }
             else

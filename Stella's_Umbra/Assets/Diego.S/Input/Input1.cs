@@ -636,7 +636,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""65b9474a-98a2-41be-9e38-0a6dae389f0c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -738,7 +738,7 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""11106643-3826-4bc5-aaed-ff007f0caf3b"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -749,6 +749,39 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""4a0b578a-d40a-4de9-899d-8225faaec6f3"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right Keyboard"",
+                    ""id"": ""78cd2d17-bcbf-4bb0-8b63-b2ecfc63a41e"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""504f38cb-2112-47d1-bff9-c01bb0384918"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ac48ac2c-6bd3-4bf4-9c81-d1802ca676f6"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -827,6 +860,17 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""689d573b-f668-4929-bf23-1f5aaa4f0aed"",
                     ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b6ede12-9e69-41ac-9e64-a8505fe57c08"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -926,6 +970,17 @@ public partial class @Input1: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""6ead9ca3-5f33-40d0-9806-7bdba7556c53"",
                     ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BendDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be9917de-b370-4393-a9c9-c117b056e588"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

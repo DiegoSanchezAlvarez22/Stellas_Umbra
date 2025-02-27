@@ -28,6 +28,8 @@ public class InteractableBoss : MonoBehaviour
     {
         hitBox.enabled = false;
         sistemaParticulas.SetActive(false); //Desactiva completamente el objeto
+
+        RestartBoss();
     }
 
     private void Update()
@@ -153,5 +155,17 @@ public class InteractableBoss : MonoBehaviour
     public void HideBossCanvasLife()
     {
         _healthCanvas.SetActive(false);
+    }
+
+    private void RestartBoss()
+    {
+        RestartAnim();
+        _enemyLifes.PlayBossSoundLoop();
+    }
+
+    private void RestartAnim()
+    {
+        Boss.enabled = false;
+        Boss.enabled = true;
     }
 }

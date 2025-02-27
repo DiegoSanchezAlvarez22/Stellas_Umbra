@@ -27,6 +27,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private CheckPointSystem _checkPointSystem;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerMov _playerMov;
+    [SerializeField] private EnemyLifes _enemyLifes;
 
     [SerializeField] private float _looseControlTime;
 
@@ -49,6 +50,7 @@ public class PlayerLife : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerMov = GetComponent<PlayerMov>();
+        _enemyLifes = GetComponent<EnemyLifes>();
 
         _checkPointSystem.LoadProgress();
         _changeLife.Invoke(_actualLife);
@@ -140,6 +142,8 @@ public class PlayerLife : MonoBehaviour
             _actualLife = 0;
 
             AudioManagerBehaviour.instance.PlaySFX("Player Death");
+
+            _enemyLifes.StopBossSoundLoop();
 
             Debug.Log("Has muerto");
         }

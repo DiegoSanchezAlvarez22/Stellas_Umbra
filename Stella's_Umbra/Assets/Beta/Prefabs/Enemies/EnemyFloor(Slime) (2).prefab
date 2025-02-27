@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  _enemyLifes: {fileID: 0}
 --- !u!1 &4467458454856985659
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +446,6 @@ MonoBehaviour:
   _attackDistance: 2.5
   _tiempoAtacando: 1
   _colliderAttack: {fileID: 3558068922619864732}
-  _timeToNextAttack: 0
 --- !u!114 &7261019191549966352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  _enemyLifes: {fileID: 0}
 --- !u!114 &2359122820674323173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +478,7 @@ MonoBehaviour:
   _damageDuration: 0.1
   _expToAdd: 10
   _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
+  isDead: 0
 --- !u!82 &963284808426167918
 AudioSource:
   m_ObjectHideFlags: 0

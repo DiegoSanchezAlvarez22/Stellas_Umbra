@@ -31660,9 +31660,6 @@ MonoBehaviour:
   _damageDuration: 0.3
   _expToAdd: 0
   _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
-  Boss: {fileID: 680098220}
-  _checkPointSystem: {fileID: 1789269180}
-  _interactableBoss: {fileID: 1305886056}
   isDead: 0
 --- !u!95 &680098220
 Animator:
@@ -52950,11 +52947,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -89.3
+      value: -39.6
       objectReference: {fileID: 0}
     - target: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 167.7
+      value: 76.7
       objectReference: {fileID: 0}
     - target: {fileID: 290188763919154300, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53628,7 +53625,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 18
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1127202270
 MonoBehaviour:
@@ -59733,8 +59730,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020764336, y: 0.036193784, z: 0.01973618}
-  m_Center: {x: -0.008228846, y: 0.019029379, z: 0.014915016}
+  m_Size: {x: 0.02076434, y: 0.07755266, z: 0.019736178}
+  m_Center: {x: -0.008228848, y: -0.0016500006, z: 0.014915016}
 --- !u!114 &1305886056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89870,6 +89867,7 @@ MonoBehaviour:
   _checkPointSystem: {fileID: 1789269180}
   _spriteRenderer: {fileID: 1789269176}
   _playerMov: {fileID: 1789269174}
+  _enemyLifes: {fileID: 0}
   _looseControlTime: 1.5
   _deathCanvas: {fileID: 1370172121}
   _starsBackground: {fileID: 508104310}

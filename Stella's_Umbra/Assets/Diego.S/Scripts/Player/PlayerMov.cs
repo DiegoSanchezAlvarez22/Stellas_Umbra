@@ -407,7 +407,6 @@ public class PlayerMov : MonoBehaviour
         {
             BendDown(_otherCollider, _floorIsPlat);
             _anim.SetBool("IsBendDown", true);
-
         }
     }
 

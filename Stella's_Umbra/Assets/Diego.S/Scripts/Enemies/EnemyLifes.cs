@@ -10,9 +10,9 @@ public class EnemyLifes : MonoBehaviour
     [SerializeField] private float _damageDuration;
     [SerializeField] private int _expToAdd;
     [SerializeField] public GameObject _dyingEffect;
-    [SerializeField] Animator Boss;
-    [SerializeField] CheckPointSystem _checkPointSystem;
-    [SerializeField] InteractableBoss _interactableBoss;
+    private Animator _bossAnimator;
+    private CheckPointSystem _checkPointSystem;
+    private InteractableBoss _interactableBoss;
     private SpriteRenderer _spriteRenderer;
     private GameObject _playerTarget;
 
@@ -26,13 +26,41 @@ public class EnemyLifes : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _playerTarget = GameObject.Find("Player");
+        _checkPointSystem = _playerTarget.GetComponent<CheckPointSystem>();
+
+        if (gameObject.CompareTag("Boss"))
+        {
+            _bossAnimator.GetComponent<Animator>();
+        }
+        else
+        {
+            _bossAnimator = null;
+        }
+
+        if (gameObject.name == "Armature")
+        {
+            _interactableBoss.GetComponent<InteractableBoss>();
+        }
+        else
+        {
+            _interactableBoss = null;
+        }
     }
 
     public void DamageRecieved(float _dmg)
     {
         float _previousHealth = _currentHealth;
         _currentHealth -= _dmg;
-        AudioManagerBehaviour.instance.PlaySFX("Boss Pain");
+
+        if (gameObject.CompareTag("Boss"))
+        {
+            AudioManagerBehaviour.instance.PlaySFX("Boss Pain");
+        }
+        else
+        {
+            //MI COLEGON EL HULIOOOOO PONME UN RUIDITO WAPO DE COHONES PA LOS ENEMIGOS CHIKITOS
+        }
+
         Debug.Log("Vidas actuales enemigo = " + _currentHealth);
 
         _healthBarBehaviour.UpdateHealthBar(_maxHealth, _currentHealth, _previousHealth);
@@ -59,7 +87,7 @@ public class EnemyLifes : MonoBehaviour
 
             if (gameObject.CompareTag("Boss"))
             {
-                Boss.SetTrigger("Muerte");
+                _bossAnimator.SetTrigger("Muerte");
                 Debug.Log("Has matado al jefe final");
 
                 isDead = true; //Variable si está muerto o no el Boss (Lo está)
@@ -111,7 +139,7 @@ public class EnemyLifes : MonoBehaviour
         }
     }
 
-    private IEnumerator PlayBossSoundLoop()
+    public IEnumerator PlayBossSoundLoop()
     {
         while (_currentHealth > 0)
         {
@@ -129,6 +157,11 @@ public class EnemyLifes : MonoBehaviour
             float waitTime = Random.Range(8f,12f);
             yield return new WaitForSeconds(waitTime);
         }
+    }
+
+    public void StopBossSoundLoop()
+    {
+        StopCoroutine(PlayBossSoundLoop());
     }
 
     private IEnumerator PlayBossDeathSoundDelayed()
