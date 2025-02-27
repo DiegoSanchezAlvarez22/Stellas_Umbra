@@ -174,6 +174,7 @@ public class PlayerAttacks : MonoBehaviour
     public void OnEnable()
     {
         _basicAttack.Enable();
+        _basicAttack.started += BasicAttackStarted;
         _basicAttack.performed += BasicAttack;
 
         _boulderAttack.Enable();
@@ -181,6 +182,7 @@ public class PlayerAttacks : MonoBehaviour
         _boulderAttack.performed += BoulderAttack;
 
         _energyOrbAttack.Enable();
+        _energyOrbAttack.started += ShootBulletStarted;
         _energyOrbAttack.performed += ShootBullet;
 
         _tornadoAttack.Enable();
@@ -189,6 +191,7 @@ public class PlayerAttacks : MonoBehaviour
 
     public void OnDisable()
     {
+        _basicAttack.started -= BasicAttackStarted;
         _basicAttack.performed -= BasicAttack;
         _basicAttack.Disable();
 
@@ -196,9 +199,11 @@ public class PlayerAttacks : MonoBehaviour
         _boulderAttack.performed -= BoulderAttack;
         _boulderAttack.Disable();
 
+        _energyOrbAttack.started -= ShootBulletStarted;
         _energyOrbAttack.performed -= ShootBullet;
         _energyOrbAttack.Disable();
 
+        _tornadoAttack.started -= TornadoAttackStarted;
         _tornadoAttack.performed -= TornadoAttackStarted;
         _tornadoAttack.Disable();
     }
@@ -301,6 +306,22 @@ public class PlayerAttacks : MonoBehaviour
             }
         }
     }
+    private void BasicAttackStarted(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.started)
+        {
+            if (_canBasicAttack == true)
+            {
+                _anim.SetBool("BasicAttack", true); //Isa
+
+            }
+        }
+    }
+
+    void StopBasicAttackAnim()
+    {
+        _anim.SetBool("BasicAttack", false); //Isa      
+    }
 
     private void BoulderAttack(InputAction.CallbackContext _callbackContext)
     {
@@ -336,15 +357,15 @@ public class PlayerAttacks : MonoBehaviour
             if (_canBoulderAttack == true)
             {
                 _anim.SetBool("BoulderAttack", true); //Isa
-                StopBoulderAttackAnim();
+               
             }
         }
     }
 
-    void StopBoulderAttackAnim()
-    {
+   void StopBoulderAttackAnim()
+   {
         _anim.SetBool("BoulderAttack", false); //Isa      
-    }
+   }
 
     private void PositionIndicator(Collider enemy)
     {
@@ -396,7 +417,22 @@ public class PlayerAttacks : MonoBehaviour
             }
         }
     }
+    private void ShootBulletStarted(InputAction.CallbackContext _callbackContext)
+    {
+        if (_callbackContext.started)
+        {
+            if (_canEnergyOrbAttack == true)
+            {
+                _anim.SetBool("EnergyOrbAttack", true); //Isa
 
+            }
+        }
+    }
+
+    void StopShootBulletAnim()
+    {
+        _anim.SetBool("EnergyOrbAttack", false); //Isa      
+    }
     public void RemoveEnemyFromList(GameObject enemy)
     {
         //Buscar el collider del enemigo en la lista y eliminarlo
@@ -421,7 +457,18 @@ public class PlayerAttacks : MonoBehaviour
         if (_callbackContext.performed)
         {
             StartCoroutine(TornadoAttack());
+            if (_canTornadoAttack == true)
+            {
+                _anim.SetBool("TornadoAttack", true); //Isa
+
+            }
         }
+    }
+   
+
+    void StopTornadoAttackAnim()
+    {
+        _anim.SetBool("TornadoAttack", false); //Isa      
     }
 
     private IEnumerator TornadoAttack()

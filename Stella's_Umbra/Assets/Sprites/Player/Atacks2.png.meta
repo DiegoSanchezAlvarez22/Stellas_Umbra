@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 19fbaa023acec9849b6c5b63214b7f46
+guid: a653206aadd2dd943962f0ecb5a4641f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 700
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,77 +97,77 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: batfly_0
+      name: Atacks2_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 17
+        x: 20
+        y: 2252
         width: 1049
         height: 1049
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44c9c4b8114caec4b8cfc488952aff4b
-      internalID: 386670715
+      spriteID: cd9f706b78cd5364f8164e17ae8e7872
+      internalID: 271843018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: batfly_1
+      name: Atacks2_1
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 17
+        x: 20
+        y: 1147
         width: 1049
         height: 1049
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb2ee0b2c673434f99b29a4cc0ba3d5
-      internalID: -646647826
+      spriteID: e9fc843f5fc5df745a3b0217679d755b
+      internalID: 1633385148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: batfly_2
+      name: Atacks2_2
       rect:
         serializedVersion: 2
-        x: 2204
-        y: 17
+        x: 20
+        y: 21
         width: 1049
         height: 1049
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1146a28ed1fa08d4c80f2e68dd5ced57
-      internalID: -382699135
+      spriteID: cf0ea5f0204e6584b8616f4b2ac31e29
+      internalID: -151046149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: batfly_3
+      name: Atacks2_3
       rect:
         serializedVersion: 2
-        x: 3293
-        y: 17
+        x: 1101
+        y: 2252
         width: 1049
         height: 1049
       alignment: 0
@@ -178,18 +178,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 359a8a91f693d9745a0c53063c6e084e
-      internalID: -218680070
+      spriteID: 2047189a513df594eb744f356e9ed645
+      internalID: -295780929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: batfly_4
+      name: Atacks2_4
       rect:
         serializedVersion: 2
-        x: 4383
-        y: 17
+        x: 2188
+        y: 2252
         width: 1049
         height: 1049
       alignment: 0
@@ -200,8 +200,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 536674dfbcb3d1648bb6db33625f2029
-      internalID: 2141819300
+      spriteID: 66b41c28005483b4a8db1512e9e00cca
+      internalID: -569765454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atacks2_5
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1147
+        width: 1049
+        height: 1049
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59943a0f8a93d86428d2a2042315ce12
+      internalID: 1670355081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atacks2_6
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 1147
+        width: 1049
+        height: 1049
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf1f1995806a704ca305eb33793b3c0
+      internalID: -1140750013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atacks2_7
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 21
+        width: 1049
+        height: 1049
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a17344eea14714f96530b29d84a9b9
+      internalID: -386624031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atacks2_8
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 21
+        width: 1049
+        height: 1049
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f73d5e7425103438f4789106e63667
+      internalID: -1977383299
       vertices: []
       indices: 
       edges: []
@@ -210,7 +298,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a0feaf6fe921b2448851b73f89bf9092
+    spriteID: 06831c154ab6bbe448bbd535b3246e0e
     internalID: 0
     vertices: []
     indices: 
@@ -220,11 +308,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      batfly_0: 386670715
-      batfly_1: -646647826
-      batfly_2: -382699135
-      batfly_3: -218680070
-      batfly_4: 2141819300
+      Atacks2_0: 271843018
+      Atacks2_1: 1633385148
+      Atacks2_2: -151046149
+      Atacks2_3: -295780929
+      Atacks2_4: -569765454
+      Atacks2_5: 1670355081
+      Atacks2_6: -1140750013
+      Atacks2_7: -386624031
+      Atacks2_8: -1977383299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

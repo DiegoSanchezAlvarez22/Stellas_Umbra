@@ -406,6 +406,8 @@ public class PlayerMov : MonoBehaviour
         if (_callbackContext.performed)
         {
             BendDown(_otherCollider, _floorIsPlat);
+            _anim.SetBool("IsBendDown", true);
+
         }
     }
 
@@ -417,6 +419,7 @@ public class PlayerMov : MonoBehaviour
             _collider.size = new Vector3(0.6808743f, 1, 1);
             _walkForce = 10f;
             _floorIsPlat = false;
+            _anim.SetBool("IsBendDown", false);
         }
     }
 
