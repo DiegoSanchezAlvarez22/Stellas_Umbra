@@ -23,9 +23,6 @@ public class EnemyRespawn : MonoBehaviour
     {
         // Notificar al EnemyManager para que lo reinstancie después de 1.5 segundos
         EnemyManager.Instance.RespawnEnemy(enemyPrefab, initialPosition, initialRotation);
-
-        // Destruir el enemigo actual
-        Destroy(gameObject);
     }
 }
 

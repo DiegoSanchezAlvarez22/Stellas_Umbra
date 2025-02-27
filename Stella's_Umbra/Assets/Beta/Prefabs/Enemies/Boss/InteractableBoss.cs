@@ -110,13 +110,19 @@ public class InteractableBoss : MonoBehaviour
 
         while (true)
         {
+
             yield return new WaitForSeconds(5f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Barrido");
 
+            Invoke(nameof(StartBossAttackSound2), 6f); //Sonido ataque barrido (Va bien)
+
             yield return new WaitForSeconds(5f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Palmada");
+
+            Invoke(nameof(StartBossAttackSound1), 8.6f); //Sonido ataque palmada (Se desincroniza un poco)
+
 
             yield return new WaitForSeconds(2f); //Espera el tiempo de la animación
 
@@ -126,10 +132,24 @@ public class InteractableBoss : MonoBehaviour
 
             Boss.SetTrigger("Barrido");
 
+            Invoke(nameof(StartBossAttackSound2), 6.2f); //Sonido ataque barrido (Este se desincroniza mazo)
+
             yield return new WaitForSeconds(2f); //Espera el tiempo de la animación
 
             Boss.SetTrigger("Palmada");
         }
+    }
+
+    //Audio del ataque palmada del Jefe final
+    private void StartBossAttackSound1()
+    {
+        AudioManagerBehaviour.instance.PlaySFX("Boss Attack");
+    }
+
+    //Audio del ataque barrido del Jefe final
+    private void StartBossAttackSound2()
+    {
+        AudioManagerBehaviour.instance.PlaySFX("Boss Attack 2");
     }
 
     void OnCollisionEnter(Collision collision)

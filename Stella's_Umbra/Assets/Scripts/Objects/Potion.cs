@@ -8,15 +8,17 @@ public class Potion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que colisiona es el jugador
+        //Verifica si el objeto que colisiona es el jugador
         if (other.CompareTag("Player"))
         {
             PlayerLife vidaJugador = other.GetComponent<PlayerLife>();
 
             if (vidaJugador != null)
             {
-                vidaJugador.IncreaseLife(heal); // Quita vida al jugador
+                vidaJugador.IncreaseLife(heal); //Aumenta vida al jugador
+                AudioManagerBehaviour.instance.PlaySFX("Take Item"); //Sonido del item
                 Debug.Log("Jugador recibió una cura: " + heal);
+                Destroy(this.gameObject);
             }
         }
     }
