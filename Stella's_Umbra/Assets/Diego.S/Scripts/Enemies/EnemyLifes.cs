@@ -17,6 +17,7 @@ public class EnemyLifes : MonoBehaviour
     private GameObject _playerTarget;
 
     public bool isDead = false;
+    private Coroutine bossSoundCoroutine;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class EnemyLifes : MonoBehaviour
     {
         float _previousHealth = _currentHealth;
         _currentHealth -= _dmg;
+        AudioManagerBehaviour.instance.PlaySFX("Boss Pain");
         Debug.Log("Vidas actuales enemigo = " + _currentHealth);
 
         _healthBarBehaviour.UpdateHealthBar(_maxHealth, _currentHealth, _previousHealth);
@@ -61,6 +63,8 @@ public class EnemyLifes : MonoBehaviour
                 Debug.Log("Has matado al jefe final");
 
                 isDead = true; //Variable si está muerto o no el Boss (Lo está)
+
+                StartCoroutine(PlayBossDeathSoundDelayed()); //Audio de muerte tras 2 segundos de morir
 
                 _checkPointSystem.ClearProgress();
                 Debug.Log("Borras el progreso al terminar el juego");
@@ -93,5 +97,43 @@ public class EnemyLifes : MonoBehaviour
 
         //Actualizas la barra de vida del Boss
         _healthBarBehaviour.UpdateHealthBar(100,100,0);
+    }
+
+    public void BossLifeSounds()
+    { 
+        if (gameObject.CompareTag("Boss"))
+        {
+            if (bossSoundCoroutine != null)
+            {
+                StopCoroutine(bossSoundCoroutine);
+            }
+            bossSoundCoroutine = StartCoroutine(PlayBossSoundLoop());
+        }
+    }
+
+    private IEnumerator PlayBossSoundLoop()
+    {
+        while (_currentHealth > 0)
+        {
+            float healthPercentage = (_currentHealth / _maxHealth) * 100;
+
+            if (healthPercentage >= 50 && healthPercentage <= 100)
+            {
+                AudioManagerBehaviour.instance.PlaySFX("Boss Laugh");
+            }
+            else if (healthPercentage > 0 && healthPercentage < 30)
+            {
+                AudioManagerBehaviour.instance.PlaySFX("Boss Suffering");
+            }
+
+            float waitTime = Random.Range(8f,12f);
+            yield return new WaitForSeconds(waitTime);
+        }
+    }
+
+    private IEnumerator PlayBossDeathSoundDelayed()
+    {
+        yield return new WaitForSeconds(1f);
+        AudioManagerBehaviour.instance.PlaySFX("Boss Death");
     }
 }

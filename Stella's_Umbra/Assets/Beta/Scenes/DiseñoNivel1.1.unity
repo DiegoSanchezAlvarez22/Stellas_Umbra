@@ -10083,17 +10083,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e6b026736b4cd0a48a3d84c4f244c44a, type: 3}
   - {fileID: 8300000, guid: f040dab788caf884ebe3af1e1383147f, type: 3}
   - {fileID: 8300000, guid: 52aeae454c117d54cb8cf8d7f5b14643, type: 3}
+  - {fileID: 8300000, guid: 6b46e2bd12ddad54bb56c49ce6bb7411, type: 3}
+  - {fileID: 8300000, guid: 0d43101232e2c9f4ca8cef3e9a11af36, type: 3}
   - {fileID: 8300000, guid: e519c9a5975077e47bd060517bb101c6, type: 3}
   - {fileID: 8300000, guid: c938a3c4a24398144b5b12f48a71a6f2, type: 3}
   - {fileID: 8300000, guid: b3658551cc2e8b64487a1bc451c9d9b7, type: 3}
   - {fileID: 8300000, guid: 8fb7085c35531bd429e58c8b1f3a4ad5, type: 3}
   - {fileID: 8300000, guid: 8b4b18d49f6404447b94ab1281023370, type: 3}
   - {fileID: 8300000, guid: f4e713e2df88e034cbcdacbca4208cf0, type: 3}
-  - {fileID: 8300000, guid: 6b46e2bd12ddad54bb56c49ce6bb7411, type: 3}
+  - {fileID: 8300000, guid: 8343e48a3cae6d649902685713dc1772, type: 3}
   - {fileID: 8300000, guid: c46040f8611e0a64a954b60cbbec0b51, type: 3}
   - {fileID: 8300000, guid: 4741d94f4821bc048866b8277ad62a86, type: 3}
-  - {fileID: 8300000, guid: 0d43101232e2c9f4ca8cef3e9a11af36, type: 3}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -53064,6 +53064,10 @@ PrefabInstance:
       propertyPath: 'audioClips.Array.data[10]'
       value: 
       objectReference: {fileID: 8300000, guid: 4741d94f4821bc048866b8277ad62a86, type: 3}
+    - target: {fileID: 6033304798287099784, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
+      propertyPath: _currentExp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6671716360910017017, guid: 3e78f0ca83ad6504c8177ac25c9cf550, type: 3}
       propertyPath: m_Name
       value: Player
@@ -59750,6 +59754,11 @@ MonoBehaviour:
   sistemaParticulas: {fileID: 436403766}
   _healthCanvas: {fileID: 386333355}
   _checkpointSystem: {fileID: 1789269180}
+  _enemyLifes: {fileID: 680098219}
+  _bulbIcon: {fileID: 30922364}
+  _playerHearts: {fileID: 460843215}
+  _mapIcon: {fileID: 522869617}
+  _enemyIndicatorIcon: {fileID: 1138863687}
 --- !u!1 &1309104381
 GameObject:
   m_ObjectHideFlags: 0

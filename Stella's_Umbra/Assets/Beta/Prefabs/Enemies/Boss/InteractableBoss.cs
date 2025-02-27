@@ -15,6 +15,14 @@ public class InteractableBoss : MonoBehaviour
     [SerializeField] GameObject sistemaParticulas;
     [SerializeField] GameObject _healthCanvas;
     [SerializeField] CheckPointSystem _checkpointSystem;
+    [SerializeField] EnemyLifes _enemyLifes;
+
+    [Header("Icons")]
+    [SerializeField] GameObject _bulbIcon;
+    [SerializeField] GameObject _playerHearts;
+    [SerializeField] GameObject _mapIcon;
+    [SerializeField] GameObject _enemyIndicatorIcon;
+
 
     private void Start()
     {
@@ -42,6 +50,7 @@ public class InteractableBoss : MonoBehaviour
 
             //A
             Boss.SetTrigger("Awake");
+            _enemyLifes.BossLifeSounds(); //Llamas a la corroutina de sonidos del boss
             StartCoroutine(FasesJefe());  //Llamas a la corrutina
             interact.enabled = false; //Desactiva el collider después de la interacción
 
@@ -72,9 +81,23 @@ public class InteractableBoss : MonoBehaviour
 
         if (Boss.GetCurrentAnimatorStateInfo(0).IsName("Armature|MuerteIdle"))
         {
+            Time.timeScale = 0;
+
             canvaPostMortem.Play();
+            canvaPostMortem.loopPointReached += LoadNextScene;
+
+            _bulbIcon.SetActive(false);
+            _playerHearts.SetActive(false);
+            _mapIcon.SetActive(false);
+            _enemyIndicatorIcon.SetActive(false);
+
             Debug.Log("Reproduce animación final");
         }
+    }
+
+    private void LoadNextScene(VideoPlayer vp)
+    {
+        SceneManager.LoadScene("Menu Principal");
     }
 
     private IEnumerator FasesJefe()
