@@ -11,6 +11,7 @@ public class BatBehaviour : MonoBehaviour
     #region Variables
 
     [SerializeField] private float _distance;
+    [SerializeField] EnemiesAreaBehaviour _enemyAreaBehaviour;
     [HideInInspector] public Vector3 _startingPoint;
     private Transform _player;
     private Animator _anim;
@@ -35,8 +36,10 @@ public class BatBehaviour : MonoBehaviour
         _anim.SetFloat("Distance", _distance);
 
         //Si está cerca del jugador, reproducir sonido de vuelo
-        if (_distance < 10f && !isPlayingFlySound)
+        if (_distance < 10f && _enemyAreaBehaviour != null && !isPlayingFlySound)
         {
+            _enemyAreaBehaviour.FollowingState();
+
             isPlayingFlySound = true;
             AudioManagerBehaviour.instance.PlaySFX("Bat Flying");
             //Se reproduce cada 1s

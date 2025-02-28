@@ -74,6 +74,7 @@ public class PauseMenu : MonoBehaviour
         // Inicializar la visibilidad de los menús
         _pauseMenu.SetActive(false);
         _livesMenu.SetActive(true);
+        _mapButton.SetActive(true);
         _backgroundPause.SetActive(false);
         _optionsMenu.SetActive(false);
         _keyboardMenu.SetActive(false);

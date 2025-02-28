@@ -7,24 +7,18 @@ public class SkillTreePointsView : MonoBehaviour
 {
     [SerializeField] private PlayerExpSystem _playerExpSystem;
     [SerializeField] private Text _experienceText; // Referencia al texto en la UI
-    private float _exp;
 
-    void Start()
+    void Update()
     {
         UpdateExperienceUI();
     }
 
-    public void AddExperience(int amount)
-    {
-        _exp = _playerExpSystem._currentExp;
-        UpdateExperienceUI();
-    }
 
     void UpdateExperienceUI()
     {
-        if (_experienceText != null)
+        if (_experienceText != null && _playerExpSystem != null)
         {
-            _experienceText.text = "Experiencia disponible: " + _exp.ToString();
+            _experienceText.text = "Experiencia disponible: " + _playerExpSystem._currentExp.ToString();
         }
     }
 }

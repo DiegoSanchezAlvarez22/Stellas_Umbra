@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerLife.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerAttacks.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\BulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BossManager.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\ApplyBrightness.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Enemies\HealthBarBehaviour.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\CheckPointSystem.cs" />
@@ -646,6 +647,14 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

@@ -84,7 +84,7 @@ public class EnemiesAreaBehaviour : MonoBehaviour
         }
     }
 
-    private void FollowingState()
+    public void FollowingState()
     {
         if (_playerTransform == null)
         {
