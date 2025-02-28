@@ -5,23 +5,28 @@ using UnityEngine;
 public class BatBackAnimBehaviour : StateMachineBehaviour
 {
     [SerializeField] private float _moveSpeed;
-    private Vector3 _startingPoint;
+    private Vector3 _startingPointAnim;
     private BatBehaviour _bat;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bat = animator.gameObject.GetComponent<BatBehaviour>();
-        _startingPoint = _bat._startingPoint;
+        _startingPointAnim = _bat._startingPointBat;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.transform.position = Vector2.MoveTowards(animator.transform.position,
-            _startingPoint, _moveSpeed * Time.deltaTime);
-        _bat.FlipSprite(_startingPoint);
-        if (animator.transform.position == _startingPoint)
+            _startingPointAnim, _moveSpeed * Time.deltaTime);
+
+        _bat.FlipSprite(_startingPointAnim);
+
+        Debug.Log("animator.transform.position = " + animator.transform.position);
+        Debug.Log("_startingPointAnim = " + _startingPointAnim);
+
+        if (Vector3.Distance(animator.transform.position, _startingPointAnim) < 0.3f)
         {
             animator.SetTrigger("StartingPoint");
         }

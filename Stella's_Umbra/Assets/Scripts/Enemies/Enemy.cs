@@ -7,11 +7,12 @@ public class Enemy : MonoBehaviour
     [Tooltip("Este valor solo es necesario modificarlo en caso de que se " +
         "quiera destruir el objeto al pasar el valor indicado.")]
     [SerializeField] int _damage; // Cantidad de vida que el enemigo quita al jugador
-
-    [SerializeField] EnemyLifes _enemyLifes;
+    private EnemyLifes _enemyLifes;
 
     private void Start()
     {
+        _enemyLifes = gameObject.GetComponent<EnemyLifes>();
+
         if (gameObject.tag == "EnemyShot")
         {
             float _time = 8; // Tiempo que tardará en destruirse si no colisiona con nada

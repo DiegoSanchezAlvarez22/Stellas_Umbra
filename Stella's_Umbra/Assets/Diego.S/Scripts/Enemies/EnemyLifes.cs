@@ -10,7 +10,7 @@ public class EnemyLifes : MonoBehaviour
     [SerializeField] private float _damageDuration;
     [SerializeField] private int _expToAdd;
     [SerializeField] public GameObject _dyingEffect;
-    private Animator _bossAnimator;
+    [SerializeField] private Animator _bossAnimator;
     private CheckPointSystem _checkPointSystem;
     private InteractableBoss _interactableBoss;
     private SpriteRenderer _spriteRenderer;
@@ -22,20 +22,15 @@ public class EnemyLifes : MonoBehaviour
     private void Start()
     {
         _maxHealth = _currentHealth;
+        if (gameObject.CompareTag("Boss"))
+        {
+            _healthBarBehaviour = GameObject.FindWithTag("HealthBarBoss").GetComponent<HealthBarBehaviour>();
+        }
         _healthBarBehaviour.UpdateHealthBar(_maxHealth, _currentHealth, _currentHealth);
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _playerTarget = GameObject.Find("Player");
         _checkPointSystem = _playerTarget.GetComponent<CheckPointSystem>();
-
-        if (gameObject.CompareTag("Boss"))
-        {
-            _bossAnimator.GetComponent<Animator>();
-        }
-        else
-        {
-            _bossAnimator = null;
-        }
 
         if (gameObject.name == "Armature")
         {

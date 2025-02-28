@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _enemyLifes: {fileID: 0}
 --- !u!1 &4467458454856985659
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _enemyLifes: {fileID: 0}
 --- !u!114 &2359122820674323173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,11 +471,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarBehaviour: {fileID: 1231256395199149792}
-  _maxHealth: 10
-  _currentHealth: 10
+  _maxHealth: 15
+  _currentHealth: 15
   _damageDuration: 0.1
-  _expToAdd: 10
+  _expToAdd: 15
   _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
+  _bossAnimator: {fileID: 0}
   isDead: 0
 --- !u!82 &963284808426167918
 AudioSource:

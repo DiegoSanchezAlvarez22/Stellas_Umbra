@@ -668,11 +668,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarBehaviour: {fileID: 1651326213651898305}
-  _maxHealth: 15
-  _currentHealth: 15
+  _maxHealth: 40
+  _currentHealth: 40
   _damageDuration: 0.15
   _expToAdd: 50
   _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
+  _bossAnimator: {fileID: 0}
+  isDead: 0
 --- !u!114 &8461433362132253842
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class VirtualMouseUI : MonoBehaviour
     [SerializeField] private RectTransform _canvasRectTransform;
     [SerializeField] private RectTransform _cursorImage; // Imagen del cursor (MouseVirtual)
     private Vector2 _lastMousePosition;
-    private bool _usingMouse = false; // Para alternar entre ratón y gamepad
+    //private bool _usingMouse = false; // Para alternar entre ratón y gamepad
 
     private void Awake()
     {
@@ -29,12 +29,12 @@ public class VirtualMouseUI : MonoBehaviour
         Vector2 currentMousePosition = Mouse.current.position.ReadValue();
         if (currentMousePosition != _lastMousePosition)
         {
-            _usingMouse = true;
+            //_usingMouse = true;
             virtualMousePos = currentMousePosition; // El virtual mouse sigue al ratón
         }
         else if (Gamepad.current != null && Gamepad.current.leftStick.ReadValue() != Vector2.zero)
         {
-            _usingMouse = false;
+            //_usingMouse = false;
         }
 
         // Aplicar la posición corregida al Input System y al cursor UI

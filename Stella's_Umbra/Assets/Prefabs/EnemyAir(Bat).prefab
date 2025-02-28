@@ -252,9 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7a874c1304ee44b9ad2bc0a33f9261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
   _distance: 7
-  _startingPoint: {x: 0.23, y: 7.49, z: 0}
+  _enemyAreaBehaviour: {fileID: 0}
+  _startingPointBat: {x: 0, y: 0, z: 0}
 --- !u!114 &8755160260100505958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  _enemyLifes: {fileID: 3508399214007403201}
 --- !u!114 &3508399214007403201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,12 +281,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebcf2e452c800e40bdfa0b8c62ea959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTarget: {fileID: 0}
   _healthBarBehaviour: {fileID: 8098963396622793422}
-  _maxHealth: 5
-  _currentHealth: 5
+  _maxHealth: 20
+  _currentHealth: 20
   _damageDuration: 0.1
-  _expToAdd: 20
+  _expToAdd: 25
+  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
+  _bossAnimator: {fileID: 0}
+  isDead: 0
 --- !u!1 &4648026214448170886
 GameObject:
   m_ObjectHideFlags: 0

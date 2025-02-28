@@ -10,10 +10,11 @@ public class ButtonBehaviour : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
     }
 
+    [System.Obsolete]
     public void ChangeAnimState()
     {
         _rectTransform.localScale = Vector3.one;
-        _rectTransform.rotation = Quaternion.EulerAngles(0,0,0);
+        _rectTransform.rotation = Quaternion.EulerAngles(0, 0, 0);
         _anim.SetTrigger("Normal");
     }
 }

@@ -192,11 +192,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarBehaviour: {fileID: 0}
-  _maxHealth: 0
-  _currentHealth: 0
-  _damageDuration: 0
-  _expToAdd: 0
-  _dyingEffect: {fileID: 0}
+  _maxHealth: 10
+  _currentHealth: 10
+  _damageDuration: 0.3
+  _expToAdd: 20
+  _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
+  _bossAnimator: {fileID: 0}
+  isDead: 0
 --- !u!95 &8045144147378146371
 Animator:
   serializedVersion: 7

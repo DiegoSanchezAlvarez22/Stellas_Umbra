@@ -49,11 +49,11 @@ public class PlayerAttacks : MonoBehaviour
     [Header("EnergyOrbAttack")]
     [SerializeField] public bool _canEnergyOrbAttack;
     [SerializeField] SphereCollider _detectionCollider;
-    [SerializeField] Image _enemyIndicator;
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] Transform _shootingPoint;
     [SerializeField] List<Collider> _enemiesInside = new List<Collider>(); //Lista para detectar a los enemigos dentro del Sphere Collider
     [SerializeField] private float _timeRechargeEnergyOrbAttack = 1.5f; // Ajusta según sea necesario
+    [HideInInspector] public Image _enemyIndicator;
     private bool _energyOrbAttackRecharged = false;
     private float _timerRechargeEnergyOrb = 0f;
 

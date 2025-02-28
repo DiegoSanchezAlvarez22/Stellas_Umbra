@@ -21,6 +21,7 @@ TagManager:
   - Audio
   - Boss
   - Item
+  - HealthBarBoss
   layers:
   - Default
   - TransparentFX

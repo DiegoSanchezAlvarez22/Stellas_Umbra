@@ -27,6 +27,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private CheckPointSystem _checkPointSystem;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerMov _playerMov;
+    [SerializeField] private PlayerAttacks _playerAttacks;
     [SerializeField] private EnemyLifes _enemyLifes;
 
     [SerializeField] private float _looseControlTime;
@@ -51,6 +52,7 @@ public class PlayerLife : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerMov = GetComponent<PlayerMov>();
+        _playerAttacks = GetComponent<PlayerAttacks>();
         _enemyLifes = GetComponent<EnemyLifes>();
 
         _checkPointSystem.LoadProgress();
@@ -75,7 +77,8 @@ public class PlayerLife : MonoBehaviour
                 _interactIcon.SetActive(false);
                 _bossHealthBar.SetActive(false);
                 _starsBackground.SetActive(true);
-                
+
+                _playerAttacks._enemyIndicator.enabled = false;
 
                 if (BossManager.Instance != null)
                 {
