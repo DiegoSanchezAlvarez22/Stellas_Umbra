@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 4824259583868554319}
   - component: {fileID: 8280908493845885683}
   - component: {fileID: 6033304798287099784}
-  - component: {fileID: 1692272324648021538}
   - component: {fileID: 612874926118024614}
   - component: {fileID: 7988612050019788970}
   - component: {fileID: 6967456595877116603}
@@ -541,6 +540,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a78c6aaf-4756-4dc7-b854-1f324ce87f9e
     m_ActionName: 'Playing/MenuActivation[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9de9c9a1-93ca-4988-959e-d09acb3cfae6
+    m_ActionName: 'UI/SkillTreeActionUI[/Keyboard/i]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Playing
@@ -584,6 +587,7 @@ MonoBehaviour:
   _anim: {fileID: 2549569791863814557}
   _spriteRenderer: {fileID: 8907755523591804082}
   _collider: {fileID: 3194450582138999176}
+  _playerSounds: {fileID: 0}
 --- !u!114 &8280908493845885683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 8907755523591804082}
+  _anim: {fileID: 0}
   _energy: 100
   _energyBoost: 1
   _canBasicAttack: 0
@@ -608,12 +613,14 @@ MonoBehaviour:
   shootingPoint: {fileID: 927611748827660408}
   _boulderSpawnRight: {x: 4, y: 3, z: 0}
   _boulderSpawnLeft: {x: -4, y: 3, z: 0}
+  _timeRechargeBoulderAttack: 1
   _canEnergyOrbAttack: 0
   _detectionCollider: {fileID: 2160388577919333903}
-  _enemyIndicator: {fileID: 0}
   _bulletPrefab: {fileID: 5293527828824941751, guid: 7ca3a07bfc8820a40b1089c752e920af, type: 3}
   _shootingPoint: {fileID: 927611748827660408}
   _enemiesInside: []
+  _timeRechargeEnergyOrbAttack: 1.5
+  _enemyIndicator: {fileID: 0}
   _canTornadoAttack: 0
   _tornado: {fileID: 4342673284362773583, guid: bb72fff86be93774fb3be0452f958622, type: 3}
   _tornadoAttackDuration: 7
@@ -630,33 +637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentExp: 100
---- !u!114 &1692272324648021538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671716360910017017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992a0b09f0df30e49bf6c1a90ec6ac89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cristalesRequeridos: 5
-  regenerarVida: 1
-  cantidadActualCristales: 0
-  vidaActual: 4
-  corazonesMax: 4
-  cambioVida:
-    m_PersistentCalls:
-      m_Calls: []
-  sumarCorazon:
-    m_PersistentCalls:
-      m_Calls: []
-  _checkPointSystem: {fileID: 6967456595877116603}
-  _spriteRenderer: {fileID: 0}
-  _playerMov: {fileID: 4824259583868554319}
-  _looseControlTime: 1.5
 --- !u!114 &612874926118024614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,9 +651,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skilltree: {fileID: 0}
   _starsBackground: {fileID: 0}
+  _pointer: {fileID: 0}
   _lifeCanvas: {fileID: 0}
   _mapIcon: {fileID: 0}
   _mapaDesplegable: {fileID: 0}
+  _bossHealthBar: {fileID: 0}
 --- !u!114 &7988612050019788970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,11 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61383c9d6a7ed8c4bb091ab230727b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escenasPermitidas:
-  - Scene01
-  - "Dise\xF1oNivel1.1"
-  - BossRoom
-  - PruebaDiego
+  _scenes: []
 --- !u!114 &6967456595877116603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,12 +681,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce234051ed44040864558c5e4c65ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerExpSystem: {fileID: 6033304798287099784}
-  _vidaJugador: {fileID: 1692272324648021538}
-  _jugadorTransform: {fileID: 290188763919154300}
+  _playerTransform: {fileID: 0}
   _playerMov: {fileID: 4824259583868554319}
-  _skillTreeManager: {fileID: 0}
   _playerAttacks: {fileID: 8280908493845885683}
+  _playerLifes: {fileID: 0}
+  _playerExpSystem: {fileID: 6033304798287099784}
+  _heartsCanvasTransform: {fileID: 0}
 --- !u!114 &2089185292222206164
 MonoBehaviour:
   m_ObjectHideFlags: 0
