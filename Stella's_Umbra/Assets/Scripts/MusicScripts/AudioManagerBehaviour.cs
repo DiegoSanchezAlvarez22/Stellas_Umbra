@@ -38,7 +38,7 @@ public class AudioManagerBehaviour : MonoBehaviour
 
     void Start()
     {
-        musicSource.clip = adventureBackground;
+        musicSource.clip = background;
         musicSource.Play();
     }
 

@@ -465,7 +465,6 @@ GameObject:
   - component: {fileID: 6082313961527106971}
   - component: {fileID: 6183608258746084487}
   - component: {fileID: 7854543190832135508}
-  - component: {fileID: 8461433362132253842}
   - component: {fileID: 8165271566425554195}
   m_Layer: 10
   m_Name: EnemyFloor(Tree) 1
@@ -675,18 +674,6 @@ MonoBehaviour:
   _dyingEffect: {fileID: 7101334312869811744, guid: 5b0093b846c97d946b27d68f39bcaa18, type: 3}
   _bossAnimator: {fileID: 0}
   isDead: 0
---- !u!114 &8461433362132253842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8844728031483331638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764378315ba701d4aa2118a8b67719a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &8165271566425554195
 AudioSource:
   m_ObjectHideFlags: 0
