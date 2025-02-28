@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-    #region Variables y referencias
+    #region Variables
     [SerializeField] int _requieredCrystals;    // Cantidad de items necesarios para aumentar vida
     [SerializeField] int _regenerateLife;     // heal
     [SerializeField] int _actualCrystalsTaken;  // Items actuales recogidos

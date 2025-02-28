@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class CheckPointSystem : MonoBehaviour
 {
-    #region Referencias
+    #region References
     //Referencia al Transform del jugador para guardar la posición
     [SerializeField] Transform _playerTransform;
 
@@ -26,7 +26,7 @@ public class CheckPointSystem : MonoBehaviour
     [SerializeField] Transform _heartsCanvasTransform;
     #endregion
 
-    #region Claves
+    #region Keys
     //Clave para guardar/cargar el dato de la exp en PlayerPrefs
     const string ExpKey = "PlayerExp";
 

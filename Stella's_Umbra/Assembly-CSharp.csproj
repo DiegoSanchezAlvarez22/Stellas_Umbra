@@ -92,7 +92,6 @@
     <Compile Include="Assets\Scripts\Enemies\TreeWalkBehaviour.cs" />
     <Compile Include="Assets\Diego.S\Scripts\PorSiAcaso\Inutiles\Jump.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\Respawn.cs" />
-    <Compile Include="Assets\Diego.B\Scripts\Palanca.cs" />
     <Compile Include="Assets\Scripts\SceneryScripts\DeadzoneBehaviour.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerLife.cs" />
     <Compile Include="Assets\Diego.S\Scripts\Player\PlayerAttacks.cs" />

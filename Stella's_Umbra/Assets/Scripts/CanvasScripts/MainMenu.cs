@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    #region Referencias
+    #region References
     [SerializeField] GameObject _menuWarning;
     [SerializeField] GameObject _menuMain;
     [SerializeField] GameObject _menuOptions;
