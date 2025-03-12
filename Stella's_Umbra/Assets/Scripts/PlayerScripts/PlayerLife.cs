@@ -66,7 +66,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
-        if (_actualLife == 0)
+        if (_actualLife <= 0)
         {
             if (_checkPointSystem != null && PlayerPrefs.HasKey("PlayerVida"))
             {

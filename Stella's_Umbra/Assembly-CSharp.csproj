@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\ParticleTrigger.cs" />
     <Compile Include="Assets\Scripts\SceneryScripts\PlatformBehaviour.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Disparofijado.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\Apuntado.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Respawn.cs" />
     <Compile Include="Assets\Beta\Prefabs\Enemies\Boss\InteractableBoss.cs" />
     <Compile Include="Assets\Scripts\Enemies\TreeWalkBehaviour.cs" />
@@ -105,6 +104,7 @@
     <Compile Include="Assets\Scripts\TpScripts\Flag.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\BatAttack.cs" />
+    <Compile Include="Assets\PlayerInput\Input1.cs" />
     <Compile Include="Assets\Scripts\CanvasScripts\BrightnessSettings.cs" />
     <Compile Include="Assets\Scripts\Skilltree\ImageHover.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerDestroyLoads.cs" />
@@ -1258,16 +1258,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
